@@ -76,6 +76,13 @@ super + shift + c
 super + shift + e
   ~/bin/dmenuemoji
 
+super + shift + m
+	SUDO_ASKPASS=~/bin/dmenupass ~/bin/dmenumount
+
+super + shift + u
+	SUDO_ASKPASS=~/bin/dmenupass ~/bin/dmenuunmount
+
+# make sxhkd reload its configuration files:
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
