@@ -40,7 +40,15 @@ nmap <S-Enter> O<Esc>j
 nmap <CR> o<Esc>
 
 "Get out of insert mode
-inoremap jk <Esc>
+imap jk <Esc>
+vmap jk <Esc>
+
+" Conveniency
+nnoremap ' `
+vnoremap ; :
+vnoremap : ;
+nnoremap ; :
+nnoremap : ;
 
 "Source current file
 nnoremap <leader>t :so %<cr>
@@ -51,6 +59,11 @@ nnoremap <leader>S :%s//g<Left><Left>
 " Surround
 vnoremap (( "sc(<C-r>s)<Esc>
 vnoremap "" "sc"<C-r>s"<Esc>
+
+" Command-line like forward-search
+cnoremap <C-k> <Up>
+" Command-line like reverse-search
+cnoremap <C-j> <Down>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim Plugins
