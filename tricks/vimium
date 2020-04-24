@@ -1,0 +1,13 @@
+#change how to move between tabs
+unmap J
+unmap K
+map <a-h> previousTab
+map <a-l> nextTab
+map <a-j> firstTab
+map <a-k> lastTab
+
+#change f to g
+#unmap f
+#unmap F
+#map g LinkHints.activateMode
+#map G LinkHints.activateModeToOpenInNewTab
