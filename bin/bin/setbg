@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale '/home/yaslix/Pictures/Wallpapers/space2.png' 
