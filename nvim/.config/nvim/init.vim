@@ -42,6 +42,7 @@ nmap <CR> o<Esc>
 "Get out of insert mode
 imap jk <Esc>
 vmap jk <Esc>
+cmap jk <C-C>
 
 " Conveniency
 nnoremap ' `
