@@ -59,6 +59,8 @@ cnoremap <C-k> <Up>
 " Command-line like reverse-search
 cnoremap <C-j> <Down>
 
+" Reopen closed tabs
+map <silent><leader>u <leader>be<Down>t
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -78,6 +80,7 @@ Plug 'lilydjwg/colorizer'
 Plug 'thaerkh/vim-workspace'
 Plug 'tpope/vim-commentary'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'jlanzarotta/bufexplorer'
 
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
