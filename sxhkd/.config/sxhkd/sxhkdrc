@@ -63,9 +63,15 @@ XF86AudioPrev
 XF86TouchpadToggle
   toggleTouchpad
 
+# Screen shot
 Print
   ~/bin/screenshot
 
+# Screen shot and open to browser
+super + shift + Print
+  ~/bin/screenshot open
+
+# zoom & colopicker; powerlfull combo
 # zoom & colopicker; powerlfull combo
 super + shift + z
   ~/bin/zoom

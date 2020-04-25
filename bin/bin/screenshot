@@ -1,2 +1,12 @@
 #!/usr/bin/sh
-maim -s -q -c 0.3,0.4,0.6,0.4 -l | convert - -scene 1 ~/Pictures/$(date +"%m-%d-%I-%p%S").png
+
+latestPic=$(find ~/Pictures -name "scr-*" | head -1)
+
+if [ $1 = "open" ]; then
+maim -s -q -c 0.3,0.4,0.6,0.4 -l |
+  convert - -scene 1 ~/Pictures/scr-$(date +"%m-%d-%I-%p%S").png &&
+  $BROWSER $latestPic
+else
+maim -s -q -c 0.3,0.4,0.6,0.4 -l |
+  convert - -scene 1 ~/Pictures/scr-$(date +"%m-%d-%I-%p%S").png
+fi
