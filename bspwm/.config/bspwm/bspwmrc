@@ -50,3 +50,5 @@ synclient TapButton1=1 TapButton2=3
 # Second Arg : interval
 xset r rate 180 40 
 
+# Compose key to be right alt
+setxkbmap -option compose:ralt
