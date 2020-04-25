@@ -44,13 +44,6 @@ imap jk <Esc>
 vmap jk <Esc>
 cmap jk <C-C>
 
-" Conveniency
-nnoremap ' `
-vnoremap ; :
-vnoremap : ;
-nnoremap ; :
-nnoremap : ;
-
 "Source current file
 nnoremap <leader>t :so %<cr>
 
