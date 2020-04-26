@@ -24,7 +24,6 @@ let mapleader = ' '
 nnoremap gl $
 nnoremap gh ^
 nnoremap gk H
-nnoremap gk H
 nnoremap gj L
 
 nnoremap <leader>m )
@@ -33,7 +32,6 @@ nnoremap <leader>c (
 "Saving and quiting
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
-nnoremap <leader>wq :wq<cr>
 
 "Enter functionality
 nmap <S-Enter> O<Esc>j
@@ -45,7 +43,7 @@ vmap jk <Esc>
 cmap jk <C-C>
 
 "Source current file
-nnoremap <leader>t :so %<cr>
+nnoremap <leader>y :so %<cr>
 
 "Search for something globaly in the file and select it
 nnoremap <leader>S :%s//g<Left><Left>
@@ -59,8 +57,10 @@ cnoremap <C-k> <Up>
 " Command-line like reverse-search
 cnoremap <C-j> <Down>
 
-" Reopen closed tabs
-map <silent><leader>u <leader>be<Down>t
+" Go to file under cursor under new tab
+nnoremap gf <C-W>gf
+vnoremap gf <C-W>gf
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -72,15 +72,16 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'drewtempelmeyer/palenight.vim' " Theme
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'on': []}
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
-Plug 'mhinz/vim-startify' " Show recent files on neovim start
-Plug 'francoiscabrol/ranger.vim' " Ranger
 Plug 'rbgrouleff/bclose.vim' " Ranger needs this
 Plug 'rust-lang/rust.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'thaerkh/vim-workspace'
 Plug 'tpope/vim-commentary'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'jlanzarotta/bufexplorer'
+Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
 
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
@@ -148,7 +149,7 @@ autocmd VimEnter * map <M-h> :tabp<CR>
 autocmd VimEnter * map <M-l> :tabn<CR>
 
 " Unhighlight searched words
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+nnoremap <silent> <C-t> :nohl<CR><C-l>
 
 " Format Documents
 nmap <Leader>g <Plug>(Prettier)
@@ -156,14 +157,13 @@ nmap <Leader>g <Plug>(Prettier)
 " Ignore files and directories in .gitignore when fuzzy finding
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-" open ranger when vim open a directory
-"let g:ranger_replace_netrw = 1
-" Open files from ranger in a new tab
-let g:ranger_map_keys = 0
-map <leader>f :RangerNewTab<CR>
-" identified as typescript react file, so add following
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+
+" Make Ranger replace netrw and be the file explorer
+let g:rnvimr_ex_enable = 1
+
+nmap <space>ra :RnvimrToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Themes
@@ -173,6 +173,7 @@ syntax enable
 colorscheme palenight
 let g:lightline = { 'colorscheme': 'palenight' }
 let g:airline_theme = "palenight"
+set guifont=Jetbrains\ Mono\ Font\ 11
 
 "Set the right colors in vim
 set termguicolors
@@ -182,7 +183,7 @@ let &t_8b = "\e[48;2;%lu;%lu;%lum"
 " Tab colors
 hi TabLineFill guibg=#292D3E
 hi TabLine guibg=#49475E
-hi TabLineSel guibg=#6E617D
+hi TabLineSel guibg=#7784e0
 
 "Cursor line
 set cursorline
@@ -269,8 +270,68 @@ autocmd FileType bash setlocal commentstring=#\ %s
 autocmd FileType python setlocal commentstring=#\ %s
 autocmd FileType nvim setlocal commentstring="\ %s
 
-" Indent Setting
+"  Indent Setting
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#2b3042 ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#2e3345 ctermbg=4
+
+" Coc explorer settings
+nmap <space>e :CocCommand explorer<CR>
+
+" Coc terminal
+nmap <leader>to <Plug>(coc-terminal-toggle)
+
+" Session settings
+nnoremap <leader>s :ToggleWorkspace<CR>
+let g:workspace_session_directory = $HOME . '/sessions'
+let g:workspace_autosave_always = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Coc settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TextEdit might fail if hidden is not set.
+" This is the default extra key bindings
+    let g:fzf_action = {
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-x': 'split',
+      \ 'ctrl-v': 'vsplit' }
+
+map <leader>f :Files<CR>
+map <leader>bu :Buffers<CR>
+nnoremap <leader>rg :Rg<CR>
+
+
+let g:fzf_tags_command = 'ctags -R'
+" Border color
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.6, 'height': 0.4,'yoffset':0.0,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
+
+let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
+let $FZF_DEFAULT_COMMAND="rg --files --hidden"
+
+"Get previews
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
+
+
+" Rg previews
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
