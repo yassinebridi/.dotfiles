@@ -1,0 +1,27 @@
+{
+  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "typescript.suggestionActions.enabled": false,
+  "python.linting.enabled": true,
+  "python.linting.pylamaEnabled": true,
+  "coc.preferences.extensionUpdateCheck": "never",
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.jumpCommand": "vsp",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "Markdown",
+    "javascript",
+    "javascript.jsx",
+    "typescript",
+    "typescript.tsx",
+    "graphql",
+    "toml",
+    "json"
+  ],
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.width": 30,
+  "explorer.keyMappings": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "v": "open:vsplit"
+  }
+}
