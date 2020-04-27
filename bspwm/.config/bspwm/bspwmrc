@@ -42,6 +42,7 @@ bspc rule -a mpv state=floating
 bspc rule -a Onboard state=floating
 bspc rule -a java-lang-Thread desktop=^8
 bspc rule -a Org.gnome.Nautilus state=floating
+bspc rule -a Ranger state=floating
 
 # General configs
 # Mouse Pad

@@ -8,7 +8,7 @@ super + Return
 
 # Run the file manager
 super + shift + Return
-  $TERMINAL -e $FILE
+  $TERMINAL -c Ranger -e $FILE
 
 # program launcher
 super + @space
