@@ -1,0 +1,5 @@
+#!/bin/sh
+
+while clipnotify; do
+  sed -i 1i\ $(xclip -o -selection primary) .clip_history
+done

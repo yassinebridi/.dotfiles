@@ -82,6 +82,9 @@ super + shift + c
 super + shift + e
   ~/bin/dmenuemoji
 
+super + shift + y
+  ~/bin/dmenuclip
+
 super + shift + m
 	SUDO_ASKPASS=~/bin/dmenupass ~/bin/dmenumount
 
