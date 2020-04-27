@@ -57,7 +57,7 @@ XF86AudioPlay
 XF86AudioNext 
   playerctl next
 
-XF86AudioPrev 
+XF86AudioPrev
   playerctl previous
 
 XF86TouchpadToggle

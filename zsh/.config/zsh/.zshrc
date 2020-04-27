@@ -8,10 +8,10 @@ export PATH="$HOME/.cargo/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 autoload -U compinit && compinit
 
+source /usr/share/autojump/autojump.zsh
+
 export PATH="$PATH:`yarn global bin`"
 export PATH="$PATH:$HOME/scripts/bin"
-
-HISTFILE=~/.config/zsh/.zsh_history
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char

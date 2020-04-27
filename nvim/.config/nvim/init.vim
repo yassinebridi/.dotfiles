@@ -279,9 +279,6 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#2e3345 ctermbg=4
 " Coc explorer settings
 nmap <space>e :CocCommand explorer<CR>
 
-" Coc terminal
-nmap <leader>to <Plug>(coc-terminal-toggle)
-
 " Session settings
 nnoremap <leader>s :ToggleWorkspace<CR>
 let g:workspace_session_directory = $HOME . '/sessions'
