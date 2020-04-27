@@ -82,6 +82,7 @@ Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-rooter'
 
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
@@ -297,11 +298,12 @@ let g:workspace_autosave_always = 1
 map <leader>f :Files<CR>
 map <leader>bu :Buffers<CR>
 nnoremap <leader>rg :Rg<CR>
-
+nnoremap <leader>tg :Tags<CR>
+nnoremap <leader>mr :Marks<CR>
 
 let g:fzf_tags_command = 'ctags -R'
 " Border color
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.6, 'height': 0.4,'yoffset':0.0,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.0,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
 let $FZF_DEFAULT_COMMAND="rg --files --hidden"

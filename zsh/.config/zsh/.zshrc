@@ -90,3 +90,6 @@ xmodmap ~/.Xmodmap
 
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
+
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
