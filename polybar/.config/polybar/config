@@ -36,7 +36,7 @@ font-2 = siji:pixelsize=10;1
 font-3 = FontAwesome:size=10
 
 modules-left = restart poweroff kxorg suspend bspwm spotify previous playpause next
-modules-center = pst pchrome ponboard
+modules-center = pst pchrome pxdm ponboard
 modules-right = memory cpu xtemperature xbacklight pulseaudio xkeyboard wlan eth date 
 
 tray-position = right
@@ -100,9 +100,20 @@ label-urgent-background = #bd2c40
 label-urgent-underline = #9b0a20
 label-urgent-padding = 2
 
-label-empty = 
+label-empty =
 
 ; Progams
+[module/pxdm]
+type = custom/script
+interval = 86400
+format = "%{T3}<label>"
+format-padding = 2
+exec = echo "⬇"
+format-underline = #fcfd95
+line-size = 1
+click-left = xdman &
+
+
 [module/pchrome]
 type = custom/script
 interval = 86400
