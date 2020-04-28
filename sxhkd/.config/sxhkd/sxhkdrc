@@ -1,4 +1,5 @@
 #
+
 # wm independent hotkeys
 #
 
@@ -94,7 +95,12 @@ super + shift + u
 super + shift + n
 	nautilus &
 
-# make sxhkd reload its configuration files:
+super + shift + o
+  ~/bin/dmenuopener
+
+super + shift + r
+  ~/bin/dmenurecord
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
