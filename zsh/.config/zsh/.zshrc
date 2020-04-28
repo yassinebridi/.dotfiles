@@ -58,6 +58,7 @@ alias nf='neofetch'
 alias stn='stow --adopt -nv'
 alias stv='stow --adopt -v'
 alias std='stow --adopt -vD'
+alias nb='newsboat'
 
 ytp(){
   yarn add -D "@types/"$@
