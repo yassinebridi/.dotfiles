@@ -39,7 +39,6 @@ nmap <CR> o<Esc>
 
 "Get out of insert mode
 imap jk <Esc>
-vmap jk <Esc>
 cmap jk <C-C>
 
 "Source current file
@@ -97,7 +96,7 @@ augroup load_us_ycm
                      \| autocmd! load_us_ycm
 augroup END
 
-let g:prettier#autoformat = 1
+" let g:prettier#autoformat = 1
 
 " Vim-airline
 let g:airline#extensions#wordcount#enabled = 1
@@ -196,6 +195,10 @@ set cursorcolumn
 " TextEdit might fail if hidden is not set.
 set hidden
 
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
 " Give more space for displaying messages.
 set cmdheight=2
 
@@ -235,14 +238,14 @@ else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-" GoTo code navgation.
+" GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> <C-k> :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -255,13 +258,34 @@ endfunction
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json,python setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Remap keys for applying codeAction to the current line.
+nmap <leader>ac  <Plug>(coc-codeaction)
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
+" Add `:OR` command for organize imports of the current buffer.
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Mappings using CoCList:
+" Show all diagnostics.
+nnoremap <silent> <space>ad  :<C-u>CocList diagnostics<cr>
+
 " Fix Error color
 hi! CocErrorSign guifg=#dd5d32
-
-" Rust settings
-let g:rustfmt_autosave = 1
-let g:coc_user_config = {}
-let g:coc_user_config['coc.preferences.jumpCommand'] = ':vsplit'
 
 " vim-commentary settings
 autocmd FileType typescript.tsx setlocal commentstring={/*\ %s\ */}
@@ -271,7 +295,7 @@ autocmd FileType bash setlocal commentstring=#\ %s
 autocmd FileType python setlocal commentstring=#\ %s
 autocmd FileType nvim setlocal commentstring="\ %s
 
-"  Indent Setting
+" Indent Setting
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#2b3042 ctermbg=3
@@ -283,10 +307,10 @@ nmap <space>e :CocCommand explorer<CR>
 " Session settings
 nnoremap <leader>s :ToggleWorkspace<CR>
 let g:workspace_session_directory = $HOME . '/sessions'
-let g:workspace_autosave_always = 1
+"let g:workspace_autosave_always = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Coc settings
+" => FZF Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TextEdit might fail if hidden is not set.
 " This is the default extra key bindings
