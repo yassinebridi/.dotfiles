@@ -101,6 +101,7 @@ augroup END
 " Vim-airline
 let g:airline#extensions#wordcount#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
+
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -151,14 +152,12 @@ autocmd VimEnter * map <M-l> :tabn<CR>
 " Unhighlight searched words
 nnoremap <silent> <C-t> :nohl<CR><C-l>
 
-" Format Documents
-nmap <Leader>g <Plug>(Prettier)
-
 " Ignore files and directories in .gitignore when fuzzy finding
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+au BufNewFile,BufRead *.py setlocal filetype=python
 
 " Make Ranger replace netrw and be the file explorer
 let g:rnvimr_ex_enable = 1
@@ -307,7 +306,7 @@ nmap <space>e :CocCommand explorer<CR>
 " Session settings
 nnoremap <leader>s :ToggleWorkspace<CR>
 let g:workspace_session_directory = $HOME . '/sessions'
-"let g:workspace_autosave_always = 1
+let g:workspace_autosave = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FZF Settings
