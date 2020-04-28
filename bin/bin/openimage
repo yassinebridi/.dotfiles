@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# go to the download directory
+cd /tmp/imgs && 
+  curl -O -J -L $1 &&
+  sxiv "$(for n in *; do printf '%s\n' "$n"; done | tail -n 1)"
+
+exec zsh
