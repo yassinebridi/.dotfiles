@@ -91,6 +91,9 @@ super + shift + m
 super + shift + u
 	SUDO_ASKPASS=~/bin/dmenupass ~/bin/dmenuunmount
 
+super + shift + n
+	nautilus &
+
 # make sxhkd reload its configuration files:
 # make sxhkd reload its configuration files:
 super + Escape
