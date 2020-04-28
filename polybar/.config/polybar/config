@@ -105,7 +105,6 @@ label-empty =
 ; Progams
 [module/pxdm]
 type = custom/script
-interval = 86400
 format = "%{T3}<label>"
 format-padding = 2
 exec = echo "⬇"
@@ -115,16 +114,16 @@ click-left = xdman &
 
 [module/precord]
 type = custom/script
-interval = 86400
+interval = 5
 format = "%{T3}<label>"
 format-padding = 2
-exec = cat /tmp/recordingicon
+exec = echo "⚫"
+exec-if = pgrep -x ffmpeg
 format-underline = #ef94cf
 line-size = 1
 
 [module/pchrome]
 type = custom/script
-interval = 86400
 format = "%{T3}<label>"
 format-padding = 2
 exec = echo ""
@@ -134,7 +133,6 @@ click-left = google-chrome-stable &
 
 [module/pst]
 type = custom/script
-interval = 86400
 format = "%{T3}<label>"
 format-padding = 2
 exec = echo ""
@@ -144,7 +142,6 @@ click-left = st &
 
 [module/ponboard]
 type = custom/script
-interval = 86400
 format = "%{T3}<label>"
 format-padding = 2
 exec = echo ""
@@ -155,7 +152,6 @@ click-left = onboard &
 ; Power controls
 [module/poweroff]
 type = custom/script
-interval = 86400
 format = "%{T3}<label>"
 format-padding = 2
 exec = echo ""
@@ -165,7 +161,6 @@ click-left = [ "$(echo -e "Cancel\nShutdown" | dmenu)" = "Shutdown" ] && systemc
 
 [module/restart]
 type = custom/script
-interval = 86400
 format = "%{T3}<label>"
 format-padding = 2
 exec = echo ""
@@ -175,7 +170,6 @@ click-left = [ "$(echo -e "Cancel\nRestart" | dmenu)" = "Restart" ] && systemctl
 
 [module/kxorg]
 type = custom/script
-interval = 86400
 format = "%{T3}<label>"
 format-padding = 2
 exec = echo ""
@@ -185,7 +179,6 @@ click-left = "[ "$(echo -e "Cancel\nLeave" | dmenu)" = "Leave" ] && killall Xorg
 
 [module/suspend]
 type = custom/script
-interval = 86400
 format = "%{T3}<label>"
 format-padding = 2
 exec = echo ""
@@ -196,7 +189,7 @@ click-left = [ "$(echo -e "Cancel\nSuspend" | dmenu)" = "Suspend" ] && systemctl
 ; Spotify controls
 [module/previous]
 type = custom/script
-interval = 86400
+interval = 80000
 format = "%{T3}<label>"
 format-padding = 5
 exec = echo ""
@@ -207,7 +200,7 @@ click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org
 
 [module/next]
 type = custom/script
-interval = 86400
+interval = 80000
 format = "%{T3}<label>"
 format-padding = 5
 exec = echo ""
@@ -218,7 +211,7 @@ click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org
 
 [module/playpause]
 type = custom/script
-interval = 86400
+interval = 80000
 format = "%{T3}<label>"
 format-padding = 5
 exec = echo ""
