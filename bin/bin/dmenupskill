@@ -1,0 +1,7 @@
+#!/bin/sh
+
+picked=$(ps -U $USER -o ucmd | uniq | dmenu -i -p "Kill?")
+
+[ "$picked" != "" ] || exit
+
+pkill $picked
