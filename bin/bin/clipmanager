@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# Populate a history file.
+
+# Test if .clip_history exists, if not create it.
+touch ~/.clip_history
+
+# Add every new copied test to the .clip_history file
 while clipnotify; do
   echo "$(xsel -o -b)" >> ~/.clip_history
 done

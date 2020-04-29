@@ -1,3 +1,4 @@
 #!/usr/bin/sh
 
+# Grab a pixel from the screen, then copy it to the clipboard
 grabc | xclip -r -selection c

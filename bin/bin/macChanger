@@ -1,3 +1,7 @@
+#!/usr/bin/sh
+
+# Change mac address, in case someone is spoofing
+
 sudo su <<EOF
 ifconfig wlo1 down
 macchanger -r wlo1

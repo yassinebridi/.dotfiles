@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-# go to the download directory
-cd /tmp/imgs && 
+# Go to the download directory
+cd ~/Downloads/Documents && 
   curl -O -J -L $1 &&
+# Open the downloaded pdf
   zathura "$(for n in *; do printf '%s\n' "$n"; done | tail -n 1)"
 exec zsh

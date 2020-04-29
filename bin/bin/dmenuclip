@@ -1,18 +1,11 @@
 #!/bin/sh
 
-# The famous "get a menu of emojis to copy" script.
-
-# Must have xclip installed to even show menu.
-xclip -h 2>/dev/null || exit 1
-
+# Do some filtering on the .clip_history file
+# Remove empty lines, get unique lines, and reverse order, to get the latest clips
 chosen=$(grep -v "^[[:space:]]*$" $HOME/.clip_history | tac | uniq | dmenu -i -l 8 -w 310)
 
 [ "$chosen" != "" ] || exit
 
-# If you run this command with an argument, it will automatically insert the character.
-if [ -n "$1" ]; then
-	xdotool key Shift+Insert
-else
-	echo "$chosen" | tr -d '\n' | xclip -selection clipboard
-	notify-send "'$chosen' copied to clipboard." &
-fi
+# Copy the picked clips and notify of getting them
+echo "$chosen" | tr -d '\n' | xclip -selection clipboard
+notify-send "'$chosen' copied to clipboard." &

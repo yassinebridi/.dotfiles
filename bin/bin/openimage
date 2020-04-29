@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-# go to the download directory
-cd /tmp/imgs && 
+# Go to the download directory
+cd ~/Downloads && 
+# Download the argument
   curl -O -J -L $1 &&
+# Then open it with sxiv(this opens, the latest picture in the directory, which is the screenshoted one)
   sxiv "$(for n in *; do printf '%s\n' "$n"; done | tail -n 1)"
 exec zsh

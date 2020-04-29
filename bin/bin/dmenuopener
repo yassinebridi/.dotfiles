@@ -1,7 +1,6 @@
 #!/bin/sh
 
-# Feed this script a link and it will give dmenu
-# some choice programs to use to open it.
+# Open a copied link with the following picked programs
 
 case "$(printf "Youtube\\nImage\\nPDF\\nBrowser" | dmenu -i -p "Open with?")" in
   mpv)
@@ -12,5 +11,4 @@ case "$(printf "Youtube\\nImage\\nPDF\\nBrowser" | dmenu -i -p "Open with?")" in
 	Browser) setsid "$BROWSER" "$(xclip -o -selection clipboard)" >/dev/null 2>&1 & ;;
   Image) ~/bin/openimage "$(xclip -o -selection clipboard)" >/dev/null 2>&1 & ;;
   PDF) ~/bin/openpdf "$(xclip -o -selection clipboard)" >/dev/null 2>&1 & ;;
-	#"queue youtube-dl") tsp youtube-dl --write-metadata -ic "$(xclip -o -selection clipboard)" >/dev/null 2>&1 ;;
 esac
