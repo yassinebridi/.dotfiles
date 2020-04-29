@@ -7,8 +7,9 @@ export EDITOR=/usr/bin/vim
 export TERMINAL=/usr/local/bin/st
 export BROWSER="google-chrome-stable"
 export READER="zathura"
+export IMAGEJ="sixv"
+export PLAYER="mpv"
 
-# ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"
 
 export PATH="$HOME/.cargo/bin:$PATH"

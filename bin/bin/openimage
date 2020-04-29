@@ -4,6 +4,6 @@
 cd ~/Downloads && 
 # Download the argument
   curl -O -J -L $1 &&
-# Then open it with sxiv(this opens, the latest picture in the directory, which is the screenshoted one)
-  sxiv "$(for n in *; do printf '%s\n' "$n"; done | tail -n 1)"
+# Then open it with default image viewer(this opens, the latest picture in the directory, which is the screenshoted one)
+  $IMAGE "$(for n in *; do printf '%s\n' "$n"; done | tail -n 1)"
 exec zsh
