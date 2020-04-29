@@ -3,13 +3,14 @@
 # Feed this script a link and it will give dmenu
 # some choice programs to use to open it.
 
-case "$(printf "mpv\\nsxiv\\nbrowser" | dmenu -i -p "Open with?")" in
+case "$(printf "Youtube\\nImage\\nPDF\\nBrowser" | dmenu -i -p "Open with?")" in
   mpv)
     case "$(printf "360\\n480\\n720" | dmenu -i -p "What quality?")" in
       480) setsid mpv --ytdl-format=18 "$(xclip -o -selection clipboard)" >/dev/null 2>&1 & ;;
       720) setsid mpv --ytdl-format=22 "$(xclip -o -selection clipboard)" >/dev/null 2>&1 & ;;
     esac ;;
-	browser) setsid "$BROWSER" "$(xclip -o -selection clipboard)" >/dev/null 2>&1 & ;;
-  sxiv) ~/bin/openimage "$(xclip -o -selection clipboard)" >/dev/null 2>&1 & ;;
+	Browser) setsid "$BROWSER" "$(xclip -o -selection clipboard)" >/dev/null 2>&1 & ;;
+  Image) ~/bin/openimage "$(xclip -o -selection clipboard)" >/dev/null 2>&1 & ;;
+  PDF) ~/bin/openpdf "$(xclip -o -selection clipboard)" >/dev/null 2>&1 & ;;
 	#"queue youtube-dl") tsp youtube-dl --write-metadata -ic "$(xclip -o -selection clipboard)" >/dev/null 2>&1 ;;
 esac
