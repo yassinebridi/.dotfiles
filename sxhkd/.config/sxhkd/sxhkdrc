@@ -8,7 +8,7 @@ super + Return
   $TERMINAL
 
 # Run the file manager
-super + shift + Return
+super + shift + f
   $TERMINAL -c Ranger -e $FILE
 
 # program launcher
@@ -100,6 +100,9 @@ super + shift + o
 
 super + shift + r
   ~/bin/dmenurecord
+
+super + shift + Return
+  ~/bin/sameDirTerm
 
 # make sxhkd reload its configuration files:
 super + Escape

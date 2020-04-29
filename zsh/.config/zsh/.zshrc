@@ -1,4 +1,4 @@
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 plugins=(nvm zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
