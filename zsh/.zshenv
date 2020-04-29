@@ -10,6 +10,8 @@ export BROWSER=/usr/bin/google-chrome-stable
 export FILE=/usr/bin/ranger
 export EDITOR=nvim
 export READER="zathura"
+export IMAGE="sxiv"
+export PLAYER="mpv"
 
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
