@@ -2,16 +2,17 @@ ZSH_THEME="robbyrussell"
 plugins=(nvm zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export ZSH="/home/yaslix/.config/oh-my-zsh"
+export PATH="$PATH:$HOME/scripts/bin"
+export PATH="$PATH:`yarn global bin`"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+export ZSH="/home/yaslix/.config/oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
+
 autoload -U compinit && compinit
 
+# For the autojump to work.
 source /usr/share/autojump/autojump.zsh
-
-export PATH="$PATH:`yarn global bin`"
-export PATH="$PATH:$HOME/scripts/bin"
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -47,7 +48,6 @@ alias pacu='pacman -Syu'
 alias rn='ranger'
 alias dfc='dfc -f -w -t ext4,fuseblk'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
-# alias ls='la --color -h --group-directories-first'
 alias la='exa -la --group-directories-first'
 alias ls='exa -l --group-directories-first'
 alias rb='cargo build'
@@ -60,6 +60,7 @@ alias stv='stow --adopt -v'
 alias std='stow --adopt -vD'
 alias nb='newsboat'
 
+# Dynamic aliases
 ytp(){
   yarn add -D "@types/"$@
 }
@@ -84,13 +85,20 @@ gacp(){
   git add . && git commit -m $1 && git push origin master
 }
 
+# Layout toggling
 setxkbmap -layout us,ar
 setxkbmap -option 'grp:alt_space_toggle'
+
+# Compose key to be right alt
+setxkbmap -option compose:ralt
+
 xrdb ~/.Xresources
 xmodmap ~/.Xmodmap
 
+# Python virtualenvs
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
 
+# fzf shortcuts
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
