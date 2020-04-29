@@ -7,7 +7,7 @@ export EDITOR=/usr/bin/vim
 export TERMINAL=/usr/local/bin/st
 export BROWSER="google-chrome-stable"
 export READER="zathura"
-export IMAGEJ="sixv"
+export IMAGE="sxiv"
 export PLAYER="mpv"
 
 export XDG_CONFIG_HOME="$HOME/.config"
