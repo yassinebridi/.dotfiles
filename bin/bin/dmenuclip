@@ -5,7 +5,7 @@
 # Must have xclip installed to even show menu.
 xclip -h 2>/dev/null || exit 1
 
-chosen=$(tac $HOME/.clip_history | uniq | dmenu -i -l 8 -w 310)
+chosen=$(grep -v "^[[:space:]]*$" $HOME/.clip_history | tac | uniq | dmenu -i -l 8 -w 310)
 
 [ "$chosen" != "" ] || exit
 

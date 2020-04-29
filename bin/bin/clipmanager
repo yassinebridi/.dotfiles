@@ -1,5 +1,5 @@
 #!/bin/sh
 
 while clipnotify; do
-  echo -e "$(xclip -o -selection primary)" >> ~/.clip_history
+  echo "$(xsel --clipboard)" >> ~/.clip_history
 done
