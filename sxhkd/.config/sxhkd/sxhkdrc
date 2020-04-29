@@ -107,6 +107,9 @@ super + shift + Return
 super + shift + k
   ~/bin/dmenupskill
 
+super + shift + h
+  ~/bin/dmenuhistory
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
