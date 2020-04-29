@@ -119,9 +119,13 @@ super + Escape
 super + alt + {q,r}
 	bspc {quit,wm -r}
 
+super + shift + q
+# close and kill
+	bspc node -{c,k}
+
 # close and kill
 super + q
-	bspc node -{c,k}
+	bspc node -c
 
 # alternate between the tiled and monocle layout
 super + m

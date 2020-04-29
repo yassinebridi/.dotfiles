@@ -2,6 +2,7 @@
 set clipboard+=unnamedplus
 
 setf dosini
+set wildmenu
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -82,6 +83,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-rooter'
+Plug 'airblade/vim-gitgutter'
 
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
@@ -95,8 +97,6 @@ augroup load_us_ycm
   autocmd InsertEnter * call plug#load('coc.nvim')
                      \| autocmd! load_us_ycm
 augroup END
-
-" let g:prettier#autoformat = 1
 
 " Vim-airline
 let g:airline#extensions#wordcount#enabled = 1
