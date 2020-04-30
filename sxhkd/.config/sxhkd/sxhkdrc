@@ -104,10 +104,10 @@ super + shift + r
 super + shift + Return
   ~/bin/sameDirTerm
 
-super + shift + k
+super + shift + p
   ~/bin/dmenupskill
 
-super + shift + h
+super + shift + t
   ~/bin/dmenuhistory
 
 # make sxhkd reload its configuration files:

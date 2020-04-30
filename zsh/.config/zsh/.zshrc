@@ -58,7 +58,11 @@ alias nf='neofetch'
 alias stn='stow --adopt -nv'
 alias stv='stow --adopt -v'
 alias std='stow --adopt -vD'
-alias nb='newsboat'
+alias t='tmux'
+alias tat='t attach -t'
+alias tn='t new -s'
+alias tk='t kill-ses -t'
+alias tl='t ls'
 
 # Dynamic aliases
 ytp(){

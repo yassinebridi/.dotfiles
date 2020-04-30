@@ -24,8 +24,8 @@ let mapleader = ' '
 "Moving around
 nnoremap gl $
 nnoremap gh ^
-nnoremap gk H
-nnoremap gj L
+nnoremap k gk
+nnoremap j gj
 
 nnoremap <leader>m )
 nnoremap <leader>c (
