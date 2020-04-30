@@ -27,9 +27,6 @@ nnoremap gh ^
 nnoremap k gk
 nnoremap j gj
 
-nnoremap <leader>m )
-nnoremap <leader>c (
-
 "Saving and quiting
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
@@ -45,17 +42,15 @@ cmap jk <C-C>
 "Source current file
 nnoremap <leader>y :so %<cr>
 
-"Search for something globaly in the file and select it
-nnoremap <leader>S :%s//g<Left><Left>
-
 " Surround
 vnoremap (( "sc(<C-r>s)<Esc>
 vnoremap "" "sc"<C-r>s"<Esc>
+vnoremap '' "sc'<C-r>s'<Esc>
 
-" Command-line like forward-search
-cnoremap <C-k> <Up>
-" Command-line like reverse-search
-cnoremap <C-j> <Down>
+" Command-line like forward-g
+cnoremap <M-k> <Up>
+" Command-line like reverse-g
+cnoremap <M-j> <Down>
 
 " Go to file under cursor under new tab
 nnoremap gf <C-W>gf
@@ -73,9 +68,7 @@ Plug 'drewtempelmeyer/palenight.vim' " Theme
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'on': []}
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'rbgrouleff/bclose.vim' " Ranger needs this
-Plug 'rust-lang/rust.vim'
 Plug 'lilydjwg/colorizer'
-Plug 'thaerkh/vim-workspace'
 Plug 'tpope/vim-commentary'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
@@ -129,9 +122,6 @@ noremap <silent> J :resize +3<CR>
 noremap <silent> K :resize -3<CR>
 noremap <silent> L :vertical resize -3<CR>
 
-" Change 2 split windows from vert to horiz or horiz to vert
-map <Leader>tl <C-w>t<C-w>H
-map <Leader>tj <C-w>t<C-w>K
 
 " Split shortcuts
 noremap <Tab> >>
@@ -149,7 +139,7 @@ map <Leader>p #
 autocmd VimEnter * map <M-h> :tabp<CR>
 autocmd VimEnter * map <M-l> :tabn<CR>
 
-" Unhighlight searched words
+" Unhighlight ged words
 nnoremap <silent> <C-t> :nohl<CR><C-l>
 
 " Ignore files and directories in .gitignore when fuzzy finding
@@ -181,8 +171,8 @@ let &t_8b = "\e[48;2;%lu;%lu;%lum"
 
 " Tab colors
 hi TabLineFill guibg=#292D3E
-hi TabLine guibg=#49475E
-hi TabLineSel guibg=#7784e0
+hi TabLine guibg=#333747
+hi TabLineSel guibg=#939ede
 
 "Cursor line
 set cursorline
@@ -302,11 +292,6 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#2e3345 ctermbg=4
 
 " Coc explorer settings
 nmap <space>e :CocCommand explorer<CR>
-
-" Session settings
-nnoremap <leader>s :ToggleWorkspace<CR>
-let g:workspace_session_directory = $HOME . '/sessions'
-let g:workspace_autosave = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FZF Settings
