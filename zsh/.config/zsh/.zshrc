@@ -63,6 +63,7 @@ alias tat='t attach -t'
 alias tn='t new -s'
 alias tk='t kill-ses -t'
 alias tl='t ls'
+alias tconf='vim ~/.tmux.conf'
 
 # Dynamic aliases
 ytp(){
