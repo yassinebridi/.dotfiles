@@ -65,6 +65,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'drewtempelmeyer/palenight.vim' " Theme
+Plug 'tomasiser/vim-code-dark'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'on': []}
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'rbgrouleff/bclose.vim' " Ranger needs this
@@ -159,9 +160,10 @@ nmap <space>ra :RnvimrToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype detect
 syntax enable
+set t_Co=256
+set t_ut=
 colorscheme palenight
-let g:lightline = { 'colorscheme': 'palenight' }
-let g:airline_theme = "palenight"
+let g:airline_theme = 'palenight'
 set guifont=Jetbrains\ Mono\ Font\ 11
 
 "Set the right colors in vim
