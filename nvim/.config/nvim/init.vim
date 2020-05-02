@@ -15,6 +15,7 @@ set ignorecase
 set smartcase
 set encoding=utf-8
 
+nnoremap <leader>s :source ~/projects/vim-synto/colors/syntho.vim<cr>
 
 " Enable autocompletion:
 set wildmode=longest,list,full
@@ -42,6 +43,9 @@ cmap jk <C-C>
 "Source current file
 nnoremap <leader>y :so %<cr>
 
+"Compile current file
+nnoremap <leader>c :botright 50vsp <bar> terminal python %<cr>
+
 " Surround
 vnoremap (( "sc(<C-r>s)<Esc>
 vnoremap "" "sc"<C-r>s"<Esc>
@@ -63,9 +67,9 @@ call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'yassinebridi/vim-purpura'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'drewtempelmeyer/palenight.vim' " Theme
-Plug 'tomasiser/vim-code-dark'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'on': []}
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'rbgrouleff/bclose.vim' " Ranger needs this
@@ -125,8 +129,8 @@ noremap <silent> L :vertical resize -3<CR>
 
 
 " Split shortcuts
-noremap <Tab> >>
-noremap <S-Tab> <<
+noremap <leader><Tab> >>
+noremap <leader><S-Tab> <<
 
 " Split shortcuts
 map <Leader>v :vsplit<CR>
@@ -259,6 +263,7 @@ augroup end
 
 " Remap keys for applying codeAction to the current line.
 nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <silent> <M-CR> <Plug>(coc-fix-current) 
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
