@@ -1,3 +1,6 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => SETTINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use system clipboard
 set clipboard+=unnamedplus
 
@@ -14,8 +17,6 @@ set number relativenumber
 set ignorecase
 set smartcase
 set encoding=utf-8
-
-nnoremap <leader>s :source ~/projects/vim-synto/colors/syntho.vim<cr>
 
 " Enable autocompletion:
 set wildmode=longest,list,full
@@ -61,6 +62,13 @@ nnoremap gf <C-W>gf
 vnoremap gf <C-W>gf
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => MACROS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" JSX Tag completion
+let @t ='yiwi<ea></pa>bba'
+inoremap <M-tab> <esc>@t
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
@@ -82,6 +90,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'
+Plug 'SirVer/ultisnips'
+Plug 'mlaursen/vim-react-snippets'
 
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
@@ -128,9 +138,9 @@ noremap <silent> K :resize -3<CR>
 noremap <silent> L :vertical resize -3<CR>
 
 
-" Split shortcuts
-noremap <leader><Tab> >>
-noremap <leader><S-Tab> <<
+" " Split shortcuts
+" noremap <leader><Tab> >>
+" noremap <leader><S-Tab> <<
 
 " Split shortcuts
 map <Leader>v :vsplit<CR>
@@ -146,9 +156,6 @@ autocmd VimEnter * map <M-l> :tabn<CR>
 
 " Unhighlight ged words
 nnoremap <silent> <C-t> :nohl<CR><C-l>
-
-" Ignore files and directories in .gitignore when fuzzy finding
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
@@ -224,6 +231,7 @@ endfunction
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
+
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
@@ -321,17 +329,16 @@ let g:fzf_tags_command = 'ctags -R'
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.0,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-let $FZF_DEFAULT_COMMAND="rg --files --hidden"
+let $FZF_DEFAULT_COMMAND="rg -g !.git --files --hidden"
 
 "Get previews
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 
-
 " Rg previews
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   'rg -g !yarn.lock --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
 
 " Customize fzf colors to match your color scheme

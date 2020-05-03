@@ -10,9 +10,9 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "Markdown",
     "javascript",
-    "javascript.jsx",
     "typescript",
     "typescript.tsx",
+    "typescriptreact",
     "graphql",
     "python",
     "toml",
@@ -22,7 +22,11 @@
   "explorer.previewAction.onHover": false,
   "explorer.width": 30,
   "explorer.keyMappings": {
-    "<cr>": ["expandable?", "expand", "open"],
+    "<cr>": [
+      "expandable?",
+      "expand",
+      "open"
+    ],
     "v": "open:vsplit"
   }
 }
