@@ -173,7 +173,7 @@ filetype detect
 syntax enable
 set t_Co=256
 set t_ut=
-colorscheme palenight
+colorscheme purpura
 let g:airline_theme = 'palenight'
 set guifont=Jetbrains\ Mono\ Font\ 11
 
@@ -182,10 +182,10 @@ set termguicolors
 let &t_8f = "\e[38;2;%lu;%lu;%lum"
 let &t_8b = "\e[48;2;%lu;%lu;%lum"
 
-" Tab colors
-hi TabLineFill guibg=#292D3E
-hi TabLine guibg=#333747
-hi TabLineSel guibg=#939ede
+" " Tab colors
+" hi TabLineFill guibg=#4e1178
+" hi TabLine guibg=#3f0f61
+" hi TabLineSel guibg=#681c9e
 
 "Cursor line
 set cursorline
@@ -279,18 +279,12 @@ command! -nargs=0 Format :call CocAction('format')
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
 " Mappings using CoCList:
 " Show all diagnostics.
 nnoremap <silent> <space>ad  :<C-u>CocList diagnostics<cr>
 
 " Fix Error color
-hi! CocErrorSign guifg=#dd5d32
-
+hi! CocErrorSign guifg=#ff7070
 " vim-commentary settings
 autocmd FileType typescript.tsx setlocal commentstring={/*\ %s\ */}
 autocmd FileType typescript.ts setlocal commentstring=//\ %s
@@ -302,8 +296,8 @@ autocmd FileType nvim setlocal commentstring="\ %s
 " Indent Setting
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#2b3042 ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#2e3345 ctermbg=4
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#2a0340 ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#290345 ctermbg=4
 
 " Coc explorer settings
 nmap <space>e :CocCommand explorer<CR>

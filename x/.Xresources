@@ -6,7 +6,7 @@
 
 ! Dracula Xresources palette
 *.foreground:   #D4D4D4 
-*.background:   #292d3e
+*.background:   #1e0030
 *.color0:       #608b4e
 *.color8:       #4D4D4D
 *.color1:       #FF5555
@@ -15,7 +15,7 @@
 *.color10:      #5AF78E
 *.color3:       #F4F99D
 *.color11:      #F4F99D
-*.color4:       #BD93F9
+*.color4:       #ff8fe0
 *.color12:      #CAA9FA
 *.color5:       #FF79C6
 *.color13:      #FF92D0
