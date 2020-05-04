@@ -29,6 +29,10 @@ nnoremap gh ^
 nnoremap k gk
 nnoremap j gj
 
+" Tab like movement in autocompletion
+inoremap <M-j> <Down>
+inoremap <M-k> <UP>
+
 "Saving and quiting
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
@@ -65,8 +69,13 @@ vnoremap gf <C-W>gf
 " => MACROS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JSX Tag completion
-let @t ='yiwi<ea></pa>bba'
-inoremap <M-tab> <esc>@t
+inoremap <M-tab> <esc>yiwi<ea></pa>bba
+
+" JSX Tag complection for the whole components
+inoremap <M-t> <esc>diw[(opbi<ea>[(%Opbi</ea>
+
+" Console.log macos
+nnoremap <leader>l yiwoconsole.log("pa: ", pa);gh
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim Plugins
@@ -92,6 +101,8 @@ Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'
 Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
@@ -138,9 +149,9 @@ noremap <silent> K :resize -3<CR>
 noremap <silent> L :vertical resize -3<CR>
 
 
-" " Split shortcuts
-" noremap <leader><Tab> >>
-" noremap <leader><S-Tab> <<
+" Split shortcuts
+noremap <Tab> >>
+noremap <S-tab> <<
 
 " Split shortcuts
 map <Leader>v :vsplit<CR>
@@ -182,11 +193,6 @@ set termguicolors
 let &t_8f = "\e[38;2;%lu;%lu;%lum"
 let &t_8b = "\e[48;2;%lu;%lu;%lum"
 
-" " Tab colors
-" hi TabLineFill guibg=#4e1178
-" hi TabLine guibg=#3f0f61
-" hi TabLineSel guibg=#681c9e
-
 "Cursor line
 set cursorline
 set cursorcolumn
@@ -215,23 +221,10 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 set signcolumn=yes
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
-
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
@@ -285,6 +278,7 @@ nnoremap <silent> <space>ad  :<C-u>CocList diagnostics<cr>
 
 " Fix Error color
 hi! CocErrorSign guifg=#ff7070
+
 " vim-commentary settings
 autocmd FileType typescript.tsx setlocal commentstring={/*\ %s\ */}
 autocmd FileType typescript.ts setlocal commentstring=//\ %s
@@ -323,7 +317,7 @@ let g:fzf_tags_command = 'ctags -R'
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.0,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-let $FZF_DEFAULT_COMMAND="rg -g !.git --files --hidden"
+let $FZF_DEFAULT_COMMAND="rg -g !.git -g !node_modules -g !.next --files --hidden"
 
 "Get previews
 command! -bang -nargs=? -complete=dir Files
@@ -350,3 +344,6 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+" Markdown preview settings
+nmap <C-p> <Plug>MarkdownPreviewToggle

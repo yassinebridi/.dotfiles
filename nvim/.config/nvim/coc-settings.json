@@ -6,12 +6,11 @@
   "python.linting.pylamaEnabled": true,
   "coc.preferences.extensionUpdateCheck": "never",
   "coc.preferences.formatOnType": true,
-  "coc.preferences.jumpCommand": "vsp",
+  "coc.preferences.jumpCommand": "tabnew",
   "coc.preferences.formatOnSaveFiletypes": [
     "Markdown",
     "javascript",
     "typescript",
-    "typescript.tsx",
     "typescriptreact",
     "graphql",
     "python",
