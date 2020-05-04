@@ -198,33 +198,27 @@ click-left = [ "$(echo -e "Cancel\nSuspend" | dmenu)" = "Suspend" ] && systemctl
 ; Spotify controls
 [module/previous]
 type = custom/script
-interval = 80000
 format = "%{T3}<label>"
 format-padding = 5
 exec = echo ""
-exec-if = "pgrep spotify"
 format-underline = #1db954
 line-size = 1
 click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 
 [module/next]
 type = custom/script
-interval = 80000
 format = "%{T3}<label>"
 format-padding = 5
 exec = echo ""
-exec-if = "pgrep spotify"
 format-underline = #1db954
 line-size = 1
 click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 
 [module/playpause]
 type = custom/script
-interval = 80000
 format = "%{T3}<label>"
 format-padding = 5
 exec = echo ""
-exec-if = "pgrep spotify"
 format-underline = #1db954
 line-size = 1
 click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
