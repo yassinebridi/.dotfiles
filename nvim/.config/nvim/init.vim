@@ -17,6 +17,7 @@ set number relativenumber
 set ignorecase
 set smartcase
 set encoding=utf-8
+set foldmethod=syntax
 
 " Enable autocompletion:
 set wildmode=longest,list,full
@@ -53,6 +54,7 @@ nnoremap <leader>c :botright 50vsp <bar> terminal python %<cr>
 
 " Surround
 vnoremap (( "sc(<C-r>s)<Esc>
+vnoremap {{ "sc{<C-r>s}<Esc>
 vnoremap "" "sc"<C-r>s"<Esc>
 vnoremap '' "sc'<C-r>s'<Esc>
 
@@ -72,10 +74,14 @@ vnoremap gf <C-W>gf
 inoremap <M-tab> <esc>yiwi<ea></pa>bba
 
 " JSX Tag complection for the whole components
-inoremap <M-t> <esc>diw[(opbi<ea>[(%Opbi</ea>
+inoremap <C-l> <esc>diw[(opbi<ea>[(%Opbi</ea>
 
 " Console.log macos
 nnoremap <leader>l yiwoconsole.log("pa: ", pa);gh
+
+" Code generation
+inoremap <M-[> ={}ha
+inoremap <M-'> =""ha
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim Plugins
@@ -103,6 +109,7 @@ Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'jeetsukumaran/vim-indentwise'
 
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
@@ -309,10 +316,8 @@ nmap <space>e :CocCommand explorer<CR>
 map <leader>f :Files<CR>
 map <leader>bu :Buffers<CR>
 nnoremap <leader>rg :Rg<CR>
-nnoremap <leader>tg :Tags<CR>
 nnoremap <leader>mr :Marks<CR>
 
-let g:fzf_tags_command = 'ctags -R'
 " Border color
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.0,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 

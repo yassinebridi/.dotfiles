@@ -65,6 +65,7 @@ alias tn='t new -s'
 alias tk='t kill-ses -t'
 alias tl='t ls'
 alias tconf='vim ~/.tmux.conf'
+alias code='code .'
 
 # Dynamic aliases
 ytp(){
