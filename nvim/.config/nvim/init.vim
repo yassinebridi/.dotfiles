@@ -17,7 +17,6 @@ set number relativenumber
 set ignorecase
 set smartcase
 set encoding=utf-8
-set foldmethod=syntax
 
 " Enable autocompletion:
 set wildmode=longest,list,full
@@ -192,7 +191,7 @@ syntax enable
 set t_Co=256
 set t_ut=
 colorscheme purpura
-let g:airline_theme = 'palenight'
+let g:airline_theme = 'purpura'
 set guifont=Jetbrains\ Mono\ Font\ 11
 
 "Set the right colors in vim

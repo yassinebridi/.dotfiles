@@ -9,13 +9,15 @@ from ranger.api.commands import *
 from ranger.core.loader import CommandLoader
 
 # A simple command for demonstration purposes follows.
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 # You can import any python module as needed.
 import os
 
 # Any class that is a subclass of "Command" will be integrated into ranger as a
 # command.  Try typing ":my_edit<ENTER>" in ranger!
+
+
 class my_edit(Command):
     # The so-called doc-string of the class will be visible in the built-in
     # help that is accessible by typing "?c" inside ranger.
@@ -71,15 +73,16 @@ class fzf_select(Command):
 
     See: https://github.com/junegunn/fzf
     """
+
     def execute(self):
         import subprocess
         if self.quantifier:
             # match only directories
-            command="find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
+            command = "find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
             -o -type d -print 2> /dev/null | sed 1d | cut -b3- | fzf +m"
         else:
             # match files and directories
-            command="find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
+            command = "find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
             -o -print 2> /dev/null | sed 1d | cut -b3- | fzf +m"
         fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
         stdout, stderr = fzf.communicate()
@@ -102,12 +105,13 @@ class fzf_locate(Command):
 
     See: https://github.com/junegunn/fzf
     """
+
     def execute(self):
         import subprocess
         if self.quantifier:
-            command="locate home mnt | fzf -e -i"
+            command = "mylocate home | fzf -e -i"
         else:
-            command="locate home mnt | fzf -e -i"
+            command = "mylocate home | fzf -e -i"
         fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
         stdout, stderr = fzf.communicate()
         if fzf.returncode == 0:
@@ -126,16 +130,17 @@ class fzf_bring(Command):
 
     See: https://github.com/junegunn/fzf
     """
+
     def execute(self):
         import subprocess
         import shutil
         if self.quantifier:
             # match only directories
-            command="find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
+            command = "find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
             -o -type d -print 2> /dev/null | sed 1d | cut -b3- | fzf +m"
         else:
             # match files and directories
-            command="find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
+            command = "find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
             -o -print 2> /dev/null | sed 1d | cut -b3- | fzf +m"
         fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
         stdout, stderr = fzf.communicate()
@@ -162,8 +167,8 @@ class compress(Command):
         au_flags = parts[1:]
 
         descr = "compressing files in: " + os.path.basename(parts[1])
-        obj = CommandLoader(args=['apack'] + au_flags + \
-                [os.path.relpath(f.path, cwd.path) for f in marked_files], descr=descr)
+        obj = CommandLoader(args=['apack'] + au_flags +
+                            [os.path.relpath(f.path, cwd.path) for f in marked_files], descr=descr)
 
         obj.signal_bind('after', refresh)
         self.fm.loader.add(obj)
@@ -199,10 +204,10 @@ class extracthere(Command):
         if len(copied_files) == 1:
             descr = "extracting: " + os.path.basename(one_file.path)
         else:
-            descr = "extracting files from: " + os.path.basename(one_file.dirname)
-        obj = CommandLoader(args=['aunpack'] + au_flags \
-                + [f.path for f in copied_files], descr=descr)
+            descr = "extracting files from: " + \
+                os.path.basename(one_file.dirname)
+        obj = CommandLoader(args=['aunpack'] + au_flags
+                            + [f.path for f in copied_files], descr=descr)
 
         obj.signal_bind('after', refresh)
         self.fm.loader.add(obj)
-

@@ -66,6 +66,8 @@ alias tk='t kill-ses -t'
 alias tl='t ls'
 alias tconf='vim ~/.tmux.conf'
 alias code='code .'
+alias cat='bat'
+alias mylocate='locate --database=/home/yaslix/.locate.db'
 
 # Dynamic aliases
 ytp(){
@@ -101,10 +103,6 @@ setxkbmap -option compose:ralt
 
 xrdb ~/.Xresources
 xmodmap ~/.Xmodmap
-
-# Python virtualenvs
-export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
 
 # fzf shortcuts
 source /usr/share/fzf/completion.zsh
