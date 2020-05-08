@@ -1,15 +1,15 @@
 #!/usr/bin/sh
 
 #Define latest taken screenshot so i can open it with the browser.
-latestPic=$(find ~/Pictures -name "scr-*" | head -1)
+latestPic=$(find ~/Pictures -name "scr-*" | sort -r | head -1)
 
 # The keybinding for these two actions are in sxhkdrc
 # Either take a screenshot, or take it and open it with the default browser.
 if [ $1 = "open" ]; then
 maim -s -q -c 0.3,0.4,0.6,0.4 -l |
-  convert - -scene 1 ~/Pictures/scr-$(date +"%m-%d-%I-%p%S").png &&
+  convert - -scene 1 ~/Pictures/scr-$(date +"%m-%d-%I-%p%M%S").png &&
   $BROWSER $latestPic
 else
 maim -s -q -c 0.3,0.4,0.6,0.4 -l |
-  convert - -scene 1 ~/Pictures/scr-$(date +"%m-%d-%I-%p%S").png
+  convert - -scene 1 ~/Pictures/scr-$(date +"%m-%d-%I-%p%M%S").png
 fi
