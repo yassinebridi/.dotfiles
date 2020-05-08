@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Convert all the images in the current directory
+# Example: convertimage jpg png (convert from jpg to png)
+
+parallel convert '{}' '{.}.'"$2"'' ::: *.$1
