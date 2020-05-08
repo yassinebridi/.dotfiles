@@ -104,6 +104,9 @@ super + shift + r
 super + shift + Return
   ~/bin/sameDirTerm
 
+super + shift + g
+	~/bin/sameDirRanger
+
 super + shift + p
   ~/bin/dmenupskill
 
