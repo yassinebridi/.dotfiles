@@ -65,11 +65,11 @@ XF86TouchpadToggle
 
 # Screen shot
 Print
-  ~/bin/screenshot
+  ~/bin/screenshot open
 
 # Screen shot and open to browser
 super + shift + Print
-  ~/bin/screenshot open
+  ~/bin/screenshot
 
 # zoom & colopicker; powerlfull combo
 # zoom & colopicker; powerlfull combo

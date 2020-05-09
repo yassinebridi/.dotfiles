@@ -2,7 +2,7 @@
 *.alpha: 0.95
 
 !!! Set a default font and font size as below:
-*.font:Jetbrains Mono:size=11
+*.font:monospace:size=11
 
 ! Dracula Xresources palette
 *.foreground:   #D4D4D4 

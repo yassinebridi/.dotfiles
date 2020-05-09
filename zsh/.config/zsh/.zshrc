@@ -4,7 +4,6 @@ plugins=(nvm zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/scripts/bin"
 export PATH="$PATH:`yarn global bin`"
-export PATH="$HOME/.cargo/bin:$PATH"
 
 export ZSH="/home/yaslix/.config/oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
