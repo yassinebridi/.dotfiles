@@ -109,9 +109,9 @@ class fzf_locate(Command):
     def execute(self):
         import subprocess
         if self.quantifier:
-            command = "mylocate home | fzf -e -i"
+            command = "locate home | fzf -e -i"
         else:
-            command = "mylocate home | fzf -e -i"
+            command = "locate home | fzf -e -i"
         fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
         stdout, stderr = fzf.communicate()
         if fzf.returncode == 0:
