@@ -10,8 +10,8 @@ do
   "f")
 		convert -flop "$file" "$file" ;;
   "C-d")
-  mv "$file" ~/.trash ;;
+    trash-put "$file" && notify-send "Image '$file' deleted" ;;
   "C-c")
-  echo -n "$file" | xclip -selection clipboard ;;
+    echo -n "$file" | xclip -selection clipboard && notify-send "Image '$file' copied to clipboard";;
   esac
 done
