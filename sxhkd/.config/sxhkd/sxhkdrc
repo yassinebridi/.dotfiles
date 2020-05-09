@@ -1,7 +1,6 @@
-#
-
-# wm independent hotkeys
-#
+############################
+## wm independent hotkeys ##
+############################
 
 # terminal emulator
 super + Return
@@ -28,13 +27,13 @@ super + shift + x
   [ "$(echo -e "Cancel\nLeave" | dmenu)" = "Leave" ] && killall Xorg
 
 super + shift + BackSpace
-  [ "$(echo -e "Cancel\nLock" | dmenu)" = "Lock" ] && slock
+  [ "$(echo -e "Cancel\nLock" | dmenu)" = "Lock" ] && playerctl pause && slock
 
 XF86PowerOff
   [ "$(echo -e "Cancel\nShutdown" | dmenu)" = "Shutdown" ] && systemctl poweroff
 
 super + shift + space
-  [ "$(echo -e "Cancel\nSuspend" | dmenu)" = "Suspend" ] && systemctl suspend
+  [ "$(echo -e "Cancel\nSuspend" | dmenu)" = "Suspend" ] && playerctl pause && systemctl suspend && slock
 
 super + shift + Escape
   [ "$(echo -e "Cancel\nRestart" | dmenu)" = "Restart" ] && systemctl reboot
