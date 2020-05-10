@@ -67,6 +67,7 @@ alias tl='t ls'
 alias tconf='vim ~/.tmux.conf'
 alias code='code .'
 alias cat='bat'
+alias nb='newsboat'
 
 # Dynamic aliases
 ytp(){
