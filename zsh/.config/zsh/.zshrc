@@ -107,3 +107,6 @@ xmodmap ~/.Xmodmap
 # fzf shortcuts
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
+alias fsearch='rg . -n -g "!*.html" | fzf --preview="source ~/bin/string2arg; string2arg {}"'
+alias org='export vfile=$(fsearch);vim +$(cut -d":" -f2 <<< $vfile) $(cut -d":" -f1 <<< $vfile)'
+
