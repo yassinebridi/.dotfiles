@@ -8,9 +8,10 @@ if [ $1 = "open" ]; then
   maim -s -q -c 0.3,0.4,0.6,0.4 -l |
   convert - -scene 1 ~/Pictures/scr-$(date +"%m-%d-%I-%p%M%S").png &&
   latestPic=$(find ~/Pictures -name "scr-*" | sort -r | head -1) && # This needs to be defined after the screenshot is taken
-    case "$(printf "Image Viewer\\nBrowser\\nUpload to imgur" | dmenu -i -p "Open with?")" in
+    case "$(printf "Image Viewer\\nBrowser\\nGimp\\nUpload to imgur" | dmenu -i -p "Open with?")" in
       "Browser") setsid "$BROWSER" "$latestPic" >/dev/null 2>&1 & ;;
       "Image Viewer") setsid "$IMAGE" "$latestPic" >/dev/null 2>&1 & ;;
+      "Gimp") setsid gimp "$latestPic" >/dev/null 2>&1 & ;;
       "Upload to imgur") setsid ~/bin/imageuploader "$latestPic" >/dev/null 2>&1 & ;;
       # Add an upload options, to some popular image hosting provider like imgur, or a custom server?
     esac
