@@ -1,0 +1,57 @@
+; Linux
+.git
+.local
+.java
+.tmux
+.vscode
+.cache
+.parallel
+.pki
+.ssh
+.pylint.d
+.vim
+.vscode
+.xdman
+.yarn
+.clip_history
+.python_history
+.viminfo
+.wget-hsts
+.yarnrc
+.zsh_history
+.next
+yarn.lock
+
+; Windows
+mounting
+$RECYCLE.BIN
+System Volume Information
+$Recycle.Bin
+Config.Msi
+desktop.ini
+Intel
+PerfLogs
+ProgramData
+Program Files
+Program Files (x86)
+Recovery
+System Volume Information
+tools
+Windows
+hiberfil.sys
+pagefile.sys
+swapfile.sys
+Default
+postgres
+Public
+3D Objects
+AppData
+Contacts
+Favorites
+IntelGraphicsProfiles
+Links
+MicrosoftEdgeBackups
+OneDrive
+Saved Games
+Searches
+ntuser*
