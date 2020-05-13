@@ -23,4 +23,6 @@
 *.color14:      #9AEDFE
 *.color7:       #BFBFBF
 *.color15:      #E6E6E6
+*.sxivBg:       #170026
+*.sxivFg:       #fcffbf
 *.cursorColor:  #FF00FF
