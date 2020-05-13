@@ -1,10 +1,8 @@
 call plug#begin()
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'rbong/vim-crystalline'
 Plug 'yassinebridi/vim-purpura'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'kovetskiy/sxhkd-vim'
-Plug 'drewtempelmeyer/palenight.vim' " Theme
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'on': []}
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'rbgrouleff/bclose.vim' " Ranger needs this
