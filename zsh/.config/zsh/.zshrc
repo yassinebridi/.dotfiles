@@ -112,3 +112,4 @@ source /usr/share/fzf/key-bindings.zsh
 alias fsearch='rg --hidden . -n | fzf -e --preview="source ~/bin/string2arg; string2arg {}"'
 alias org='export vfile=$(fsearch);vim +$(cut -d":" -f2 <<< $vfile) $(cut -d":" -f1 <<< $vfile)'
 alias psearch='fzf -e --preview "bat --style=numbers --color=always {} | head -500"'
+export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
