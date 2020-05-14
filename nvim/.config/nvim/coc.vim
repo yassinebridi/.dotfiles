@@ -68,8 +68,8 @@ augroup mygroup
 augroup end
 
 " Remap keys for applying codeAction to the current line.
-nmap <leader>ac  <Plug>(coc-codeaction)
-nmap <silent> <M-CR> <Plug>(coc-fix-current) 
+nmap <leader>ac <Plug>(coc-codeaction)
+nmap <M-CR> <Plug>(coc-fix-current) 
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
