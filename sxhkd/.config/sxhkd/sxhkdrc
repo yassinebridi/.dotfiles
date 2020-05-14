@@ -240,3 +240,9 @@ super + alt + ctrl + {h,j,k,l}
 # move a floating window
 alt + ctrl + {h,j,k,l}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Change gaps
+alt + {minus,equal}
+	bspc config window_gap $(( $(bspc config window_gap) {-,+} 10 ))    
+alt + 0
+	bspc config window_gap 0

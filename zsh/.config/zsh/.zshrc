@@ -4,6 +4,7 @@ plugins=(nvm zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/scripts/bin"
 export PATH="$PATH:`yarn global bin`"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 export ZSH="/home/yaslix/.config/oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
@@ -68,6 +69,7 @@ alias tconf='vim ~/.tmux.conf'
 alias code='code .'
 alias cat='bat'
 alias nb='newsboat'
+alias lg='lazygit'
 
 # Dynamic aliases
 ytp(){
@@ -109,3 +111,4 @@ source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 alias fsearch='rg --hidden . -n | fzf -e --preview="source ~/bin/string2arg; string2arg {}"'
 alias org='export vfile=$(fsearch);vim +$(cut -d":" -f2 <<< $vfile) $(cut -d":" -f1 <<< $vfile)'
+alias psearch='fzf -e --preview "bat --style=numbers --color=always {} | head -500"'

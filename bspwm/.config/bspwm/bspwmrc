@@ -43,6 +43,7 @@ bspc rule -a mpv state=floating
 bspc rule -a Onboard state=floating
 bspc rule -a java-lang-Thread desktop=^8
 bspc rule -a Gimp desktop=^4
+bspc rule -a figma-linux dekstop=^3
 bspc rule -a Org.gnome.Nautilus state=floating
 bspc rule -a Ranger state=floating
 bspc rule -a Sxiv state=floating
