@@ -10,7 +10,7 @@ inoremap <M-k> <UP>
 
 "Saving and quiting
 nnoremap <leader>w :w<cr>
-nnoremap <leader>q :q<cr>
+nnoremap <leader>s :q<cr>
 
 "Enter functionality
 nmap <S-Enter> O<Esc>j
@@ -37,9 +37,9 @@ cnoremap <M-k> <Up>
 " Command-line like reverse-g
 cnoremap <M-j> <Down>
 
-" Go to file under cursor under new tab
-nnoremap gf <C-W>gf
-vnoremap gf <C-W>gf
+" " Go to file under cursor under new tab
+" nnoremap gf <C-W>gf
+" vnoremap gf <C-W>gf
 
 "
 set splitbelow splitright
@@ -69,8 +69,9 @@ map <Leader>n *
 map <Leader>p #
 
 " Moving between tabs
-autocmd VimEnter * map <M-h> :tabp<CR>
-autocmd VimEnter * map <M-l> :tabn<CR>
+autocmd VimEnter * map <M-h> :bp<CR>
+autocmd VimEnter * map <M-l> :bn<CR>
+noremap <leader>q :bd<CR>
 
 " Unhighlight ged words
 nnoremap <silent> <C-t> :nohl<CR><C-l>

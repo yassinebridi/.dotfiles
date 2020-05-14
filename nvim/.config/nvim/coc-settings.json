@@ -6,7 +6,6 @@
   "python.linting.pylamaEnabled": true,
   "coc.preferences.extensionUpdateCheck": "never",
   "coc.preferences.formatOnType": true,
-  "coc.preferences.jumpCommand": "tabnew",
   "coc.preferences.formatOnSaveFiletypes": [
     "Markdown",
     "javascript",
@@ -15,7 +14,9 @@
     "graphql",
     "python",
     "toml",
-    "json"
+    "json",
+    "c",
+    "cc"
   ],
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
