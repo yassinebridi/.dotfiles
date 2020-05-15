@@ -1,3 +1,7 @@
+" JSX Chnage a tag with it's closing tag
+let @k = 'vbd%pldwhyiwPlde'
+inoremap <C-b> <esc>@k
+
 " JSX Tag completion
 inoremap <M-tab> <esc>yiwi<ea></pa>bba
 
