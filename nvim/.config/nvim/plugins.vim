@@ -20,6 +20,7 @@ Plug 'mlaursen/vim-react-snippets'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'jeetsukumaran/vim-indentwise'
+Plug 'cespare/vim-toml'
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
