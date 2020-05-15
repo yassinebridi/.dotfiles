@@ -37,10 +37,6 @@ cnoremap <M-k> <Up>
 " Command-line like reverse-g
 cnoremap <M-j> <Down>
 
-" " Go to file under cursor under new tab
-" nnoremap gf <C-W>gf
-" vnoremap gf <C-W>gf
-
 "
 set splitbelow splitright
 
