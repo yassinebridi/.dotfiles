@@ -16,7 +16,7 @@
     "toml",
     "json",
     "c",
-    "cc"
+    "rust"
   ],
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
