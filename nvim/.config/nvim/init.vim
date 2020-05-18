@@ -5,3 +5,5 @@ source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/theme.vim
 source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/fzf.vim
+source $HOME/.config/nvim/floaterm.vim
+source $HOME/.config/nvim/compile.vim

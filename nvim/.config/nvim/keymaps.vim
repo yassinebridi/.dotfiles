@@ -1,5 +1,3 @@
-"Moving around
-nnoremap gl $
 nnoremap gh ^
 nnoremap k gk
 nnoremap j gj
@@ -22,9 +20,6 @@ cmap jk <C-C>
 
 "Source current file
 nnoremap <leader>y :so %<cr>
-
-"Compile current file
-nnoremap <leader>c :botright 50vsp <bar> terminal python %<cr>
 
 " Surround
 vnoremap (( "sc(<C-r>s)<Esc>
@@ -72,11 +67,5 @@ noremap <leader>q :bd<CR>
 " Unhighlight ged words
 nnoremap <silent> <C-t> :nohl<CR><C-l>
 
-" Start Ranger
-nmap <space>ra :FloatermNew ranger<CR>
-
 " Markdown preview settings
 nmap <C-p> <Plug>MarkdownPreviewToggle
-
-" Run cargo
-nmap <space>ru :FloatermNew cargo run<CR>
