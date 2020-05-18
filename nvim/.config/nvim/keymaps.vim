@@ -73,7 +73,10 @@ noremap <leader>q :bd<CR>
 nnoremap <silent> <C-t> :nohl<CR><C-l>
 
 " Start Ranger
-nmap <space>ra :RnvimrToggle<CR>
+nmap <space>ra :FloatermNew ranger<CR>
 
 " Markdown preview settings
 nmap <C-p> <Plug>MarkdownPreviewToggle
+
+" Run cargo
+nmap <space>ru :FloatermNew cargo run<CR>

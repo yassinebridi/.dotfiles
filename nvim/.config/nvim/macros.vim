@@ -1,3 +1,7 @@
+""""""""""""""
+" TYPESCRIPT "
+""""""""""""""
+
 " JSX Chnage a tag with it's closing tag
 let @k = 'vbd%pldwhyiwPlde'
 inoremap <C-b> <esc>@k
@@ -9,8 +13,14 @@ inoremap <M-tab> <esc>yiwi<ea></pa>bba
 inoremap <C-l> <esc>diw[(opbi<ea>[(%Opbi</ea>
 
 " Console.log macos
-nnoremap <leader>l yiwoconsole.log("pa: ", pa);gh
+nnoremap <leader>lt yiwoconsole.log("pa: ", pa);gh
 
 " Code generation
 inoremap <M-[> ={}ha
 inoremap <M-'> =""ha
+
+""""""""
+" RUST "
+""""""""
+" println! macos
+nnoremap <leader>lr yiwoprintln!("{:?}", pa);    

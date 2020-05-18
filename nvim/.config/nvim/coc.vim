@@ -86,3 +86,7 @@ hi! CocErrorSign guifg=#ff7070
 
 " Coc explorer settings
 nmap <space>e :CocCommand explorer<CR>
+
+" Coc snippets jumping
+imap <tab> <Plug>(coc-snippets-expand)
+let g:coc_snippet_next = '<TAB>'
