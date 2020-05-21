@@ -1,6 +1,11 @@
+" Moving around
 nnoremap gh ^
+nnoremap gl $
 nnoremap k gk
 nnoremap j gj
+
+" Select all
+nmap <leader>aa ggVG
 
 " Tab like movement in autocompletion
 inoremap <M-j> <Down>
@@ -11,7 +16,7 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>s :q<cr>
 
 "Enter functionality
-nmap <S-Enter> O<Esc>j
+nmap <leader><CR> i<CR><Esc>
 nmap <CR> o<Esc>
 
 "Get out of insert mode
