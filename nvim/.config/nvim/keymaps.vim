@@ -74,3 +74,6 @@ nnoremap <silent> <C-t> :nohl<CR><C-l>
 
 " Markdown preview settings
 nmap <C-p> <Plug>MarkdownPreviewToggle
+
+" Fold toggle
+nnoremap <leader>u za
