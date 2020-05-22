@@ -26,6 +26,7 @@ bindkey -v '^?' backward-delete-char
 alias gd='gatsby develop'
 alias gdc='gatsby clean && gatsby develop'
 alias yd='yarn dev'
+alias ydc='yarn clean && yarn dev'
 alias nrd='npm run dev'
 alias pld='youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s"'
 alias server='python -m SimpleHTTPServer 8080'
