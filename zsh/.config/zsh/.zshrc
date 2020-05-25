@@ -9,6 +9,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export ZSH="/home/yaslix/.config/oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
+export TERM=screen-256color
+
 autoload -U compinit && compinit
 
 # For the autojump to work.
@@ -71,6 +73,9 @@ alias code='code .'
 alias cat='bat'
 alias nb='newsboat'
 alias lg='lazygit'
+alias gl='git log'
+alias gs='git status'
+alias alc='vim ~/.config/alacritty/alacritty.yml'
 
 # Dynamic aliases
 ytp(){
@@ -114,3 +119,10 @@ alias fsearch='rg --hidden . -n | fzf -e --preview="source ~/bin/string2arg; str
 alias org='export vfile=$(fsearch);vim +$(cut -d":" -f2 <<< $vfile) $(cut -d":" -f1 <<< $vfile)'
 alias psearch='fzf -e --preview "bat --style=numbers --color=always {} | head -500"'
 export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
+
+alacrittyOpenWidget() /home/yaslix/bin/alacrittyOpen alac
+rangerOpenWidget() /home/yaslix/bin/alacrittyOpen
+zle -N alacrittyOpenWidget
+zle -N rangerOpenWidget
+bindkey '^[^M' alacrittyOpenWidget
+bindkey '^[r' rangerOpenWidget

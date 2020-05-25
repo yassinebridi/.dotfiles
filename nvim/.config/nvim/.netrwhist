@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/yaslix/.dotfiles/.git'
+let g:netrw_dirhist_3='/home/yaslix/projects/quentent/node_modules/cloudinary-react'
+let g:netrw_dirhist_2='/home/yaslix/projects/quentent/node_modules/cloudinary-react/src/components/Image'
 let g:netrw_dirhist_1='/home/yaslix/.dotfiles/.git'

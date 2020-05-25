@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ "$1" = "alac" ]; then
+  alacritty --working-directory=$PWD
+else
+  $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE $PWD
+fi

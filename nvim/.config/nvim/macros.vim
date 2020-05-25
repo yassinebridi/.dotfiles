@@ -1,3 +1,9 @@
+"""""""""""
+" GENERAL "
+"""""""""""
+" Change the selected text in the whole line
+vnoremap <leader>cw y:.s/"//g<left><left>
+
 """"""""""""""
 " TYPESCRIPT "
 """"""""""""""
@@ -19,7 +25,10 @@ nnoremap <leader>lt yiwoconsole.log("pa: ", pa);gh
 inoremap <M-[> ={}ha
 inoremap <M-'> =""ha
 
-""""""""
+" Code generation
+let @1 = 'da{[]}jkhhpa,pa,pa,pa,p'
+vnoremap <leader>rs @1
+"
 " RUST "
 """"""""
 " println! macos

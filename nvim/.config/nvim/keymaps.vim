@@ -1,6 +1,8 @@
 " Moving around
 nnoremap gh ^
 nnoremap gl $
+vnoremap gh ^
+vnoremap gl $
 nnoremap k gk
 nnoremap j gj
 
@@ -77,3 +79,9 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " Fold toggle
 nnoremap <leader>u za
+
+" Map alt + h to remove characters
+imap <M-h> <backspace>
+
+" End macros in command mode
+cnoremap <c-q> <c-f>i<c-o>q

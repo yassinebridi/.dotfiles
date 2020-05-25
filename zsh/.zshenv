@@ -5,7 +5,7 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export TERMINAL=/usr/local/bin/st
+export TERMINAL=/usr/bin/alacritty
 export BROWSER=/usr/bin/google-chrome-stable
 export FILE=/usr/bin/ranger
 export EDITOR=nvim

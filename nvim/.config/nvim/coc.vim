@@ -90,3 +90,15 @@ nmap <space>e :CocCommand explorer<CR>
 " Coc snippets jumping
 imap <tab> <Plug>(coc-snippets-expand)
 let g:coc_snippet_next = '<TAB>'
+
+
+nmap <silent> <C-c> <Plug>(coc-cursors-position)
+nmap <silent> <C-d> <Plug>(coc-cursors-word)
+nmap <expr> <silent> <C-d> <SID>select_current_word()
+nmap <leader>x  <Plug>(coc-cursors-operator)
+function! s:select_current_word()
+  if !get(g:, 'coc_cursors_activated', 0)
+    return "\<Plug>(coc-cursors-word)"
+  endif
+  return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
+endfunc

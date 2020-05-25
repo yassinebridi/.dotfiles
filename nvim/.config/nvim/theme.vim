@@ -6,21 +6,21 @@ colorscheme purpura
 set guifont=Jetbrains\ Mono\ Font\ 11
 
 "Set the right colors in vim
-set termguicolors
-let &t_8f = "\e[38;2;%lu;%lu;%lum"
-let &t_8b = "\e[48;2;%lu;%lu;%lum"
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 "Cursor line
 set cursorline
 set cursorcolumn
-
 
 " Indent Setting
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#2a0340 ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#290345 ctermbg=4
-
 
 function! StatusLine(current, width)
   let l:s = ''
