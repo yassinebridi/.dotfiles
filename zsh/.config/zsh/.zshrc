@@ -122,7 +122,10 @@ export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
 
 alacrittyOpenWidget() /home/yaslix/bin/alacrittyOpen alac
 rangerOpenWidget() /home/yaslix/bin/alacrittyOpen
+nautilusOpenWidget() /home/yaslix/bin/alacrittyOpen naut
 zle -N alacrittyOpenWidget
 zle -N rangerOpenWidget
+zle -N nautilusOpenWidget
 bindkey '^[^M' alacrittyOpenWidget
 bindkey '^[r' rangerOpenWidget
+bindkey '^[n' nautilusOpenWidget
