@@ -12,16 +12,6 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-"Cursor line
-set cursorline
-set cursorcolumn
-
-" Indent Setting
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#2a0340 ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#290345 ctermbg=4
-
 function! StatusLine(current, width)
   let l:s = ''
 
@@ -59,3 +49,6 @@ let g:crystalline_theme = 'purpura'
 set showtabline=2
 set guioptions-=e
 set laststatus=2
+
+hi Normal ctermbg=NONE guibg=NONE
+hi NonText ctermbg=NONE guibg=NONE

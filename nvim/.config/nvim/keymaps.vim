@@ -26,13 +26,15 @@ imap jk <Esc>
 cmap jk <C-C>
 
 "Source current file
-nnoremap <leader>y :so %<cr>
+nnoremap <leader>y :w<cr> :so ~/.config/nvim/init.vim<cr>
 
 " Surround
 vnoremap (( "sc(<C-r>s)<Esc>
 vnoremap {{ "sc{<C-r>s}<Esc>
+vnoremap [[ "sc[<C-r>s]<Esc>
 vnoremap "" "sc"<C-r>s"<Esc>
 vnoremap '' "sc'<C-r>s'<Esc>
+vnoremap `` "sc`<C-r>s`<Esc>
 
 " Command-line like forward-g
 cnoremap <M-k> <Up>
@@ -80,8 +82,12 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 " Fold toggle
 nnoremap <leader>u za
 
-" Map alt + h to remove characters
-imap <M-h> <backspace>
+" Map alt + {h,l} to move the cursor left and right
+imap <M-h> <left>
+imap <M-l> <right>
 
 " End macros in command mode
 cnoremap <c-q> <c-f>i<c-o>q
+
+" Map alt + space to remove characters
+imap <M-space> <backspace>

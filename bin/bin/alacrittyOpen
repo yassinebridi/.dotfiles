@@ -4,5 +4,5 @@ if [ "$1" = "alac" ]; then
 elif [ "$1" = "naut" ]; then
   nohup nautilus . > /dev/null 2>&1 &
 else
-  $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE $PWD
+  $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE $PWD > /dev/null 2>&1 &
 fi

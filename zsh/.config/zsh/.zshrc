@@ -5,6 +5,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/scripts/bin"
 export PATH="$PATH:`yarn global bin`"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/programs/android-studio/bin:$PATH"
 
 export ZSH="/home/yaslix/.config/oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
@@ -101,10 +102,6 @@ gac(){
 gacp(){
   git add . && git commit -m $1 && git push origin master
 }
-
-# Layout toggling
-setxkbmap -layout us,ar
-setxkbmap -option 'grp:alt_space_toggle'
 
 # Compose key to be right alt
 setxkbmap -option compose:ralt

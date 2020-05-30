@@ -14,6 +14,7 @@ set number relativenumber
 set ignorecase
 set smartcase
 set encoding=utf-8
+set noswapfile
 
 " Enable autocompletion:
 set wildmode=longest,list,full
