@@ -8,13 +8,16 @@ vnoremap <leader>cw y:.s/"//g<left><left>
 " TYPESCRIPT "
 """"""""""""""
 
-" JSX Chnage a tag with it's closing tag
+" JSX Change a tag with it's closing tag
 let @k = 'vbd%pldwhyiwPlde'
 inoremap <C-b> <esc>@k
 
 " JSX Tag completion
-inoremap <M-tab> <esc>yiwi<ea></pa>bba
+inoremap <M-tab> <esc>"ayiwi<ea></"apa>bba
 
+" Enclose a bunch of tags with a Box Tag
+vnoremap <leader>tg dOBox<esc><esc>"ayiwi<ea></"apa>bbaPka
+        
 " JSX Tag complection for the whole components
 inoremap <C-l> <esc>diw[(opbi<ea>[(%Opbi</ea>
 

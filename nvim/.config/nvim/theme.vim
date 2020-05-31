@@ -50,5 +50,10 @@ set showtabline=2
 set guioptions-=e
 set laststatus=2
 
+" For Transparent background
 hi Normal ctermbg=NONE guibg=NONE
 hi NonText ctermbg=NONE guibg=NONE
+hi CursorLineNr ctermbg=NONE guibg=NONE
+hi LineNr ctermbg=NONE guibg=NONE guifg=#690da1 
+hi EndOfBuffer ctermbg=NONE guibg=NONE
+hi SignColumn	ctermbg=NONE guibg=NONE

@@ -5,6 +5,10 @@ vnoremap gh ^
 vnoremap gl $
 nnoremap k gk
 nnoremap j gj
+nnoremap <M-k> {
+nnoremap <M-j> }
+vnoremap <M-k> {
+vnoremap <M-j> }
 
 " Select all
 nmap <leader>aa ggVG
