@@ -53,7 +53,7 @@ alias nb='newsboat'
 alias lg='lazygit'
 alias gl='git log'
 alias gs='git status'
-alias gp='git status'
+alias gp='git push origin master'
 alias lnv='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
 
 gac(){
