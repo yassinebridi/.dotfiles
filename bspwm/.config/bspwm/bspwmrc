@@ -6,8 +6,6 @@ sxhkd &
 xmodmap ~/.Xmodmap &
 polybar example &
 picom &
-setxkbmap -layout us,ar &
-setxkbmap -option 'grp:rctrl_rshift_toggle' &
 ~/bin/setbg &
 ~/bin/clipmanager &
 nm-applet &
