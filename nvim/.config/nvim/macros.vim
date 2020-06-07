@@ -4,6 +4,12 @@
 " Change the selected text in the whole line
 vnoremap <leader>cw y:.s/"//g<left><left>
 
+" perform varius command on oneline
+nnoremap vil $v0
+nnoremap yil $v0y
+nnoremap dil $v0d
+nnoremap cil $v0c
+
 """"""""""""""
 " TYPESCRIPT "
 """"""""""""""

@@ -92,8 +92,8 @@ imap <tab> <Plug>(coc-snippets-expand)
 let g:coc_snippet_next = '<TAB>'
 
 
-nmap <silent> <C-c> <Plug>(coc-cursors-position)
-nmap <silent> <C-d> <Plug>(coc-cursors-word)
+nmap <silent> <leader>cc <Plug>(coc-cursors-position)
+nmap <silent> <leader>cd <Plug>(coc-cursors-word)
 nmap <expr> <silent> <C-d> <SID>select_current_word()
 nmap <leader>x  <Plug>(coc-cursors-operator)
 function! s:select_current_word()

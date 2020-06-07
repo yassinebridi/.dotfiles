@@ -55,6 +55,8 @@ alias gl='git log'
 alias gs='git status'
 alias gp='git push origin master'
 alias lnv='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
+alias exyn='export PATH="$PATH:`yarn global bin`"'
+alias f='ffmpeg'
 
 gac(){
   git add . && git commit -m $1

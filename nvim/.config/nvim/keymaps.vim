@@ -95,3 +95,15 @@ cnoremap <c-q> <c-f>i<c-o>q
 
 " Map alt + space to remove characters
 imap <M-space> <backspace>
+
+" Map alt + space to remove characters
+" nnoremap <M-o> <C-a>
+nnoremap <M-i> <C-x>
+nnoremap <M-o> <C-a>
+
+" map {}
+inoremap <M-r> }
+inoremap <M-e> {
+
+" map .
+nnoremap <M-p> .
