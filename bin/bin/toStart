@@ -1,0 +1,5 @@
+#!/bin/bash    
+
+sleep 5
+/usr/bin/xmodmap /home/yaslix/.Xmodmap &
+date >> /tmp/xmodmap-has-run

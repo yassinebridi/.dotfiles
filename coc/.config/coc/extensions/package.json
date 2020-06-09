@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "coc-explorer": "*",
+    "coc-tsserver": "*",
+    "coc-python": "*"
+  }
+}
