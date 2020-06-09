@@ -57,3 +57,6 @@ hi CursorLineNr ctermbg=NONE guibg=NONE
 hi LineNr ctermbg=NONE guibg=NONE guifg=#690da1 
 hi EndOfBuffer ctermbg=NONE guibg=NONE
 hi SignColumn	ctermbg=NONE guibg=NONE
+
+" Better spell checks colors
+hi SpellBad guibg=#fc6d6d ctermbg=224

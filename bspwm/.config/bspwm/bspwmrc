@@ -3,7 +3,7 @@
 bspc rule -r "*"
 
 sxhkd &
-xmodmap ~/.Xmodmap &
+~/bin/toStart &
 polybar example &
 picom &
 ~/bin/setbg &

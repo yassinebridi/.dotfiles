@@ -20,6 +20,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
 Plug 'pseewald/vim-anyfold'
 Plug 'thaerkh/vim-workspace'
+Plug 'junegunn/goyo.vim'
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',

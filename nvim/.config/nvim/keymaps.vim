@@ -107,3 +107,6 @@ inoremap <M-e> {
 
 " map .
 nnoremap <M-p> .
+
+" Toggle Markdown Preview
+nnoremap <leader>mp :MarkdownPreview<CR>

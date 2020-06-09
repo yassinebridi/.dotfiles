@@ -9,4 +9,6 @@ source $HOME/.config/nvim/ghost.vim
 source $HOME/.config/nvim/fold.vim
 source $HOME/.config/nvim/workspace.vim
 source $HOME/.config/nvim/compile.vim
+source $HOME/.config/nvim/spelling.vim
+source $HOME/.config/nvim/goyo.vim
 source $HOME/.config/nvim/theme.vim
