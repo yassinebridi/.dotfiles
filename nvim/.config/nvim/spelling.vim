@@ -11,3 +11,14 @@ function! ToggleSpellCheck()
 endfunction
 
 nnoremap <silent> <Leader>S :call ToggleSpellCheck()<CR>
+
+" Spelling actions
+
+" Fix spelling
+nnoremap <leader>jf z=
+
+" Add spelling to dictionary
+nnoremap <leader>ja zw
+
+" Remove spelling from dictionary
+nnoremap <leader>jr zuw
