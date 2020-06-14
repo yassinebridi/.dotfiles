@@ -18,7 +18,7 @@ nnoremap <silent> <Leader>S :call ToggleSpellCheck()<CR>
 nnoremap <leader>jf z=
 
 " Add spelling to dictionary
-nnoremap <leader>ja zw
+nnoremap <leader>ja zg
 
 " Remove spelling from dictionary
-nnoremap <leader>jr zuw
+nnoremap <leader>jr zug
