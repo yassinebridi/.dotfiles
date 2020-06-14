@@ -2,6 +2,7 @@
   "dependencies": {
     "coc-explorer": "*",
     "coc-tsserver": "*",
-    "coc-python": "*"
+    "coc-python": "*",
+    "coc-snippets": "*"
   }
 }
