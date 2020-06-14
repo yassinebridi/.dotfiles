@@ -2,3 +2,5 @@ plugins
 .zcompdump*
 plugged
 .undodir
+
+nvim/.config/nvim/.netrwhist
