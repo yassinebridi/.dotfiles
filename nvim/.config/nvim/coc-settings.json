@@ -2,6 +2,9 @@
   "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "typescript.suggestionActions.enabled": false,
+  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "javascript.suggestionActions.enabled": false,
   "python.linting.enabled": true,
   "python.linting.pylamaEnabled": true,
   "coc.preferences.extensionUpdateCheck": "never",
@@ -9,6 +12,7 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "Markdown",
     "javascript",
+    "javascriptreact",
     "typescript",
     "typescriptreact",
     "graphql",

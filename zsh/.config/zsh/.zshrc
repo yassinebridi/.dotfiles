@@ -20,6 +20,8 @@ bindkey -M viins 'jk' vi-cmd-mode
 bindkey -v '^?' backward-delete-char
 
 # Aliases
+alias yrd='yarn rw dev'
+alias ydc='yarn clean && yarn dev'
 alias yd='yarn dev'
 alias ydc='yarn clean && yarn dev'
 alias ytp='youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s"'

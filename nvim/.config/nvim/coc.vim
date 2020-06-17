@@ -85,7 +85,7 @@ nnoremap <silent> <space>ad  :<C-u>CocList diagnostics<cr>
 hi! CocErrorSign guifg=#ff7070
 
 " Coc explorer settings
-nmap <space>e :CocCommand explorer --position right<CR>
+nmap <space>e :CocCommand explorer<CR>
 
 " Coc snippets jumping
 imap <tab> <Plug>(coc-snippets-expand)

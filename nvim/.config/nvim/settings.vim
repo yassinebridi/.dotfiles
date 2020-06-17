@@ -38,3 +38,6 @@ cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 au BufNewFile,BufRead *.py setlocal filetype=python
+
+" Close netrw
+autocmd FileType netrw setl bufhidden=wipe
