@@ -20,7 +20,10 @@ bindkey -M viins 'jk' vi-cmd-mode
 bindkey -v '^?' backward-delete-char
 
 # Aliases
-alias yrd='yarn rw dev'
+alias yrdev='yarn rw dev'
+alias yw='yarn workspace'
+alias yrd='yarn rw db'
+alias yrg='yarn rw g'
 alias ydc='yarn clean && yarn dev'
 alias yd='yarn dev'
 alias ydc='yarn clean && yarn dev'
@@ -57,8 +60,8 @@ alias lg='lazygit'
 alias gl='git log'
 alias gs='git status'
 alias gp='git push origin master'
-alias lnv='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
-alias exyn='export PATH="$PATH:`yarn global bin`"'
+alias lv='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
+alias lnd='export PATH="$PATH:`yarn global bin`"'
 alias f='ffmpeg'
 
 gac(){

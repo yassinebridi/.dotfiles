@@ -87,6 +87,9 @@ hi! CocErrorSign guifg=#ff7070
 " Coc explorer settings
 nmap <space>e :CocCommand explorer<CR>
 
+" Restart coc
+nmap <space>rc :CocRestart<CR>
+
 " Coc snippets jumping
 imap <tab> <Plug>(coc-snippets-expand)
 let g:coc_snippet_next = '<TAB>'
