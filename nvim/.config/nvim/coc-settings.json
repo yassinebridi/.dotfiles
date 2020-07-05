@@ -34,5 +34,7 @@
       "open"
     ],
     "v": "open:vsplit"
-  }
+  },
+  "yaml.format.enable": true,
+  "yaml.format.singleQuote": true
 }

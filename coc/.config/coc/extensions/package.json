@@ -1,8 +1,10 @@
 {
   "dependencies": {
     "coc-explorer": "*",
-    "coc-tsserver": "*",
+    "coc-json": ">=1.2.6",
     "coc-python": "*",
-    "coc-snippets": "*"
+    "coc-snippets": "*",
+    "coc-tsserver": "*",
+    "coc-yaml": ">=1.0.4"
   }
 }
