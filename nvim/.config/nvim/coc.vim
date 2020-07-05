@@ -87,6 +87,9 @@ hi! CocErrorSign guifg=#ff7070
 " Coc explorer settings
 nmap <space>e :CocCommand explorer<CR>
 
+" Coc explorer settings
+nmap <space>o :OR<CR>
+
 " Restart coc
 nmap <space>rc :CocRestart<CR>
 

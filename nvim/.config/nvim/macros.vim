@@ -14,8 +14,12 @@ nnoremap cil $v0c
 " TYPESCRIPT "
 """"""""""""""
 
+" Change styles attributes style
+nnoremap <leader>cs <esc>ws: $a,jg^
+nnoremap <leader>ca <esc>eer=g$dljg^
+                  
 " JSX Change a tag with it's closing tag
-let @k = 'vbd%pldwhyiwPlde'
+let @k = 'vbd%pldwhyiwPldei'
 inoremap <C-b> <esc>@k
 
 " JSX Tag completion

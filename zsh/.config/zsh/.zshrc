@@ -20,13 +20,11 @@ bindkey -M viins 'jk' vi-cmd-mode
 bindkey -v '^?' backward-delete-char
 
 # Aliases
-alias yrdev='yarn rw dev'
 alias yw='yarn workspace'
-alias yrd='yarn rw db'
-alias yrg='yarn rw g'
+alias ywws='yw web start'
+alias ywas='yw api start'
 alias ydc='yarn clean && yarn dev'
 alias yd='yarn dev'
-alias ydc='yarn clean && yarn dev'
 alias ytp='youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s"'
 alias yts='youtube-dl --write-sub --sub-lang en --skip-download'
 alias server='python -m SimpleHTTPServer 8080'
