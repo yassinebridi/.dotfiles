@@ -21,8 +21,10 @@ bindkey -v '^?' backward-delete-char
 
 # Aliases
 alias yw='yarn workspace'
+alias yc='yarn commit'
+alias yd='yarn deploy'
 alias ydc='yarn clean && yarn dev'
-alias yd='yarn dev'
+alias ydv='yarn dev'
 alias ytp='youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s"'
 alias yts='youtube-dl --write-sub --sub-lang en --skip-download'
 alias server='python -m SimpleHTTPServer 8080'
