@@ -21,8 +21,6 @@ bindkey -v '^?' backward-delete-char
 
 # Aliases
 alias yw='yarn workspace'
-alias ywws='yw web start'
-alias ywas='yw api start'
 alias ydc='yarn clean && yarn dev'
 alias yd='yarn dev'
 alias ytp='youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s"'
@@ -72,7 +70,7 @@ gacp(){
 
 xrdb ~/.Xresources
 
-setxkbmap -layout us,ar
+setxkbmap -layout us,ar,fr
 setxkbmap -option 'grp:rctrl_rshift_toggle'
 
 # For the autojump to work.
