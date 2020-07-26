@@ -28,12 +28,7 @@
   "explorer.previewAction.onHover": false,
   "explorer.width": 30,
   "explorer.keyMappings": {
-    "<cr>": [
-      "expandable?",
-      "expand",
-      "open"
-    ],
-    "v": "open:vsplit"
+    "ga": "collapse:all"
   },
   "yaml.format.enable": true,
   "yaml.format.singleQuote": true

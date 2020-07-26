@@ -108,3 +108,5 @@ function! s:select_current_word()
   endif
   return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
 endfunc
+
+nmap <leader>cc <Plug>(coc-calc-result-append)
