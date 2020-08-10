@@ -37,7 +37,7 @@ font-2 = siji:pixelsize=10;1
 font-3 = FontAwesome:size=10
 
 modules-left = restart poweroff kxorg suspend bspwm spotify previous playpause next
-modules-center = pst pchrome pxdm ponboard pdeluge pspotify
+modules-center = pterm pchrome pxdm ponboard pdeluge pspotify pranger
 modules-right = sshare pshare precord memory cpu xtemperature xbacklight pulseaudio xkeyboard eth date 
 
 tray-position = right
@@ -104,6 +104,16 @@ label-urgent-padding = 2
 label-empty =
 
 ; Shell programs
+[module/pranger]
+type = custom/script
+format = "%{T3}<label>"
+format-padding = 2
+exec = echo ""
+format-underline = #fcfd95
+line-size = 1
+click-left = $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE &
+  
+
 [module/pshare]
 type = custom/script
 format = "%{T3}<label>"
@@ -111,7 +121,7 @@ format-padding = 2
 exec = "! pgrep create_ap >/dev/null && echo ""; exit 0"
 format-underline = #fcfd95
 line-size = 1
-click-left = sudo create_ap -n wlo1 vota mayamaya &
+click-left = sudo create_ap wlo1 wlo1 bota mayamaya &
 
 [module/sshare]
 type = custom/script
@@ -160,7 +170,8 @@ format-padding = 2
 exec = echo ""
 format-underline = #fcfd95
 line-size = 1
-click-left = /opt/spotify/spotify &
+click-left = spotify > /dev/null 2>&1 & 
+
 
 [module/pchrome]
 type = custom/script
@@ -171,14 +182,14 @@ format-underline = #fcfd95
 line-size = 1
 click-left = google-chrome-stable &
 
-[module/pst]
+[module/pterm]
 type = custom/script
 format = "%{T3}<label>"
 format-padding = 2
 exec = echo ""
 format-underline = #fcfd95
 line-size = 1
-click-left = st &
+click-left = alacritty &
 
 [module/ponboard]
 type = custom/script
