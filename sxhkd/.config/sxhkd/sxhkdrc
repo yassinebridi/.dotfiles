@@ -246,3 +246,6 @@ alt + {minus,equal}
 	bspc config window_gap $(( $(bspc config window_gap) {-,+} 10 ))    
 alt + 0
 	bspc config window_gap 0
+
+button3
+  ~/bin/rootMenu

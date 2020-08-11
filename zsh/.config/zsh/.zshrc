@@ -61,6 +61,7 @@ alias gp='git push'
 alias lv='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
 alias lnd='export PATH="$PATH:`yarn global bin`"'
 alias f='ffmpeg'
+alias ltp='grep -i installed /var/log/pacman.log'
 
 gac(){
   git add . && git commit -m $1
