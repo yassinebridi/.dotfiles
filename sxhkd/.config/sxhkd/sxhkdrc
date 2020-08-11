@@ -247,5 +247,5 @@ alt + {minus,equal}
 alt + 0
 	bspc config window_gap 0
 
-button3
+~button3
   ~/bin/rootMenu
