@@ -2,16 +2,21 @@
 
 bspc rule -r "*"
 
+killall polybar &
+killall sxhkd &
+killall picom &
+killall bluetooth-applet &
+killall redshift-gtk &
 sxhkd &
 ~/bin/toStart &
 polybar example &
-picom &
-~/bin/setbg &
-~/bin/clipmanager &
 nm-applet &
 bluetooth-applet &
+picom &
 /usr/lib/geoclue-2.0/demos/agent &
 redshift-gtk &
+~/bin/setbg &
+~/bin/clipmanager &
 ~/.config/polybar/spotify/launchlistener.sh &
 
 #Wallpaper
@@ -46,7 +51,7 @@ bspc rule -a Gimp desktop=^4
 bspc rule -a figma-linux dekstop=^3
 bspc rule -a Org.gnome.Nautilus state=floating
 bspc rule -a Ranger state=floating
-bspc rule -a Cmus desktop=^4 state=floating
+bspc rule -a Cmus desktop=^4 state=floating follow=on
 bspc rule -a Sxiv state=floating
 bspc rule -a Deluge-gtk state=floating
 bspc rule -a jetbrains-studio state=floating dekstop=^7

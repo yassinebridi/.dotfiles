@@ -110,7 +110,6 @@ label-empty =
 ; Shell programs
 [module/cmus]
 type = custom/script
-
 exec = ~/.config/polybar/cmus.sh
 exec-if = pgrep -x cmus
 interval = 1
@@ -118,6 +117,7 @@ interval = 1
 click-left = cmus-remote --next
 click-right = cmus-remote --prev
 click-middle = cmus-remote --pause
+double-click-left = bspc desktop --focus ^4
 scroll-up = cmus-remote --volume +5%
 scroll-down = cmus-remote --volume -5%
 
@@ -129,11 +129,11 @@ label-maxlen = 50
 
 [module/cmuspause]
 type = custom/script
-interval = 5
+interval = 1
 format = "%{T3}<label>"
 format-padding = 5
-exec = echo ""
-exec-if = pgrep -x spotify
+exec = ~/.config/polybar/cmusPause.sh
+exec-if = pgrep -x cmus
 format-underline = #1db954
 line-size = 1
 click-left = cmus-remote --pause

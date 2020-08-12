@@ -2,5 +2,6 @@ plugins
 .zcompdump*
 plugged
 .undodir
+cmus/.config/cmus/cache
 
 nvim/.config/nvim/.netrwhist
