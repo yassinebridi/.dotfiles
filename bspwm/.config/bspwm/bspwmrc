@@ -46,6 +46,7 @@ bspc rule -a Gimp desktop=^4
 bspc rule -a figma-linux dekstop=^3
 bspc rule -a Org.gnome.Nautilus state=floating
 bspc rule -a Ranger state=floating
+bspc rule -a Cmus desktop=^4 state=floating
 bspc rule -a Sxiv state=floating
 bspc rule -a Deluge-gtk state=floating
 bspc rule -a jetbrains-studio state=floating dekstop=^7

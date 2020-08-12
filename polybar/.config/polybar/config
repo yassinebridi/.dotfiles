@@ -40,8 +40,8 @@ font-3 = FontAwesome:size=10
 ; modules-center = pterm pchrome pxdm ponboard pdeluge pspotify pranger pnaut
 ; modules-right = sshare pshare precord memory cpu xtemperature xbacklight pulseaudio xkeyboard eth date 
 
-modules-left = bspwm spotify previous playpause next
-modules-center = pxdm pdeluge pspotify
+modules-left = bspwm cmus cmuspause spotify previous playpause next
+modules-center = pxdm pdeluge pspotify pcmus
 modules-right = sshare pshare precord memory cpu xtemperature xbacklight pulseaudio xkeyboard eth date 
 
 tray-position = right
@@ -108,6 +108,45 @@ label-urgent-padding = 2
 label-empty =
 
 ; Shell programs
+[module/cmus]
+type = custom/script
+
+exec = ~/.config/polybar/cmus.sh
+exec-if = pgrep -x cmus
+interval = 1
+
+click-left = cmus-remote --next
+click-right = cmus-remote --prev
+click-middle = cmus-remote --pause
+scroll-up = cmus-remote --volume +5%
+scroll-down = cmus-remote --volume -5%
+
+label-font = 3
+format = <label>
+format-underline = #1db954
+label = %output%
+label-maxlen = 50
+
+[module/cmuspause]
+type = custom/script
+interval = 5
+format = "%{T3}<label>"
+format-padding = 5
+exec = echo ""
+exec-if = pgrep -x spotify
+format-underline = #1db954
+line-size = 1
+click-left = cmus-remote --pause
+
+[module/pcmus]
+type = custom/script
+format = "%{T3}<label>"
+format-padding = 2
+exec = echo ""
+format-underline = #fcfd95
+line-size = 1
+click-left = $TERMINAL -d 80 25 --class cmus,Cmus -e cmus &
+
 [module/pnaut]
 type = custom/script
 format = "%{T3}<label>"
@@ -254,27 +293,33 @@ click-left = [ "$(echo -e "Cancel\nSuspend" | dmenu)" = "Suspend" ] && systemctl
 ; Spotify controls
 [module/previous]
 type = custom/script
+interval = 5
 format = "%{T3}<label>"
 format-padding = 5
 exec = echo ""
+exec-if = pgrep -x spotify
 format-underline = #1db954
 line-size = 1
 click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 
 [module/next]
 type = custom/script
+interval = 5
 format = "%{T3}<label>"
 format-padding = 5
 exec = echo ""
+exec-if = pgrep -x spotify
 format-underline = #1db954
 line-size = 1
 click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 
 [module/playpause]
 type = custom/script
+interval = 5
 format = "%{T3}<label>"
 format-padding = 5
 exec = echo ""
+exec-if = pgrep -x spotify
 format-underline = #1db954
 line-size = 1
 click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
