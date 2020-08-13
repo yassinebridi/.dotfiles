@@ -41,8 +41,8 @@ font-3 = FontAwesome:size=10
 ; modules-right = sshare pshare precord memory cpu xtemperature xbacklight pulseaudio xkeyboard eth date 
 
 modules-left = bspwm cmus cmuspause spotify previous playpause next
-modules-center = pxdm pdeluge pspotify pcmus
-modules-right = sshare pshare precord memory cpu xtemperature xbacklight pulseaudio xkeyboard eth date 
+modules-center = pterm pxdm pdeluge pspotify pcmus
+modules-right = pkillen sshare pshare precord memory cpu xtemperature xbacklight pulseaudio xkeyboard eth date 
 
 tray-position = right
 tray-padding = 2
@@ -108,6 +108,16 @@ label-urgent-padding = 2
 label-empty =
 
 ; Shell programs
+[module/pkillen]
+type = custom/script
+format = "%{T3}<label>"
+format-padding = 2
+exec = echo ""
+format-underline = #fcfd95
+line-size = 1
+click-left = bspc node -c
+
+
 [module/cmus]
 type = custom/script
 exec = ~/.config/polybar/cmus.sh

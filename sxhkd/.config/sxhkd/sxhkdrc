@@ -29,8 +29,10 @@ super + shift + x
 super + shift + BackSpace
   [ "$(echo -e "Cancel\nLock" | dmenu)" = "Lock" ] && playerctl pause && slock
 
+# You should change these things in /etc/systemd/logind.conf(if you are using systemd)
+# HandlePowerKey=ignore, PowerKeyIgnoreInhibited=yes
 XF86PowerOff
-  [ "$(echo -e "Cancel\nShutdown" | dmenu)" = "Shutdown" ] && systemctl poweroff
+  [ "$(echo -e "Cancel\nLeave" | dmenu)" = "Leave" ] && killall Xorg
 
 super + shift + space
   [ "$(echo -e "Cancel\nSuspend" | dmenu)" = "Suspend" ] && playerctl pause && systemctl suspend && slock
