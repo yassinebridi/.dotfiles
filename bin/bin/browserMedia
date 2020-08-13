@@ -1,0 +1,19 @@
+#!/bin/sh
+
+stat=$(echo -n $(dbus-send --print-reply  --dest=org.mpris.MediaPlayer2.chrome.instance$(pgrep -x chrome | head -n 1) /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'PlaybackStatus' | tail -n 1  | cut -c 25-))
+stat="${stat%\"}"
+stat="${stat#\"}"
+
+if [[ $stat = "Paused" ]]; then
+        echo 
+elif [[ $stat = "Playing" ]]; then
+        echo 
+else
+        echo
+fi
+
+if [[ $1 = "toggle" ]]; then
+      dbus-send --print-reply --dest=org.mpris.MediaPlayer2.chrome.instance$(pgrep -x chrome | head -n 1) /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+else
+        echo
+fi

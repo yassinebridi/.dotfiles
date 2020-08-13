@@ -3,9 +3,6 @@
 bspc rule -r "*"
 
 killall polybar &
-killall picom &
-killall bluetooth-applet &
-killall redshift-gtk &
 sxhkd &
 ~/bin/toStart &
 polybar example &

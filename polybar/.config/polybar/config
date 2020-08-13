@@ -40,7 +40,7 @@ font-3 = FontAwesome:size=10
 ; modules-center = pterm pchrome pxdm ponboard pdeluge pspotify pranger pnaut
 ; modules-right = sshare pshare precord memory cpu xtemperature xbacklight pulseaudio xkeyboard eth date 
 
-modules-left = bspwm cmus cmuspause spotify previous playpause next
+modules-left = bspwm cmus cmuspause spotify previous playpause next playpausechrome
 modules-center = pterm pxdm pdeluge pspotify pcmus
 modules-right = pkillen sshare pshare precord memory cpu xtemperature xbacklight pulseaudio xkeyboard eth date 
 
@@ -107,7 +107,19 @@ label-urgent-padding = 2
 
 label-empty =
 
-; Shell programs
+;Shell programs
+[module/playpausechrome]
+type = custom/script
+format = "%{T3}<label>"
+format-padding = 5
+interval = 1
+exec = ~/bin/browserMedia
+exec-if = dbus-send --print-reply  --dest=org.mpris.MediaPlayer2.chrome.instance$(pgrep -x chrome | head -n 1) /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'PlaybackStatus'
+format-underline = #ff00ff
+line-size = 1
+click-left = ~/bin/browserMedia toggle
+
+
 [module/pkillen]
 type = custom/script
 format = "%{T3}<label>"
@@ -116,7 +128,6 @@ exec = echo ""
 format-underline = #fcfd95
 line-size = 1
 click-left = bspc node -c
-
 
 [module/cmus]
 type = custom/script
