@@ -1,0 +1,13 @@
+#!/bin/sh
+
+cat <<EOF | xmenu | sh &
+Dektop 1		~/bin/windowMover d1
+Dektop 2		~/bin/windowMover d2
+Dektop 3		~/bin/windowMover d3
+Dektop 4		~/bin/windowMover d4
+Dektop 5		~/bin/windowMover d5
+Dektop 6		~/bin/windowMover d6
+Dektop 7		~/bin/windowMover d7
+Dektop 8		~/bin/windowMover d8
+Dektop 9		~/bin/windowMover d9
+EOF
