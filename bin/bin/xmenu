@@ -7,6 +7,16 @@ Onboard		onboard
 Ranger		$TERMINAL -d 80 25 --class ranger,Ranger -e $FILE 
 Nautilus		nautilus
 
+Files
+	Home	     $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE ~/
+	Downloads	 $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE ~/Downloads
+	Pictures	 $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE ~/Pictures
+	YassineHD	 $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE ~/mounting/YassineHD
+	TV Show	   $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE ~/mounting/YassineHD/TV Shows - Movies - Anime
+	MyShit	   $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE ~/mounting/YassineHD/MyShit
+	C	         $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE ~/mounting/c
+	Pictures	 $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE ~/Pictures
+
 Suspend			playerctl pause && systemctl suspend && slock || systemctl suspend && slock
 Lock	  		playerctl pause && slock || slock
 Exit	  		killall Xorg
