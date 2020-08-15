@@ -7,14 +7,24 @@ if [[ $status = "playing" ]]; then
         song=$(echo -n $(cmus-remote -C status | grep title | cut -c 11-))
         show="${artist} - ${song}"
         showLength=$(echo -n $show | wc -m)
-        title=$(echo -n $(echo $show | rev | cut -c $((showLength - 17))- | rev))
-        echo -n "$title... "
+        if [ "$showLength" -lt 17 ] || [ "$showLength" -eq 17 ]; then
+          title=$show
+          echo -n "$title - "
+        else
+          title=$(echo -n $(echo $show | rev | cut -c $((showLength - 17))- | rev))
+          echo -n "$title... "
+        fi
 elif [[ $status = "paused" ]]; then
         song=$(echo -n $(cmus-remote -C status | grep title | cut -c 11-))
         show="${artist} - ${song}"
         showLength=$(echo -n $show | wc -m)
-        title=$(echo -n $(echo $show | rev | cut -c $((showLength - 17))- | rev))
-        echo -n "$title... "
+        if [ "$showLength" -lt 17 ] || [ "$showLength" -eq 17 ]; then
+          title=$show
+          echo -n "$title - "
+        else
+          title=$(echo -n $(echo $show | rev | cut -c $((showLength - 17))- | rev))
+          echo -n "$title... "
+        fi
 else
         echo
 fi

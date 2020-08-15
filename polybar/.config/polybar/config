@@ -163,8 +163,8 @@ exec-if = pgrep -x cmus
 interval = 1
 format-padding = 2
 
-click-left = cmus-remote --next
-click-right = cmus-remote --prev
+click-left = cmus-remote --prev
+click-right = cmus-remote --next
 double-click-right = cmus-remote --pause
 double-click-left = bspc desktop --focus ^4
 scroll-up = cmus-remote --volume +5%
