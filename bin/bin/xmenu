@@ -1,11 +1,12 @@
 #!/bin/sh
 
 cat <<EOF | xmenu | sh &
+Ranger		$TERMINAL -d 80 25 --class ranger,Ranger -e $FILE 
+Alacritty		alacritty
+Chrome		google-chrome-stable
+Onboard		onboard
+
 Applications
-	Alacritty		alacritty
-	Chrome		google-chrome-stable
-	Onboard		onboard
-	Ranger		$TERMINAL -d 80 25 --class ranger,Ranger -e $FILE 
 	Nautilus		nautilus
 	Spotify		spotify > /dev/null 2>&1 &
 	Cmus		$TERMINAL -d 80 25 --class cmus,Cmus -e cmus &
