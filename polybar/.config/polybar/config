@@ -40,9 +40,8 @@ font-3 = FontAwesome:size=10
 ; modules-center = pterm pchrome pxdm ponboard pdeluge pspotify pranger pnaut
 ; modules-right = sshare pshare precord memory cpu xtemperature xbacklight pulseaudio xkeyboard eth date 
 
-modules-left = bspwm cmus cmuspause spotify previous playpause next playpausechrome
-modules-center = pterm pxdm pdeluge pspotify pcmus
-modules-right = pmove pkillen sshare pshare precord memory cpu xtemperature xbacklight pulseaudio xkeyboard eth date 
+modules-left = bspwm cspotify ccmus cbrowser
+modules-right = pkillen pmove sshare pshare precord memory cpu xbacklight pulseaudio xkeyboard date 
 
 tray-position = right
 tray-padding = 2
@@ -117,16 +116,16 @@ format-underline = #fcfd95
 line-size = 1
 click-left = ~/bin/xmenuDesktop
 
-[module/playpausechrome]
+[module/cbrowser]
 type = custom/script
 format = "%{T3}<label>"
-format-padding = 5
+format-padding = 2
 interval = 1
-exec = ~/bin/browserMedia
+exec = ~/bin/browserControls
 exec-if = dbus-send --print-reply  --dest=org.mpris.MediaPlayer2.chrome.instance$(pgrep -x chrome | head -n 1) /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'PlaybackStatus'
 format-underline = #ff00ff
 line-size = 1
-click-left = ~/bin/browserMedia toggle
+click-left = ~/bin/browserControls toggle
 
 [module/pkillen]
 type = custom/script
@@ -137,64 +136,25 @@ format-underline = #fcfd95
 line-size = 1
 click-left = bspc node -c
 
-[module/cmus]
+[module/ccmus]
 type = custom/script
-exec = ~/.config/polybar/cmus.sh
+exec = ~/bin/cmusingControls
 exec-if = pgrep -x cmus
 interval = 1
+format-padding = 2
 
 click-left = cmus-remote --next
 click-right = cmus-remote --prev
-click-middle = cmus-remote --pause
+double-click-right = cmus-remote --pause
 double-click-left = bspc desktop --focus ^4
 scroll-up = cmus-remote --volume +5%
 scroll-down = cmus-remote --volume -5%
 
 label-font = 3
 format = <label>
-format-underline = #1db954
+format-underline = #0a6cf5
 label = %output%
 label-maxlen = 50
-
-[module/cmuspause]
-type = custom/script
-interval = 1
-format = "%{T3}<label>"
-format-padding = 5
-exec = ~/.config/polybar/cmusPause.sh
-exec-if = pgrep -x cmus
-format-underline = #1db954
-line-size = 1
-click-left = cmus-remote --pause
-
-[module/pcmus]
-type = custom/script
-format = "%{T3}<label>"
-format-padding = 2
-exec = echo ""
-format-underline = #fcfd95
-line-size = 1
-click-left = $TERMINAL -d 80 25 --class cmus,Cmus -e cmus &
-
-[module/pnaut]
-type = custom/script
-format = "%{T3}<label>"
-format-padding = 2
-exec = echo ""
-format-underline = #fcfd95
-line-size = 1
-click-left = nautilus &
-  
-
-[module/pranger]
-type = custom/script
-format = "%{T3}<label>"
-format-padding = 2
-exec = echo ""
-format-underline = #fcfd95
-line-size = 1
-click-left = $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE &
-  
 
 [module/pshare]
 type = custom/script
@@ -216,25 +176,6 @@ line-size = 1
 exec-if = pgrep -x create_ap
 click-left = sudo pkill create_ap
 
-; Progams
-[module/pdeluge]
-type = custom/script
-format = "%{T3}<label>"
-format-padding = 2
-exec = echo ""
-format-underline = #fcfd95
-line-size = 1
-click-left = deluge-gtk &
-
-[module/pxdm]
-type = custom/script
-format = "%{T3}<label>"
-format-padding = 2
-exec = echo "⬇"
-format-underline = #fcfd95
-line-size = 1
-click-left = xdman &
-
 [module/precord]
 type = custom/script
 interval = 5
@@ -245,113 +186,20 @@ exec-if = pgrep -x ffmpeg
 format-underline = #ef94cf
 line-size = 1
 
-[module/pspotify]
-type = custom/script
-format = "%{T3}<label>"
-format-padding = 2
-exec = echo ""
-format-underline = #fcfd95
-line-size = 1
-click-left = spotify > /dev/null 2>&1 & 
-
-
-[module/pchrome]
-type = custom/script
-format = "%{T3}<label>"
-format-padding = 2
-exec = echo ""
-format-underline = #fcfd95
-line-size = 1
-click-left = google-chrome-stable &
-
-[module/pterm]
-type = custom/script
-format = "%{T3}<label>"
-format-padding = 2
-exec = echo ""
-format-underline = #fcfd95
-line-size = 1
-click-left = alacritty &
-
-[module/ponboard]
-type = custom/script
-format = "%{T3}<label>"
-format-padding = 2
-exec = echo ""
-format-underline = #fcfd95
-line-size = 1
-click-left = onboard &
-
-; Power controls
-[module/poweroff]
-type = custom/script
-format = "%{T3}<label>"
-format-padding = 2
-exec = echo ""
-format-underline = #fc1703
-line-size = 1
-click-left = [ "$(echo -e "Cancel\nShutdown" | dmenu)" = "Shutdown" ] && systemctl poweroff
-
-[module/restart]
-type = custom/script
-format = "%{T3}<label>"
-format-padding = 2
-exec = echo ""
-format-underline = #fc9803
-line-size = 1
-click-left = [ "$(echo -e "Cancel\nRestart" | dmenu)" = "Restart" ] && systemctl reboot
-
-[module/kxorg]
-type = custom/script
-format = "%{T3}<label>"
-format-padding = 2
-exec = echo ""
-format-underline = #0398fc
-line-size = 1
-click-left = "[ "$(echo -e "Cancel\nLeave" | dmenu)" = "Leave" ] && killall Xorg"
-
-[module/suspend]
-type = custom/script
-format = "%{T3}<label>"
-format-padding = 2
-exec = echo ""
-format-underline = #25db1d
-line-size = 1
-click-left = [ "$(echo -e "Cancel\nSuspend" | dmenu)" = "Suspend" ] && systemctl suspend
-
 ; Spotify controls
-[module/previous]
+[module/cspotify]
 type = custom/script
-interval = 5
+interval = 1
 format = "%{T3}<label>"
-format-padding = 5
-exec = echo ""
+format-padding = 2
+exec = ~/bin/spotifyControls
 exec-if = pgrep -x spotify
 format-underline = #1db954
 line-size = 1
 click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-
-[module/next]
-type = custom/script
-interval = 5
-format = "%{T3}<label>"
-format-padding = 5
-exec = echo ""
-exec-if = pgrep -x spotify
-format-underline = #1db954
-line-size = 1
-click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
-
-[module/playpause]
-type = custom/script
-interval = 5
-format = "%{T3}<label>"
-format-padding = 5
-exec = echo ""
-exec-if = pgrep -x spotify
-format-underline = #1db954
-line-size = 1
-click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+click-right = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+double-click-left = bspc desktop --focus ^4
+double-click-right = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -388,38 +236,6 @@ interval = 2
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
-
-[module/wlan]
-type = internal/network
-interface = wlo1
-interval = 3.0
-
-format-connected = <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %{A1:nm-connection-editor:}%essid%%{A}
-#label-connected = %essid%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-[module/eth]
-type = internal/network
-interface = eno1
-interval = 3.0
-
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
@@ -465,32 +281,8 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
-
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-;pseudo-transparency = false
 
 [global/wm]
 margin-top = 5

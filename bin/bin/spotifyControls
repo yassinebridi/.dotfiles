@@ -1,0 +1,15 @@
+#!/bin/sh
+
+status=$(echo -n $(dbus-send --print-reply  --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'PlaybackStatus' | tail -n 1 | cut -c 25- | tr -d \"))
+
+if [[ $status = Playing ]]; then
+        song=$(echo -n $(dbus-send --print-reply  --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata' | grep -A 2 title | tail -n 2 | head -1 | cut -c 43- | tr -d \"))
+        artist=$(echo -n $(dbus-send --print-reply  --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata' | grep -A 2 artist | tail -n 1 | head -1 | cut -c 26- | tr -d \"))
+        echo -n "$artist - $song - "
+elif [[ $status = Paused ]]; then
+        song=$(echo -n $(dbus-send --print-reply  --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata' | grep -A 2 title | tail -n 2 | head -1 | cut -c 43- | tr -d \"))
+        artist=$(echo -n $(dbus-send --print-reply  --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata' | grep -A 2 artist | tail -n 1 | head -1 | cut -c 26- | tr -d \"))
+        echo -n "$artist - $song - "
+else
+        echo
+fi
