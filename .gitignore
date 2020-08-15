@@ -5,3 +5,11 @@ plugged
 cmus/.config/cmus/cache
 
 nvim/.config/nvim/.netrwhist
+
+mpv/.config/mpv/watch_later*
+
+mpd/.config/mpd/*
+!mpd/.config/mpd/mpd.conf
+
+cmus/.config/cmus/*
+!cmus/.config/cmus/autosave
