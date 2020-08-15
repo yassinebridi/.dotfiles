@@ -2,18 +2,17 @@
 
 bspc rule -r "*"
 
-killall polybar &
+killall redshift-gtk &
+killall redshift &
+pkill -USR1 -x sxhkd
 sxhkd &
 ~/bin/toStart &
-polybar example &
+polybar -r example &
 nm-applet &
-bluetooth-applet &
 picom &
-/usr/lib/geoclue-2.0/demos/agent &
 redshift-gtk &
 ~/bin/setbg &
 ~/bin/clipmanager &
-~/.config/polybar/spotify/launchlistener.sh &
 
 #Wallpaper
 bspc monitor -d 1 2 3 4 5 6 7 8 9
@@ -26,8 +25,6 @@ bspc config focus_follows_pointer true
 # Border Colors
 bspc config normal_border_color "#484848"
 bspc config focused_border_color "#FF00FF"
-bspc config urgent_border_color "#B58900"
-bspc config presel_border_color "#26E2FF"
 
 #bspc config normal_frame_opacity 0.75
 #bspc config focused_frame_opacity 0.75
