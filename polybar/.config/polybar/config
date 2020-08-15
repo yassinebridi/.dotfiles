@@ -41,7 +41,7 @@ font-3 = FontAwesome:size=10
 ; modules-right = sshare pshare precord memory cpu xtemperature xbacklight pulseaudio xkeyboard eth date 
 
 modules-left = bspwm cspotify ccmus cbrowser
-modules-right = pkillen pmove sshare pshare precord memory cpu xbacklight pulseaudio xkeyboard date 
+modules-right = pkillen pmove sssh pssh sshare pshare precord memory cpu xbacklight pulseaudio xkeyboard date 
 
 tray-position = right
 tray-padding = 2
@@ -107,6 +107,26 @@ label-urgent-padding = 2
 label-empty =
 
 ;Shell programs
+[module/pssh]
+type = custom/script
+format = "%{T3}<label>"
+format-padding = 2
+exec = "! pgrep sshfs >/dev/null && echo ""; exit 0"
+format-underline = #fcfd95
+line-size = 1
+click-left = ~/bin/sshRuner &
+
+[module/sssh]
+type = custom/script
+interval = 5
+format = "%{T3}<label>"
+format-padding = 2
+exec = echo ""
+format-underline = #fc1703
+line-size = 1
+exec-if = pgrep -x sshfs
+click-left = sudo pkill sshfs
+
 [module/pmove]
 type = custom/script
 format = "%{T3}<label>"
