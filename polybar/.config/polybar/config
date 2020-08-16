@@ -204,6 +204,7 @@ exec = "! pgrep create_ap >/dev/null && echo ""; exit 0"
 format-underline = #fcfd95
 line-size = 1
 click-left = sudo create_ap wlo1 wlo1 bota mayamaya &
+click-right = ~/bin/sharedDevices &
 
 [module/sshare]
 type = custom/script
