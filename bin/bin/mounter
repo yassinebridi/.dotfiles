@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cat <<EOF | xmenu | sh &
+YassineHD		~/bin/mounterCli YassineHD
+C		~/bin/mounterCli C
+EOF

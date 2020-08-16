@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ "$1" == "YassineHD" ]; then
+  sudo mount -t auto -v /dev/sda5 ~/mounting/YassineHD
+	notify-send "💻 Mounted YassineHD."
+elif [ "$1" == "C" ]; then
+  sudo mount -t auto -v /dev/sda5 ~/mounting/YassineHD
+	notify-send "💻 Mounted C."
+else
+  echo
+fi
