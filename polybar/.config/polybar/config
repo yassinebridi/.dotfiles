@@ -41,7 +41,7 @@ font-3 = FontAwesome:size=10
 ; modules-right = sshare pshare precord memory cpu xtemperature xbacklight pulseaudio xkeyboard eth date 
 
 modules-left = bspwm cspotify ccmus cbrowser
-modules-right = pkillen pmove pmount sssh pssh sshare pshare precord memory cpu xbacklight pulseaudio xkeyboard date 
+modules-right = pkillen pmove scrollWindows pmount sssh pssh sshare pshare precord memory cpu xbacklight pulseaudio xkeyboard date 
 
 tray-position = right
 tray-padding = 2
@@ -73,6 +73,7 @@ label-indicator-underline = ${colors.secondary}
 type = internal/bspwm
 pin-workspaces = true
 
+click-right = ~/bin/mounter &
 inline-mode = false
 enable-click = true
 enable-scroll = true
@@ -107,6 +108,16 @@ label-urgent-padding = 2
 label-empty =
 
 ;Shell programs
+[module/scrollWindows]
+type = custom/script
+format = "%{T3}<label>"
+format-padding = 2
+exec = echo ""
+format-underline = #fcfd95
+line-size = 1
+scroll-up = bspc node @/ -C forward &
+scroll-down = bspc node @/ -C backward &
+
 [module/pmount]
 type = custom/script
 format = "%{T3}<label>"
