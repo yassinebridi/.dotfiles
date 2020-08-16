@@ -166,6 +166,7 @@ exec-if = dbus-send --print-reply  --dest=org.mpris.MediaPlayer2.chrome.instance
 format-underline = #ff00ff
 line-size = 1
 click-left = ~/bin/browserControls toggle
+double-click-left = bspc desktop --focus ^2
 
 [module/pkillen]
 type = custom/script
@@ -183,9 +184,8 @@ exec-if = pgrep -x cmus
 interval = 1
 format-padding = 2
 
-click-left = cmus-remote --prev
-click-right = cmus-remote --next
-double-click-right = cmus-remote --pause
+click-left = cmus-remote --pause
+click-right = ~/bin/cmusingControls controls
 double-click-left = bspc desktop --focus ^4
 scroll-up = cmus-remote --volume +5%
 scroll-down = cmus-remote --volume -5%
@@ -236,10 +236,9 @@ exec = ~/bin/spotifyControls
 exec-if = pgrep -x spotify
 format-underline = #1db954
 line-size = 1
-click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-click-right = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+click-left = ~/bin/spotifyControls stop &
+click-right = ~/bin/spotifyControls controls &
 double-click-left = bspc desktop --focus ^4
-double-click-right = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 
 [module/xbacklight]
 type = internal/xbacklight

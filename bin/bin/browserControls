@@ -17,10 +17,10 @@ elif [[ $status = Paused ]]; then
         showLength=$(echo -n $show | wc -m)
         if [ "$showLength" -lt 17 ] || [ "$showLength" -eq 17 ]; then
           title=$show
-          echo -n "$title - "
+          echo -n "$title - "
         else
           title=$(echo -n $(echo $show | rev | cut -c $((showLength - 17))- | rev))
-          echo -n "$title... "
+          echo -n "$title... "
         fi
 else
         echo

@@ -30,3 +30,14 @@ elif [[ $status = Paused ]]; then
 else
         echo
 fi
+
+if [ "$1" == "controls" ]; then
+	cat <<-EOF | xmenu | sh &
+		Next			dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+		Previous	  		dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+	EOF
+elif [ "$1" == "stop" ]; then
+  dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+else
+  echo
+fi

@@ -28,3 +28,12 @@ elif [[ $status = "paused" ]]; then
 else
         echo
 fi
+
+if [ "$1" == "controls" ]; then
+	cat <<-EOF | xmenu | sh &
+		Next			cmus-remote --next
+		Previous	cmus-remote --prev
+	EOF
+else
+  echo
+fi
