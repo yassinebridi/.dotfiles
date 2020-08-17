@@ -73,7 +73,9 @@ Print
 super + shift + Print
   ~/bin/screenshot
 
-# zoom & colopicker; powerlfull combo
+super + shift + s
+  ~/bin/selector
+
 # zoom & colopicker; powerlfull combo
 super + shift + z
   ~/bin/zoom
