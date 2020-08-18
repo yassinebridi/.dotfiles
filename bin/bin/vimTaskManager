@@ -1,3 +1,11 @@
 #!/bin/sh
 
-echo -en "yarn install\nyarn update" | fzf | { read command; $TERMINAL --hold -d 70 15 --class floater,Floater -e $command;}
+# echo -en "yarn install\nyarn update" | fzf | { read command; $TERMINAL --hold -d 70 15 --class floater,Floater -e $command;}
+script=$(echo -en "yarn\nyarn workspace" | fzf)
+if [ "$script" == "yarn" ]; then
+  argument=$(echo -en "yarn install\nyarn update" | fzf | { read command; $TERMINAL --hold -d 70 15 --class floater,Floater -e $command;})
+  echo $argument
+elif [ "$script" == "yarn workspace" ]; then
+  argument=$(echo -en "yarn workspace install\nyarn workspace remove" | fzf | { read command; $TERMINAL --hold -d 70 15 --class floater,Floater -e $command;})
+  echo $argument
+fi
