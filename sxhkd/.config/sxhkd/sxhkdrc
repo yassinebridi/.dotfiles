@@ -80,7 +80,7 @@ super + shift + s
 super + shift + z
   ~/bin/zoom
 
-super + shift + c
+super + shift + g
   ~/bin/colorpicker
 
 super + shift + e
@@ -98,6 +98,9 @@ super + shift + u
 super + shift + n
 	nautilus &
 
+super + shift + c
+  ~/bin/dmenuCalc
+
 super + shift + o
   ~/bin/dmenuopener
 
@@ -107,8 +110,8 @@ super + shift + r
 # super + shift + Return
 #   ~/bin/sameDirTerm
 
-super + shift + g
-	~/bin/sameDirRanger
+# super + shift + g
+# 	~/bin/sameDirRanger
 
 super + shift + p
   ~/bin/dmenupskill

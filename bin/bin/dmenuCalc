@@ -1,0 +1,25 @@
+#!/bin/sh
+
+export pi="3.1415926535897932384626433832795028841971694"
+export e="2.7182818284590452353602874713526624977572471"
+
+result="$(echo -e "Cncl" | dmenu -i -p "Calculate:")"
+
+if [[ $result == *"pi"* ]]; then
+  result=$(echo $result | sed "s/pi/$pi/g")
+  result=$(echo "scale=2; $result" | bc -l)
+elif [[ $result == *"e"* ]]; then
+  result=$(echo $result | sed "s/e/$e/g")
+  result=$(echo "scale=2; $result" | bc -l)
+else
+  result=$(echo "scale=2; $result" | bc -l)
+fi
+
+if [ "$result" == 'Close' ]; then
+  :
+elif [ "$result" != 'Close' ]; then
+	echo "$result" | xclip -selection clipboard
+	notify-send $result &
+else
+	notify-send "You can't do that, try again" &
+fi
