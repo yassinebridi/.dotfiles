@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo -en "yarn install\nyarn update" | fzf | { read command; $TERMINAL --hold -d 70 15 --class floater,Floater -e $command;}

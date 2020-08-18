@@ -2,6 +2,7 @@
   "dependencies": {
     "coc-calc": ">=2.0.0",
     "coc-explorer": ">=0.7.21",
+    "coc-floaterm": ">=0.0.7",
     "coc-json": ">=1.2.6",
     "coc-python": "*",
     "coc-snippets": ">=2.1.28",

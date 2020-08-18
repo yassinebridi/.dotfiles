@@ -11,3 +11,5 @@ nnoremap <leader>crn :FloatermNew cargo run<cr>
 
 "Compile current file with arguments
 nnoremap <leader>cra :FloatermNew cargo run
+
+nnoremap <leader>ts :FloatermNew --position=top vimTaskManager<cr>

@@ -4,6 +4,7 @@ plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/scripts/bin"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/programs/android-studio/bin:$PATH"
 export ZSH="/home/yaslix/.config/oh-my-zsh"
 

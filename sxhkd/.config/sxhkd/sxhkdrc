@@ -77,6 +77,9 @@ super + shift + s
   ~/bin/selector
 
 # zoom & colopicker; powerlfull combo
+super + shift + button4
+  ~/bin/zoom
+
 super + shift + z
   ~/bin/zoom
 
