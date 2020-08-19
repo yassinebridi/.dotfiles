@@ -114,8 +114,8 @@ format-padding = 2
 exec = echo ""
 format-underline = #fcfd95
 line-size = 1
-scroll-up = bspc node @/ -C forward &
-scroll-down = bspc node @/ -C backward &
+scroll-up = bspc node -f next.local &
+scroll-down = bspc node -f prev.local &
 
 [module/pmount]
 type = custom/script
