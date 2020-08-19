@@ -1,6 +1,7 @@
 #!/bin/sh
 
 cat <<EOF | xmenu | sh &
-YassineHD		~/bin/mounterCli YassineHD
-C		~/bin/mounterCli C
+YassineHD		~/bin/mounterCli YassineHD &
+Phone		~/bin/mounterCli Phone &
+C		~/bin/mounterCli C &
 EOF

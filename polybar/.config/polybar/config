@@ -73,7 +73,6 @@ label-indicator-underline = ${colors.secondary}
 type = internal/bspwm
 pin-workspaces = true
 
-click-right = ~/bin/mounter &
 inline-mode = false
 enable-click = true
 enable-scroll = true
