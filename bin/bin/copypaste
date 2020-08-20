@@ -1,0 +1,16 @@
+#!/bin/bash    
+
+alacrittyId=$(xdotool search --class 'alacritty' | tac | head -1)
+currentWindowId=$(xdotool getactivewindow)
+
+if [ "$1" == "copy" ]; then
+  if [ "$alacrittyId" == $currentWindowId ]; then
+    sleep 0.5; xdotool key alt+c &
+  else
+    sleep 0.5; xdotool key ctrl+c &
+  fi
+elif [ "$1" == "paste" ]; then
+  sh -c 'sleep 0.5; xdotool type "$(xclip -o -selection clipboard)"'
+else
+  :
+fi
