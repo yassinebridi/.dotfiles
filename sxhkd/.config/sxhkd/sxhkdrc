@@ -8,7 +8,7 @@ super + Return
 
 # Run the file manager
 super + shift + f
-  $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE
+  $TERMINAL -d 80 25 --class ranger,Ranger -e ~/bin/openLastRanger
 
 # program launcher
 super + @space

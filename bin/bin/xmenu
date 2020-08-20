@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cat <<EOF | xmenu | sh &
-Ranger		$TERMINAL -d 80 25 --class ranger,Ranger -e $FILE 
+Ranger		$TERMINAL -d 80 25 --class ranger,Ranger -e ~/bin/openLastRanger
 Alacritty		alacritty
 Chrome		google-chrome-stable
 Onboard		onboard
