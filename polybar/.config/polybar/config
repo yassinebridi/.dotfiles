@@ -62,6 +62,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
+label-layout-padding = 1
 label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
@@ -260,22 +261,28 @@ click-left = ~/bin/spotifyControls stop &
 click-right = ~/bin/spotifyControls controls &
 double-click-left = bspc desktop --focus ^4
 
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume>
+format-volume-underline = #9f78e1
+format-volume-padding = 2
+label-volume =  %percentage%%
+label-volume-foreground = ${root.foreground}
+
+format-muted = <label-muted>
+format-muted-underline = #765aa6
+format-muted-padding = 2
+label-muted =  %percentage%%
+label-muted-foreground = #666
+
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
-label = 
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+format = <label>
+format-underline = #9f78e1
+format-padding = 2
+label =  %percentage%%
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -286,12 +293,14 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format-prefix-foreground = ${colors.foreground-alt}
+format-padding = 1
 format-underline = #f90000
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
+format-padding = 1
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -310,35 +319,6 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
 label = %date% %time%
-
-[module/pulseaudio]
-type = internal/pulseaudio
-
-format-volume = <label-volume> <bar-volume>
-label-volume =  %percentage%%
-label-volume-foreground = ${root.foreground}
-
-
-format-muted = <label-muted> <bar-volume>
-label-muted =  %percentage%%
-label-muted-foreground = #666
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [settings]
 screenchange-reload = true
