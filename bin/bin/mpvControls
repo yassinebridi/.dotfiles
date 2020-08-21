@@ -1,0 +1,41 @@
+#!/bin/sh
+
+status=$(echo -n $(dbus-send --print-reply  --dest=org.mpris.MediaPlayer2.mpv /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'PlaybackStatus' | tail -n 1 | cut -c 25- | tr -d \"))
+
+if [[ $status = Playing ]]; then
+        show=$(echo -n $(dbus-send --print-reply  --dest=org.mpris.MediaPlayer2.mpv /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata' | grep -A 2 title | tail -n 2 | head -1 | cut -c 43- | tr -d \" | rev | cut -c 5- | rev))
+        showLength=$(echo -n $show | wc -m)
+        if [ "$showLength" -lt 17 ] || [ "$showLength" -eq 17 ]; then
+          title=$show
+          echo -n "$title - "
+        else
+          title=$(echo -n $(echo $show | rev | cut -c $((showLength - 17))- | rev))
+          echo -n "$title... "
+        fi
+elif [[ $status = Paused ]]; then
+        show=$(echo -n $(dbus-send --print-reply  --dest=org.mpris.MediaPlayer2.mpv /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata' | grep -A 2 title | tail -n 2 | head -1 | cut -c 43- | tr -d \" | rev | cut -c 5- | rev))
+        showLength=$(echo -n $show | wc -m)
+        if [ "$showLength" -lt 17 ] || [ "$showLength" -eq 17 ]; then
+          title=$show
+          echo -n "$title - "
+        else
+          title=$(echo -n $(echo $show | rev | cut -c $((showLength - 17))- | rev))
+          echo -n "$title... "
+        fi
+else
+        echo
+fi
+
+if [[ $1 = "speedUp" ]]; then
+      xdotool key --window "$(xdotool search --class mpv)" 35 &
+elif [[ $1 = "speedDown" ]]; then
+      xdotool key --window "$(xdotool search --class mpv)" 34 &
+else
+  :
+fi
+
+if [[ $1 = "toggle" ]]; then
+      dbus-send --print-reply --dest=org.mpris.MediaPlayer2.mpv /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+else
+      :
+fi
