@@ -1,11 +1,13 @@
 #!/bin/sh
 
 # echo -en "yarn install\nyarn update" | fzf | { read command; $TERMINAL --hold -d 70 15 --class floater,Floater -e $command;}
-script=$(echo -en "yarn\nyarn workspace" | fzf)
+script=$(echo -en "yarn\nyarn workspace" | dmenu -c -i -l 8 -w 310)
 if [ "$script" == "yarn" ]; then
-  argument=$(echo -en "yarn install\nyarn update" | fzf | { read command; $TERMINAL --hold -d 70 15 --class floater,Floater -e $command;})
-  echo $argument
+  command=$(echo -en "yarn install\nyarn update" | dmenu -c -i -l 8 -w 310)
+  echo $command 
+  tmux popup -w70 -h20 -KR "$command"
 elif [ "$script" == "yarn workspace" ]; then
-  argument=$(echo -en "yarn workspace install\nyarn workspace remove" | fzf | { read command; $TERMINAL --hold -d 70 15 --class floater,Floater -e $command;})
-  echo $argument
+  command=$(echo -en "yarn workspace install\nyarn workspace remove" | dmenu -c -i -l 8 -w 310)
+  echo $command
+  tmux popup -w70 -h20 -KR "$command"
 fi

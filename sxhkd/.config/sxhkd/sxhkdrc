@@ -92,6 +92,9 @@ super + shift + e
 super + shift + y
   ~/bin/dmenuclip
 
+super + shift + i
+  ~/bin/vimTaskManager
+
 super + shift + m
 	SUDO_ASKPASS=~/bin/dmenupass ~/bin/dmenumount
 
