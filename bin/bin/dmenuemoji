@@ -5,7 +5,7 @@
 # Must have xclip installed to even show menu.
 xclip -h 2>/dev/null || exit 1
 
-picked=$(cut -d ';' -f1 $HOME/bin/emoji | dmenu -i -l 8 -w 310 | sed "s/ .*//")
+picked=$(cut -d ';' -f1 $HOME/bin/emoji | dmenu -c -i -l 8 -w 310 | sed "s/ .*//")
 
 [ "$picked" != "" ] || exit
 

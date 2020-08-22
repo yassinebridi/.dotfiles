@@ -2,7 +2,7 @@
 
 # Do some filtering on the .clip_history file
 # Remove empty lines, get unique lines, and reverse order, to get the latest clips
-chosen=$(cat ~/.zsh_history | cut -c 16- | uniq | tac | dmenu -i -l 8 -w 310)
+chosen=$(cat ~/.zsh_history | cut -c 16- | uniq | tac | dmenu -c -i -l 8 -w 310)
 
 [ "$chosen" != "" ] || exit
 
