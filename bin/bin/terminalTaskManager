@@ -1,0 +1,18 @@
+#!/bin/sh
+
+folders=( $( 'ls' ~/projects/$1/packages -1p | grep / | sed 's/^\(.*\)/\1/' | rev | cut -c 2- | rev ) )
+folder=$(echo -en "${folders[0]}\n${folders[1]}\n${folders[2]}\n${folders[3]}" | dmenu -c -i -l 8 -w 310)
+
+if [ "$folder" "==" "api" ]
+then
+  yarn workspace api start:dev
+elif [ "$folder" "==" "common" ]
+then
+  yarn workspace common build
+elif [ "$folder" "==" "front" ]
+then
+  yarn workspace front dev
+elif [ "$folder" "==" "web" ]
+then
+  yarn workspace web dev
+fi

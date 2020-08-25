@@ -91,9 +91,12 @@ export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
 alacrittyOpenWidget() /home/yaslix/bin/alacrittyOpen alac
 rangerOpenWidget() /home/yaslix/bin/alacrittyOpen
 nautilusOpenWidget() /home/yaslix/bin/alacrittyOpen naut
+terminalTaskManagerWidget() /home/yaslix/bin/terminalTaskManager gokoura
 zle -N alacrittyOpenWidget
 zle -N rangerOpenWidget
 zle -N nautilusOpenWidget
+zle -N terminalTaskManagerWidget
 bindkey '^[^M' alacrittyOpenWidget
 bindkey '^[r' rangerOpenWidget
 bindkey '^[n' nautilusOpenWidget
+bindkey '^[t' terminalTaskManagerWidget
