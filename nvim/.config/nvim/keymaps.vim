@@ -10,6 +10,12 @@ nnoremap <M-j> }
 vnoremap <M-k> {
 vnoremap <M-j> }
 
+" Remove
+nnoremap cia ci'
+nnoremap ciq ci"
+nnoremap dia di'
+nnoremap diq di"
+
 " Select all
 nmap <leader>aa ggVG
 
