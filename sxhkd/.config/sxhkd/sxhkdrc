@@ -93,7 +93,7 @@ super + shift + y
   ~/bin/dmenuclip
 
 super + shift + i
-  ~/bin/vimTaskManager
+  ~/bin/vimTaskManager gokoura
 
 super + shift + m
 	SUDO_ASKPASS=~/bin/dmenupass ~/bin/dmenumount

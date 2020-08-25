@@ -1,13 +1,37 @@
 #!/bin/sh
 
-# echo -en "yarn install\nyarn update" | fzf | { read command; $TERMINAL --hold -d 70 15 --class floater,Floater -e $command;}
-script=$(echo -en "yarn\nyarn workspace" | dmenu -c -i -l 8 -w 310)
-if [ "$script" == "yarn" ]; then
-  command=$(echo -en "yarn install\nyarn update" | dmenu -c -i -l 8 -w 310)
-  echo $command 
-  tmux popup -w70 -h20 -KR "$command"
-elif [ "$script" == "yarn workspace" ]; then
-  command=$(echo -en "yarn workspace install\nyarn workspace remove" | dmenu -c -i -l 8 -w 310)
-  echo $command
-  tmux popup -w70 -h20 -KR "$command"
+folders=( $( 'ls' ~/projects/$1/packages -1p | grep / | sed 's/^\(.*\)/\1/' | rev | cut -c 2- | rev ) )
+folder=$(echo -en "${folders[0]}\n${folders[1]}\n${folders[2]}\n${folders[3]}" | dmenu -c -i -l 8 -w 310)
+
+if [ "$folder" "==" "${folders[0]}" ]
+then
+  command1=$(echo -en "nest\nyarn" | dmenu -c -i -l 8 -w 310)
+  if [ "$command1" "==" "nest" ]
+  then
+    command2=$(echo -en "yarn workspace ${folders[0]} nest g module
+yarn workspace ${folders[0]} nest g provider
+yarn workspace ${folders[0]} nest g service
+yarn workspace ${folders[0]} nest g resolver
+yarn workspace ${folders[0]} nest g controller
+yarn workspace ${folders[0]} nest g decorator
+yarn workspace ${folders[0]} nest g pipe
+yarn workspace ${folders[0]} nest g guard
+yarn workspace ${folders[0]} nest g interface
+yarn workspace ${folders[0]} nest g interceptor
+yarn workspace ${folders[0]} nest g middleware
+yarn workspace ${folders[0]} nest g filter" |
+  dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command2"
+  elif [ "$command1" "==" "yarn" ]
+  then
+    command2=$(echo -en "yarn workspace ${folders[0]} nest\nyarn workspace ${folders[0]} add\nyarn workspace ${folders[0]} remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command2"
+  fi
+elif [ "$folder" "==" "${folders[1]}" ]
+then
+  command=$(echo -en "yarn workspace ${folders[1]} add\nyarn workspace ${folders[1]} remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
+elif [ "$folder" "==" "${folders[2]}" ]
+then
+  command=$(echo -en "yarn workspace ${folders[2]} add\nyarn workspace ${folders[2]} remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
+elif [ "$folder" "==" "${folders[3]}" ]
+then
+  command=$(echo -en "yarn workspace ${folders[3]} add\nyarn workspace ${folders[3]} remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
 fi
