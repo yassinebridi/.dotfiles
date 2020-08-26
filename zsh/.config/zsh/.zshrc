@@ -96,7 +96,7 @@ zle -N alacrittyOpenWidget
 zle -N rangerOpenWidget
 zle -N nautilusOpenWidget
 zle -N terminalTaskManagerWidget
-bindkey '^[^M' alacrittyOpenWidget
+bindkey '^[a' alacrittyOpenWidget
 bindkey '^[r' rangerOpenWidget
 bindkey '^[n' nautilusOpenWidget
 bindkey '^[t' terminalTaskManagerWidget
