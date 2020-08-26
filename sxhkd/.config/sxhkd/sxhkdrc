@@ -95,6 +95,9 @@ super + shift + y
 super + shift + i
   ~/bin/taskManager gokoura
 
+super + shift + j
+  ~/bin/taskManagerNormal
+
 super + shift + m
 	SUDO_ASKPASS=~/bin/dmenupass ~/bin/dmenumount
 

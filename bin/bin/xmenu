@@ -12,6 +12,7 @@ Applications
 	Cmus		$TERMINAL -d 80 25 --class cmus,Cmus -e cmus &
 	XDM		xdman &
 	Deluge		deluge-gtk &
+	Notes		~/bin/notes &
 
 Files
 	Home	     $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE ~/
