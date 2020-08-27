@@ -15,13 +15,12 @@ Applications
 	Notes		~/bin/notes &
 
 Files
-	Home	     $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE ~/
-	Downloads	 $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE ~/Downloads
-	YassineHD	 $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE ~/mounting/YassineHD
-	TV Show	   $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE ~/mounting/YassineHD/TV Shows - Movies - Anime
-	MyShit	   $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE ~/mounting/YassineHD/MyShit
-	C	         $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE ~/mounting/c
-	Pictures	 $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE ~/Pictures
+	Home	     $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/
+	Downloads	 $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/Downloads
+	YassineHD	 $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/mounting/YassineHD
+	MyShit	   $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/mounting/YassineHD/MyShit
+	C	         $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/mounting/c
+	Pictures	 $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/Pictures
 
 Power
 	Suspend			playerctl pause && systemctl suspend && slock || systemctl suspend && slock
