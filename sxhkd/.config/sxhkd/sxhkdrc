@@ -65,13 +65,13 @@ XF86AudioPrev
 XF86TouchpadToggle
   toggleTouchpad
 
-# Screen shot
-Print
-  ~/bin/screenshot open
-
 # Screenshot the whole screen
-super + Print
+Print
   ~/bin/screenshot all
+
+# Screen shot
+super + Print
+  ~/bin/screenshot open
 
 # Screen shot and open to browser
 super + shift + Print
