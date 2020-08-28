@@ -13,3 +13,6 @@ mpd/.config/mpd/*
 
 cmus/.config/cmus/*
 !cmus/.config/cmus/autosave
+
+mpv/.config/mpv/scripts/run.sh
+mpv/.config/mpv/scripts/time_pairs.txt
