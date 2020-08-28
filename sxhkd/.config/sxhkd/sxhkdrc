@@ -69,6 +69,10 @@ XF86TouchpadToggle
 Print
   ~/bin/screenshot open
 
+# Screenshot the whole screen
+super + Print
+  ~/bin/screenshot all
+
 # Screen shot and open to browser
 super + shift + Print
   ~/bin/screenshot
