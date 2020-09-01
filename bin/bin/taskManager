@@ -8,30 +8,30 @@ then
   command1=$(echo -en "nest\nyarn" | dmenu -c -i -l 8 -w 310)
   if [ "$command1" "==" "nest" ]
   then
-    command2=$(echo -en "yarn workspace ${folders[0]} nest g module
-yarn workspace ${folders[0]} nest g provider
-yarn workspace ${folders[0]} nest g service
-yarn workspace ${folders[0]} nest g resolver
-yarn workspace ${folders[0]} nest g controller
-yarn workspace ${folders[0]} nest g decorator
-yarn workspace ${folders[0]} nest g pipe
-yarn workspace ${folders[0]} nest g guard
-yarn workspace ${folders[0]} nest g interface
-yarn workspace ${folders[0]} nest g interceptor
-yarn workspace ${folders[0]} nest g middleware
-yarn workspace ${folders[0]} nest g filter" |
+    command2=$(echo -en "yarn --offline workspace @$1/${folders[0]} nest g module
+yarn --offline workspace @$1/${folders[0]} nest g provider
+yarn --offline workspace @$1/${folders[0]} nest g service
+yarn --offline workspace @$1/${folders[0]} nest g resolver
+yarn --offline workspace @$1/${folders[0]} nest g controller
+yarn --offline workspace @$1/${folders[0]} nest g decorator
+yarn --offline workspace @$1/${folders[0]} nest g pipe
+yarn --offline workspace @$1/${folders[0]} nest g guard
+yarn --offline workspace @$1/${folders[0]} nest g interface
+yarn --offline workspace @$1/${folders[0]} nest g interceptor
+yarn --offline workspace @$1/${folders[0]} nest g middleware
+yarn --offline workspace @$1/${folders[0]} nest g filter" |
   dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command2"
   elif [ "$command1" "==" "yarn" ]
   then
-    command2=$(echo -en "yarn workspace ${folders[0]} nest\nyarn workspace ${folders[0]} add\nyarn workspace ${folders[0]} remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command2"
+    command2=$(echo -en "yarn workspace @$1/${folders[0]} nest\nyarn workspace @$1/${folders[0]} add\nyarn workspace @$1/${folders[0]} remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command2"
   fi
 elif [ "$folder" "==" "${folders[1]}" ]
 then
-  command=$(echo -en "yarn workspace ${folders[1]} add\nyarn workspace ${folders[1]} remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
+  command=$(echo -en "yarn workspace @$1/${folders[1]} build\nyarn workspace @$1/${folders[1]} add\nyarn workspace @$1/${folders[1]} remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
 elif [ "$folder" "==" "${folders[2]}" ]
 then
-  command=$(echo -en "yarn workspace ${folders[2]} add\nyarn workspace ${folders[2]} remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
+  command=$(echo -en "yarn workspace @$1/${folders[2]} add\nyarn workspace @$1/${folders[2]} remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
 elif [ "$folder" "==" "${folders[3]}" ]
 then
-  command=$(echo -en "yarn workspace ${folders[3]} add\nyarn workspace ${folders[3]} remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
+  command=$(echo -en "yarn workspace @$1/${folders[3]} add\nyarn workspace @$1/${folders[3]} remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
 fi

@@ -5,14 +5,14 @@ folder=$(echo -en "${folders[0]}\n${folders[1]}\n${folders[2]}\n${folders[3]}" |
 
 if [ "$folder" "==" "api" ]
 then
-  yarn workspace api start:dev
+  yarn workspace @gokoura/api start:dev
 elif [ "$folder" "==" "common" ]
 then
-  yarn workspace common build
+  yarn workspace @gokoura/common build
 elif [ "$folder" "==" "front" ]
 then
-  yarn workspace front dev
+  yarn workspace @gokoura/front dev
 elif [ "$folder" "==" "web" ]
 then
-  yarn workspace web dev
+  yarn workspace @gokoura/web dev
 fi
