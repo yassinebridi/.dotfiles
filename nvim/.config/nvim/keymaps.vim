@@ -1,3 +1,7 @@
+" Copy
+vnoremap Y "ky
+vnoremap P "kp
+
 " Moving around
 nnoremap gh ^
 nnoremap gl $
