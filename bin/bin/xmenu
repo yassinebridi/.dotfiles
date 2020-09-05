@@ -19,8 +19,8 @@ Files
 	Downloads	 $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/Downloads
 	YassineHD	 $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/mounting/YassineHD
 	MyShit	   $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/mounting/YassineHD/MyShit
-	C	         $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/mounting/c
-	Pictures	 $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/Pictures
+	Watch	     $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/mounting/YassineHD/Watch/Shows/Banshee
+	Videos	   $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/mounting/YassineHD/Videos
 
 Power
 	Suspend			playerctl pause && systemctl suspend && slock || systemctl suspend && slock
