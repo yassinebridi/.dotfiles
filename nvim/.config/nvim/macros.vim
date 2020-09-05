@@ -14,6 +14,9 @@ nnoremap cil $v0c
 " TYPESCRIPT "
 """"""""""""""
 
+" Surround with trycatch
+vnoremap <leader>tr >gvctry {}kpk%a catch(error){console.log(error)}
+
 " Change styles attributes style
 nnoremap <leader>cs <esc>ws: $a,jg^
 nnoremap <leader>ca <esc>eer=g$dljg^

@@ -14,5 +14,5 @@ then
   yarn workspace @gokoura/front dev
 elif [ "$folder" "==" "web" ]
 then
-  yarn workspace @gokoura/web dev
+  yarn workspace @gokoura/web start
 fi

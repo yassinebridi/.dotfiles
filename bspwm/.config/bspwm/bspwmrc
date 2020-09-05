@@ -39,7 +39,7 @@ bspc rule -a Code desktop=^3
 bspc rule -a Spotify desktop=^9
 bspc rule -a mpv state=floating
 bspc rule -a Onboard state=floating
-bspc rule -a xdman-Main desktop=^8
+bspc rule -a xdman-Main desktop=^8 state=floating
 bspc rule -a Gimp desktop=^4
 bspc rule -a figma-linux dekstop=^3
 bspc rule -a Org.gnome.Nautilus state=floating

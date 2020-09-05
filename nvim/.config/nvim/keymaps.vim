@@ -15,10 +15,18 @@ vnoremap <M-k> {
 vnoremap <M-j> }
 
 " Remove
+nnoremap yia yi'
+nnoremap yiq yi"
+nnoremap yi` yi`
 nnoremap cia ci'
 nnoremap ciq ci"
+nnoremap ci` ci`
 nnoremap dia di'
 nnoremap diq di"
+nnoremap di` di`
+nnoremap via vi'
+nnoremap viq vi"
+nnoremap vi` vi`
 
 " Select all
 nmap <leader>aa ggVG
@@ -65,10 +73,10 @@ nnoremap <C-J> <C-w>k
 nnoremap <C-L> <C-w>l
 
 " Make adjusing split sizes a bit more friendly
-noremap <silent> H :vertical resize +3<CR>
+noremap <silent> L :vertical resize +3<CR>
 noremap <silent> J :resize +3<CR>
 noremap <silent> K :resize -3<CR>
-noremap <silent> L :vertical resize -3<CR>
+noremap <silent> H :vertical resize -3<CR>
 
 " Split shortcuts
 noremap <Tab> >>
