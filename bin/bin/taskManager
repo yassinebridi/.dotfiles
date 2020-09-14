@@ -3,7 +3,7 @@
 folders=( $( 'ls' ~/projects/$1/packages -1p | grep / | sed 's/^\(.*\)/\1/' | rev | cut -c 2- | rev ) )
 folder=$(echo -en "${folders[0]}\n${folders[1]}\n${folders[2]}\n${folders[3]}" | dmenu -c -i -l 8 -w 310)
 
-if [ "$folder" "==" "${folders[0]}" ]
+if [ "$folder" "==" "api" ]
 then
   command1=$(echo -en "nest\nyarn" | dmenu -c -i -l 8 -w 310)
   if [ "$command1" "==" "nest" ]
@@ -23,15 +23,15 @@ yarn --offline workspace @$1/${folders[0]} nest g filter" |
   dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command2"
   elif [ "$command1" "==" "yarn" ]
   then
-    command2=$(echo -en "yarn workspace @$1/${folders[0]} nest\nyarn workspace @$1/${folders[0]} add\nyarn workspace @$1/${folders[0]} remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command2"
+    command2=$(echo -en "yarn workspace @$1/api nest\nyarn workspace @$1/api add\nyarn workspace @$1/api remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command2"
   fi
-elif [ "$folder" "==" "${folders[1]}" ]
+elif [ "$folder" "==" "common" ]
 then
-  command=$(echo -en "yarn workspace @$1/${folders[1]} build\nyarn workspace @$1/${folders[1]} add\nyarn workspace @$1/${folders[1]} remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
-elif [ "$folder" "==" "${folders[2]}" ]
+  command=$(echo -en "yarn workspace @$1/common build\nyarn workspace @$1/common add\nyarn workspace @$1/common remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
+elif [ "$folder" "==" "front" ]
 then
-  command=$(echo -en "yarn workspace @$1/${folders[2]} add\nyarn workspace @$1/${folders[2]} remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
-elif [ "$folder" "==" "${folders[3]}" ]
+  command=$(echo -en "yarn workspace @$1/front add\nyarn workspace @$1/front remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
+elif [ "$folder" "==" "web" ]
 then
-  command=$(echo -en "yarn workspace @$1/${folders[3]} add\nyarn workspace @$1/${folders[3]} remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
+  command=$(echo -en "yarn workspace @$1/web gen\nyarn workspace @$1/web add\nyarn workspace @$1/web remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
 fi
