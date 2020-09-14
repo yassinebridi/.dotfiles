@@ -13,6 +13,8 @@ nnoremap cil $v0c
 """"""""""""""
 " TYPESCRIPT "
 """"""""""""""
+" Surround with if statement
+nnoremap <leader>if yiwoif(pa){}ko
 
 " Surround with trycatch
 vnoremap <leader>tr >gvctry {}kpk%a catch(error){console.log(error)}
