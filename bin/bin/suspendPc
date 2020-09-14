@@ -1,0 +1,3 @@
+#!/bin/sh
+
+(playerctl pause && systemctl suspend && slock) || (systemctl suspend && slock)

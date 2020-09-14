@@ -23,7 +23,7 @@ Files
 	Videos	   $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/mounting/YassineHD/Videos
 
 Power
-	Suspend			playerctl pause && systemctl suspend && slock || systemctl suspend && slock
+	Suspend			~/bin/suspendPc
 	Lock	  		playerctl pause && slock || slock
 	Exit	  		killall Xorg
 	Shutdown		systemctl poweroff
