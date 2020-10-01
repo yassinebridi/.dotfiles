@@ -8,18 +8,19 @@ then
   command1=$(echo -en "nest\nyarn" | dmenu -c -i -l 8 -w 310)
   if [ "$command1" "==" "nest" ]
   then
-    command2=$(echo -en "yarn --offline workspace @$1/${folders[0]} nest g module
-yarn --offline workspace @$1/${folders[0]} nest g provider
-yarn --offline workspace @$1/${folders[0]} nest g service
-yarn --offline workspace @$1/${folders[0]} nest g resolver
-yarn --offline workspace @$1/${folders[0]} nest g controller
-yarn --offline workspace @$1/${folders[0]} nest g decorator
-yarn --offline workspace @$1/${folders[0]} nest g pipe
-yarn --offline workspace @$1/${folders[0]} nest g guard
-yarn --offline workspace @$1/${folders[0]} nest g interface
-yarn --offline workspace @$1/${folders[0]} nest g interceptor
-yarn --offline workspace @$1/${folders[0]} nest g middleware
-yarn --offline workspace @$1/${folders[0]} nest g filter" |
+    command2=$(echo -en "yarn workspace @$1/${folders[0]} nest g --no-spec resource
+yarn workspace @$1/${folders[0]} nest g --no-spec module
+yarn workspace @$1/${folders[0]} nest g --no-spec provider
+yarn workspace @$1/${folders[0]} nest g --no-spec service
+yarn workspace @$1/${folders[0]} nest g --no-spec resolver
+yarn workspace @$1/${folders[0]} nest g --no-spec controller
+yarn workspace @$1/${folders[0]} nest g --no-spec decorator
+yarn workspace @$1/${folders[0]} nest g --no-spec pipe
+yarn workspace @$1/${folders[0]} nest g --no-spec guard
+yarn workspace @$1/${folders[0]} nest g --no-spec interface
+yarn workspace @$1/${folders[0]} nest g --no-spec interceptor
+yarn workspace @$1/${folders[0]} nest g --no-spec middleware
+yarn workspace @$1/${folders[0]} nest g --no-spec filter" |
   dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command2"
   elif [ "$command1" "==" "yarn" ]
   then
