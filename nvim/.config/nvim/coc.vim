@@ -110,3 +110,9 @@ function! s:select_current_word()
 endfunc
 
 nmap <leader>cc <Plug>(coc-calc-result-append)
+
+" Jump to coc problems
+try
+	nmap <silent> m :call CocAction('diagnosticNext')<cr>
+	nmap <silent> M :call CocAction('diagnosticPrevious')<cr>
+endtry
