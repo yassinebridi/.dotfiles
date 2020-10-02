@@ -51,6 +51,8 @@ alias tn='tmux new -s'
 alias tk='tmux kill-ses -t'
 alias tl='tmux ls'
 
+alias gp='git push'
+
 alias code='code .'
 alias cat='bat'
 alias nb='newsboat'
