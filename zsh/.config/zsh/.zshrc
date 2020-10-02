@@ -3,9 +3,7 @@ plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/scripts/bin"
-export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/programs/android-studio/bin:$PATH"
 export ZSH="/home/yaslix/.config/oh-my-zsh"
 
 source $ZSH/oh-my-zsh.sh
@@ -53,10 +51,6 @@ alias tn='tmux new -s'
 alias tk='tmux kill-ses -t'
 alias tl='tmux ls'
 
-alias gl='git log'
-alias gs='git status'
-alias gp='git push'
-
 alias code='code .'
 alias cat='bat'
 alias nb='newsboat'
@@ -71,14 +65,6 @@ alias ls='exa -l --group-directories-first'
 alias lv='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
 alias lnd='export PATH="$PATH:`yarn global bin`"'
 alias ltp='grep -i installed /var/log/pacman.log'
-
-gac(){
-  git add . && git commit -m $1
-}
-
-gacp(){
-  git add . && git commit -m $1 && git push origin master
-}
 
 xrdb ~/.Xresources
 
