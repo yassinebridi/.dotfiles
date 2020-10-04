@@ -93,6 +93,9 @@ super + shift + g
 super + shift + e
   ~/bin/dmenuemoji
 
+super + shift + k
+  ~/bin/dmenuPortKiller
+
 super + shift + y
   ~/bin/dmenuclip
 
