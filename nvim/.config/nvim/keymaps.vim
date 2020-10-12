@@ -16,17 +16,24 @@ vnoremap <M-j> }
 
 " Remove
 nnoremap yia yi'
-nnoremap yiq yi"
-nnoremap yi` yi`
 nnoremap cia ci'
-nnoremap ciq ci"
-nnoremap ci` ci`
 nnoremap dia di'
-nnoremap diq di"
-nnoremap di` di`
 nnoremap via vi'
+
+nnoremap yiq yi"
+nnoremap ciq ci"
+nnoremap diq di"
 nnoremap viq vi"
+
+nnoremap yi` yi`
+nnoremap ci` ci`
+nnoremap di` di`
 nnoremap vi` vi`
+
+nnoremap yii yi{
+nnoremap cii ci{
+nnoremap dii di{
+nnoremap vii vi{
 
 " Select all
 nmap <leader>aa ggVG
@@ -120,7 +127,7 @@ nnoremap <M-i> <C-x>
 nnoremap <M-o> <C-a>
 
 " map {}
-inoremap <M-r> }
+inoremap <M-i> }
 inoremap <M-e> {
 
 " map .
