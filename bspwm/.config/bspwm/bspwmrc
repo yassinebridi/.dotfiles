@@ -52,6 +52,7 @@ bspc rule -a jetbrains-studio state=floating dekstop=^7
 bspc rule -a zoom dekstop=^3
 bspc rule -a Floater state=floating
 bspc rule -a Yad state=floating
+bspc rule -a WATCHED dekstop=^1
 
 # General configs
 # Mouse Pad
