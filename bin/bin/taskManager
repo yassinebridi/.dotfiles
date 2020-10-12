@@ -1,7 +1,7 @@
 #!/bin/sh
 
 folders=( $( 'ls' ~/projects/$1/packages -1p | grep / | sed 's/^\(.*\)/\1/' | rev | cut -c 2- | rev ) )
-folder=$(echo -en "${folders[0]}\n${folders[1]}\n${folders[2]}\n${folders[3]}" | dmenu -c -i -l 8 -w 310)
+folder=$(echo -en "${folders[0]}\n${folders[1]}\n${folders[2]}\n${folders[3]}\n${folders[4]}" | dmenu -c -i -l 8 -w 310)
 
 if [ "$folder" "==" "api" ]
 then
@@ -31,7 +31,7 @@ then
   command=$(echo -en "yarn workspace @$1/common build\nyarn workspace @$1/common add\nyarn workspace @$1/common remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
 elif [ "$folder" "==" "front" ]
 then
-  command=$(echo -en "yarn workspace @$1/front gen\nyarn workspace @$1/front add\nyarn workspace @$1/front remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
+  command=$(echo -en "yarn workspace @$1/front gen\nyarn workspace @$1/front clean\nyarn workspace @$1/front add\nyarn workspace @$1/front remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
 elif [ "$folder" "==" "web" ]
 then
   command=$(echo -en "yarn workspace @$1/web gen\nyarn workspace @$1/web add\nyarn workspace @$1/web remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"
