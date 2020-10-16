@@ -11,7 +11,8 @@ Applications
 	Spotify		spotify > /dev/null 2>&1 &
 	Cmus		$TERMINAL -d 80 25 --class cmus,Cmus -e cmus &
 	XDM		xdman &
-	Watched		~/Executables/WATCHED-0.18.8.AppImage &
+	Popcorntime		popcorntime &
+	Responsively		~/Executables/ResponsivelyApp-0.14.0.AppImage &
 	Deluge		deluge-gtk &
 	Notes		~/bin/notes &
 
