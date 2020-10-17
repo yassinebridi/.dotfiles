@@ -2,6 +2,12 @@
 vnoremap Y "ky
 vnoremap P "kp
 
+" Folding
+nnoremap fo zo
+nnoremap fc zc
+nnoremap fO zR
+nnoremap fC zM
+
 " Moving around
 nnoremap gh ^
 nnoremap gl $
