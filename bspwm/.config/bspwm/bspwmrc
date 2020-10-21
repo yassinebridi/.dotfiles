@@ -20,7 +20,7 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9
 bspc config border_width         4
 bspc config window_gap          15
 bspc config top_padding         30
-bspc config focus_follows_pointer true
+bspc config focus_follows_pointer false
 
 # Border Colors
 bspc config normal_border_color "#484848"
