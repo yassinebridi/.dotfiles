@@ -53,6 +53,7 @@ bspc rule -a zoom dekstop=^3
 bspc rule -a Floater state=floating
 bspc rule -a Yad state=floating
 bspc rule -a WATCHED dekstop=^1
+bspc rule -a Calculator.Skia.Gtk state=floating rectangle=400x550+450+100
 
 # General configs
 # Mouse Pad

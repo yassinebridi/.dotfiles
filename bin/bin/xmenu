@@ -15,6 +15,7 @@ Applications
 	Responsively		~/Executables/ResponsivelyApp-0.14.0.AppImage &
 	Deluge		deluge-gtk &
 	Notes		~/bin/notes &
+	Calculator		uno-calculator &
 
 Files
 	Home	     $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/
