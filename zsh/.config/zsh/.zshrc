@@ -6,6 +6,10 @@ export PATH="$PATH:$HOME/scripts/bin"
 export PATH="$HOME/.local/bin:$PATH"
 export ZSH="/home/yaslix/.config/oh-my-zsh"
 
+# Deno
+export DENO_INSTALL="/home/yaslix/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 source $ZSH/oh-my-zsh.sh
 
 export TERM=screen-256color
