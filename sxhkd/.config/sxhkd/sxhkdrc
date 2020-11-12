@@ -8,7 +8,7 @@ super + Return
 
 # Run the file manager
 super + shift + f
-  $TERMINAL -d 80 25 --class ranger,Ranger -e ~/bin/openLastRanger
+  $TERMINAL -d 80 25 --class ranger,Ranger -e /bin/zsh -i -c 'ranger --choosedir=/home/yaslix/latestDir $(head -1 ~/latestDir)'
 
 # program launcher
 super + @space
@@ -100,7 +100,7 @@ super + shift + y
   ~/bin/dmenuclip
 
 super + shift + i
-  ~/bin/taskManager gokoura
+	/bin/sh -c $(deno run --allow-all  ~/bin/taskManagerDeno); exec zsh
 
 super + shift + j
   ~/bin/taskManagerNormal

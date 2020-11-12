@@ -63,7 +63,6 @@ alias nb='newsboat'
 alias lg='lazygit'
 alias f='ffmpeg'
 
-alias ranger='~/bin/openLastRanger'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias la='exa -la --group-directories-first'
 alias ls='exa -l --group-directories-first'

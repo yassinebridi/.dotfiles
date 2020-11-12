@@ -1,4 +1,0 @@
-#!/bin/sh
-
-latestDir=$(head -1 ~/latestDir)
-$FILE --choosedir=/home/yaslix/latestDir $latestDir
