@@ -2,15 +2,14 @@
 
 bspc rule -r "*"
 
-killall redshift-gtk &
-killall redshift &
+killall gammy &
 pkill -USR1 -x sxhkd
 sxhkd &
 ~/bin/toStart &
 polybar -r example &
 nm-applet &
 picom &
-redshift-gtk &
+gammy &
 ~/bin/setbg &
 ~/bin/clipmanager &
 

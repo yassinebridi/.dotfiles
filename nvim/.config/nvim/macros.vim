@@ -37,7 +37,7 @@ vnoremap <leader>tg dOdiv<esc><esc>"ayiwi<ea></"apa>bbaPka
 inoremap <C-l> <esc>diw[(opbi<ea>[(%Opbi</ea>
 
 " Console.log macos
-nnoremap <leader>lt yiwoconsole.log("pa: ", pa);gh
+nnoremap <leader>lt yiwoconsole.log({ pa })
 
 " Code generation
 inoremap <M-[> ={}ha
