@@ -1,0 +1,14 @@
+#!/bin/sh
+
+case "$(printf "No\\nYes" | dmenu -i -p "Are you sure you want to pastebin?")" in
+  Yes)
+		clip=$(xclip -o -select clipboard)
+		chosen=$(echo -n "$clip" | nc termbin.com 9999)
+
+		[ "$chosen" != "" ] || exit
+
+		echo "$chosen" | tr -d '\n' | xclip -selection clipboard
+		notify-send "'$chosen' copied to clipboard." &;;
+  "No") :
+esac
+

@@ -135,6 +135,9 @@ super + shift + p
 super + shift + t
   ~/bin/dmenuhistory
 
+super + shift + b
+  ~/bin/dmenuPastBin
+
 super + shift + w
   ~/bin/wp
 
