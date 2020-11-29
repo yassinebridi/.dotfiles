@@ -7,7 +7,7 @@ Chrome		google-chrome-stable
 Onboard		onboard
 
 Applications
-	Nautilus		nautilus
+	PCManFm		pcmanfm &
 	Spotify		spotify > /dev/null 2>&1 &
 	Cmus		$TERMINAL -d 80 25 --class cmus,Cmus -e cmus &
 	XDM		xdman &
