@@ -1,0 +1,61 @@
+#!/bin/bash
+# substr() for MPEG-encoded files
+
+infile="$1"; shift
+start="$1"; shift
+end="$1"; shift
+outfile="$1"; shift
+args=()
+
+# Convert time to seconds
+# https://unix.stackexchange.com/questions/412868/bash-reverse-an-array
+timetosec() {
+  rev="$(<<< "$1" tr ':' '\n' | sed 's/^0\+\([0-9]+\)/$1/' | tac | tr '\n' ' ')"
+  IFS=' ' read -a times <<< "$rev"
+  let secs="${times[0]:-0} + (${times[1]:-0} * 60) + (${times[2]:-0} * 3600)"
+  printf '%i' "$secs"
+}
+
+# Input file requred
+if [ -z "$infile" ]; then
+  echo "Usage: $(basename -- "$0") infile [start [end [outfile [ffmpeg-args]]]]" >&2
+  echo "Example: $(basename -- "$0") input.mp3 -5:00" >&2
+  exit 1
+fi
+
+# Start (negative starts from the end)
+if [ "${start:0:1}" = "-" ]; then args+=('-sseof' "$start")
+elif [ -n "$start" ]; then args+=('-ss' "$start")
+fi
+
+# Input
+args+=('-i' "$infile")
+
+# End (use + or - to specify relative to the starting point)
+if [ "${end:0:1}" = "+" ]; then args+=('-to' "$end")
+elif [ "${end:0:1}" = "-" ]; then args+=('-sseof' "$end")
+elif [ -n "$end" ]; then
+  let dur="$(timetosec "$end") - $(timetosec "$start")"
+  args+=('-to' "$dur")
+fi
+
+# Default output filename
+filename=$(basename -- "$infile")
+extension="${filename##*.}"
+filename="${filename%.*}"
+defaultOutfile="${filename}-${start}-${end}.${extension}"
+if [ -z "$outfile" ]; then
+  outfile="$defaultOutfile"
+elif [ -d "$outfile" ]; then
+  outfile="${outfile}/${defaultOutfile}"
+fi
+
+# Cannot have colon in the filename with ffmpeg
+# https://unix.stackexchange.com/questions/412519/ffmpeg-protocol-not-found-for-normal-file-name
+outfile="$(printf '%s' "$outfile" | sed 's/:/./g')"
+
+# Slice audio
+ffmpeg "${args[@]}" -c copy "$@" "$outfile" 1>&2
+
+# Output the final location
+printf '%s' "$(readlink -f "$outfile")"
