@@ -156,7 +156,8 @@ format-padding = 2
 exec = echo ""
 format-underline = #fcfd95
 line-size = 1
-click-left = ~/bin/mounter &
+click-left = ~/bin/mounter mounter &
+click-right = ~/bin/mounter unmounter &
 
 [module/pssh]
 type = custom/script
