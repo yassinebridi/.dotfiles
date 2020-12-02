@@ -8,7 +8,7 @@ Onboard		onboard
 
 Applications
 	PCManFm		pcmanfm &
-	Spotify		spotify > /dev/null 2>&1 &
+	Spotify		/opt/google/chrome/google-chrome --profile-directory=Default --app-id=pjibgclleladliembfgfagdaldikeohf &
 	Cmus		$TERMINAL -d 80 25 --class cmus,Cmus -e cmus &
 	XDM		xdman &
 	Popcorntime		popcorntime &
