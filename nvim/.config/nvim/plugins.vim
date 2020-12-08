@@ -18,7 +18,6 @@ Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
 Plug 'pseewald/vim-anyfold'
 Plug 'thaerkh/vim-workspace'
 Plug 'jparise/vim-graphql'
-Plug 'KabbAmine/vCoolor.vim'
 Plug 'jiangmiao/auto-pairs'
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {

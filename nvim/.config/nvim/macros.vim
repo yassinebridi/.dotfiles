@@ -31,7 +31,7 @@ inoremap <C-b> <esc>@k
 inoremap <M-tab> <esc>"ayiwi<ea></"apa>bba
 
 " Enclose a bunch of tags with a dib Tag
-vnoremap <leader>tg dOdiv<esc><esc>"ayiwi<ea></"apa>bbaPka
+vnoremap <leader>tg dOBox<esc><esc>"ayiwi<ea></"apa>bbaPka
         
 " JSX Tag complection for the whole components
 inoremap <C-l> <esc>diw[(opbi<ea>[(%Opbi</ea>

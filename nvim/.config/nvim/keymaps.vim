@@ -46,7 +46,7 @@ nmap <leader>aa ggVG
 
 " Tab like movement in autocompletion
 " inoremap <M-d> <Down>
-inoremap <M-w> <C-w>
+imap <M-w> <C-w>
 
 " Tab like movement in autocompletion
 inoremap <M-j> <Down>
