@@ -273,5 +273,14 @@ alt + {minus,equal}
 alt + 0
 	bspc config window_gap 0
 
+# ~button1
+#   ~/bin/desktopActions menu2
+
 ~button3
-  ~/bin/rootMenu
+  ~/bin/desktopActions menu
+
+~button4
+  ~/bin/desktopActions next
+
+~button5
+  ~/bin/desktopActions prev

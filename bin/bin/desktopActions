@@ -1,0 +1,14 @@
+#!/usr/bin/sh
+
+if [[ $1 == "menu" ]]; then
+	xqp 0 $(xdo id -N Bspwm -n root) && ~/bin/xmenu
+elif [[ $1 == "next" ]]; then
+	xqp 0 $(xdo id -N Bspwm -n root) && bspc desktop -f next
+elif [[ $1 == "prev" ]]; then
+	xqp 0 $(xdo id -N Bspwm -n root) && bspc desktop -f prev
+# elif [[ $1 == "menu2" ]]; then
+# 	xqp 0 $(xdo id -N Bspwm -n root) && ~/bin/xmenu
+else
+  :
+fi
+
