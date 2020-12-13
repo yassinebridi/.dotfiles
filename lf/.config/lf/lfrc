@@ -1,0 +1,12 @@
+# Reset
+set drawbox on
+set icons on
+
+# Remap
+map D :delete
+map . set hidden!
+
+cmap <a-h> cmd-left
+cmap <a-l> cmd-right
+cmap <a-w> cmd-delete-home
+cmap <a-e> cmd-delete-end
