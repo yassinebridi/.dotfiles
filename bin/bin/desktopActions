@@ -9,9 +9,9 @@ if [[ $1 == "menu" ]]; then
 	xqp 0 $(xdo id -N Bspwm -n root) && ~/bin/xmenu
 elif [[ $1 == "next" ]]; then
 	if [[ $X -gt 886 && $Y -gt 513 ]]; then
-		amixer set Master 5%+
+		xqp 0 $(xdo id -N Bspwm -n root) && amixer set Master 5%+
 	elif [[ $X -gt 1211 && $Y -lt 234 ]]; then
-		xbacklight -inc 10
+		xqp 0 $(xdo id -N Bspwm -n root) && xbacklight -inc 10
 	elif [[ $X -lt 370 ]]; then
 		xqp 0 $(xdo id -N Bspwm -n root) && bspc desktop -f next
 	else	
@@ -19,9 +19,9 @@ elif [[ $1 == "next" ]]; then
 	fi
 elif [[ $1 == "prev" ]]; then
 	if [[ $X -gt 886 && $Y -gt 513 ]]; then
-		amixer set Master 5%-
+		xqp 0 $(xdo id -N Bspwm -n root) && amixer set Master 5%-
 	elif [[ $X -gt 1211 && $Y -lt 234 ]]; then
-		xbacklight -dec 10
+		xqp 0 $(xdo id -N Bspwm -n root) && xbacklight -dec 10
 	elif [[ $X -lt 370 ]]; then
 		xqp 0 $(xdo id -N Bspwm -n root) && bspc desktop -f prev
 	else	
