@@ -1,13 +1,32 @@
 #!/usr/bin/sh
 
+eval $(xdotool getmouselocation --shell)
+
+echo $X
+echo $Y
+
 if [[ $1 == "menu" ]]; then
 	xqp 0 $(xdo id -N Bspwm -n root) && ~/bin/xmenu
 elif [[ $1 == "next" ]]; then
-	xqp 0 $(xdo id -N Bspwm -n root) && bspc desktop -f next
+	if [[ $X -gt 886 && $Y -gt 513 ]]; then
+		amixer set Master 5%+
+	elif [[ $X -gt 1211 && $Y -lt 234 ]]; then
+		xbacklight -inc 10
+	elif [[ $X -lt 370 ]]; then
+		xqp 0 $(xdo id -N Bspwm -n root) && bspc desktop -f next
+	else	
+		:
+	fi
 elif [[ $1 == "prev" ]]; then
-	xqp 0 $(xdo id -N Bspwm -n root) && bspc desktop -f prev
-# elif [[ $1 == "menu2" ]]; then
-# 	xqp 0 $(xdo id -N Bspwm -n root) && ~/bin/xmenu
+	if [[ $X -gt 886 && $Y -gt 513 ]]; then
+		amixer set Master 5%-
+	elif [[ $X -gt 1211 && $Y -lt 234 ]]; then
+		xbacklight -dec 10
+	elif [[ $X -lt 370 ]]; then
+		xqp 0 $(xdo id -N Bspwm -n root) && bspc desktop -f prev
+	else	
+		:
+	fi
 else
   :
 fi
