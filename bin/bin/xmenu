@@ -1,21 +1,21 @@
 #!/bin/sh
 
 cat <<EOF | xmenu | sh &
-Ranger		$TERMINAL -d 80 25 --class ranger,Ranger -e ~/bin/openLastRanger
+PCManFm		pcmanfm &
 Alacritty		alacritty
 Chrome		google-chrome-stable
 Onboard		onboard
 
 Applications
-	PCManFm		pcmanfm &
-	Spotify		/opt/google/chrome/google-chrome --profile-directory=Default --app-id=pjibgclleladliembfgfagdaldikeohf &
+	Ranger		$TERMINAL -d 80 25 --class ranger,Ranger -e ~/bin/openLastRanger
+	Spotify		/opt/google/chrome/google-chrome --app-id=pjibgclleladliembfgfagdaldikeohf &
 	Cmus		$TERMINAL -d 80 25 --class cmus,Cmus -e cmus &
 	XDM		xdman &
-	Popcorntime		popcorntime &
+	Notes		~/bin/notes &
 	Responsively		~/Executables/ResponsivelyApp-0.14.0.AppImage &
 	Deluge		deluge-gtk &
-	Notes		~/bin/notes &
 	Calculator		uno-calculator &
+	Gammy		gammy &
 
 Files
 	Home	     $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/
