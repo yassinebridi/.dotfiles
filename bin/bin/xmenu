@@ -2,12 +2,12 @@
 
 cat <<EOF | xmenu | sh &
 PCManFm		pcmanfm &
+Spotify		/opt/google/chrome/google-chrome --app-id=pjibgclleladliembfgfagdaldikeohf &
 Alacritty		alacritty
 Chrome		google-chrome-stable
 Onboard		onboard
 
 Applications
-	Spotify		/opt/google/chrome/google-chrome --app-id=pjibgclleladliembfgfagdaldikeohf &
 	Cmus		$TERMINAL -d 80 25 --class cmus,Cmus -e cmus &
 	XDM		xdman &
 	Notes		~/bin/notes &
