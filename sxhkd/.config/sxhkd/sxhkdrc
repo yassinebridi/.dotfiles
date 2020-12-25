@@ -112,7 +112,7 @@ super + shift + u
 	SUDO_ASKPASS=~/bin/dmenupass ~/bin/dmenuunmount
 
 super + shift + n
-	nautilus &
+	pcmanfm &
 
 super + shift + c
   ~/bin/dmenuCalc
