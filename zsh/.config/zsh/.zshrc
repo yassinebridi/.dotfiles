@@ -74,7 +74,8 @@ alias ltp='grep -i installed /var/log/pacman.log'
 
 xrdb ~/.Xresources
 
-setxkbmap -layout us,ar,fr
+# setxkbmap -layout us,ar,fr
+setxkbmap -layout us,ar
 setxkbmap -option 'grp:rctrl_rshift_toggle'
 
 # For the autojump to work.
@@ -90,8 +91,7 @@ export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
 
 alacrittyOpenWidget() /home/yaslix/bin/alacrittyOpen alac
 rangerOpenWidget() /home/yaslix/bin/alacrittyOpen
-nautilusOpenWidget() /home/yaslix/bin/alacrittyOpen naut
-terminalTaskManagerWidget() /home/yaslix/bin/terminalTaskManager gokoura
+nautilusOpenWidget() /home/yaslix/bin/alacrittyOpen pcman
 zle -N alacrittyOpenWidget
 zle -N rangerOpenWidget
 zle -N nautilusOpenWidget

@@ -7,7 +7,7 @@ export LC_ALL=en_US.UTF-8
 
 export TERMINAL=/usr/bin/alacritty
 export BROWSER=/usr/bin/google-chrome-stable
-export FILE=/usr/bin/ranger
+export FILE=/usr/bin/lf
 export EDITOR=nvim
 export READER="zathura"
 export IMAGE="sxiv"

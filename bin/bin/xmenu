@@ -7,7 +7,6 @@ Chrome		google-chrome-stable
 Onboard		onboard
 
 Applications
-	Ranger		$TERMINAL -d 80 25 --class ranger,Ranger -e ~/bin/openLastRanger
 	Spotify		/opt/google/chrome/google-chrome --app-id=pjibgclleladliembfgfagdaldikeohf &
 	Cmus		$TERMINAL -d 80 25 --class cmus,Cmus -e cmus &
 	XDM		xdman &
@@ -18,12 +17,12 @@ Applications
 	Gammy		gammy &
 
 Files
-	Home	     $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/
-	Downloads	 $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/Downloads
-	YassineHD	 $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/mounting/YassineHD
-	MyShit	   $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/mounting/YassineHD/MyShit
-	Watch	     $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/mounting/YassineHD/Watch/Shows/Banshee
-	Videos	   $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE --choosedir=/home/yaslix/latestDir ~/mounting/YassineHD/Videos
+	Home	     $TERMINAL -d 80 25 --class lf,Lf -e $FILE ~/
+	Downloads	 $TERMINAL -d 80 25 --class lf,Lf -e $FILE ~/Downloads
+	YassineHD	 $TERMINAL -d 80 25 --class lf,Lf -e $FILE ~/mounting/YassineHD
+	MyShit	   $TERMINAL -d 80 25 --class lf,Lf -e $FILE ~/mounting/YassineHD/MyShit
+	Watch	     $TERMINAL -d 80 25 --class lf,Lf -e $FILE ~/mounting/YassineHD/Watch/Shows/Banshee
+	Videos	   $TERMINAL -d 80 25 --class lf,Lf -e $FILE ~/mounting/YassineHD/Videos
 
 Power
 	Suspend			~/bin/suspendPc

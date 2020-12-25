@@ -43,6 +43,7 @@ bspc rule -a Gimp desktop=^4
 bspc rule -a figma-linux dekstop=^3
 bspc rule -a Org.gnome.Nautilus state=floating
 bspc rule -a Ranger state=floating
+bspc rule -a Lf state=floating
 bspc rule -a Cmus desktop=^4 state=floating follow=on
 bspc rule -a Note dekstop=^5 state=floating follow=on
 bspc rule -a Sxiv state=floating
@@ -53,6 +54,7 @@ bspc rule -a Floater state=floating
 bspc rule -a Yad state=floating
 bspc rule -a WATCHED dekstop=^1
 bspc rule -a Calculator.Skia.Gtk state=floating rectangle=400x550+450+100
+bspc rule -a Pcmanfm state=floating
 
 # General configs
 # Mouse Pad

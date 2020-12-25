@@ -8,7 +8,7 @@ super + Return
 
 # Run the file manager
 super + shift + f
-  $TERMINAL -d 80 25 --class ranger,Ranger -e /bin/zsh -i -c 'ranger --choosedir=/home/yaslix/latestDir $(head -1 ~/latestDir)'
+  $TERMINAL -d 80 25 --class lf,Lf -e lf
 
 # program launcher
 super + @space

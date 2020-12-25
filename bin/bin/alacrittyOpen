@@ -1,8 +1,8 @@
 #!/bin/sh
 if [ "$1" = "alac" ]; then
   alacritty --working-directory=$PWD
-elif [ "$1" = "naut" ]; then
-  nohup nautilus . > /dev/null 2>&1 &
+elif [ "$1" = "pcman" ]; then
+  pcmanfm . > /dev/null 2>&1 &
 else
-  $TERMINAL -d 80 25 --class ranger,Ranger -e $FILE $PWD > /dev/null 2>&1 &
+  $TERMINAL -d 80 25 --class lf,Lf -e $FILE $PWD > /dev/null 2>&1 &
 fi
