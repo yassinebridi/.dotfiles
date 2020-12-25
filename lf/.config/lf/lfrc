@@ -2,11 +2,43 @@
 set drawbox on
 set icons on
 
-# Remap
-map D :delete
-map . set hidden!
-
+# cmd maps
 cmap <a-h> cmd-left
 cmap <a-l> cmd-right
 cmap <a-w> cmd-delete-home
 cmap <a-e> cmd-delete-end
+
+# Remap
+map D :delete
+map S !zsh
+map . set hidden!
+
+# CD to dirs
+map gr cd /
+map gh cd ~
+map gm cd ~/mounting
+map gd cd ~/Downloads
+map gp cd ~/Pictures
+map gy cd ~/mounting/YassineHD
+
+###############
+## Functions ##
+###############
+
+#Bulk rename files
+cmd bulkrename ${{
+  /bin/sh -c "vimv $(echo -e "$fx" | xargs -i echo "\\'{}\\'" | xargs echo)"
+}}
+map br bulkrename
+
+
+cmd z ${{
+  set +u
+  if [ $# -gt 0 ]; then
+    . "j"
+    dest="$(_z "$@" && pwd)"
+    [ -n "$dest" ] && lf -remote "send $id cd '${dest}'"
+  fi
+}}
+map zl z
+
