@@ -54,7 +54,7 @@ bspc rule -a Floater state=floating
 bspc rule -a Yad state=floating
 bspc rule -a WATCHED dekstop=^1
 bspc rule -a Calculator.Skia.Gtk state=floating rectangle=400x550+450+100
-bspc rule -a Pcmanfm state=floating
+bspc rule -a Pcmanfm state=floating rectangle=858x536+250+123
 
 # General configs
 # Mouse Pad
