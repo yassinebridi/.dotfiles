@@ -88,7 +88,7 @@ super + shift + z
   ~/bin/zoom
 
 super + shift + g
-  ~/bin/colorpicker
+  ~/bin/colorgrabber
 
 super + shift + e
   ~/bin/dmenuemoji
