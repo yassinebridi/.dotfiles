@@ -78,8 +78,8 @@ xrdb ~/.Xresources
 setxkbmap -layout us,ar
 setxkbmap -option 'grp:rctrl_rshift_toggle'
 
-# For the autojump to work.
-source /usr/share/autojump/autojump.zsh
+# # For the autojump to work.
+# source /usr/share/autojump/autojump.zsh
 
 # fzf shortcuts
 source /usr/share/fzf/completion.zsh
@@ -100,3 +100,6 @@ bindkey '^[a' alacrittyOpenWidget
 bindkey '^[r' rangerOpenWidget
 bindkey '^[n' nautilusOpenWidget
 bindkey '^[t' terminalTaskManagerWidget
+
+# zoxide(autojump replacement)
+eval "$(zoxide init zsh)"
