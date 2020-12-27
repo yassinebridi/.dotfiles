@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
 # Grab a pixel from the screen, then copy it to the clipboard
-grabc | xclip -r -selection c
+printf "#%02X%02X%02X" $(stint | sed q | tr -d \\n) | xclip -r -selection c
 
 notify-send "$(xsel -o -b) copied to clipboard." &
