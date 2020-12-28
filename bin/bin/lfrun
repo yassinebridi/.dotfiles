@@ -1,13 +1,24 @@
-#!/usr/bin/env bash
-export FIFO_UEBERZUG="/tmp/lf-ueberzug-${PPID}"
+#!/bin/sh
+set -e
 
-function cleanup {
-	rm "$FIFO_UEBERZUG" 2>/dev/null
-	pkill -KILL -P $$
-}
+if [ -n "$DISPLAY" ]; then
+  export FIFO_UEBERZUG="${TMPDIR:-/tmp}/lf-ueberzug-$$"
 
-mkfifo "$FIFO_UEBERZUG"
-trap cleanup EXIT
-tail --follow "$FIFO_UEBERZUG" | ueberzug layer --silent --parser bash &
+  cleanup() {
+    exec 3>&-
+    rm "$FIFO_UEBERZUG"
+  }
 
-lf $@
+  mkfifo "$FIFO_UEBERZUG"
+  ueberzug layer -s <"$FIFO_UEBERZUG" &
+  exec 3>"$FIFO_UEBERZUG"
+  trap cleanup EXIT
+
+  if ! [ -d "$HOME/.cache/lf" ]; then
+    mkdir -p "$HOME/.cache/lf"
+  fi
+
+  lf "$@" 3>&-
+else
+  exec lf "$@"
+fi
