@@ -1,3 +1,7 @@
+#############
+## General ##
+#############
+
 # Reset
 set drawbox on
 set icons on
@@ -9,6 +13,7 @@ cmap <a-w> cmd-delete-home
 cmap <a-e> cmd-delete-end
 
 # Remap
+map <a-r> reload
 map D :delete
 map S !zsh
 map . set hidden!
@@ -21,6 +26,16 @@ map gd cd ~/Downloads
 map gp cd ~/Pictures
 map gy cd ~/mounting/YassineHD
 
+cmd jump ${{
+    printf "directory: "
+    read -e dr
+    dir=$(zoxide query "$@" $dr)
+    lf -remote "send $id cd \"$dir\""
+}}
+map gb :jump
+# cmd az %lf -remote "send $id cd '$(zoxide query "$@" $1)'"
+# map a push :az<space>
+
 ###############
 ## Functions ##
 ###############
@@ -31,14 +46,10 @@ cmd bulkrename ${{
 }}
 map br bulkrename
 
+#############
+## Scripts ##
+#############
 
-cmd z ${{
-  set +u
-  if [ $# -gt 0 ]; then
-    . "j"
-    dest="$(_z "$@" && pwd)"
-    [ -n "$dest" ] && lf -remote "send $id cd '${dest}'"
-  fi
-}}
-map zl z
-
+# Previewer script
+set previewer ~/.config/lf/scripts/pv
+map i $LESSOPEN='| ~/.config/lf/scripts/pv %s' less -R $f

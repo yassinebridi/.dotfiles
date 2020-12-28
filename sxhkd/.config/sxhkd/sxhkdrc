@@ -8,7 +8,7 @@ super + Return
 
 # Run the file manager
 super + shift + f
-  $TERMINAL -d 80 25 --class lf,Lf -e lf
+  $TERMINAL -d 80 25 --class lf,Lf -e ~/bin/lfrun
 
 # program launcher
 super + @space
