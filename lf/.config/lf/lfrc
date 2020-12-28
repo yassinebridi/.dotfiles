@@ -47,14 +47,14 @@ map gb :jump
 # map a push :az<space>
 
 cmd unarchive ${{
-  aunpack -- $fx
+  aunpack -- "$fx"
 }}
 cmd archive ${{
 	bname=$(basename "$fx")
 	bnameWithoutExt="${bname%.*}"
 	name="${bname}"
 	nameExt=$(basename "${fx%.*}").zip
-  apack $nameExt $name
+  apack "$nameExt" "$name"
 }}
 map tx :unarchive
 map tc :archive
