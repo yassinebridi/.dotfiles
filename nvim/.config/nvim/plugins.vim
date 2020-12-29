@@ -19,7 +19,6 @@ Plug 'pseewald/vim-anyfold'
 Plug 'thaerkh/vim-workspace'
 Plug 'jparise/vim-graphql'
 Plug 'jiangmiao/auto-pairs'
-Plug 'easymotion/vim-easymotion'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {

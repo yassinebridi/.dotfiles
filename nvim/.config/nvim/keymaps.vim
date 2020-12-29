@@ -145,9 +145,3 @@ nnoremap <M-p> .
 
 " Toggle Markdown Preview
 nnoremap <leader>mp :MarkdownPreview<CR>
-
-" Easy motion
-
-" Move to word
-map  fw <Plug>(easymotion-bd-w)
-nmap fw <Plug>(easymotion-overwin-w)

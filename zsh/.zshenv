@@ -31,3 +31,4 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export NVM_DIR="$XDG_DATA_HOME"/nvm
 
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
+source "$HOME/.cargo/env"

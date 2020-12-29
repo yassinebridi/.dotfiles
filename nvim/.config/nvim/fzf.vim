@@ -6,7 +6,7 @@
       \ 'ctrl-v': 'vsplit' }
 
 map <leader>f :Files<CR>
-map <leader>bu :Buffers<CR>
+map <leader>g :Buffers<CR>
 map <leader>cm :Commands<CR>
 nnoremap <leader>rg :Rg<CR>
 nnoremap <leader>mr :Marks<CR>

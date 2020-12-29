@@ -11,3 +11,4 @@ source $HOME/.config/nvim/workspace.vim
 source $HOME/.config/nvim/compile.vim
 source $HOME/.config/nvim/spelling.vim
 source $HOME/.config/nvim/theme.vim
+source $HOME/.config/nvim/firenvim.vim
