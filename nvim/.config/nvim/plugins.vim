@@ -20,6 +20,7 @@ Plug 'thaerkh/vim-workspace'
 Plug 'jparise/vim-graphql'
 Plug 'jiangmiao/auto-pairs'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+Plug 'rust-lang/rust.vim'
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',

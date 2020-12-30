@@ -4,6 +4,7 @@ plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions colored-man
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/scripts/bin"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 # export PATH=~/.config/npm-global/bin:$PATH
 export ZSH="/home/yaslix/.config/oh-my-zsh"
 
