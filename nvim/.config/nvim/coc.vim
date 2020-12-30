@@ -77,9 +77,9 @@ command! -nargs=0 Format :call CocAction('format')
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-" Mappings using CoCList:
-" Show all diagnostics.
-nnoremap <silent> <space>ad  :<C-u>CocList diagnostics<cr>
+" " Mappings using CoCList:
+" " Show all diagnostics.
+" nnoremap <silent> <space>ad  :<C-u>CocList diagnostics<cr>
 
 " Fix Error color
 hi! CocErrorSign guifg=#ff7070
@@ -97,22 +97,22 @@ nmap <space>rc :CocRestart<CR>
 imap <tab> <Plug>(coc-snippets-expand)
 let g:coc_snippet_next = '<TAB>'
 
-
-nmap <silent> <leader>cc <Plug>(coc-cursors-position)
-nmap <silent> <leader>cd <Plug>(coc-cursors-word)
-nmap <expr> <silent> <C-d> <SID>select_current_word()
-nmap <leader>x  <Plug>(coc-cursors-operator)
-function! s:select_current_word()
-  if !get(g:, 'coc_cursors_activated', 0)
-    return "\<Plug>(coc-cursors-word)"
-  endif
-  return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
-endfunc
-
-nmap <leader>cc <Plug>(coc-calc-result-append)
-
 " Jump to coc problems
 try
 	nmap <silent> m :call CocAction('diagnosticNext')<cr>
 	nmap <silent> M :call CocAction('diagnosticPrevious')<cr>
 endtry
+
+" nmap <silent> <leader>cc <Plug>(coc-cursors-position)
+" nmap <silent> <leader>cd <Plug>(coc-cursors-word)
+" nmap <expr> <silent> <C-d> <SID>select_current_word()
+" nmap <leader>x  <Plug>(coc-cursors-operator)
+" function! s:select_current_word()
+"   if !get(g:, 'coc_cursors_activated', 0)
+"     return "\<Plug>(coc-cursors-word)"
+"   endif
+"   return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
+" endfunc
+
+" nmap <leader>cc <Plug>(coc-calc-result-append)
+

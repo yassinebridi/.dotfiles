@@ -4,7 +4,6 @@ Plug 'yassinebridi/vim-purpura'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'on': []}
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
-Plug 'lilydjwg/colorizer'
 Plug 'tpope/vim-commentary'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -12,15 +11,15 @@ Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'voldikss/vim-floaterm'
-Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
 Plug 'pseewald/vim-anyfold'
 Plug 'thaerkh/vim-workspace'
 Plug 'jparise/vim-graphql'
 Plug 'jiangmiao/auto-pairs'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'rust-lang/rust.vim'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',

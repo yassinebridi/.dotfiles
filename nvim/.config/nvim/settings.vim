@@ -17,6 +17,7 @@ set encoding=utf-8
 set noswapfile
 set spelllang+=fr
 set binary
+set mouse=a
 set spellfile=$HOME/.config/nvim/spell/fr.utf-8.add
 
 " Enable autocompletion:
