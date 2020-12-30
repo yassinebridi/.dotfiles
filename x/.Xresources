@@ -2,7 +2,7 @@
 *.alpha: 0.95
 
 !!! Set a default font and font size as below:
-*.font:monospace:size=11
+*.font:"JetBrains Mono":size=11
 
 ! Dracula Xresources palette
 *.foreground:   #D4D4D4 
@@ -26,3 +26,6 @@
 *.sxivBg:       #170026
 *.sxivFg:       #fcffbf
 *.cursorColor:  #FF00FF
+
+! Rofi font
+rofi.font:JetBrains Mono 11
