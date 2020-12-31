@@ -36,9 +36,11 @@ cmd bulkrename ${{
 }}
 map br bulkrename
 
+#Jump to directory using zoxide
 cmd az %lf -remote "send $id cd '$(zoxide query $1)'"
 map a push :az<space>
 
+# Archive(to zip)/unarchive using atool
 cmd unarchive ${{
   aunpack -- "$fx"
 }}
@@ -51,6 +53,13 @@ cmd archive ${{
 }}
 map tx :unarchive
 map tc :archive
+
+# Locate files using fzf
+cmd locate ${{
+  file=$(locate home | fzf -e -i)
+	lf -remote "send $id select '$file'"
+}}
+map <c-l> :locate
 
 #############
 ## Scripts ##
