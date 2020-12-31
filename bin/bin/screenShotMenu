@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cat <<EOF | xmenu | sh &
+All		~/bin/screenshot all &
+Select		~/bin/screenshot select &
+Open		~/bin/screenshot open &
+EOF

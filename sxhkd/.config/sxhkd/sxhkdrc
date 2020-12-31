@@ -75,7 +75,7 @@ super + Print
 
 # Screen shot and open to browser
 super + shift + Print
-  ~/bin/screenshot
+  ~/bin/screenshot select
 
 super + shift + s
   ~/bin/selector
