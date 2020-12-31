@@ -8,6 +8,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # export PATH=~/.config/npm-global/bin:$PATH
 export ZSH="/home/yaslix/.config/oh-my-zsh"
 
+export FZF_DEFAULT_COMMAND='rg --files'
+
 # Deno
 export DENO_INSTALL="/home/yaslix/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
