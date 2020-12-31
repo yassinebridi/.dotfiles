@@ -4,7 +4,12 @@
 
 # Reset
 set drawbox on
+set ignorecase true
+set preview true
 set icons on
+
+# Unmap
+map m
 
 # cmd maps
 cmap <a-h> cmd-left
@@ -29,6 +34,10 @@ map gy cd ~/mounting/YassineHD
 ###############
 ## Functions ##
 ###############
+
+# Make dir
+cmd mkdir %lf -remote "send $id mkdir $1"
+map mkd push :mkdir<space>
 
 #Bulk rename files
 cmd bulkrename ${{
@@ -60,6 +69,10 @@ cmd locate ${{
 	lf -remote "send $id select '$file'"
 }}
 map <c-l> :locate
+
+# Dragon: drag & drop
+cmd dragon %dragon-drag-and-drop -a $fx
+map n dragon
 
 #############
 ## Scripts ##
