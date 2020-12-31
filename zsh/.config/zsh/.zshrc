@@ -106,3 +106,5 @@ bindkey '^[t' terminalTaskManagerWidget
 
 # zoxide(autojump replacement)
 eval "$(zoxide init zsh)"
+
+source /home/yaslix/.config/broot/launcher/bash/br

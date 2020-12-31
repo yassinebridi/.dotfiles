@@ -1,5 +1,22 @@
 background_opacity: 0.9
 
+font:
+  normal:
+    family: Monaco
+    style: Regular
+
+  bold:
+    family: Monaco
+    style: Bold
+
+  italic:
+    family: Monaco
+    style: Italic
+
+  bold_italic:
+    family: Monaco
+    style: Bold Italic
+
 colors:
   # Default colors
   primary:
@@ -8,28 +25,32 @@ colors:
 
   # Cursor colors
   cursor:
-    text:   '#D4D4D4'
+    text: '#D4D4D4'
     cursor: '#FF00FF'
 
   # Normal colors
   normal:
-    black:   '#1c1c1c'
-    red:     '#bc5653'
-    green:   '#909d63'
-    yellow:  '#ebc17a'
-    blue:    '#7eaac7'
+    black: '#1c1c1c'
+    red: '#bc5653'
+    green: '#909d63'
+    yellow: '#ebc17a'
+    blue: '#7eaac7'
     magenta: '#aa6292'
-    cyan:    '#86d3ce'
-    white:   '#cacaca'
-    
+    cyan: '#86d3ce'
+    white: '#cacaca'
+
 key_bindings:
-- { key: V, mods: Alt, action: Paste }
-- { key: C, mods: Alt, action: Copy }
-- { key: J, mods: Alt|Shift, action: DecreaseFontSize }
-- { key: H, mods: Alt|Shift, action: ResetFontSize }
-- { key: K, mods: Alt|Shift, action: IncreaseFontSize }
-- { key: Up, mods: Alt, action: ScrollLineUp }
-- { key: Down, mods: Alt, action: ScrollLineDown }
-- { key: U, mods: Alt, action: ScrollPageUp }
-- { key: D, mods: Alt, action: ScrollPageDown }
-- { key: Return, mods: Super|Shift, command: { program: "/home/yaslix/bin/alacrittyOpen"} }
+  - { key: V, mods: Alt, action: Paste }
+  - { key: C, mods: Alt, action: Copy }
+  - { key: J, mods: Alt|Shift, action: DecreaseFontSize }
+  - { key: H, mods: Alt|Shift, action: ResetFontSize }
+  - { key: K, mods: Alt|Shift, action: IncreaseFontSize }
+  - { key: Up, mods: Alt, action: ScrollLineUp }
+  - { key: Down, mods: Alt, action: ScrollLineDown }
+  - { key: U, mods: Alt, action: ScrollPageUp }
+  - { key: D, mods: Alt, action: ScrollPageDown }
+  - {
+      key: Return,
+      mods: Super|Shift,
+      command: { program: '/home/yaslix/bin/alacrittyOpen' },
+    }
