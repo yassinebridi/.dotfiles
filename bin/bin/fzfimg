@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # This is just an example how ueberzug can be used with fzf.
 # Copyright (C) 2019  Nico Baeurer
 
@@ -21,10 +21,8 @@ declare -r -x DEFAULT_PREVIEW_POSITION="right"
 declare -r -x UEBERZUG_FIFO="$(mktemp --dry-run --suffix "fzf-$$-ueberzug")"
 declare -r -x PREVIEW_ID="preview"
 
-
 function is_option_key [[ "${@}" =~ ^(\-.*|\+.*) ]]
 function is_key_value [[ "${@}" == *=* ]]
-
 
 function map_options {
     local -n options="${1}"
@@ -45,14 +43,12 @@ function map_options {
     done
 }
 
-
 function parse_options {
     declare -g -a script_options=("${@}")
     declare -g -A mapped_options
     map_options script_options mapped_options
     declare -g -r -x PREVIEW_POSITION="${mapped_options[--preview-window]%%:[^:]*}"
 }
-
 
 function start_ueberzug {
     mkfifo "${UEBERZUG_FIFO}"
@@ -63,7 +59,6 @@ function start_ueberzug {
         exec
 }
 
-
 function finalise {
     3>&- \
         exec
@@ -72,7 +67,6 @@ function finalise {
     &>/dev/null \
         kill $(jobs -p)
 }
-
 
 function calculate_position {
     # TODO costs: creating processes > reading files
@@ -115,7 +109,7 @@ function draw_preview {
 						# add [synchronously_draw]=True if you want to see each change
 				;;
 			video/*)
-				cache="asdfasd.jpg"
+				cache="$home/.cache/fzf/fzf-$(date +"%m-%d-%I-%p%M%S").jpg"
 				ffmpegthumbnailer -i "${@}" -o "$cache" -s 0
 
 				>"${UEBERZUG_FIFO}" declare -A -p cmd=( \
