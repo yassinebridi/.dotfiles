@@ -8,8 +8,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # export PATH=~/.config/npm-global/bin:$PATH
 export ZSH="/home/yaslix/.config/oh-my-zsh"
 
-export FZF_DEFAULT_COMMAND='rg --files'
-
 # Deno
 export DENO_INSTALL="/home/yaslix/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
@@ -83,30 +81,15 @@ xrdb ~/.Xresources
 setxkbmap -layout us,ar
 setxkbmap -option 'grp:rctrl_rshift_toggle'
 
-# # For the autojump to work.
-# source /usr/share/autojump/autojump.zsh
-
-# fzf shortcuts
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
-alias fsearch='rg --hidden . -n | fzf -e --preview="source ~/bin/string2arg; string2arg {}"'
-alias org='export vfile=$(fsearch);vim +$(cut -d":" -f2 <<< $vfile) $(cut -d":" -f1 <<< $vfile)'
-alias psearch='fzf -e --preview "bat --style=numbers --color=always {} | head -500"'
-export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
-
 alacrittyOpenWidget() /home/yaslix/bin/alacrittyOpen alac
-rangerOpenWidget() /home/yaslix/bin/alacrittyOpen
-nautilusOpenWidget() /home/yaslix/bin/alacrittyOpen pcman
+lfOpenWidget() /home/yaslix/bin/alacrittyOpen lf
+pcmanOpenWidget() /home/yaslix/bin/alacrittyOpen pcman
 zle -N alacrittyOpenWidget
-zle -N rangerOpenWidget
-zle -N nautilusOpenWidget
-zle -N terminalTaskManagerWidget
-bindkey '^[a' alacrittyOpenWidget
-bindkey '^[r' rangerOpenWidget
-bindkey '^[n' nautilusOpenWidget
-bindkey '^[t' terminalTaskManagerWidget
+zle -N lfOpenWidget
+zle -N pcmanOpenWidget
+bindkey '^[t' alacrittyOpenWidget
+bindkey '^[r' lfOpenWidget
+bindkey '^[p' pcmanOpenWidget
 
 # zoxide(autojump replacement)
 eval "$(zoxide init zsh)"
-
-source /home/yaslix/.config/broot/launcher/bash/br
