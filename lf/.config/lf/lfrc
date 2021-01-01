@@ -65,7 +65,7 @@ map tc :archive
 
 # Locate files using fzf
 cmd locate ${{
-  file=$(locate home | fzf -e -i)
+  file=$(locate home | ~/bin/fzfimg)
 	lf -remote "send $id select '$file'"
 }}
 map <c-l> :locate
