@@ -3,6 +3,6 @@ if [ "$1" = "alac" ]; then
   alacritty --working-directory=$PWD
 elif [ "$1" = "pcman" ]; then
   pcmanfm . > /dev/null 2>&1 &
-else
+elif [ "$1" = "lf" ]; then
   $TERMINAL -d 80 25 --class lf,Lf -e $FILE $PWD > /dev/null 2>&1 &
 fi
