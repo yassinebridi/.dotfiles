@@ -16,10 +16,10 @@ if [ $1 = "open" ]; then
       # Add an upload options, to some popular image hosting provider like imgur, or a custom server?
     esac
 elif [ $1 = "all" ]; then
-  maim | convert - -scene 1 ~/Pictures/scr-$(date +"%m-%d-%I-%p%M%S").png
+  maim | convert - -scene 1 ~/Pictures/scr-$(date +"%m-%d-%I-%p%M%S").jpg
 elif [ $1 = "select" ]; then
   maim -s -q -c 0.3,0.4,0.6,0.4 -l |
-  convert - -scene 1 ~/Pictures/scr-$(date +"%m-%d-%I-%p%M%S").png
+  convert - -scene 1 ~/Pictures/scr-$(date +"%m-%d-%I-%p%M%S").jpg
 else
 	:
 fi
