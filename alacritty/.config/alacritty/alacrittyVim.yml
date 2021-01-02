@@ -2,6 +2,17 @@ background_opacity: 0.9
 
 font:
   size: 17.0
+  normal:
+    family: Monaco
+    style: Regular
+
+  bold:
+    family: Monaco
+    style: Bold
+
+  italic:
+    family: Monaco
+    style: Italic
 
 colors:
   # Default colors
