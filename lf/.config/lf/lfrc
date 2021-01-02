@@ -10,6 +10,7 @@ set icons on
 
 # Unmap
 map m
+map i
 
 # cmd maps
 cmap <a-h> cmd-left
@@ -20,8 +21,12 @@ cmap <a-e> cmd-delete-end
 # Remap
 map <a-r> reload
 map D :delete
-map S !zsh
+map <enter> !zsh
 map . set hidden!
+map <c-space> :invert
+
+map R rename
+map r push R<a-b><a-b><a-f>
 
 # CD to dirs
 map gr cd /
@@ -36,7 +41,7 @@ map gy cd ~/mounting/YassineHD
 ###############
 
 # Make dir
-cmd mkdir %lf -remote "send $id mkdir $1"
+cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
 map mkd push :mkdir<space>
 
 #Bulk rename files
