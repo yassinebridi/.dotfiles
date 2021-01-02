@@ -31,7 +31,10 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export NVM_DIR="$XDG_DATA_HOME"/nvm
 
 export FZF_DEFAULT_COMMAND='rg --files'
-export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
+export FZF_DEFAULT_OPTS='
+	--bind alt-j:down,alt-k:up
+	--color=fg:8,hl:201,bg+:54 
+'
 
 source "$HOME/.cargo/env"
 
