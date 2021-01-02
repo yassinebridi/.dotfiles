@@ -11,7 +11,6 @@ if exists("g:started_by_firenvim")
 	" source $HOME/.config/nvim/floaterm.vim
 	" source $HOME/.config/nvim/fold.vim
 	" source $HOME/.config/nvim/workspace.vim
-	" source $HOME/.config/nvim/compile.vim
 	" source $HOME/.config/nvim/spelling.vim
 else
 	source $HOME/.config/nvim/settings.vim
@@ -24,7 +23,6 @@ else
 	source $HOME/.config/nvim/floaterm.vim
 	source $HOME/.config/nvim/fold.vim
 	source $HOME/.config/nvim/workspace.vim
-	source $HOME/.config/nvim/compile.vim
 	source $HOME/.config/nvim/spelling.vim
 	source $HOME/.config/nvim/theme.vim
 	" source $HOME/.config/nvim/firenvim.vim
