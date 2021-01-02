@@ -1,19 +1,4 @@
 #!/bin/sh
-# This is just an example how ueberzug can be used with fzf.
-# Copyright (C) 2019  Nico Baeurer
-
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 readonly BASH_BINARY="$(which bash)"
 readonly REDRAW_COMMAND="toggle-preview+toggle-preview"
 readonly REDRAW_KEY="µ"
@@ -69,11 +54,6 @@ function finalise {
 }
 
 function calculate_position {
-    # TODO costs: creating processes > reading files
-    #      so.. maybe we should store the terminal size in a temporary file
-    #      on receiving SIGWINCH
-    #      (in this case we will also need to use perl or something else
-    #      as bash won't execute traps if a command is running)
     < <(</dev/tty stty size) \
         read TERMINAL_LINES TERMINAL_COLUMNS
 
@@ -93,42 +73,82 @@ function calculate_position {
     esac
 }
 
-
 function draw_preview {
-    calculate_position
+		hash_file() {
+			printf '%s/.cache/fzf/%s' "$HOME" \
+				"$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- \
+				"$(readlink -f "${@}")" | sha256sum | awk '{print $1}')"
+		}
+		draw() {
+			>"${UEBERZUG_FIFO}" declare -A -p cmd=( \
+					[action]=add [identifier]="${PREVIEW_ID}" \
+					[x]="${X}" [y]="${Y}" \
+					[width]="${COLUMNS}" [height]="${LINES}" \
+					[scaler]=contain [scaling_position_x]=0.5 [scaling_position_y]=0.5 \
+					[path]="$1")
+		}
+		clear_preview() {
+			>"${UEBERZUG_FIFO}" declare -A -p cmd=([action]=remove [identifier]="${PREVIEW_ID}")
+		}
+		cache() {
+			if [ -f "$1" ]; then
+				draw "$1"
+			fi
+		}
+
+		calculate_position
 
 		case "$(file -Lb --mime-type -- "${@}")" in
-			text/*) bat --color=always ${@} ;;
-			image/*)
-				>"${UEBERZUG_FIFO}" declare -A -p cmd=( \
-						[action]=add [identifier]="${PREVIEW_ID}" \
-						[x]="${X}" [y]="${Y}" \
-						[width]="${COLUMNS}" [height]="${LINES}" \
-						[scaler]=contain [scaling_position_x]=0.5 [scaling_position_y]=0.5 \
-						[path]="${@}")
-						# add [synchronously_draw]=True if you want to see each change
+			text/*) 
+				clear_preview
+				bat --color=always ${@} 
 				;;
+			image/*) draw "${@}";;
 			video/*)
-				cache="$home/.cache/fzf/fzf-$(date +"%m-%d-%I-%p%M%S").jpg"
+				cache="$(hash_file "${@}").jpg"
+				cache "$cache"
 				ffmpegthumbnailer -i "${@}" -o "$cache" -s 0
+				draw "$cache"
+				;;
+		esac
 
-				>"${UEBERZUG_FIFO}" declare -A -p cmd=( \
-						[action]=add [identifier]="${PREVIEW_ID}" \
-						[x]="${X}" [y]="${Y}" \
-						[width]="${COLUMNS}" [height]="${LINES}" \
-						[scaler]=contain [scaling_position_x]=0.5 [scaling_position_y]=0.5 \
-						[path]="$cache")
-						# add [synchronously_draw]=True if you want to see each change
+		case "${@}" in
+			*.7z|*.a|*.ace|*.alz|*.arc|*.arj|*.bz|*.bz2|*.cab|*.cpio|*.deb|*.gz|*.jar|\
+			*.lha|*.lrz|*.lz|*.lzh|*.lzma|*.lzo|*.rar|*.rpm|*.rz|*.t7z|*.tar|*.tbz|\
+			*.tbz2|*.tgz|*.tlz|*.txz|*.tZ|*.tzo|*.war|*.xz|*.Z|*.zip)
+				als -- "${@}"
+				;;
+			*.[1-8])
+				man -- "${@}" | col -b
+				exit 0
+				;;
+			*.pdf)
+				cache="$(hash_file "${@}")"
+				cache "$cache.jpg"
+
+				pdftoppm -f 1 -l 1 \
+					-scale-to-x "$default_x" \
+					-scale-to-y -1 \
+					-singlefile \
+					-jpeg \
+					-- "${@}" "$cache"
+
+				draw "$cache.jpg"
+				;;
+			*.docx|*.odt|*.epub) pandoc -s -t plain -- "${@}" ;;
+			*.svg)
+				cache="$(hash_file "${@}").jpg"
+				cache "$cache"
+
+				convert -- "${@}" "$cache"
+
+				draw "$cache"
 				;;
 		esac
 
 }
 
-
 function print_on_winch {
-    # print "$@" to stdin on receiving SIGWINCH
-    # use exec as we will only kill direct childs on exiting,
-    # also the additional bash process isn't needed
     </dev/tty \
         exec perl -e '
             require "sys/ioctl.ph";
@@ -141,18 +161,16 @@ function print_on_winch {
             "${@}" &
 }
 
-
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     trap finalise EXIT
     parse_options "${@}"
-    # print the redraw key twice as there's a run condition we can't circumvent
-    # (we can't know the time fzf finished redrawing it's layout)
+
     print_on_winch "${REDRAW_KEY}${REDRAW_KEY}"
     start_ueberzug
 
     export -f draw_preview calculate_position
     SHELL="${BASH_BINARY}" \
-        fzf -e -i --preview "draw_preview {}" \
+        fzf -i --preview "draw_preview {}" \
             --preview-window "${DEFAULT_PREVIEW_POSITION}" \
             --bind "${REDRAW_KEY}:${REDRAW_COMMAND}" \
             "${@}"

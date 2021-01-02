@@ -62,26 +62,14 @@ case "$1" in
       exit 0
     fi
     ;;
-  *.djvu|*.djv)
-    if [ -n "$FIFO_UEBERZUG" ]; then
-      cache="$(hash "$1").tiff"
-      cache "$cache"
-      ddjvu -format=tiff -quality=90 -page=1 -size="${default_x}x${default_y}" \
-        - "$cache" <"$1"
-      draw "$cache"
-    else
-      djvutxt - <"$1"
-      exit 0
-    fi
-    ;;
   *.docx|*.odt|*.epub)
     pandoc -s -t plain -- "$1"
     exit 0
     ;;
-  # *.htm|*.html|*.xhtml)
-  #   lynx -dump -- "$1"
-  #   exit 0
-  #   ;;
+  *.htm|*.html|*.xhtml)
+    lynx -dump -- "$1"
+    exit 0
+    ;;
   *.svg)
     if [ -n "$FIFO_UEBERZUG" ]; then
       cache="$(hash "$1").jpg"
