@@ -14,8 +14,8 @@ nnoremap <leader>mr :Marks<CR>
 " Border color
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.0,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 
-let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --bind alt-j:down,alt-k:up'
-let $FZF_DEFAULT_COMMAND="rg -g !.git -g !node_modules -g !.next --files --hidden"
+let $FZF_DEFAULT_COMMAND='rg -g !.git -g !node_modules -g !.next --files --hidden'
+let $FZF_DEFAULT_OPTS='--layout=reverse --info=inline --bind alt-j:down,alt-k:up --color=fg:8,hl:201,bg+:54'
 
 "Get previews
 command! -bang -nargs=? -complete=dir Files
