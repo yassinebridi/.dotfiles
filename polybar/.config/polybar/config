@@ -41,7 +41,7 @@ font-3 = FontAwesome:size=10
 ; modules-right = sshare pshare precord memory cpu xtemperature xbacklight pulseaudio xkeyboard eth date 
 
 modules-left = bspwm cspotify ccmus cbrowser cmpv
-modules-right = pkillen pscreenshot pcopypaste pmove scrollWindows pmount sssh pssh sshare pshare precord memory cpu xbacklight pulseaudio xkeyboard popup-calendar 
+modules-right = pkillen pscreenshot pmove pmount sshare pshare precord memory cpu xbacklight pulseaudio xkeyboard popup-calendar 
 
 tray-position = right
 tray-padding = 2
@@ -129,25 +129,25 @@ click-left = ~/bin/mpvControls toggle
 scroll-up = ~/bin/mpvControls speedUp
 scroll-down = ~/bin/mpvControls speedDown
 
-[module/pcopypaste]
-type = custom/script
-format = "%{T3}<label>"
-format-padding = 2
-exec = echo ""
-format-underline = #fcfd95
-line-size = 1
-click-left = copypaste copy &
-click-right = copypaste paste &
+; [module/pcopypaste]
+; type = custom/script
+; format = "%{T3}<label>"
+; format-padding = 2
+; exec = echo ""
+; format-underline = #fcfd95
+; line-size = 1
+; click-left = copypaste copy &
+; click-right = copypaste paste &
 
-[module/scrollWindows]
-type = custom/script
-format = "%{T3}<label>"
-format-padding = 2
-exec = echo ""
-format-underline = #fcfd95
-line-size = 1
-click-left = bspc node -f next.local &
-click-right= bspc node -f prev.local &
+; [module/scrollWindows]
+; type = custom/script
+; format = "%{T3}<label>"
+; format-padding = 2
+; exec = echo ""
+; format-underline = #fcfd95
+; line-size = 1
+; click-left = bspc node -f next.local &
+; click-right= bspc node -f prev.local &
 
 [module/pscreenshot]
 type = custom/script
@@ -168,25 +168,25 @@ line-size = 1
 click-left = ~/bin/mounter mounter &
 click-right = ~/bin/mounter unmounter &
 
-[module/pssh]
-type = custom/script
-format = "%{T3}<label>"
-format-padding = 2
-exec = "! pgrep sshfs >/dev/null && echo ""; exit 0"
-format-underline = #fcfd95
-line-size = 1
-click-left = ~/bin/sshRuner &
+; [module/pssh]
+; type = custom/script
+; format = "%{T3}<label>"
+; format-padding = 2
+; exec = "! pgrep sshfs >/dev/null && echo ""; exit 0"
+; format-underline = #fcfd95
+; line-size = 1
+; click-left = ~/bin/sshRuner &
 
-[module/sssh]
-type = custom/script
-interval = 5
-format = "%{T3}<label>"
-format-padding = 2
-exec = echo ""
-format-underline = #fc1703
-line-size = 1
-exec-if = pgrep -x sshfs
-click-left = sudo pkill sshfs
+; [module/sssh]
+; type = custom/script
+; interval = 5
+; format = "%{T3}<label>"
+; format-padding = 2
+; exec = echo ""
+; format-underline = #fc1703
+; line-size = 1
+; exec-if = pgrep -x sshfs
+; click-left = sudo pkill sshfs
 
 [module/pmove]
 type = custom/script
