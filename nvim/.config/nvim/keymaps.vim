@@ -145,3 +145,6 @@ nnoremap <M-p> .
 
 " Toggle Markdown Preview
 nnoremap <leader>mp :MarkdownPreview<CR>
+
+" Open current file in lf
+nnoremap <leader>lf :! ~/bin/openLf %<CR>

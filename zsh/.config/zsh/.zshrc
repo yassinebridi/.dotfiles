@@ -39,6 +39,7 @@ alias server='python -m SimpleHTTPServer 8080'
 alias szsh='source ~/.config/zsh/.zshrc'
 
 alias vim='nvim'
+alias v='nvim'
 alias ezsh='nvim ~/.config/zsh/.zshrc'
 alias evim='nvim ~/.config/nvim/init.vim'
 alias svim='sudo -E nvim'
