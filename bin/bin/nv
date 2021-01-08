@@ -1,0 +1,4 @@
+#!/usr/bin/sh
+
+# Run nvim nightly
+NVIM_RPLUGIN_MANIFEST=$HOME/.local/share/nvim-nightly/rplugin.vim VIMRUNTIME=$HOME/cloned/neovim/runtime $HOME/cloned/neovim/build/bin/nvim "$@" -u $HOME/.config/nvim-nightly/init.vim

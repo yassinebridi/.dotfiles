@@ -1,3 +1,8 @@
+set runtimepath+=~/.config/nvim/after
+set runtimepath^=~/.config/nvim
+set runtimepath+=~/.local/share/nvim/site/after
+set runtimepath^=~/.local/share/nvim/site
+
 if exists("g:started_by_firenvim")
 	source $HOME/.config/nvim/settings.vim
 	source $HOME/.config/nvim/keymaps.vim
