@@ -77,7 +77,7 @@
 # Represents the colour of the border of unselected widgets.
 #border_color="Gray"
 # Represents the colour of the border of selected widgets.
-highlighted_border_color="#FF00FF"
+highlighted_border_color="#88c0d0"
 # Represents the colour of most text.
 #text_color="Gray"
 # Represents the colour of text that is selected.

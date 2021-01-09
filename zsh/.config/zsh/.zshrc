@@ -5,7 +5,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/scripts/bin"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-# export PATH=~/.config/npm-global/bin:$PATH
+export PATH=~/.config/npm-global/bin:$PATH
 export ZSH="/home/yaslix/.config/oh-my-zsh"
 
 # Deno
@@ -94,3 +94,5 @@ bindkey '^[p' pcmanOpenWidget
 
 # zoxide(autojump replacement)
 eval "$(zoxide init zsh)"
+
+test -r ~/.config/dircolors && eval $(dircolors ~/.config/dircolors)

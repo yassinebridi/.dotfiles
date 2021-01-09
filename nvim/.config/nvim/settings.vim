@@ -7,10 +7,10 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set laststatus=2
-set number
 set autoindent
 set nocompatible
-set number relativenumber
+" set number
+" set number relativenumber
 set ignorecase
 set smartcase
 set encoding=utf-8
