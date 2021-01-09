@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'neovim/nvim-lspconfig'
 Plug 'rbong/vim-crystalline'
 Plug 'yassinebridi/vim-purpura'
 Plug 'kovetskiy/sxhkd-vim'
@@ -18,4 +19,6 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'windwp/vim-floaterm-repl'
 Plug 'pantharshit00/vim-prisma'
+Plug 'RishabhRD/popfix'
+Plug 'RishabhRD/nvim-lsputils'
 call plug#end()

@@ -12,6 +12,7 @@ source $HOME/.config/nvim-nightly/settings.vim
 source $HOME/.config/nvim-nightly/keymaps.vim
 source $HOME/.config/nvim-nightly/macros.vim
 source $HOME/.config/nvim-nightly/plugins.vim
+source $HOME/.config/nvim-nightly/lsp.vim
 source $HOME/.config/nvim-nightly/visual-multi.vim
 source $HOME/.config/nvim-nightly/fzf.vim
 source $HOME/.config/nvim-nightly/floaterm.vim
