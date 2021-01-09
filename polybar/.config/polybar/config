@@ -1,11 +1,20 @@
 [colors]
-background = #1e0030
-background-alt = #1e0030
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
+background = #2E3440
+background-alt = #4c566a
+buffer = #4c566a
+foreground = #D8DEE9
+foreground-alt = #D8DEE9
+nord6 = #ECEFF4
+nord7 = #8FBCBB
+nord8 = #88C0D0
+nord9 = #81A1C1
+primary = #8fa5d9
 secondary = #e60053
-alert = #bd2c40
+urgent = #BF616A
+warning = #D08770
+notify = #EBCB8B
+success = #A3BE8C
+function = #B48EAD
 
 [bar/example]
 scroll-up = bspwm-desknext
@@ -87,23 +96,23 @@ label-monitor = %name%
 label-dimmed-foreground = #555
 label-dimmed-underline = #FF00FF
 label-dimmed-focused-background = #f00
-label-dimmed-padding = 2
+label-dimmed-padding = 3
 
 label-focused = %index%
 label-focused-foreground = #ffffff
 label-focused-background = ${colors.background-alt}
 label-focused-underline = ${colors.primary}
-label-focused-padding = 2
+label-focused-padding = 3
 
 label-occupied = %index%
-label-occupied-underline = #555555
-label-occupied-padding = 2
+label-occupied-underline = #3b4252
+label-occupied-padding = 3
 
 label-urgent = %index%
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
 label-urgent-underline = #9b0a20
-label-urgent-padding = 2
+label-urgent-padding = 3
 
 label-empty =
 
