@@ -3,11 +3,8 @@ set clipboard+=unnamedplus
 
 setf dosini
 set wildmenu
-set tabstop=2
-set shiftwidth=2
-set expandtab
 set laststatus=2
-set autoindent
+" set autoindent
 set nocompatible
 set number
 " set number relativenumber
