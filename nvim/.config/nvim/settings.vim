@@ -9,7 +9,7 @@ set expandtab
 set laststatus=2
 set autoindent
 set nocompatible
-" set number
+set number
 " set number relativenumber
 set ignorecase
 set smartcase

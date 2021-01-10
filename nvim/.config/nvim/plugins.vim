@@ -27,7 +27,6 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'windwp/vim-floaterm-repl'
 " Theme
 Plug 'itchyny/lightline.vim'
-Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
 Plug 'mengelbrecht/lightline-bufferline'
 

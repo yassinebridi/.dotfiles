@@ -30,11 +30,18 @@ export NMBGIT="$XDG_DATA_HOME"/notmuch/nmbug
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export NVM_DIR="$XDG_DATA_HOME"/nvm
 
+
+_gen_fzf_default_opts() {
+local color01='#bdae93'
+local color02='#3c3836'
+local color03='#b8bb26'
+
 export FZF_DEFAULT_COMMAND='rg --files'
-export FZF_DEFAULT_OPTS='
-	--bind alt-j:down,alt-k:up
-	--color=fg:8,hl:109,bg+:66 
-'
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
+" --color=fg:$color01,bg+:$color02,hl:$color03"
+}
+
+_gen_fzf_default_opts
 
 source "$HOME/.cargo/env"
 
