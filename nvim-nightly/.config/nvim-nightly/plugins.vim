@@ -21,4 +21,5 @@ Plug 'windwp/vim-floaterm-repl'
 Plug 'pantharshit00/vim-prisma'
 Plug 'RishabhRD/popfix'
 Plug 'RishabhRD/nvim-lsputils'
+Plug 'nvim-lua/completion-nvim'
 call plug#end()

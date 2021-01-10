@@ -2,10 +2,15 @@ lua << EOF
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.rust_analyzer.setup{}
-require'lspconfig'.graphql.setup{}
 require'lsp_config'
 EOF 
 
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+"map <c-p> to manually trigger completion
+imap <silent> <c-space> <Plug>(completion_trigger)
+
+" require'lspconfig'.graphql.setup{}
 
 " " GoTo code navigation.
 " nnoremap <silent>gd    <cmd>lua vim.lsp.buf.declaration()<CR>

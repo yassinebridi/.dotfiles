@@ -31,7 +31,7 @@ end
 lsp.tsserver.setup{on_attach=custom_attach}
 lsp.rust_analyzer.setup{on_attach=custom_attach}
 lsp.bashls.setup{on_attach=custom_attach}
-lsp.graphql.setup{on_attach=custom_attach}
+-- lsp.graphql.setup{on_attach=custom_attach}
 
 vim.lsp.handlers['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
 vim.lsp.handlers['textDocument/references'] = require'lsputil.locations'.references_handler
