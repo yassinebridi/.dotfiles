@@ -28,7 +28,9 @@ Plug 'windwp/vim-floaterm-repl'
 " Theme
 Plug 'itchyny/lightline.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
 Plug 'mengelbrecht/lightline-bufferline'
+
 " Disabled
 " Plug 'rbong/vim-crystalline'
 " Plug 'yassinebridi/vim-purpura'

@@ -2,7 +2,7 @@ filetype detect
 syntax enable
 set t_Co=256
 set t_ut=
-colorscheme nord
+colorscheme gruvbox
 set guifont=Jetbrains\ Mono\ Font\ 11
 
 "Set the right colors in vim
@@ -18,7 +18,7 @@ set laststatus=2
 set noshowmode
 
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
       \ },
@@ -68,13 +68,13 @@ let g:lightline = {
 " let g:crystalline_tabline_fn = 'TabLine'
 " let g:crystalline_theme = 'purpura'
 
-" " For Transparent background
-" hi Normal ctermbg=NONE guibg=NONE
-" hi NonText ctermbg=NONE guibg=NONE
-" hi CursorLineNr ctermbg=NONE guibg=NONE
+" For Transparent background
+hi Normal ctermbg=NONE guibg=NONE
+hi NonText ctermbg=NONE guibg=NONE
+hi CursorLineNr ctermbg=NONE guibg=NONE
+hi EndOfBuffer ctermbg=NONE guibg=NONE
+hi SignColumn	ctermbg=NONE guibg=NONE
 " hi LineNr ctermbg=NONE guibg=NONE guifg=#690da1 
-" hi EndOfBuffer ctermbg=NONE guibg=NONE
-" hi SignColumn	ctermbg=NONE guibg=NONE
 
 " " Better spell checks colors
 " hi SpellBad guibg=#fc6d6d ctermbg=224

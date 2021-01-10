@@ -1,19 +1,26 @@
 [colors]
-background = #2E3440
-background-alt = #4c566a
-buffer = #4c566a
-foreground = #D8DEE9
-foreground-alt = #D8DEE9
-nord6 = #ECEFF4
-nord7 = #8FBCBB
-nord8 = #88C0D0
-nord9 = #81A1C1
-primary = #8fa5d9
-secondary = #e60053
-urgent = #BF616A
-warning = #D08770
+darkgray = ${xrdb:color8}
+orange = ${xrdb:color9}
+white = #ebdbb2
+gray = #585858
+black = #090909
+red = #c795ae
+blue = #95aec7
+yellow = #c7ae95
+green = #aec795
+#background = #1f222d
+background = #262626
+background-alt = #4e4e4e
+#foreground = #dfdfdf
+foreground = ${xrdb:foreground}
+foreground-alt = #4e4e4e
+primary = #cfad04
+secondary = #FF6200
+alert = #fb4934
 notify = #EBCB8B
 success = #A3BE8C
+urgent = #BF616A
+warning = #D08770
 function = #B48EAD
 
 [bar/example]
@@ -96,23 +103,23 @@ label-monitor = %name%
 label-dimmed-foreground = #555
 label-dimmed-underline = #FF00FF
 label-dimmed-focused-background = #f00
-label-dimmed-padding = 3
+label-dimmed-padding = 4
 
 label-focused = %index%
 label-focused-foreground = #ffffff
 label-focused-background = ${colors.background-alt}
 label-focused-underline = ${colors.primary}
-label-focused-padding = 3
+label-focused-padding = 4
 
 label-occupied = %index%
-label-occupied-underline = #3b4252
-label-occupied-padding = 3
+label-occupied-underline = #3a3a3a
+label-occupied-padding = 4
 
 label-urgent = %index%
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
 label-urgent-underline = #9b0a20
-label-urgent-padding = 3
+label-urgent-padding = 4
 
 label-empty =
 
