@@ -1,0 +1,22 @@
+global !p
+def upperfirst(t):
+	if len(t) < 2:
+		return '' if len(t) < 1 else t.capitalize()
+	return t[0].capitalize() + t[1:]
+def lowerdash(t):
+	return '-'.join([ w.lower() for w in re.findall('[a-z]+|[A-Z]+[a-z]*', t) ])
+endglobal
+
+# Snippets
+snippet fce "function component export (with prop interface)" b
+import React from "react"
+
+export interface ${1:`!v expand('%:t:r')`}Props {}
+const ${1:`!v expand('%:t:r')`}: React.FC<${1:`!v expand('%:t:r')`}Props> = () => {
+  return (
+	 <div>${1:`!v expand('%:t:r')`}</div>
+  )
+}
+
+export default ${1:`!v expand('%:t:r')`}
+endsnippet
