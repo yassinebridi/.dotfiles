@@ -4,6 +4,7 @@ set t_Co=256
 set t_ut=
 colorscheme gruvbox
 set guifont=Jetbrains\ Mono\ Font\ 11
+autocmd BufEnter,InsertLeave * :syntax sync fromstart
 
 "Set the right colors in vim
 if exists('+termguicolors')
@@ -31,8 +32,13 @@ let g:lightline = {
       \ },
       \ 'component_type': {
       \   'buffers': 'tabsel'
+      \ },
+      \ 'component_raw': {
+      \   'buffers': 1
+      \ },
       \ }
-      \ }
+let g:lightline#bufferline#enable_nerdfont=1
+let g:lightline#bufferline#clickable=1
 
 " function! StatusLine(current, width)
 "   let l:s = ''

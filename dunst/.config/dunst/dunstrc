@@ -10,7 +10,7 @@
     padding = 10
     horizontal_padding = 10
     frame_width = 3
-    frame_color = "#ff00ff"
+    frame_color = "#d4b106"
 
     separator_color = frame
 
@@ -69,13 +69,13 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#3b2b4d"
-    foreground = "#979aad"
+    background = "#3c3836"
+    foreground = "#a8a8a8"
     timeout = 5
 
 [urgency_normal]
-    background = "#606280"
-    foreground = "#fcf5e3"
+    background = "#3c3836"
+    foreground = "#a8a8a8"
     timeout = 5
 
 [urgency_critical]

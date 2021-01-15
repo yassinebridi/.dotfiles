@@ -1,8 +1,8 @@
-" Start Ranger
-nmap <space>ra :FloatermNew ranger<CR>
-
-" Start Ranger
+" Start Lazygit
 nmap <space>lg :FloatermNew --height=1.0 --width=1.0 lazygit<CR>
+
+" Start Lazydocker
+nmap <space>ld :FloatermNew --height=1.0 --width=1.0 lazydocker<CR>
 
 let g:floaterm_autoclose = 2
 

@@ -6,6 +6,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jparise/vim-graphql'
 Plug 'rust-lang/rust.vim'
 Plug 'pantharshit00/vim-prisma'
+Plug 'jidn/vim-dbml'
 " Main
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -29,6 +30,7 @@ Plug 'windwp/vim-floaterm-repl'
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 Plug 'mengelbrecht/lightline-bufferline'
+Plug 'lambdalisue/nerdfont.vim'
 
 " Disabled
 " Plug 'rbong/vim-crystalline'

@@ -5,8 +5,8 @@
 case "$(printf "Image\\nPDF\\nBrowser\\nYoutube\\nYoutube Playlist" | dmenu -i -p "Open with?")" in
   Youtube)
     case "$(printf "480\\n720" | dmenu -i -p "What quality?")" in
-      480) setsid $PLAYER --ytdl-format=18 "$(xclip -o -selection clipboard)" >/dev/null 2>&1 & ;;
-      720) setsid $PLAYER --ytdl-format=22 "$(xclip -o -selection clipboard)" >/dev/null 2>&1 & ;;
+      480) setsid $PLAYER --keep-open=yes --ytdl-format=18 "$(xclip -o -selection clipboard)" >/dev/null 2>&1 & ;;
+      720) setsid $PLAYER --keep-open=yes --ytdl-format=22 "$(xclip -o -selection clipboard)" >/dev/null 2>&1 & ;;
     esac ;;
   "Youtube Playlist")
     case "$(printf "480\\n720" | dmenu -i -p "What quality?")" in

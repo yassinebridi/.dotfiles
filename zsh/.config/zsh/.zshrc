@@ -66,6 +66,7 @@ alias code='code .'
 alias cat='bat'
 alias nb='newsboat'
 alias lg='lazygit'
+alias ld='lazydocker'
 alias f='ffmpeg'
 
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'

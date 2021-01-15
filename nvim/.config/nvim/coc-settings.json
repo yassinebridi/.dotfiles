@@ -1,33 +1,35 @@
 {
-	"typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
-	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-	"typescript.suggestionActions.enabled": false,
-	"javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
-	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-	"javascript.suggestionActions.enabled": false,
-	"coc.preferences.extensionUpdateCheck": "never",
-	"coc.preferences.formatOnType": true,
-	"coc.preferences.formatOnSaveFiletypes": [
-		"Markdown",
-		"javascript",
-		"javascriptreact",
-		"typescript",
-		"typescriptreact",
-		"graphql",
-		"python",
-		"toml",
-		"json",
-		"c",
-		"rust",
-		"css",
-		"yaml"
-	],
-	"explorer.icon.enableNerdfont": true,
-	"explorer.previewAction.onHover": false,
-	"explorer.width": 30,
-	"explorer.keyMappings": {
-		"ga": "collapse:all"
-	},
-	"yaml.format.enable": true,
-	"yaml.format.singleQuote": true
+  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "typescript.suggestionActions.enabled": false,
+  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "javascript.suggestionActions.enabled": false,
+  "coc.preferences.extensionUpdateCheck": "never",
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "Markdown",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "graphql",
+    "python",
+    "toml",
+    "json",
+    "c",
+    "rust",
+    "css",
+    "prisma",
+    "yaml"
+  ],
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.width": 30,
+  "explorer.keyMappings.global": {
+    "ga": "collapse:all",
+    ".": "toggleHidden"
+  },
+  "yaml.format.enable": true,
+  "yaml.format.singleQuote": true
 }
