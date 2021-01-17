@@ -148,3 +148,6 @@ nnoremap <leader>mp :MarkdownPreview<CR>
 
 " Open current file in lf
 nnoremap <leader>lf :! ~/bin/openLf %<CR>
+
+" Open git history of current file
+nnoremap <leader>gp :! ~/bin/openGitDiffer %<CR>

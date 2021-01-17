@@ -4,5 +4,5 @@ if [ "$1" = "alac" ]; then
 elif [ "$1" = "pcman" ]; then
   pcmanfm . > /dev/null 2>&1 &
 elif [ "$1" = "lf" ]; then
-  $TERMINAL -d 80 25 --class lf,Lf -e $FILE $PWD > /dev/null 2>&1 &
+  $TERMINAL --class lf,Lf -e $FILE $PWD > /dev/null 2>&1 &
 fi
