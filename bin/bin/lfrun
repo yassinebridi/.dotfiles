@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 set -e
 
 if [ -n "$DISPLAY" ]; then
@@ -18,7 +18,7 @@ if [ -n "$DISPLAY" ]; then
     mkdir -p "$HOME/.cache/lf"
   fi
 
-  lf "$@" 3>&-
+  ~/go/bin/lf "$@" 3>&-
 else
-  exec lf "$@"
+  exec ~/go/bin/lf "$@"
 fi

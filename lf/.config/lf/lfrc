@@ -28,6 +28,12 @@ map <c-space> :invert
 map R rename
 map r push R<a-b><a-b><a-f>
 
+# Mouse
+map <m-up>    up
+map <m-down>  down
+map <m-2>  open
+map <m-1>  updir
+
 # CD to dirs
 map gr cd /
 map gh cd ~

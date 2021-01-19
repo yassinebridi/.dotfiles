@@ -5,7 +5,12 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/scripts/bin"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+# export GOPATH="$HOME/go"
+# export PATH="$PATH:/usr/local/go/bin"
+# export PATH="$PATH:$GOPATH/bin"
 export PATH=~/.config/npm-global/bin:$PATH
+
 export ZSH="/home/yaslix/.config/oh-my-zsh"
 
 # Deno
