@@ -31,7 +31,7 @@ bindkey -v '^?' backward-delete-char
 
 # Aliases
 alias yw='yarn workspace'
-alias yc='yarn commit'
+alias yc='yarn cm'
 alias yd='yarn deploy'
 alias ydc='yarn clean && yarn dev'
 alias ydv='yarn dev'

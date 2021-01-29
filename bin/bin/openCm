@@ -1,0 +1,3 @@
+#!/usr/bin/sh
+
+$TERMINAL --class cm,Cm -e $1

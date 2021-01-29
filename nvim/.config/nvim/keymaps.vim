@@ -137,8 +137,8 @@ nnoremap <M-i> <C-x>
 nnoremap <M-o> <C-a>
 
 " map {}
-inoremap <M-i> }
-inoremap <M-e> {
+" inoremap <M-i> }
+" inoremap <M-e> {
 
 " map .
 nnoremap <M-p> .
@@ -149,5 +149,14 @@ nnoremap <leader>mp :MarkdownPreview<CR>
 " Open current file in lf
 nnoremap <leader>lf :! ~/bin/openLf %<CR>
 
+" Open current file in lf
+nnoremap <leader>cm :! ~/bin/openCm %<CR>
+
 " Open git history of current file
 nnoremap <leader>gp :! ~/bin/openGitDiffer %<CR>
+
+" Remap search
+nnoremap <leader>gs /
+
+" Delete in insert mode
+inoremap <M-i> <Bs>

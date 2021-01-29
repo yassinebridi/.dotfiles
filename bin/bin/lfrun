@@ -18,7 +18,7 @@ if [ -n "$DISPLAY" ]; then
     mkdir -p "$HOME/.cache/lf"
   fi
 
-  ~/go/bin/lf "$@" 3>&-
+  lf "$@" 3>&-
 else
-  exec ~/go/bin/lf "$@"
+  exec lf "$@"
 fi

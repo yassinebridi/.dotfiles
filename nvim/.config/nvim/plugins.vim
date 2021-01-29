@@ -31,7 +31,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'lambdalisue/nerdfont.vim'
-
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " Disabled
 " Plug 'rbong/vim-crystalline'
 " Plug 'yassinebridi/vim-purpura'
