@@ -20,3 +20,15 @@ const ${1:`!v expand('%:t:r')`}: React.FC<${1:`!v expand('%:t:r')`}Props> = () =
 
 export default ${1:`!v expand('%:t:r')`}
 endsnippet
+
+snippet fcu "function component export (with unkown prop interface)" b
+import React from "react"
+
+const ${1:`!v expand('%:t:r')`}: React.FC<Record<string, unknown>> = (props) => {
+  return (
+	 <div>${1:`!v expand('%:t:r')`}</div>
+  )
+}
+
+export default ${1:`!v expand('%:t:r')`}
+endsnippet
