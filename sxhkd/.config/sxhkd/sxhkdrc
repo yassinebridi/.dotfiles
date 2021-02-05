@@ -77,6 +77,9 @@ super + Print
 super + shift + Print
   ~/bin/screenshot select
 
+super + shift + v
+  $TERMINAL --class dv,Dv -e bash -c "duf -hide special && exec bash"
+
 super + shift + s
   ~/bin/selector
 
