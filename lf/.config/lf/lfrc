@@ -40,7 +40,8 @@ map gh cd ~
 map gm cd ~/mounting
 map gd cd ~/Downloads
 map gp cd ~/Pictures
-map gy cd ~/mounting/YassineHD
+map gw cd /Windows7
+map gy cd /YassineHD
 
 ###############
 ## Functions ##
@@ -88,10 +89,6 @@ cmd locate ${{
 	bspc node -z top 0 50 && bspc node -z bottom 0 -50 && bspc node -v 0 -30
 }}
 map <c-l> :locate
-
-# Dragon: drag & drop
-cmd dragon %dragon-drag-and-drop -a $fx
-map n dragon
 
 #############
 ## Scripts ##

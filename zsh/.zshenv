@@ -43,6 +43,6 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
 
 _gen_fzf_default_opts
 
-source "$HOME/.cargo/env"
+# source "$HOME/.cargo/env"
 
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi

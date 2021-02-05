@@ -1,15 +1,13 @@
 {
   "dependencies": {
-    "coc-db": ">=0.0.43",
     "coc-eslint": ">=1.4.5",
-    "coc-explorer": ">=0.13.11",
+    "coc-explorer": ">=0.15.5",
     "coc-graphql": ">=0.0.1",
-    "coc-json": ">=1.3.2",
+    "coc-json": ">=1.3.3",
     "coc-markdownlint": ">=1.10.1",
     "coc-prettier": ">=1.1.20",
     "coc-prisma": ">=0.5.1",
-    "coc-rust-analyzer": ">=0.27.0",
-    "coc-snippets": ">=2.3.1",
+    "coc-snippets": ">=2.4.0",
     "coc-tailwindcss": ">=0.7.0",
     "coc-tsserver": ">=1.6.7",
     "coc-yaml": ">=1.3.0"

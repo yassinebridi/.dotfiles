@@ -44,6 +44,7 @@ bspc rule -a figma-linux dekstop=^3
 bspc rule -a Org.gnome.Nautilus state=floating
 bspc rule -a Ranger state=floating
 bspc rule -a Lf state=floating rectangle=858x536+250+123
+bspc rule -a gammy state=floating rectangle=858x536+250+123
 bspc rule -a Cm state=floating rectangle=858x536+250+123
 bspc rule -a Cmus desktop=^4 state=floating follow=on rectangle=858x536+250+123
 bspc rule -a Note dekstop=^5 state=floating follow=on
