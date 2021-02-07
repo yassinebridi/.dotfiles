@@ -3,7 +3,11 @@ node_modules
 .zcompdump*
 plugged
 .undodir
+
 cmus/.config/cmus/cache
+
+npm/.config/npm-global/bin
+npm/.config/npm-global/lib
 
 nvim/.config/nvim/.netrwhist
 
