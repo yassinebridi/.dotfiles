@@ -108,8 +108,8 @@ map <Leader>n *
 map <Leader>p #
 
 " Moving between tabs
-autocmd VimEnter * map <M-h> :bp!<CR>
-autocmd VimEnter * map <M-l> :bn!<CR>
+autocmd VimEnter * map <M-h> :bp<CR>
+autocmd VimEnter * map <M-l> :bn<CR>
 noremap <leader>q :bd<CR>
 
 " Unhighlight ged words

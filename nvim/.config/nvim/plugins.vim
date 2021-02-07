@@ -33,6 +33,7 @@ Plug 'mengelbrecht/lightline-bufferline'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jxnblk/vim-mdx-js'
+Plug 'sheerun/vim-polyglot'
 " Disabled
 " Plug 'rbong/vim-crystalline'
 " Plug 'yassinebridi/vim-purpura'
