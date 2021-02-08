@@ -3,8 +3,8 @@
 # Change mac address, in case someone is spoofing
 
 sudo su <<EOF
-ifconfig wlo1 down
+ip link set wlo1 down
 macchanger -r wlo1
-ifconfig wlo1 up
+ip link set wlo1 up
 EOF
 
