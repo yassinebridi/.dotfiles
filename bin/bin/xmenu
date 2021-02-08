@@ -12,18 +12,16 @@ Applications
 	Cmus		    $TERMINAL --class cmus,Cmus -e cmus &
 	XDM		        xdman &
 	Notes		    ~/bin/notes &
-	Responsively	~/Executables/ResponsivelyApp-0.14.0.AppImage &
-	Deluge		    deluge-gtk &
-	Calculator		uno-calculator &
+	LocalWP			/opt/Local/local &
+	Calculator		gnome-calculator &
 	Gammy		    gammy &
 
 Files
 	Home	     $TERMINAL --class lf,Lf -e $FILE ~/
 	Downloads	 $TERMINAL --class lf,Lf -e $FILE ~/Downloads
-	YassineHD	 $TERMINAL --class lf,Lf -e $FILE ~/mounting/YassineHD
-	MyShit	     $TERMINAL --class lf,Lf -e $FILE ~/mounting/YassineHD/MyShit
-	Watch	     $TERMINAL --class lf,Lf -e $FILE ~/mounting/YassineHD/Watch/Shows/Banshee
-	Videos	     $TERMINAL --class lf,Lf -e $FILE ~/mounting/YassineHD/Videos
+	YassineHD	 $TERMINAL --class lf,Lf -e $FILE /YassineHD
+	MyShit	     $TERMINAL --class lf,Lf -e $FILE /YassineHD/MyShit
+	Videos	     $TERMINAL --class lf,Lf -e $FILE /YassineHD/Videos
 
 Power
 	Suspend			~/bin/suspendPc
