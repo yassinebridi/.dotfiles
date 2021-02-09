@@ -25,3 +25,6 @@ mpv/.config/mpv/scripts/time_pairs.txt
 lazygit/.config/jesseduffield/lazygit/state.yml
 coc/.config/coc/memos.json
 coc/.config/coc/commands
+coc/.config/coc/extensions
+coc/.config/coc/snippets-mru
+coc/.config/coc/memos.json
