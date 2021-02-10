@@ -93,6 +93,9 @@ nmap <space>o :OR<CR>
 " Restart coc
 nmap <space>rc :CocRestart<CR>
 
+" Format without save
+nmap <space>t :noa w<CR>
+
 " Coc snippets jumping
 imap <tab> <Plug>(coc-snippets-expand)
 let g:coc_snippet_next = '<TAB>'
