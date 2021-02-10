@@ -90,6 +90,10 @@ cmd locate ${{
 }}
 map <c-l> :locate
 
+# Share any file 256MiB limit
+cmd share $curl -F"file=@$fx" https://0x0.st | xclip -selection c | notify-send "Shared file link in copied to clipboard"
+map xs :share
+
 #############
 ## Scripts ##
 #############
@@ -97,4 +101,4 @@ map <c-l> :locate
 # Previewer script
 set previewer ~/.config/lf/scripts/pv
 set cleaner ~/.config/lf/scripts/cls
-map i $LESSOPEN='| ~/.config/lf/scripts/pv %s' less -R $f
+# map i $LESSOPEN='| ~/.config/lf/scripts/pv %s' less -R $f
