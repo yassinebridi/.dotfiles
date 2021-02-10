@@ -36,6 +36,8 @@ fi
 
 if [[ $1 = "toggle" ]]; then
       dbus-send --print-reply --dest=org.mpris.MediaPlayer2.mpv /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+elif [[ $1 = "stop" ]]; then
+      dbus-send --print-reply --dest=org.mpris.MediaPlayer2.mpv /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
 else
       :
 fi

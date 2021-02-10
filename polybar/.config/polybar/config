@@ -142,6 +142,7 @@ exec-if = dbus-send --print-reply  --dest=org.mpris.MediaPlayer2.mpv /org/mpris/
 format-underline = #9f05a1
 line-size = 1
 click-left = ~/bin/mpvControls toggle
+click-right = ~/bin/mpvControls stop
 scroll-up = ~/bin/mpvControls speedUp
 scroll-down = ~/bin/mpvControls speedDown
 
