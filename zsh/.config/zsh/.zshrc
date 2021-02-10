@@ -48,6 +48,8 @@ alias v='nvim'
 alias svim='sudo -E nvim'
 alias dvim='nvim -d'
 
+alias ip='ip -c'
+
 alias stn='stow --adopt -nv'
 alias stv='stow --adopt -v'
 alias std='stow --adopt -vD'
