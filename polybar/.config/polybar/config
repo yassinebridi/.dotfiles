@@ -23,7 +23,53 @@ urgent = #BF616A
 warning = #D08770
 function = #B48EAD
 
-[bar/example]
+[bar/top_1]
+monitor = LVDS1
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+wm-restack = bspwm
+
+width = 100%
+height = 30
+fixed-center = false 
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+; font-0 = JetBrainsMono:pixelsize=11;1
+font-0 = fixed:pixelsize=11;1
+font-1 = unifont:fontformat=truetype:size=11:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = FontAwesome:size=10
+
+; modules-left = restart poweroff kxorg suspend bspwm spotify previous playpause next
+; modules-center = pterm pchrome pxdm ponboard pdeluge pspotify pranger pnaut
+; modules-right = sshare pshare precord memory cpu xtemperature xbacklight pulseaudio xkeyboard eth date 
+
+modules-left = bspwm cspotify ccmus cbrowser cmpv
+modules-right = pkillen popen pscreenshot pmove pmount sshare pshare precord memory cpu xbacklight pulseaudio xkeyboard popup-calendar 
+
+tray-position = right
+tray-padding = 2
+tray-background = ${colors.background-alt}
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+[bar/top_2]
+monitor = VGA1
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
 wm-restack = bspwm
@@ -100,22 +146,22 @@ format = <label-state> <label-mode>
 
 label-monitor = %name%
 
-label-dimmed-foreground = #555
-label-dimmed-underline = #FF00FF
-label-dimmed-focused-background = #f00
+label-dimmed-foreground = #ffffff
+label-dimmed-underline = ${colors.primary}
+label-dimmed-focused-background = ${colors.background-alt}
 label-dimmed-padding = 4
 
-label-focused = %index%
+label-focused = %name%
 label-focused-foreground = #ffffff
 label-focused-background = ${colors.background-alt}
 label-focused-underline = ${colors.primary}
 label-focused-padding = 4
 
-label-occupied = %index%
+label-occupied = %name%
 label-occupied-underline = #3a3a3a
 label-occupied-padding = 4
 
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
 label-urgent-underline = #9b0a20
