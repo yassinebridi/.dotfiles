@@ -15,6 +15,7 @@ Applications
 	LocalWP			/opt/Local/local &
 	Calculator		gnome-calculator &
 	Gammy		    gammy &
+	Deluge		    deluge &
 
 Files
 	Home	     $TERMINAL --class lf,Lf -e $FILE ~/

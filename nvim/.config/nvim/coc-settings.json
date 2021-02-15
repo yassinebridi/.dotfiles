@@ -23,6 +23,7 @@
     "rust",
     "css",
     "prisma",
+    "go",
     "yaml"
   ],
   "explorer.icon.enableNerdfont": true,

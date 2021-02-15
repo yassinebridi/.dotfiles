@@ -36,12 +36,12 @@ map <m-1>  updir
 
 # CD to dirs
 map gr cd /
+map gw cd /Windows7
+map gy cd /YassineHD
 map gh cd ~
 map gm cd ~/mounting
 map gd cd ~/Downloads
 map gp cd ~/Pictures
-map gw cd /Windows7
-map gy cd /YassineHD
 
 ###############
 ## Functions ##
