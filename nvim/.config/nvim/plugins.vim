@@ -11,9 +11,6 @@ Plug 'jidn/vim-dbml'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'on': []}
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'json', 'graphql', 'markdown', 'yaml'] }
 " Utils
 Plug 'tpope/vim-commentary'
 Plug 'SirVer/ultisnips'
