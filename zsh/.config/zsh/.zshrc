@@ -1,5 +1,5 @@
 ZSH_THEME="robbyrussell"
-plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions colored-man-pages)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions colored-man-pages command-time)
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/scripts/bin"
@@ -34,9 +34,8 @@ bindkey -v '^?' backward-delete-char
 # Aliases
 alias yw='yarn workspace'
 alias yc='yarn cm'
-alias yd='yarn deploy'
-alias ydc='yarn clean && yarn dev'
-alias ydv='yarn dev'
+alias yd='yarn dev'
+alias ys='yarn start'
 alias ytp='youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s"'
 alias yts='youtube-dl --write-sub --sub-lang en --skip-download'
 alias lf='lfrun'
