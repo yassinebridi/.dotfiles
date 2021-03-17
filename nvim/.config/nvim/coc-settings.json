@@ -7,9 +7,18 @@
   "javascript.suggestionActions.enabled": false,
   "languageserver": {
     "graphql": {
-    "command": "graphql-lsp",
-    "args": ["server", "-m", "stream"],
-    "filetypes": ["typescript", "typescriptreact", "graphql"]
+      "command": "graphql-lsp",
+      "args": ["server", "-m", "stream"],
+      "filetypes": ["graphql"]
+    },
+    "prosemd": {
+      "command": "/home/yaslix/.cargo/bin/prosemd-lsp",
+      "args": ["--stdio"],
+      "filetypes": ["markdown"],
+      "trace.server": "verbose",
+      "settings": {
+        "validate": true
+      }
     }
   },
   "coc.preferences.extensionUpdateCheck": "never",
