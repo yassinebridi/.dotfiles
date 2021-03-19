@@ -13,7 +13,7 @@ elif [[ $1 == "next" ]]; then
 	elif [[ $X -gt 1211 && $Y -lt 234 ]]; then
 		xqp 0 $(xdo id -N Bspwm -n root) && xbacklight -inc 10
 	elif [[ $X -lt 370 ]]; then
-		xqp 0 $(xdo id -N Bspwm -n root) && bspc desktop -f next
+		xqp 0 $(xdo id -N Bspwm -n root) && bspc desktop -f next.occupied.local
 	else	
 		:
 	fi
@@ -23,7 +23,7 @@ elif [[ $1 == "prev" ]]; then
 	elif [[ $X -gt 1211 && $Y -lt 234 ]]; then
 		xqp 0 $(xdo id -N Bspwm -n root) && xbacklight -dec 10
 	elif [[ $X -lt 370 ]]; then
-		xqp 0 $(xdo id -N Bspwm -n root) && bspc desktop -f prev
+		xqp 0 $(xdo id -N Bspwm -n root) && bspc desktop -f prev.occupied.local
 	else	
 		:
 	fi
