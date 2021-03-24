@@ -78,8 +78,12 @@ alias ls='exa -l --group-directories-first'
 alias lv='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
 alias lnd='export PATH="$PATH:`yarn global bin`"'
 alias ltp='grep -i installed /var/log/pacman.log'
+alias w
 
-xrdb ~/.Xresources
+# Functions aliases
+sb() {
+  firejail --net=none $1 & disown
+}
 
 # setxkbmap -layout us,ar,fr
 setxkbmap -layout us,ar
