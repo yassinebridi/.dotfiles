@@ -7,6 +7,7 @@ Plug 'jparise/vim-graphql'
 Plug 'rust-lang/rust.vim'
 Plug 'pantharshit00/vim-prisma'
 Plug 'jidn/vim-dbml'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 " Main
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'

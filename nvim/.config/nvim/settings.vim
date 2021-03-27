@@ -40,3 +40,8 @@ au BufNewFile,BufRead *.py setlocal filetype=python
 
 " Close netrw
 autocmd FileType netrw setl bufhidden=wipe
+
+" Disable svelte indentation
+" https://github.com/evanleck/vim-svelte#options
+let g:svelte_indent_script = 0
+let g:svelte_indent_style = 0
