@@ -10,6 +10,11 @@ export PATH="$HOME/go/bin:$PATH"
 # export PATH="$PATH:/usr/local/go/bin"
 # export PATH="$PATH:$GOPATH/bin"
 export PATH=~/.config/npm-global/bin:$PATH
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export ZSH="/home/yaslix/.config/oh-my-zsh"
 
