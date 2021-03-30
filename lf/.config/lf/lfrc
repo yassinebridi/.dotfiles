@@ -7,6 +7,7 @@ set drawbox on
 set ignorecase true
 set preview true
 set icons on
+set sortby time; set info time; set reverse!
 
 # Unmap
 map m
