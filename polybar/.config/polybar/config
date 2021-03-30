@@ -229,7 +229,7 @@ format = "%{T3}<label>"
 format-padding = 2
 interval = 1
 exec = ~/bin/browserControls
-exec-if = dbus-send --print-reply  --dest=org.mpris.MediaPlayer2.chrome.instance$(pgrep -x chrome | head -n 1) /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'PlaybackStatus'
+exec-if = dbus-send --print-reply  --dest=org.mpris.MediaPlayer2.edge.instance$(pgrep -x msedge | head -n 1) /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'PlaybackStatus'
 format-underline = #ff00ff
 line-size = 1
 click-left = ~/bin/browserControls toggle

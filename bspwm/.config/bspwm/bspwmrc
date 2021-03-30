@@ -34,6 +34,7 @@ bspc config gapless_monocle      true
 
 # Desktops configs
 bspc rule -a Google-chrome desktop=^2
+bspc rule -a Microsoft-edge-dev desktop=^2
 bspc rule -a Code desktop=^3
 bspc rule -a Spotify desktop=^9
 bspc rule -a mpv state=floating

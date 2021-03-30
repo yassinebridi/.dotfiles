@@ -5,7 +5,7 @@ PCManFm		pcmanfm &
 Lf		    $TERMINAL --class lf,Lf -e ~/bin/lfrun &
 Spotify		spotify &
 Alacritty	alacritty
-Chrome		google-chrome-stable
+Edge		microsoft-edge-dev
 Onboard		onboard
 
 Applications
