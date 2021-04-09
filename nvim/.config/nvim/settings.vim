@@ -45,3 +45,5 @@ autocmd FileType netrw setl bufhidden=wipe
 " https://github.com/evanleck/vim-svelte#options
 let g:svelte_indent_script = 0
 let g:svelte_indent_style = 0
+
+let g:XkbSwitchEnabled = 1

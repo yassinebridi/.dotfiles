@@ -63,6 +63,8 @@ nmap <CR> o<Esc>
 "Get out of insert mode
 imap jk <Esc>
 cmap jk <C-C>
+imap تن <Esc>
+cmap تن <C-C>
 
 "Source current file
 nnoremap <leader>y :w<cr> :so ~/.config/nvim/init.vim<cr>
