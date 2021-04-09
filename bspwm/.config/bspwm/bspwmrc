@@ -63,6 +63,7 @@ bspc rule -a Franz dekstop=^1
 bspc rule -a Dv state=fullscreen
 bspc rule -a Gnome-calculator state=floating rectangle=432x474+446+158
 bspc rule -a Fzfmenu state=floating rectangle=432x474+446+158
+bspc rule -a crx__pjibgclleladliembfgfagdaldikeohf dekstop=^4
 
 # General configs
 # Mouse Pad
