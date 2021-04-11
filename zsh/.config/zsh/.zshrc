@@ -108,3 +108,4 @@ bindkey '^[p' pcmanOpenWidget
 eval "$(zoxide init zsh)"
 
 test -r ~/.config/dircolors && eval $(dircolors ~/.config/dircolors)
+source /usr/share/nvm/init-nvm.sh
