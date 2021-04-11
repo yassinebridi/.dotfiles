@@ -46,4 +46,4 @@ autocmd FileType netrw setl bufhidden=wipe
 let g:svelte_indent_script = 0
 let g:svelte_indent_style = 0
 
-let g:XkbSwitchEnabled = 1
+" let g:XkbSwitchEnabled = 1
