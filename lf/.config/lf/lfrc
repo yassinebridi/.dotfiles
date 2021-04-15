@@ -95,6 +95,15 @@ map <c-l> :locate
 cmd share $curl -F"file=@$fx" https://0x0.st | xclip -selection c | notify-send "Shared file link in copied to clipboard"
 map xs :share
 
+###################
+## Open function ##
+###################
+cmd open ${{
+  case $(file --mime-type $f -b) in
+    *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
+  esac
+}}
+
 #############
 ## Scripts ##
 #############
