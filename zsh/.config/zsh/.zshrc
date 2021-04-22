@@ -37,6 +37,7 @@ bindkey -M vicmd 'gh' vi-digit-or-beginning-of-line
 bindkey -v '^?' backward-delete-char
 
 # Aliases
+alias y='yarn'
 alias yw='yarn workspace'
 alias yc='yarn cm'
 alias yd='yarn dev'
