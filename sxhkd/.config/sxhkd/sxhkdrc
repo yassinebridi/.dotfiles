@@ -86,6 +86,9 @@ super + shift + s
 super + shift + z
   ~/bin/zoom
 
+super + button4
+  ~/bin/zoom
+
 super + shift + g
   ~/bin/colorgrabber
 
