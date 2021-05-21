@@ -24,6 +24,7 @@ Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'windwp/vim-floaterm-repl'
+Plug 'tpope/vim-surround'
 " Plug 'lyokha/vim-xkbswitch'
 " Theme
 Plug 'itchyny/lightline.vim'
