@@ -4,9 +4,11 @@
 
 # The keybinding for these two actions are in sxhkdrc
 # Either take a screenshot, or take it and open it with the default browser.
+filePath=~/Pictures/scr-$(date +"%m-%d-%I-%p%M%S").jpg
+
 if [ $1 = "open" ]; then
   maim -s -q -c 0.3,0.4,0.6,0.4 -l |
-  convert - -scene 1 ~/Pictures/scr-$(date +"%m-%d-%I-%p%M%S").png &&
+  convert - -scene 1 $filePath &&
   latestPic=$(find ~/Pictures -name "scr-*" | sort -r | head -1) && # This needs to be defined after the screenshot is taken
     case "$(printf "Image Viewer\\nBrowser\\nGimp\\nUpload to imgur" | dmenu -i -p "Open with?")" in
       "Browser") setsid "$BROWSER" "$latestPic" >/dev/null 2>&1 & ;;
@@ -16,10 +18,12 @@ if [ $1 = "open" ]; then
       # Add an upload options, to some popular image hosting provider like imgur, or a custom server?
     esac
 elif [ $1 = "all" ]; then
-  maim | convert - -scene 1 ~/Pictures/scr-$(date +"%m-%d-%I-%p%M%S").jpg
+  maim | convert - -scene 1 $filePath
+  dragon-drag-and-drop $filePath
 elif [ $1 = "select" ]; then
   maim -s -q -c 0.3,0.4,0.6,0.4 -l |
-  convert - -scene 1 ~/Pictures/scr-$(date +"%m-%d-%I-%p%M%S").jpg
+  convert - -scene 1 $filePath
+  dragon-drag-and-drop $filePath
 else
 	:
 fi

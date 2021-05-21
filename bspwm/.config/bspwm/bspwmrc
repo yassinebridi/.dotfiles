@@ -58,7 +58,7 @@ bspc rule -a Yad state=floating
 bspc rule -a WATCHED dekstop=^1
 bspc rule -a Calculator.Skia.Gtk state=floating rectangle=400x550+450+100
 bspc rule -a Pcmanfm state=floating rectangle=858x536+250+123
-bspc rule -a Dragon-drag-and-drop state=floating rectangle=70x70+10+680
+bspc rule -a Dragon-drag-and-drop state=floating sticky=on
 bspc rule -a Franz dekstop=^1
 bspc rule -a Dv state=fullscreen
 bspc rule -a Gnome-calculator state=floating rectangle=432x474+446+158
