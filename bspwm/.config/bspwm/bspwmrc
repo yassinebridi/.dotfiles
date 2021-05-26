@@ -52,20 +52,13 @@ bspc rule -a Note dekstop=^5 state=floating follow=on
 bspc rule -a Sxiv state=floating
 bspc rule -a Deluge state=floating dekstop=^8
 bspc rule -a jetbrains-studio state=floating dekstop=^7
-bspc rule -a zoom dekstop=^3
-bspc rule -a Floater state=floating
-bspc rule -a Yad state=floating
-bspc rule -a WATCHED dekstop=^1
 bspc rule -a Calculator.Skia.Gtk state=floating rectangle=400x550+450+100
 bspc rule -a Pcmanfm state=floating rectangle=858x536+250+123
 bspc rule -a Dragon-drag-and-drop state=floating sticky=on
-bspc rule -a Franz dekstop=^1
 bspc rule -a Dv state=fullscreen
 bspc rule -a Gnome-calculator state=floating rectangle=432x474+446+158
-bspc rule -a Fzfmenu state=floating rectangle=432x474+446+158
-bspc rule -a Thunderbird dekstop=^6
-bspc rule -a Geary dekstop=^6
-bspc rule -a Liferea dekstop=^7
+bspc rule -a Geary dekstop=6
+bspc rule -a Liferea desktop=7 follow=on
 
 # General configs
 # Mouse Pad

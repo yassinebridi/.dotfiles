@@ -6,13 +6,13 @@ Lf		    $TERMINAL --class lf,Lf -e ~/bin/lfrun &
 Spotify		spotify &
 Alacritty	alacritty &
 Edge		microsoft-edge-dev &
-Onboard		onboard &
 Geary		geary &
 Liferea		liferea &
 
 Applications
 	Cmus		    $TERMINAL --class cmus,Cmus -e cmus &
 	XDM		        xdman &
+	Onboard		    onboard &
 	Notes		    ~/bin/notes &
 	LocalWP			/opt/Local/local &
 	Calculator		gnome-calculator &
