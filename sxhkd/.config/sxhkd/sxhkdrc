@@ -286,3 +286,6 @@ alt + 0
 
 ~button5
   ~/bin/desktopActions prev
+
+super + r
+  bspc desktop -f next.occupied.local
