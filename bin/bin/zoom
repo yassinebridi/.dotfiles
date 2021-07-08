@@ -1,7 +1,7 @@
 #!/bin/sh
 
 tmpfile=$(mktemp /tmp/shotscreen.XXXXXXXX.png)
-trap "rm $tmpfile" 0 HUP INT QUIT ILL ABRT KILL SEGV TERM CHLD STOP TSTP
+trap "rm -f $tmpfile" 0 HUP INT QUIT ILL ABRT KILL SEGV TERM STOP TSTP
 
 # Take a screenshot
 maim -u -m 1 $tmpfile
