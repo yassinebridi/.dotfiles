@@ -41,6 +41,11 @@ nnoremap cii ci{
 nnoremap dii di{
 nnoremap vii vi{
 
+nnoremap yin yi<
+nnoremap cin ci<
+nnoremap din di<
+nnoremap vin vi<
+
 " Select all
 nmap <leader>aa ggVG
 
