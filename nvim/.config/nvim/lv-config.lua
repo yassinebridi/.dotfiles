@@ -18,17 +18,11 @@ O.leader_key = " "
 O.ignore_case = true
 O.smart_case = true
 
--- TODO User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-O.plugin.dashboard.active = true
 O.plugin.colorizer.active = false
 O.plugin.ts_playground.active = false
 O.plugin.indent_line.active = false
 O.plugin.zen.active = false
-
--- dashboard
--- O.dashboard.custom_header = {""}
--- O.dashboard.footer = {""}
 
 -- if you don't want all the parsers change this to a table of the ones you want
 O.treesitter.ensure_installed = "maintained"

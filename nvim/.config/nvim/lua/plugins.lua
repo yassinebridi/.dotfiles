@@ -139,17 +139,6 @@ return require("packer").startup(function(use)
 
   -- Builtins, these do not load by default
 
-  -- Dashboard
-  use {
-    "ChristianChiarulli/dashboard-nvim",
-    event = "BufWinEnter",
-    -- cmd = { "Dashboard", "DashboardNewFile", "DashboardJumpMarks" },
-    -- config = function()
-    --   require("lv-dashboard").config()
-    -- end,
-    disable = not O.plugin.dashboard.active,
-    -- opt = true,
-  }
   -- Zen Mode
   use {
     "folke/zen-mode.nvim",
@@ -218,15 +207,6 @@ return require("packer").startup(function(use)
     disable = not O.plugin.trouble.active,
   }
 
-  -- Debugging
-  use {
-    "mfussenegger/nvim-dap",
-    config = function()
-      require "lv-dap"
-    end,
-    disable = not O.plugin.debug.active,
-  }
-
   -- Floating terminal
   use {
     "numToStr/FTerm.nvim",
@@ -268,39 +248,6 @@ return require("packer").startup(function(use)
     disable = not O.plugin.diffview.active,
   }
 
-  -- Lush Create Color Schemes
-  use {
-    "rktjmp/lush.nvim",
-    -- cmd = {"LushRunQuickstart", "LushRunTutorial", "Lushify"},
-    disable = not O.plugin.lush.active,
-  }
-
-  -- Debugger management
-  use {
-    "Pocco81/DAPInstall.nvim",
-    -- event = "BufRead",
-    disable = not O.plugin.dap_install.active,
-  }
-
-  -- LANGUAGE SPECIFIC GOES HERE
-  use {
-    "lervag/vimtex",
-    ft = "tex",
-    config = function()
-      require "lv-vimtex"
-    end,
-  }
-
-  -- Rust tools
-  -- TODO: use lazy loading maybe?
-  use {
-    "simrat39/rust-tools.nvim",
-    disable = not O.lang.rust.rust_tools.active,
-  }
-
-  -- Elixir
-  use { "elixir-editors/vim-elixir", ft = { "elixir", "eelixir", "euphoria3" } }
-
   -- Javascript / Typescript
   use {
     "jose-elias-alvarez/nvim-lsp-ts-utils",
@@ -313,26 +260,6 @@ return require("packer").startup(function(use)
       "typescript.tsx",
     },
   }
-
-  use {
-    "mfussenegger/nvim-jdtls",
-    disable = not O.lang.java.java_tools.active,
-  }
-
-  -- use {
-  --   "jose-elias-alvarez/null-ls.nvim",
-  --   ft = {
-  --     "javascript",
-  --     "javascriptreact",
-  --     "javascript.jsx",
-  --     "typescript",
-  --     "typescriptreact",
-  --     "typescript.tsx",
-  --   },
-  --   config = function()
-  --     require("null-ls").setup()
-  --   end,
-  -- }
 
   -- Pretty parentheses
   use {
