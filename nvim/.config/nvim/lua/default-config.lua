@@ -86,26 +86,20 @@ O = {
 
   plugin = {
     -- Builtins
-    dashboard = { active = false },
     colorizer = { active = false },
-    ts_playground = { active = false },
     ts_context_commentstring = { active = false },
     ts_hintobjects = { active = false },
-    ts_autotag = { active = false },
-    ts_rainbow = { active = false },
+    ts_autotag = { active = true },
+    ts_rainbow = { active = true },
     ts_textobjects = { active = false },
     ts_textsubjects = { active = false },
-    telescope_fzy = { active = false },
-    telescope_project = { active = false },
     indent_line = { active = false },
-    symbol_outline = { active = false },
     debug = { active = false },
     dap_install = { active = false },
     lush = { active = false },
     diffview = { active = false },
     floatterm = { active = false },
     trouble = { active = false },
-    sanegx = { active = false },
   },
 
   user_which_key = {},

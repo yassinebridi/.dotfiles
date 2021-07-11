@@ -167,7 +167,7 @@ local mappings = {
     q = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     s = {
-      O.plugin.symbol_outline.active and "<cmd>SymbolsOutline<cr>" or "<cmd> Telescope lsp_document_symbols<cr>",
+      "<cmd> Telescope lsp_document_symbols<cr>",
       "Document Symbols",
     },
     S = {
