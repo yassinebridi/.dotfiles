@@ -111,7 +111,6 @@ local mappings = {
   ["e"] = "Explorer",
   ["f"] = "Find File",
   ["h"] = "No Highlight",
-  [";"] = "Dashboard",
   p = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -206,36 +205,6 @@ local mappings = {
 --   }
 -- end
 
-if O.plugin.symbol_outline.active then
-  vim.api.nvim_set_keymap("n", "<leader>o", ":SymbolsOutline<CR>", { noremap = true, silent = true })
-  mappings["o"] = "Symbols outline"
-end
-
-if O.plugin.ts_playground.active then
-  vim.api.nvim_set_keymap("n", "<leader>Th", ":TSHighlightCapturesUnderCursor<CR>", { noremap = true, silent = true })
-  mappings[""] = "Highlight Capture"
-end
-
-if O.plugin.telescope_project.active then
-  -- open projects
-  vim.api.nvim_set_keymap(
-    "n",
-    "<leader>P",
-    ":lua require'telescope'.extensions.project.project{}<CR>",
-    { noremap = true, silent = true }
-  )
-  mappings["P"] = "Projects"
-end
-
-if O.lushmode then
-  mappings["L"] = {
-    name = "+Lush",
-    l = { ":Lushify<cr>", "Lushify" },
-    x = { ":lua require('lush').export_to_buffer(require('lush_theme.cool_name'))", "Lush Export" },
-    t = { ":LushRunTutorial<cr>", "Lush Tutorial" },
-    q = { ":LushRunQuickstart<cr>", "Lush Quickstart" },
-  }
-end
 
 if O.plugin.floatterm then
   vim.api.nvim_set_keymap("n", "<leader>gg", "<CMD>lua _G.__fterm_lazygit()<CR>", { noremap = true, silent = true })

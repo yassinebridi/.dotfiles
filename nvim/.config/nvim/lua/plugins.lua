@@ -82,15 +82,6 @@ return require("packer").startup(function(use)
     event = "BufRead",
   }
 
-  -- -- whichkey
-  -- use {
-  --   "folke/which-key.nvim",
-  --   config = function()
-  --     require "lv-which-key"
-  --   end,
-  --   event = "BufWinEnter",
-  -- }
-
   -- Autopairs
   use {
     "windwp/nvim-autopairs",
@@ -176,19 +167,6 @@ return require("packer").startup(function(use)
     disable = not O.plugin.ts_context_commentstring.active,
   }
 
-  -- Symbol Outline
-  use {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-    disable = not O.plugin.symbol_outline.active,
-  }
-  -- diagnostics
-  use {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-    disable = not O.plugin.trouble.active,
-  }
-
   -- Floating terminal
   use {
     "numToStr/FTerm.nvim",
@@ -197,30 +175,6 @@ return require("packer").startup(function(use)
       require("lv-floatterm").config()
     end,
     disable = not O.plugin.floatterm.active,
-  }
-
-  -- Use fzy for telescope
-  use {
-    "nvim-telescope/telescope-fzy-native.nvim",
-    event = "BufRead",
-    disable = not O.plugin.telescope_fzy.active,
-  }
-
-  -- Use project for telescope
-  use {
-    "nvim-telescope/telescope-project.nvim",
-    event = "BufRead",
-    setup = function()
-      vim.cmd [[packadd telescope.nvim]]
-    end,
-    disable = not O.plugin.telescope_project.active,
-  }
-
-  -- Sane gx for netrw_gx bug
-  use {
-    "felipec/vim-sanegx",
-    event = "BufRead",
-    disable = not O.plugin.sanegx.active,
   }
 
   -- Diffview
