@@ -139,17 +139,6 @@ return require("packer").startup(function(use)
 
   -- Builtins, these do not load by default
 
-  -- Zen Mode
-  use {
-    "folke/zen-mode.nvim",
-    cmd = "ZenMode",
-    -- event = "BufRead",
-    config = function()
-      require("lv-zen").config()
-    end,
-    disable = not O.plugin.zen.active,
-  }
-
   use {
     "norcalli/nvim-colorizer.lua",
     event = "BufWinEnter",
@@ -158,13 +147,6 @@ return require("packer").startup(function(use)
       -- vim.cmd "ColorizerReloadAllBuffers"
     end,
     disable = not O.plugin.colorizer.active,
-  }
-
-  -- Treesitter playground
-  use {
-    "nvim-treesitter/playground",
-    event = "BufRead",
-    disable = not O.plugin.ts_playground.active,
   }
 
   use {

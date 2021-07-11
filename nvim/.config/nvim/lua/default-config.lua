@@ -88,7 +88,6 @@ O = {
     -- Builtins
     dashboard = { active = false },
     colorizer = { active = false },
-    -- zen = { active = false },
     ts_playground = { active = false },
     ts_context_commentstring = { active = false },
     ts_hintobjects = { active = false },
@@ -253,5 +252,3 @@ O = {
     yaml = {},
   },
 }
-
-require "lv-zen.config"

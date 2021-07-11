@@ -216,10 +216,6 @@ if O.plugin.ts_playground.active then
   mappings[""] = "Highlight Capture"
 end
 
-if O.plugin.zen.active then
-  vim.api.nvim_set_keymap("n", "<leader>z", ":ZenMode<CR>", { noremap = true, silent = true })
-  mappings["z"] = "Zen"
-end
 if O.plugin.telescope_project.active then
   -- open projects
   vim.api.nvim_set_keymap(

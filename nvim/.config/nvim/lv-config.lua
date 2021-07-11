@@ -22,7 +22,6 @@ O.smart_case = true
 O.plugin.colorizer.active = false
 O.plugin.ts_playground.active = false
 O.plugin.indent_line.active = false
-O.plugin.zen.active = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 O.treesitter.ensure_installed = "maintained"
