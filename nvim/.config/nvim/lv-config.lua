@@ -1,12 +1,3 @@
---[[
-O is the global options object
-
-Linters should be
-filled in as strings with either
-a global executable or a path to
-an executable
-]]
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 -- general
 O.format_on_save = true
 O.auto_complete = true
@@ -36,24 +27,3 @@ O.lang.python.analysis.use_library_code_types = true
 
 -- javascript
 O.lang.tsserver.linter = nil
-
--- Additional Plugins
--- O.user_plugins = {
---     {"folke/tokyonight.nvim"}, {
---         "ray-x/lsp_signature.nvim",
---         config = function() require"lsp_signature".on_attach() end,
---         event = "InsertEnter"
---     }
--- }
-
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- O.user_autocommands = {{ "BufWinEnter", "*", "echo \"hi again\""}}
-
--- Additional Leader bindings for WhichKey
--- O.user_which_key = {
---   A = {
---     name = "+Custom Leader Keys",
---     a = { "<cmd>echo 'first custom command'<cr>", "Description for a" },
---     b = { "<cmd>echo 'second custom command'<cr>", "Description for b" },
---   },
--- }
