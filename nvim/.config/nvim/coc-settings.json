@@ -1,0 +1,48 @@
+{
+  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "typescript.suggestionActions.enabled": false,
+  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "javascript.suggestionActions.enabled": false,
+  "languageserver": {
+    "graphql": {
+      "command": "graphql-lsp",
+      "args": ["server", "-m", "stream"],
+      "filetypes": ["graphql"]
+    }
+  },
+  "coc.preferences.extensionUpdateCheck": "never",
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "markdown",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "graphql",
+    "python",
+    "mdx",
+    "md",
+    "ejs",
+    "toml",
+    "json",
+    "c",
+    "rust",
+    "css",
+    "prisma",
+    "go",
+    "svelte",
+    "yaml"
+  ],
+  "tailwindCSS.enable": true,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.width": 30,
+  "explorer.keyMappings.global": {
+    "ga": "collapse:all",
+    ".": "toggleHidden"
+  },
+  "yaml.format.enable": true,
+  "yaml.format.singleQuote": true
+}
