@@ -11,7 +11,6 @@ O.smart_case = true
 
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 O.plugin.colorizer.active = false
-O.plugin.ts_playground.active = false
 O.plugin.indent_line.active = false
 
 -- if you don't want all the parsers change this to a table of the ones you want

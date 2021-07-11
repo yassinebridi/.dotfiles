@@ -119,7 +119,7 @@ function lsp_config.tsserver_on_attach(client, bufnr)
   ts_utils.setup {
     debug = false,
     disable_commands = false,
-    enable_import_on_completion = false,
+    enable_import_on_completion = true,
     import_all_timeout = 5000, -- ms
 
     -- eslint
@@ -147,11 +147,10 @@ function lsp_config.tsserver_on_attach(client, bufnr)
   -- required to fix code action ranges
   ts_utils.setup_client(client)
 
-  -- TODO: keymap these?
-  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", {silent = true})
-  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "qq", ":TSLspFixCurrent<CR>", {silent = true})
-  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", {silent = true})
-  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", {silent = true})
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", {silent = true})
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "qq", ":TSLspFixCurrent<CR>", {silent = true})
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", {silent = true})
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", {silent = true})
 end
 
 require("lv-utils").define_augroups {
