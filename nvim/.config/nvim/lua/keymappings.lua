@@ -117,7 +117,7 @@ vim.api.nvim_set_keymap("i", "<A-j>", "<Down>", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("i", "<A-k>", "<UP>", { noremap = true, silent = true })
 
 --Enter functionality
-vim.api.nvim_set_keymap("n", "<leader><CR>", "i<CR><Esc>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<A-CR>", "i<CR><Esc>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<CR>", "o<Esc>", { noremap = true, silent = true })
 
 --Source current file

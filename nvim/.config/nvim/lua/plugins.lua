@@ -380,6 +380,14 @@ return require("packer").startup(function(use)
     config = [[require('workspace')]],
   }
 
+  -- null-ls
+  use {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      require("null-ls").setup({})
+    end
+  }
+
   for _, plugin in pairs(O.user_plugins) do
     packer.use(plugin)
   end

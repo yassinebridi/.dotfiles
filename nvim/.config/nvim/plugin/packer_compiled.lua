@@ -106,6 +106,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/yaslix/.local/share/nvim/site/pack/packer/opt/neoformat"
   },
+  ["null-ls.nvim"] = {
+    config = { "\27LJ\1\0029\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\fnull-ls\frequire\0" },
+    loaded = true,
+    path = "/home/yaslix/.local/share/nvim/site/pack/packer/start/null-ls.nvim"
+  },
   ["nvcode-color-schemes.vim"] = {
     loaded = false,
     needs_bufread = false,
@@ -193,7 +198,7 @@ _G.packer_plugins = {
   vimtex = {
     config = { "\27LJ\1\2)\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\14lv-vimtex\frequire\0" },
     loaded = false,
-    needs_bufread = true,
+    needs_bufread = false,
     path = "/home/yaslix/.local/share/nvim/site/pack/packer/opt/vimtex"
   },
   ["which-key.nvim"] = {
@@ -205,22 +210,26 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: galaxyline.nvim
-time([[Config for galaxyline.nvim]], true)
-try_loadstring("\27LJ\1\2-\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\18lv-galaxyline\frequire\0", "config", "galaxyline.nvim")
-time([[Config for galaxyline.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require('lv-telescope')
 time([[Config for telescope.nvim]], false)
--- Config for: vim-workspace
-time([[Config for vim-workspace]], true)
-require('workspace')
-time([[Config for vim-workspace]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\1\2:\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\vconfig\16lv-nvimtree\frequire\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
+-- Config for: galaxyline.nvim
+time([[Config for galaxyline.nvim]], true)
+try_loadstring("\27LJ\1\2-\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\18lv-galaxyline\frequire\0", "config", "galaxyline.nvim")
+time([[Config for galaxyline.nvim]], false)
+-- Config for: null-ls.nvim
+time([[Config for null-ls.nvim]], true)
+try_loadstring("\27LJ\1\0029\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\fnull-ls\frequire\0", "config", "null-ls.nvim")
+time([[Config for null-ls.nvim]], false)
+-- Config for: vim-workspace
+time([[Config for vim-workspace]], true)
+require('workspace')
+time([[Config for vim-workspace]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
@@ -248,9 +257,6 @@ vim.cmd [[augroup filetypedetect]]
 time([[Sourcing ftdetect script at: /home/yaslix/.local/share/nvim/site/pack/packer/opt/vim-elixir/ftdetect/elixir.vim]], true)
 vim.cmd [[source /home/yaslix/.local/share/nvim/site/pack/packer/opt/vim-elixir/ftdetect/elixir.vim]]
 time([[Sourcing ftdetect script at: /home/yaslix/.local/share/nvim/site/pack/packer/opt/vim-elixir/ftdetect/elixir.vim]], false)
-time([[Sourcing ftdetect script at: /home/yaslix/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim]], true)
-vim.cmd [[source /home/yaslix/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim]]
-time([[Sourcing ftdetect script at: /home/yaslix/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
