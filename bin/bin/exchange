@@ -1,0 +1,17 @@
+#!/usr/bin/env -S deno run --allow-all
+import { notify } from "https://deno.land/x/notifier/mod.ts";
+
+const res = await fetch("https://api.yasbr.com/api/exchange-rate");
+const data = await res.json();
+
+const message = `
+${data[0].name}
+Achat: ${data[0].achat}
+Vente: ${data[0].vent}
+
+${data[1].name}
+Achat: ${data[1].achat}
+Vente: ${data[1].vent}
+`;
+
+notify("Currency Exchange", message);
