@@ -13,7 +13,9 @@
     }
   },
   "coc.preferences.extensionUpdateCheck": "never",
+  "prismaLanguageServer.prismaFmtBinPath": "",
   "coc.preferences.formatOnType": true,
+  "prisma.prismaFmtBinPath": "",
   "coc.preferences.formatOnSaveFiletypes": [
     "markdown",
     "javascript",
