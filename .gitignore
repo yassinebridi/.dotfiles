@@ -1,6 +1,7 @@
 plugins
 node_modules
 .zcompdump*
+.DS_Store
 plugged
 .undodir
 
