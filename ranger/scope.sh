@@ -1,1 +1,0 @@
-.config/ranger/scope.sh
