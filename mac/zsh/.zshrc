@@ -39,9 +39,9 @@ alias v='nvim'
 alias svim='sudo -E nvim'
 alias dvim='nvim -d'
 
-alias stn='stow --adopt -nv'
-alias stv='stow --adopt -v'
-alias std='stow --adopt -vD'
+alias stn='stow -v -n -t ~'
+alias str='stow -v -R -t ~'
+alias std='stow -v -D -t ~'
 
 alias t='runTmux'
 alias ta='tmux a'
