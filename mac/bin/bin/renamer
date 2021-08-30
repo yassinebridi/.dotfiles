@@ -1,0 +1,23 @@
+#!/bin/sh
+
+if [[ $1 == "f" ]]; then
+	rnm -rs "/$2/$3/g" -y -dp -1 *
+	echo "Renamed files"
+elif [[ $1 == "l" ]]; then
+	grep -rl $2 . | xargs sed -i "s/$2/$3/g"
+	echo "Renamed lines"
+elif [[ $1 == "lf" ]]; then
+	rnm -rs "/$2/$3/g" -y -dp -1 * &&
+	grep -rl $2 . | xargs sed -i "s/$2/$3/g"
+	echo "Renamed files and lines"
+elif [[ "$1" == "lfc" ]]; then
+	old=${2^^${2:0:1}}
+	new=${3^^${3:0:1}}
+	rnm -rs "/$2/$3/g" -y -dp -1 *
+	rnm -rs "/$old/$new/g" -y -dp -1 *
+	grep -rl $2 . | xargs sed -i "s/$2/$3/g"
+	grep -rl $old . | xargs sed -i "s/$old/$new/g"
+	echo "Renamed files and lines"
+else
+  :
+fi
