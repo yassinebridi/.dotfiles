@@ -20,7 +20,10 @@ lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- unmap a default keymapping
--- lvim.keys.normal_mode["<C-Up>"] = ""
+lvim.keys.normal_mode["m"] = ":lua vim.lsp.diagnostic.goto_next()<CR>"
+lvim.keys.normal_mode["M"] = ":lua vim.lsp.diagnostic.goto_prev()<CR>"
+lvim.keys.normal_mode["gl"] = "$"
+lvim.keys.normal_mode["gh"] = "^"
 -- edit a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 
@@ -28,15 +31,19 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.builtin.telescope.on_config_done = function()
   local actions = require "telescope.actions"
   -- for input mode
-  lvim.builtin.telescope.defaults.mappings.i["<C-j>"] = actions.move_selection_next
-  lvim.builtin.telescope.defaults.mappings.i["<C-k>"] = actions.move_selection_previous
-  lvim.builtin.telescope.defaults.mappings.i["<C-n>"] = actions.cycle_history_next
-  lvim.builtin.telescope.defaults.mappings.i["<C-p>"] = actions.cycle_history_prev
+  lvim.builtin.telescope.defaults.mappings.i["<M-j>"] = actions.move_selection_next
+  lvim.builtin.telescope.defaults.mappings.i["<M-j>"] = actions.move_selection_next
+  lvim.builtin.telescope.defaults.mappings.i["<M-k>"] = actions.move_selection_previous
+  lvim.builtin.telescope.defaults.mappings.i["<M-n>"] = actions.cycle_history_next
+  lvim.builtin.telescope.defaults.mappings.i["<M-p>"] = actions.cycle_history_prev
   -- for normal mode
-  lvim.builtin.telescope.defaults.mappings.n["<C-j>"] = actions.move_selection_next
-  lvim.builtin.telescope.defaults.mappings.n["<C-k>"] = actions.move_selection_previous
+  lvim.builtin.telescope.defaults.mappings.n["<M-j>"] = actions.move_selection_next
+  lvim.builtin.telescope.defaults.mappings.n["<M-k>"] = actions.move_selection_previous
 end
 
+-- lvim.builtin.which_key.setup.plugins.presets = {
+--   g = false,
+-- }
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 -- lvim.builtin.which_key.mappings["t"] = {
@@ -62,6 +69,7 @@ lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
 -- generic LSP settings
+lvim.lsp.diagnostics.virtual_text= false
 -- you can set a custom on_attach function that will be used for all the language servers
 -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
 -- lvim.lsp.on_attach_callback = function(client, bufnr)
@@ -88,24 +96,62 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- end
 
 -- set a formatter if you want to override the default lsp one (if it exists)
--- lvim.lang.python.formatters = {
---   {
---     exe = "black",
---     args = {}
---   }
--- }
+lvim.lang.typescriptreact.formatters = {
+  {
+    exe = "prettier",
+    args = {}
+  }
+}
+lvim.lang.typescriptreact.linters = {
+  {
+    exe = "eslint",
+    args = {}
+  }
+}
+lvim.lang.javascriptreact.formatters = {
+  {
+    exe = "prettier",
+    args = {}
+  }
+}
+lvim.lang.javascriptreact.linters = {
+  {
+    exe = "eslint",
+    args = {}
+  }
+}
+lvim.lang.javascript.formatters = {
+  {
+    exe = "prettier",
+    args = {}
+  }
+}
+lvim.lang.javascript.linters = {
+  {
+    exe = "eslint",
+    args = {}
+  }
+}
+lvim.lang.typescript.formatters = {
+  {
+    exe = "prettier",
+    args = {}
+  }
+}
 -- set an additional linter
--- lvim.lang.python.linters = {
---   {
---     exe = "flake8",
---     args = {}
---   }
--- }
+lvim.lang.typescript.linters = {
+  {
+    exe = "eslint",
+    args = {}
+  }
+}
+
 lvim.lang.tailwindcss.lsp.active=true
 
 -- Additional Plugins
 lvim.plugins = {
     {"Pocco81/Catppuccino.nvim"},
+    {"rmagatti/auto-session"},
     {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
 }
 
