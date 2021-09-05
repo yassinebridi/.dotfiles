@@ -35,5 +35,8 @@ yabai -m config active_window_border_topmost on
 yabai -m config window_shadow                on
 yabai -m config window_opacity               on
 yabai -m config window_border_width          6
-yabai -m config active_window_border_color   0xff00ffaa
-yabai -m config normal_window_border_color   0xffaaaaaa
+# yabai -m config active_window_border_color   0xff775759
+# yabai -m config normal_window_border_color   0xff555555
+
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Digital Colou?r Meter$" sticky=on
