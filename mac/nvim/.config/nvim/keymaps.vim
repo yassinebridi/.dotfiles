@@ -54,8 +54,8 @@ nmap <leader>aa ggVG
 imap <M-w> <C-w>
 
 " Tab like movement in autocompletion
-inoremap <M-j> <Down>
-inoremap <M-k> <UP>
+inoremap <S-j> <Down>
+inoremap <S-k> <UP>
 
 "Saving and quiting
 nnoremap <leader>w :w<cr>
@@ -113,8 +113,8 @@ map <Leader>n *
 map <Leader>p #
 
 " Moving between tabs
-autocmd VimEnter * map <M-h> :bp<CR>
-autocmd VimEnter * map <M-l> :bn<CR>
+autocmd VimEnter * map <S-h> :bp<CR>
+autocmd VimEnter * map <S-l> :bn<CR>
 noremap <leader>q :bd<CR>
 
 " Unhighlight ged words
