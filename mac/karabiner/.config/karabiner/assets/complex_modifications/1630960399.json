@@ -1,0 +1,1 @@
+{"title":"Option + d to backspace","rules":[{"description":"Option + d to backspace","manipulators":[{"type":"basic","from":{"modifiers":{"mandatory":["left_alt"]},"key_code":"d"},"to":[{"repeat":true,"key_code":"delete_or_backspace"}]}]}]}
