@@ -17,15 +17,6 @@ lvim.colorscheme = "gruvbox"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
--- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
--- unmap a default keymapping
-lvim.keys.normal_mode["m"] = ":lua vim.lsp.diagnostic.goto_next()<CR>"
-lvim.keys.normal_mode["M"] = ":lua vim.lsp.diagnostic.goto_prev()<CR>"
-lvim.keys.normal_mode["gl"] = "$"
-lvim.keys.normal_mode["gh"] = "^"
--- edit a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 lvim.builtin.telescope.on_config_done = function()
@@ -159,3 +150,111 @@ lvim.plugins = {
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
+
+-------------
+-- Keymaps --
+-------------
+-- Move betwen diagnostic
+lvim.keys.normal_mode["m"] = ":lua vim.lsp.diagnostic.goto_next()<CR>"
+lvim.keys.normal_mode["M"] = ":lua vim.lsp.diagnostic.goto_prev()<CR>"
+
+-- Select all
+lvim.keys.normal_mode["<leader>aa"] = "ggVG"
+
+-- Copy
+lvim.keys.visual_mode["Y"] = '"ky'
+lvim.keys.visual_mode["P"] = '"kp'
+
+-- Moving around
+lvim.keys.normal_mode["gl"] = "$"
+lvim.keys.normal_mode["gh"] = "^"
+lvim.keys.visual_mode["gl"] = "$"
+lvim.keys.visual_mode["gh"] = "^"
+lvim.keys.normal_mode["k"] = "gk"
+lvim.keys.normal_mode["j"] = "gj"
+lvim.keys.normal_mode["<C-k>"] = "{"
+lvim.keys.normal_mode["<C-j>"] = "}"
+lvim.keys.visual_mode["<C-k>"] = "{"
+lvim.keys.visual_mode["<C-j>"] = "}"
+
+-- Wording
+lvim.keys.normal_mode["yia"] = "yi'"
+lvim.keys.normal_mode["cia"] = "ci'"
+lvim.keys.normal_mode["dia"] = "di'"
+lvim.keys.normal_mode["via"] = "vi'"
+
+lvim.keys.normal_mode["yiq"] = 'yi"'
+lvim.keys.normal_mode["ciq"] = 'ci"'
+lvim.keys.normal_mode["diq"] = 'di"'
+lvim.keys.normal_mode["viq"] = 'vi"'
+
+lvim.keys.normal_mode["yi`"] = 'yi`'
+lvim.keys.normal_mode["ci`"] = 'ci`'
+lvim.keys.normal_mode["di`"] = 'di`'
+lvim.keys.normal_mode["vi`"] = 'vi`'
+
+lvim.keys.normal_mode["yie"] = 'yi{'
+lvim.keys.normal_mode["cie"] = 'ci{'
+lvim.keys.normal_mode["die"] = 'di{'
+lvim.keys.normal_mode["vie"] = 'vi{'
+
+lvim.keys.normal_mode["yil"] = '$v0y'
+lvim.keys.normal_mode["dil"] = '$v0d'
+lvim.keys.normal_mode["cil"] = '$v0c'
+lvim.keys.normal_mode["vil"] = '$v0'
+
+-- Enter functionality
+lvim.keys.normal_mode["<leader><CR>"] = 'i<CR><Esc>'
+lvim.keys.normal_mode["<CR>"] = 'o<Esc>'
+
+-- Get out of insert mode
+lvim.keys.command_mode["jk"] = '<C-C>'
+
+-- TODO: Source current file
+lvim.keys.normal_mode["<leader>y"] = ':w<cr> :luafile ~/.config/lvim/config.lua<cr>'
+
+-- Surround
+lvim.keys.visual_mode["(("] = '"sc(<C-r>s)<Esc>'
+lvim.keys.visual_mode["{{"] = '"sc{<C-r>s}<Esc>'
+lvim.keys.visual_mode["[["] = '"sc[<C-r>s]<Esc>'
+lvim.keys.visual_mode['""'] = '"sc"<C-r>s"<Esc>'
+lvim.keys.visual_mode["''"] = '"sc\'<C-r>s\'<Esc>'
+lvim.keys.visual_mode["``"] = '"sc`<C-r>s`<Esc>'
+
+-- Indent shortcuts
+lvim.keys.normal_mode["<Tab>"] = '>>_'
+lvim.keys.normal_mode["<S-Tab>"] = '<<_'
+lvim.keys.visual_mode["<Tab>"] = '>gv'
+lvim.keys.visual_mode["<S-Tab>"] = '<gv'
+
+-- End macros in command mode
+lvim.keys.command_mode["<C-q>"] = '<C-f>i<C-o>q'
+
+------------
+-- Macros --
+------------
+
+-- Typescript
+-- Surround with trycatch
+-- lvim.keys.visual_mode["<leader>tr"] = '>gvctry {}kpk%a catch(error){console.log(error)}'
+
+-- -- JSX Tag completion
+-- lvim.keys.insert_mode["<M-tab>"] = '<esc>"ayiwi<ea></"apa>bba'
+
+-- -- JSX Tag completion without closing tag
+-- lvim.keys.insert_mode["<S-tab>"] = '<esc>bi<ea />'
+
+-- -- Enclose a bunch of tags with a dib Tag
+-- lvim.keys.visual_mode["<leader>tg"] = 'dOdiv<esc><esc>"ayiwi<ea></"apa>bbaPka'
+
+-- -- Console.log macos
+-- lvim.keys.normal_mode["<leader>lt"] = "yiwoconsole.log('pa: a', pa);"
+
+--------------
+-- Settings --
+--------------
+
+vim.cmd [[
+  autocmd BufWritePost *yabairc !brew services restart xorpse/formulae/yabai
+  autocmd BufWritePost *skhdrc !brew services restart skhd
+]]
