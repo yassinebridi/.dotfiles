@@ -255,6 +255,15 @@ lvim.keys.command_mode["<C-q>"] = '<C-f>i<C-o>q'
 --------------
 
 vim.cmd [[
-  autocmd BufWritePost *yabairc !brew services restart xorpse/formulae/yabai
-  autocmd BufWritePost *skhdrc !brew services restart skhd
+  au BufWritePost *yabairc !brew services restart xorpse/formulae/yabai
+  au BufWritePost *skhdrc !brew services restart skhd
+  au BufNewFile,BufRead *.ts setlocal filetype=typescript
+  au BufNewFile,BufRead *.tsx setlocal filetype=typescriptreact
+  au BufNewFile,BufRead *.py setlocal filetype=python
+  filetype plugin indent on
+  syntax on
+  set foldmethod=syntax
+  set foldcolumn=1
+  let javaScript_fold=1
+  set foldlevelstart=99
 ]]
