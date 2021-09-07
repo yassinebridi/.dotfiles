@@ -143,7 +143,8 @@ lvim.lang.tailwindcss.lsp.active=true
 lvim.plugins = {
     {"Pocco81/Catppuccino.nvim"},
     {"rmagatti/auto-session"},
-    {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+    {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}},
+    {"terryma/vim-multiple-cursors"}
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
@@ -256,6 +257,7 @@ lvim.keys.command_mode["<C-q>"] = '<C-f>i<C-o>q'
 
 vim.cmd [[
   au BufWritePost *yabairc !brew services restart xorpse/formulae/yabai
+  au BufWritePost *espanso/default.yml !espanso restart
   au BufWritePost *skhdrc !brew services restart skhd
   au BufNewFile,BufRead *.ts setlocal filetype=typescript
   au BufNewFile,BufRead *.tsx setlocal filetype=typescriptreact
