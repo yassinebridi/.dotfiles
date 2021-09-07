@@ -1,0 +1,6 @@
+#!/bin/zsh
+brew services restart xorpse/formulae/yabai 
+brew services restart skhd
+sudo yabai --install-sa
+sleep 1 # wait for yabai to install injection scripts
+sudo yabai --load-sa
