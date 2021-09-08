@@ -1,0 +1,4 @@
+#!/bin/zsh
+brew services stop xorpse/formulae/yabai 
+brew services stop skhd
+sudo yabai --uninstall-sa
