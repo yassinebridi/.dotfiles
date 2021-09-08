@@ -9,5 +9,6 @@ lvim.plugins = {
   {"Pocco81/Catppuccino.nvim"},
   {"rmagatti/auto-session"},
   {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}},
-  {"terryma/vim-multiple-cursors"}
+  {"terryma/vim-multiple-cursors"},
+  {"pantharshit00/vim-prisma"}
 }
