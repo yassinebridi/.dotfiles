@@ -156,6 +156,10 @@ lvim.plugins = {
 -- Keymaps --
 -------------
 -- Move betwen diagnostic
+-- Telescope
+
+lvim.keys.normal_mode["<leader>rg"] = ":lua require'telescope.builtin'.live_grep({ vimgrep_arguments = { 'rg', '--hidden','--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '-u', '-g', '!yarn.lock', '-g', '!.git', '-g', '!node_modules', '-g', '!.next' } })<cr>"
+lvim.keys.normal_mode["<leader>rf"] = ":lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git', '-g', '!node_modules', '-g', '!.next' }})<cr>"
 lvim.keys.normal_mode["m"] = ":lua vim.lsp.diagnostic.goto_next()<CR>"
 lvim.keys.normal_mode["M"] = ":lua vim.lsp.diagnostic.goto_prev()<CR>"
 
@@ -262,6 +266,7 @@ vim.cmd [[
   au BufNewFile,BufRead *.ts setlocal filetype=typescript
   au BufNewFile,BufRead *.tsx setlocal filetype=typescriptreact
   au BufNewFile,BufRead *.py setlocal filetype=python
+  set wrap
   filetype plugin indent on
   syntax on
   set foldmethod=syntax
