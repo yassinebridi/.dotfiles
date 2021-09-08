@@ -2,6 +2,7 @@ require('telescope')
 require('keymaps')
 require('macros')
 require('settings')
+require('which-key')
 require('lsp')
 
 -- Additional Plugins
