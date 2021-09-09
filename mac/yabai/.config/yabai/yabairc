@@ -40,4 +40,5 @@ yabai -m config window_border_width          6
 
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
-yabai -m rule --add app="^Digital Colou?r Meter$" sticky=on
+yabai -m rule --add app="^Digital Colou?r Meter$" manage=off
+yabai -m rule --add app="^Docker$" manage=off
