@@ -1,9 +1,9 @@
-require('telescope')
-require('keymaps')
-require('macros')
-require('settings')
-require('which-key')
-require('lsp')
+require('user/telescope')
+require('user/keymaps')
+require('user/macros')
+require('user/settings')
+require('user/which-key')
+require('user/lsp')
 
 -- Additional Plugins
 lvim.plugins = {
