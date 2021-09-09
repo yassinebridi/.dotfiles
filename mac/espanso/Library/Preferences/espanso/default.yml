@@ -18,6 +18,10 @@ matches:
   - trigger: ":lrp2"
     replace: "Architecto veniam natus sint. Fugiat reiciendis ex quo labore et ut. Sunt eum necessitatibus quam a dolores non explicabo. Repellat voluptatem id. Ullam eligendi dolores consequuntur in. Velit alias libero magnam quo praesentium numquam sunt velit. Quis praesentium quo sequi occaecati quaerat inventore. Laboriosam rerum facere culpa est. Repellendus sed in nesciunt libero natus similique laudantium. In consequuntur in aut nostrum velit architecto exercitationem non. Necessitatibus voluptatem explicabo sed dolorem magnam ut. Voluptatibus adipisci odit amet atque sequi iusto adipisci. Est omnis quia consequatur neque rem magnam nesciunt. Eos ad eligendi earum. Et sequi et voluptate ut exercitationem pariatur. Possimus et suscipit voluptatem quo. Quisquam dolor omnis. Ut et quod."
 
+  # Symbols
+  - trigger: ":euro"
+    replace: "€"
+
   # Dates
   - trigger: ":date"
     replace: "{{mydate}}"
