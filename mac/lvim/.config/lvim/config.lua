@@ -7,9 +7,10 @@ require('user/lsp')
 
 -- Additional Plugins
 lvim.plugins = {
+  {"jose-elias-alvarez/nvim-lsp-ts-utils", requires = { "jose-elias-alvarez/null-ls.nvim" }},
   {"Pocco81/Catppuccino.nvim"},
   {"rmagatti/auto-session"},
-  {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}},
+  {"ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" }},
   {"terryma/vim-multiple-cursors"},
-  {"pantharshit00/vim-prisma"}
+  {"pantharshit00/vim-prisma"},
 }
