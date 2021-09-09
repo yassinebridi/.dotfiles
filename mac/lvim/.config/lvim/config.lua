@@ -8,6 +8,8 @@ require('user/lsp')
 -- Additional Plugins
 lvim.plugins = {
   {"jose-elias-alvarez/nvim-lsp-ts-utils", requires = { "jose-elias-alvarez/null-ls.nvim" }},
+  {"JoosepAlviste/nvim-ts-context-commentstring"},
+  {"windwp/nvim-ts-autotag"},
   {"Pocco81/Catppuccino.nvim"},
   {"rmagatti/auto-session"},
   {"ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" }},

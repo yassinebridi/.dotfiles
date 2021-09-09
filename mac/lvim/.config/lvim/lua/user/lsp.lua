@@ -24,7 +24,7 @@ lvim.lang.typescript.lsp.setup.on_attach = function(client, bufnr)
         same_file = 1, -- add to existing import statement
     },
     import_all_scan_buffers = 100,
-    import_all_select_source = false,
+    import_all_select_source = true,
 
     -- eslint
     eslint_enable_code_actions = true,
@@ -39,8 +39,8 @@ lvim.lang.typescript.lsp.setup.on_attach = function(client, bufnr)
     formatter_opts = {},
 
     -- update imports on file move
-    update_imports_on_move = false,
-    require_confirmation_on_move = false,
+    update_imports_on_move = true,
+    require_confirmation_on_move = true,
     watch_dir = nil,
 
     -- filter diagnostics
