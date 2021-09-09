@@ -34,7 +34,7 @@ lvim.lang.typescript.lsp.setup.on_attach = function(client, bufnr)
     eslint_opts = {},
 
     -- formatting
-    enable_formatting = false,
+    enable_formatting = true,
     formatter = "prettier",
     formatter_opts = {},
 
