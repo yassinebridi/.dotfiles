@@ -4,6 +4,7 @@ require('user/macros')
 require('user/settings')
 require('user/which-key')
 require('user/lsp')
+require('user/plugins-settings')
 
 -- Additional Plugins
 lvim.plugins = {
@@ -15,4 +16,5 @@ lvim.plugins = {
   {"ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" }},
   {"terryma/vim-multiple-cursors"},
   {"pantharshit00/vim-prisma"},
+  {"norcalli/nvim-colorizer.lua"}
 }
