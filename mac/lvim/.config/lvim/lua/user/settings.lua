@@ -29,8 +29,10 @@ vim.cmd [[
   au BufWritePost *skhdrc !brew services restart skhd
   au BufNewFile,BufRead *.ts setlocal filetype=typescript
   au BufNewFile,BufRead *.tsx setlocal filetype=typescriptreact
+  au BufNewFile,BufRead *.js setlocal filetype=javascript
   au BufNewFile,BufRead *.py setlocal filetype=python
   set wrap
+  set clipboard+=unnamedplus
   filetype plugin indent on
   syntax on
   set foldmethod=syntax
