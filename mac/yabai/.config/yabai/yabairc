@@ -39,8 +39,11 @@ yabai -m config window_border_width          6
 # yabai -m config normal_window_border_color   0xff555555
 
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Digital Colou?r Meter$" manage=off
 yabai -m rule --add app="^Docker$" manage=off
 yabai -m rule --add app="^NeatDownloadManager$" manage=off
 yabai -m rule --add app="^VLC$" manage=off
+yabai -m rule --add app="^Disk Utility$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
