@@ -6,7 +6,7 @@
 --   g = false,
 -- }
 -- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["f"] = { "<cmd>:lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git', '-g', '!node_modules', '-g', '!.next' }})<CR>", "Files" }
 -- lvim.builtin.which_key.mappings["t"] = {
 --   name = "+Trouble",
 --   r = { "<cmd>Trouble lsp_references<cr>", "References" },

@@ -17,10 +17,10 @@ lvim.keys.visual_mode["Y"] = '"ky'
 lvim.keys.visual_mode["P"] = '"kp'
 
 -- Moving around
-lvim.keys.normal_mode["gl"] = "$"
-lvim.keys.normal_mode["gh"] = "^"
-lvim.keys.visual_mode["gl"] = "$"
-lvim.keys.visual_mode["gh"] = "^"
+lvim.keys.normal_mode["fl"] = "$"
+lvim.keys.normal_mode["fh"] = "^"
+lvim.keys.visual_mode["fl"] = "$"
+lvim.keys.visual_mode["fh"] = "^"
 lvim.keys.normal_mode["k"] = "gk"
 lvim.keys.normal_mode["j"] = "gj"
 lvim.keys.normal_mode["<C-k>"] = "{"
