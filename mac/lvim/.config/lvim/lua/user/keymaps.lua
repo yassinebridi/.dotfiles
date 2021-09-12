@@ -1,11 +1,8 @@
 -------------
 -- Keymaps --
 -------------
--- Move betwen diagnostic
--- Telescope
 
-lvim.keys.normal_mode["<leader>rg"] = ":lua require'telescope.builtin'.live_grep({ vimgrep_arguments = { 'rg', '--hidden','--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '-u', '-g', '!yarn.lock', '-g', '!.git', '-g', '!node_modules', '-g', '!.next' } })<cr>"
-lvim.keys.normal_mode["<leader>rf"] = ":lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git', '-g', '!node_modules', '-g', '!.next' }})<cr>"
+-- Move betwen diagnostic
 lvim.keys.normal_mode["m"] = ":lua vim.lsp.diagnostic.goto_next()<CR>"
 lvim.keys.normal_mode["M"] = ":lua vim.lsp.diagnostic.goto_prev()<CR>"
 
