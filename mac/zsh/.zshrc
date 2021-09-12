@@ -53,6 +53,7 @@ alias code='code .'
 alias cat='bat'
 alias lg='lazygit'
 alias ld='lazydocker'
+alias gb='gobang'
 
 alias la='exa -la --group-directories-first'
 alias ls='exa -l --group-directories-first'
