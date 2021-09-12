@@ -12,6 +12,13 @@ lvim.keys.normal_mode["M"] = ":lua vim.lsp.diagnostic.goto_prev()<CR>"
 -- Select all
 lvim.keys.normal_mode["<leader>aa"] = "ggVG"
 
+-- Resize Splits
+-- Make adjusing split sizes a bit more friendly
+lvim.keys.normal_mode["<C-L>"] = ':vertical resize +3<CR>'
+lvim.keys.normal_mode["<C-J>"] = ':resize resize +3<CR>'
+lvim.keys.normal_mode["<C-K>"] = ':resize resize -3<CR>'
+lvim.keys.normal_mode["<C-H>"] = ':vertical resize -3<CR>'
+
 -- Copy
 lvim.keys.visual_mode["Y"] = '"ky'
 lvim.keys.visual_mode["P"] = '"kp'
