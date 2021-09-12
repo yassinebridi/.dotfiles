@@ -5,6 +5,9 @@ node_modules
 plugged
 .undodir
 
+lvim/.config/lvim/plugin/packer_compiled.lua
+lazygit/Library/Application Support/lazygit/state.yml
+
 cmus/.config/cmus/cache
 
 npm/.config/npm-global/bin
