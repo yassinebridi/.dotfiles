@@ -16,5 +16,6 @@ lvim.plugins = {
   {"ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" }},
   {"terryma/vim-multiple-cursors"},
   {"pantharshit00/vim-prisma"},
-  {"norcalli/nvim-colorizer.lua"}
+  {"norcalli/nvim-colorizer.lua"},
+  {"vuki656/package-info.nvim"}
 }
