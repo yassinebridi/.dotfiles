@@ -16,9 +16,6 @@ require'colorizer'.setup(
 	  css_fn   = true;         -- Enable all CSS *functions*: rgb_fn, hsl_fn
   })
 
--- Package info
-require('package-info').setup()
-
 -- Nvim Tree
 lvim.builtin.nvimtree.hide_dotfiles = 0
 lvim.builtin.nvimtree.ignore = {".git"}
