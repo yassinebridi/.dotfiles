@@ -37,3 +37,5 @@ coc/.config/coc/extensions/db.json
 coc/.config/coc/extensions/db.json
 
 mac/gobang/.config/gobang/config.toml
+mac/lvim/.config/lvim/plugin/packer_compiled.lua
+mac/lazygit/Library/Application Support/lazygit/state.yml
