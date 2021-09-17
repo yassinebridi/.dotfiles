@@ -17,4 +17,5 @@ lvim.plugins = {
   {"terryma/vim-multiple-cursors"},
   {"pantharshit00/vim-prisma"},
   {"norcalli/nvim-colorizer.lua"},
+  {"jparise/vim-graphql"}
 }
