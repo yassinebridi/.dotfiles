@@ -82,17 +82,8 @@ esac
 
 case "$(file -Lb --mime-type -- "$1")" in
   image/*)
-    if [ -n "$FIFO_UEBERZUG" ]; then
-      orientation="$(identify -format '%[EXIF:Orientation]\n' -- "$1")"
-      if [ -n "$orientation" ] && [ "$orientation" != 1 ]; then
-        cache="$(hash "$1").jpg"
-        cache "$cache"
-        convert -- "$1" -auto-orient "$cache"
-        draw "$cache"
-      else
-        draw "$1"
-      fi
-    fi
+    viu -w 60 "$1"
+    exit 0
     ;;
   video/*)
     if [ -n "$FIFO_UEBERZUG" ]; then
