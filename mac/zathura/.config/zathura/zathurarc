@@ -1,0 +1,48 @@
+set selection-clipboard clipboard
+set font                        "Fira Mono 8"
+set default-bg                  "#262626"
+set default-fg                  "#ebdbb2"
+
+set statusbar-fg                "#ebdbb2"
+set statusbar-bg                "#262626"
+
+set inputbar-bg                 "#262626"
+set inputbar-fg                 "#ebdbb2"
+
+set notification-error-bg       "#262626"
+set notification-error-fg       "#cc241d"
+
+set notification-warning-bg     "#262626"
+set notification-warning-fg     "#d79921"
+
+set highlight-color             "#262626"
+set highlight-active-color      "#ebdbb2"
+
+set completion-highlight-fg     "#4e4e4e"
+set completion-highlight-bg     "#87afaf"
+
+set completion-bg               "#4e4e4e"
+set completion-fg               "#ebdbb2"
+
+set notification-bg             "#262626"
+set notification-fg             "#458588"
+
+set recolor-lightcolor          "#262626"
+set recolor-darkcolor           "#ebdbb2"
+set recolor                     "true"
+set statusbar-h-padding 0
+
+set statusbar-v-padding 0
+set selection-clipboard clipboard
+set page-padding 1
+
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map r reload
+map R rotate
+map f fullscreen
+map <M-k> zoom in
+map <M-j> zoom out
+map i recolor
+map p print
