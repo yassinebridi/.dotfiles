@@ -10,3 +10,7 @@ lvim.builtin.which_key.mappings["f"] = { "<cmd>:lua require'telescope.builtin'.f
 
 -- Better finding text
 lvim.builtin.which_key.mappings["rg"] = { "<cmd>:lua require'telescope.builtin'.live_grep({ vimgrep_arguments = { 'rg', '--hidden','--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '-u', '-g', '!yarn.lock', '-g', '!.git', '-g', '!node_modules', '-g', '!.next' } })<CR>", "Find Text" }
+
+
+lvim.builtin.which_key.mappings["tr"] = { "<cmd>:2TermExec cmd=\"cargo run\"<CR>", "Cargo Run" }
+
