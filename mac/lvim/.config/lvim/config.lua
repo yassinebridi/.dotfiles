@@ -16,5 +16,10 @@ lvim.plugins = {
   {"terryma/vim-multiple-cursors"},
   {"norcalli/nvim-colorizer.lua"},
   {"pantharshit00/vim-prisma"},
-  {"jparise/vim-graphql"}
+  {"jparise/vim-graphql"},
+  -- {"steelsojka/headwind.nvim"}
 }
+
+-- require "headwind".setup {
+--   -- options here
+-- }
