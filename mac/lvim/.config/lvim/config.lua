@@ -17,8 +17,11 @@ lvim.plugins = {
   {"norcalli/nvim-colorizer.lua"},
   {"pantharshit00/vim-prisma"},
   {"jparise/vim-graphql"},
+  {"AckslD/nvim-neoclip.lua"},
   -- {"steelsojka/headwind.nvim"}
 }
+
+require('neoclip').setup()
 
 -- require "headwind".setup {
 --   -- options here
