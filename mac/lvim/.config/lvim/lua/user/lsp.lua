@@ -61,6 +61,12 @@ end
 lvim.lsp.diagnostics.virtual_text= false
 lvim.lang.tailwindcss.lsp.active=true
 
+lvim.lang.json.formatters = {
+  {
+    exe = "prettier",
+    args = {}
+  }
+}
 lvim.lang.typescriptreact.formatters = {
   {
     exe = "prettier",
