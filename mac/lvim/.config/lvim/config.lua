@@ -18,10 +18,25 @@ lvim.plugins = {
   {"pantharshit00/vim-prisma"},
   {"jparise/vim-graphql"},
   {"AckslD/nvim-neoclip.lua"},
+  {"ChristianChiarulli/vim-solidity"},
+  {
+    "tzachar/cmp-tabnine",
+    config = function()
+      local tabnine = require "cmp_tabnine.config"
+      tabnine:setup {
+        max_lines = 1000,
+        max_num_results = 20,
+        sort = true,
+      }
+    end,
+
+    run = "./install.sh",
+    requires = "hrsh7th/nvim-cmp",
+  },
   -- {"steelsojka/headwind.nvim"}
 }
 
-require('neoclip').setup()
+-- require('neoclip').setup()
 
 -- require "headwind".setup {
 --   -- options here
