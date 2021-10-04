@@ -43,8 +43,8 @@ alias server='python -m SimpleHTTPServer 8080'
 alias szsh='source ~/.config/zsh/.zshrc'
 
 alias v='lvim'
-alias svim='sudo -E v'
-alias dvim='v -d'
+alias svim='sudo -E lvim'
+alias dvim='lvim -d'
 
 alias stn='stow -v -n -t ~'
 alias str='stow -v -R -t ~'
