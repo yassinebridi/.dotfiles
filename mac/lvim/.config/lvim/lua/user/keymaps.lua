@@ -21,10 +21,10 @@ lvim.keys.visual_mode["Y"] = '"ky'
 lvim.keys.visual_mode["P"] = '"kp'
 
 -- Moving around
-lvim.keys.normal_mode["fl"] = "$"
-lvim.keys.normal_mode["fh"] = "^"
-lvim.keys.visual_mode["fl"] = "$"
-lvim.keys.visual_mode["fh"] = "^"
+-- lvim.keys.normal_mode["fl"] = "$"
+-- lvim.keys.normal_mode["fh"] = "^"
+-- lvim.keys.visual_mode["fl"] = "$"
+-- lvim.keys.visual_mode["fh"] = "^"
 lvim.keys.normal_mode["k"] = "gk"
 lvim.keys.normal_mode["j"] = "gj"
 lvim.keys.normal_mode["<C-k>"] = "{"
@@ -57,6 +57,10 @@ lvim.keys.normal_mode["yil"] = '$v0y'
 lvim.keys.normal_mode["dil"] = '$v0d'
 lvim.keys.normal_mode["cil"] = '$v0c'
 lvim.keys.normal_mode["vil"] = '$v0'
+lvim.keys.normal_mode["gl"] = '$'
+lvim.keys.normal_mode["gh"] = '^'
+lvim.keys.visual_mode["gl"] = "$"
+lvim.keys.visual_mode["gh"] = "^"
 
 -- Enter functionality
 lvim.keys.normal_mode["<leader><CR>"] = 'i<CR><Esc>'
@@ -85,3 +89,5 @@ lvim.keys.visual_mode["<S-Tab>"] = '<gv'
 -- End macros in command mode
 lvim.keys.command_mode["<C-q>"] = '<C-f>i<C-o>q'
 
+lvim.keys.normal_mode["K"] = '<cmd>lua vim.lsp.buf.hover()<CR>'
+lvim.keys.normal_mode["gd"] = '<cmd>lua vim.lsp.buf.definition()<CR>'
