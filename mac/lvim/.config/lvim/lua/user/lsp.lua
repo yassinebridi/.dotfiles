@@ -59,7 +59,7 @@
 -- end
 
 lvim.lsp.diagnostics.virtual_text= false
-
+lvim.format_on_save = true
 lvim.lang.json.formatters = {
   {
     exe = "prettier",
