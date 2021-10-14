@@ -4,9 +4,9 @@
 
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.lint_on_save = true
+lvim.lint_on_save = false
 lvim.transparent_window = true
-lvim.colorscheme = "gruvbox"
+-- lvim.colorscheme = "gruvbox"
 lvim.leader = "space"
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
@@ -17,6 +17,19 @@ lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.autotag.enable = true
 lvim.builtin.treesitter.context_commentstring.enable = true
+lvim.builtin.treesitter.ensure_installed = {
+  "bash",
+  "c",
+  "javascript",
+  "json",
+  "lua",
+  "python",
+  "typescript",
+  "css",
+  "rust",
+  "java",
+  "yaml",
+}
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
