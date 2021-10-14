@@ -15,10 +15,10 @@ lvim.plugins = {
   {"ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" }},
   {"terryma/vim-multiple-cursors"},
   {"norcalli/nvim-colorizer.lua"},
-  {"pantharshit00/vim-prisma"},
-  {"jparise/vim-graphql"},
-  {"AckslD/nvim-neoclip.lua"},
-  {"ChristianChiarulli/vim-solidity"},
+  -- {"pantharshit00/vim-prisma"},
+  -- {"jparise/vim-graphql"},
+  -- {"AckslD/nvim-neoclip.lua"},
+  -- {"ChristianChiarulli/vim-solidity"},
   {
     "tzachar/cmp-tabnine",
     config = function()
