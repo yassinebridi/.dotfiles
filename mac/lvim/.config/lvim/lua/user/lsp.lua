@@ -57,72 +57,101 @@
 --   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>x", ":TSLspFixCurrent<CR>", opts)
 --   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>i", ":TSLspImportAll<CR>", opts)
 -- end
-
+lvim.lsp.automatic_servers_installation = true
 lvim.lsp.diagnostics.virtual_text= false
-lvim.format_on_save = true
-lvim.lang.json.formatters = {
-  {
-    exe = "prettier",
-    args = {}
-  }
-}
-lvim.lang.typescriptreact.formatters = {
-  {
-    exe = "prettier",
-    args = {}
-  }
-}
-lvim.lang.typescriptreact.linters = {
-  {
-    exe = "eslint",
-    args = {}
-  }
-}
-lvim.lang.javascriptreact.formatters = {
-  {
-    exe = "prettier",
-    args = {}
-  }
-}
-lvim.lang.javascriptreact.linters = {
-  {
-    exe = "eslint",
-    args = {}
-  }
-}
-lvim.lang.javascript.formatters = {
-  {
-    exe = "prettier",
-    args = {}
-  }
-}
-lvim.lang.javascript.linters = {
-  {
-    exe = "eslint",
-    args = {}
-  }
-}
-lvim.lang.typescript.formatters = {
-  {
-    exe = "prettier",
-    args = {}
-  }
-}
--- set an additional linter
-lvim.lang.typescript.linters = {
-  {
-    exe = "eslint",
-    args = {}
-  }
-}
+-- lvim.format_on_save = true
+-- lvim.lang.json.formatters = {
+--   {
+--     exe = "prettier",
+--     args = {}
+--   }
+-- }
+-- lvim.lang.typescriptreact.formatters = {
+--   {
+--     exe = "prettier",
+--     args = {}
+--   }
+-- }
+-- lvim.lang.typescriptreact.linters = {
+--   {
+--     exe = "eslint",
+--     args = {}
+--   }
+-- }
+-- lvim.lang.javascriptreact.formatters = {
+--   {
+--     exe = "prettier",
+--     args = {}
+--   }
+-- }
+-- lvim.lang.javascriptreact.linters = {
+--   {
+--     exe = "eslint",
+--     args = {}
+--   }
+-- }
+-- lvim.lang.javascript.formatters = {
+--   {
+--     exe = "prettier",
+--     args = {}
+--   }
+-- }
+-- lvim.lang.javascript.linters = {
+--   {
+--     exe = "eslint",
+--     args = {}
+--   }
+-- }
+-- lvim.lang.typescript.formatters = {
+--   {
+--     exe = "prettier",
+--     args = {}
+--   }
+-- }
+-- -- set an additional linter
+-- lvim.lang.typescript.linters = {
+--   {
+--     exe = "eslint",
+--     args = {}
+--   }
+-- }
+-- Prettier configuration
+-- local formatters = require "lvim.lsp.null-ls.formatters"
+-- formatters.setup {
+--   {
+--     exe = "prettier",
+--     filetypes = {
+--       "javascriptreact",
+--       "javascript",
+--       "typescriptreact",
+--       "typescript",
+--       "json",
+--       "markdown",
+--     },
+--   },
+-- }
 
+-- -- ESLint
+-- local linters = require "lvim.lsp.null-ls.linters"
+-- linters.setup {
+--   {
+--     exe = "eslint",
+--     filetypes = {
+--       "javascriptreact",
+--       "javascript",
+--       "typescriptreact",
+--       "typescript",
+--       "vue",
+--     },
+--   },
+-- }
 
 -- Solidity
-require("nvim-treesitter.parsers").get_parser_configs().solidity = {
-  install_info = {
-    url = "https://github.com/JoranHonig/tree-sitter-solidity",
-    files = { "src/parser.c" },
-    requires_generate_from_grammar = true,
-  },
-  filetype = "solidity",
-}
+-- require("nvim-treesitter.parsers").get_parser_configs().solidity = {
+--   install_info = {
+--     url = "https://github.com/JoranHonig/tree-sitter-solidity",
+--     files = { "src/parser.c" },
+--     requires_generate_from_grammar = true,
+--   },
+--   filetype = "solidity",
+-- }

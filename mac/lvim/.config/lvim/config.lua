@@ -36,8 +36,3 @@ lvim.plugins = {
   -- {"steelsojka/headwind.nvim"}
 }
 
--- require('neoclip').setup()
-
--- require "headwind".setup {
---   -- options here
--- }
