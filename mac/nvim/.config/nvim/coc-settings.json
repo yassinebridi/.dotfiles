@@ -1,10 +1,10 @@
 {
   "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-  "typescript.suggestionActions.enabled": false,
+  "typescript.suggestionActions.enabled": true,
   "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-  "javascript.suggestionActions.enabled": false,
+  "javascript.suggestionActions.enabled": true,
   "languageserver": {
     "graphql": {
       "command": "graphql-lsp",
