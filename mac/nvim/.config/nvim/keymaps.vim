@@ -165,3 +165,6 @@ nnoremap <leader>gs /
 
 " Delete in insert mode
 inoremap <M-i> <Bs>
+
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
