@@ -1,9 +1,10 @@
 " Lazy load coc.nvim until i enter inset mode
-augroup load_us_ycm
-  autocmd!
-  autocmd InsertEnter * call plug#load('coc.nvim')
-                     \| autocmd! load_us_ycm
-augroup END
+" augroup load_us_ycm
+"   autocmd!
+"   autocmd InsertEnter * call plug#load('coc.nvim')
+"                      \| autocmd! load_us_ycm
+" augroup END
+" plug#load('coc.nvim')
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -68,7 +69,7 @@ augroup mygroup
 augroup end
 
 " Remap keys for applying codeAction to the current line.
-nmap <leader>ac <Plug>(coc-codeaction)
+nmap <leader>la <Plug>(coc-codeaction)
 nmap <M-CR> <Plug>(coc-fix-current) 
 
 " Add `:Format` command to format current buffer.

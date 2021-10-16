@@ -7,7 +7,7 @@ Plug 'pantharshit00/vim-prisma'
 " Main
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'on': []}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Utils
 Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 Plug 'tpope/vim-commentary'
@@ -15,10 +15,10 @@ Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'pseewald/vim-anyfold'
 Plug 'voldikss/vim-floaterm'
-Plug 'thaerkh/vim-workspace'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'tpope/vim-surround'
+Plug 'rmagatti/auto-session'
 " Theme
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'

@@ -118,7 +118,7 @@ autocmd VimEnter * map <S-l> :bn<CR>
 noremap <leader>q :bd<CR>
 
 " Unhighlight ged words
-nnoremap <silent> <C-t> :nohl<CR><C-l>
+nnoremap <leader>h :nohl<CR><C-l>
 
 " Markdown preview settings
 nmap <C-p> <Plug>MarkdownPreviewToggle

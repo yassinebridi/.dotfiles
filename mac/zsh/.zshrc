@@ -42,9 +42,9 @@ alias a='z' # Zoxide to have the same alias, across zsh and lf
 alias server='python -m SimpleHTTPServer 8080'
 alias szsh='source ~/.config/zsh/.zshrc'
 
-alias v='lvim'
-alias svim='sudo -E lvim'
-alias dvim='lvim -d'
+alias v='nvim'
+alias svim='sudo -E nvim'
+alias dvim='nvim -d'
 
 alias stn='stow -v -n -t ~'
 alias str='stow -v -R -t ~'

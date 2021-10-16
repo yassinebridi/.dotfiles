@@ -18,7 +18,6 @@ else
   source $HOME/.config/nvim/fzf.vim
   source $HOME/.config/nvim/floaterm.vim
   source $HOME/.config/nvim/fold.vim
-  source $HOME/.config/nvim/workspace.vim
   source $HOME/.config/nvim/spelling.vim
   source $HOME/.config/nvim/theme.vim
 
