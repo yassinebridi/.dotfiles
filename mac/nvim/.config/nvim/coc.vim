@@ -98,8 +98,8 @@ nmap <space>rc :CocRestart<CR>
 nmap <space>t :noa w<CR>
 
 " Coc snippets jumping
-imap <tab> <Plug>(coc-snippets-expand)
-let g:coc_snippet_next = '<TAB>'
+" imap <tab> <Plug>(coc-snippets-expand)
+" let g:coc_snippet_next = '<TAB>'
 
 " Jump to coc problems
 try
