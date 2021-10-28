@@ -101,8 +101,8 @@ noremap <silent> K :resize -3<CR>
 noremap <silent> H :vertical resize -3<CR>
 
 " Split shortcuts
-noremap <Tab> >>
-noremap <S-tab> <<
+" noremap <Tab> >>
+" noremap <S-tab> <<
 
 " Split shortcuts
 map <Leader>v :vsplit<CR>
@@ -168,3 +168,5 @@ inoremap <M-i> <Bs>
 
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+nmap <leader>bl  :BlamerToggle<CR>

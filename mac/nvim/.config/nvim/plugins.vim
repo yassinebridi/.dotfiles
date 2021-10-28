@@ -19,6 +19,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'tpope/vim-surround'
 Plug 'rmagatti/auto-session'
+Plug 'github/copilot.vim'
+Plug 'APZelos/blamer.nvim'
 " Theme
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
