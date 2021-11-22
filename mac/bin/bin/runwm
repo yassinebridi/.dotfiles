@@ -1,6 +1,6 @@
 #!/bin/sh
+sudo yabai --uninstall-sa
+sleep 1 # wait for yabai to install injection scripts
+sudo yabai --install-sa
 brew services restart koekeishiya/formulae/yabai 
 brew services restart skhd
-sudo yabai --install-sa
-sleep 1 # wait for yabai to install injection scripts
-sudo yabai --load-sa
