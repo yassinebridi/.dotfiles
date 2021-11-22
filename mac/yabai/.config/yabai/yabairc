@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 # global settings
 # focus window that your mouse hovers on (disabled due to right click bugs)
 yabai -m config focus_follows_mouse          off
@@ -23,8 +25,8 @@ yabai -m config mouse_drop_action            swap
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  32
-yabai -m config bottom_padding               10
+yabai -m config top_padding                  08
+yabai -m config bottom_padding               08
 yabai -m config left_padding                 08
 yabai -m config right_padding                08
 yabai -m config window_gap                   08
