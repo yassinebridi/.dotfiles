@@ -1,0 +1,1 @@
+mac/emacs/.doom.d
