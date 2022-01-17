@@ -6,6 +6,8 @@ export PATH="$PATH:$HOME/scripts/bin"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=~/.config/npm-global/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
+export PATH="$HOME/.emacs.d/bin:$PATH"
+
 
 # Android Paths
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -13,6 +15,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 export ZSH="/Users/yassinebridi/.oh-my-zsh"
 

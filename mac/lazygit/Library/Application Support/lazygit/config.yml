@@ -6,7 +6,13 @@ git:
     pager: delta --dark --paging=never
 keybinding:
   universal:
-    scrollUpMain-alt1: '<c-k>' # main panel scrool up
-    scrollDownMain-alt1: '<c-j>' # main panel scrool down
-    scrollUpMain-alt2: '<c-u>' # main panel scrool up
-    scrollDownMain-alt2: '<c-d>' # main panel scrool down
+    scrollUpMain-alt1: "<c-k>" # main panel scrool up
+    scrollDownMain-alt1: "<c-j>" # main panel scrool down
+    scrollUpMain-alt2: "<c-u>" # main panel scrool up
+    scrollDownMain-alt2: "<c-d>" # main panel scrool down
+customCommands:
+  - key: "C"
+    command: "git cz"
+    context: "files"
+    loadingText: "opening commitizen commit tool"
+    subprocess: true
