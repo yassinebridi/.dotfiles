@@ -170,3 +170,5 @@ xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 nmap <leader>bl  :BlamerToggle<CR>
+
+nnoremap <leader>n :SearchBoxIncSearch<CR>
