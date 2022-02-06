@@ -21,6 +21,7 @@ Plug 'tpope/vim-surround'
 Plug 'rmagatti/auto-session'
 Plug 'github/copilot.vim'
 Plug 'APZelos/blamer.nvim'
+" Plug 'phaazon/hop.nvim'
 " Theme
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
