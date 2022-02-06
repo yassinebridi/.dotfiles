@@ -171,4 +171,8 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 nmap <leader>bl  :BlamerToggle<CR>
 
+" Search Box
 nnoremap <leader>n :SearchBoxIncSearch<CR>
+
+" Command Box
+nnoremap : :FineCmdline<CR>

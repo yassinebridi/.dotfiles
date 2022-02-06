@@ -24,6 +24,8 @@ Plug 'APZelos/blamer.nvim'
 " Plug 'phaazon/hop.nvim'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'VonHeikemen/searchbox.nvim'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'VonHeikemen/fine-cmdline.nvim'
 " Theme
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
