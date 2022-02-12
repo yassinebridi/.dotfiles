@@ -1,25 +1,18 @@
-background_opacity: 0.9
-
 font:
   size: 17.0
+  use_thin_strokes: true
   normal:
-    family: Monaco
-    style: Regular
-
-  bold:
-    family: Monaco
-    style: Bold
-
-  italic:
-    family: Monaco
-    style: Italic
+    family: JetBrains Mono
 
 # Colors (Gruvbox dark)
+window:
+  opacity: 0.90
+
 colors:
   # Default colors
   primary:
     # hard contrast: background = '#1d2021'
-    background: "#282828"
+    background: "#000000"
     # soft contrast: background = '#32302f'
     foreground: "#ebdbb2"
 
