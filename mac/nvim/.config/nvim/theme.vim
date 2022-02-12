@@ -3,7 +3,7 @@ syntax enable
 set t_Co=256
 set t_ut=
 colorscheme gruvbox
-set guifont=Jetbrains\ Mono\ Font\ 11
+" set guifont=JetBrains\ Mono\ Font\ 19
 autocmd BufEnter,InsertLeave * :syntax sync fromstart
 
 "Set the right colors in vim

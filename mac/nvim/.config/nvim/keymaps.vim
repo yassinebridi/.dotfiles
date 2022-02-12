@@ -175,4 +175,4 @@ nmap <leader>bl  :BlamerToggle<CR>
 nnoremap <leader>n :SearchBoxIncSearch<CR>
 
 " Command Box
-nnoremap : :FineCmdline<CR>
+" nnoremap : :FineCmdline<CR>

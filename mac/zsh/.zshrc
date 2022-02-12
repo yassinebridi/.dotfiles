@@ -1,5 +1,6 @@
 ZSH_THEME="robbyrussell"
-plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-autocomplete)
+# plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-autocomplete)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/scripts/bin"
