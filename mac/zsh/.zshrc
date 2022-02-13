@@ -5,6 +5,7 @@ plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/scripts/bin"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/share/nvim/lsp_servers/tsserver/node_modules/.bin:$PATH"
 export PATH=~/.config/npm-global/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="$HOME/.emacs.d/bin:$PATH"
@@ -46,7 +47,7 @@ alias a='z' # Zoxide to have the same alias, across zsh and lf
 alias server='python -m SimpleHTTPServer 8080'
 alias szsh='source ~/.config/zsh/.zshrc'
 
-alias v='nvim'
+alias v='lvim'
 alias svim='sudo -E nvim'
 alias dvim='nvim -d'
 
