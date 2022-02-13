@@ -3,8 +3,8 @@
 -------------
 
 -- Move betwen diagnostic
-lvim.keys.normal_mode["m"] = ":lua vim.lsp.diagnostic.goto_next()<CR>"
-lvim.keys.normal_mode["M"] = ":lua vim.lsp.diagnostic.goto_prev()<CR>"
+lvim.keys.normal_mode["m"] = ":lua vim.diagnostic.goto_next()<CR>"
+lvim.keys.normal_mode["M"] = ":lua vim.diagnostic.goto_prev()<CR>"
 
 -- Select all
 lvim.keys.normal_mode["<leader>aa"] = "ggVG"

@@ -16,6 +16,21 @@ require'colorizer'.setup(
 	  css_fn   = true;         -- Enable all CSS *functions*: rgb_fn, hsl_fn
   })
 
+-- nvim-tree
+function _G.nvimTreeCollapse()
+  local lib = require'nvim-tree.lib'
+  lib.collapse_all()
+end
+require('nvim-tree').setup {
+  view = {
+    mappings = {
+      list = {
+        { key = 'ga', cb = ':call v:lua.nvimTreeCollapse() | normal gg<cr>' },
+      },
+    },
+  },
+}
 -- Nvim Tree
-lvim.builtin.nvimtree.hide_dotfiles = 0
-lvim.builtin.nvimtree.ignore = {".git"}
+-- lvim.builtin.nvimtree.filters.dotfiles = false
+-- lvim.builtin.nvimtree.git.ignore = true
+-- lvim.builtin.nvimtree.git.enable = true

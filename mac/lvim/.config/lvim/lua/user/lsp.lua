@@ -2,95 +2,110 @@
 -- LSP --
 ---------
 -- Better TS/JS Dev experience
--- lvim.lang.typescript.lsp.setup.on_attach = function(client, bufnr)
---   -- disable tsserver formatting if you plan on formatting via null-ls
---   client.resolved_capabilities.document_formatting = false
---   client.resolved_capabilities.document_range_formatting = false
+vim.list_extend(lvim.lsp.override, { "tsserver" })
 
---   local ts_utils = require("nvim-lsp-ts-utils")
+local tsserver_bin = "typescript-language-server"
 
---   -- defaults
---   ts_utils.setup {
---     debug = false,
---     disable_commands = false,
---     enable_import_on_completion = false,
+local custom_on_attach = function(client, bufnr)
+  require("lvim.lsp").common_on_attach(client, bufnr)
 
---     -- import all
---     import_all_timeout = 5000, -- ms
---     import_all_priorities = {
---         buffers = 4, -- loaded buffer names
---         buffer_content = 3, -- loaded buffer content
---         local_files = 2, -- git files or files with relative path markers
---         same_file = 1, -- add to existing import statement
---     },
---     import_all_scan_buffers = 100,
---     import_all_select_source = true,
+  client.resolved_capabilities.document_formatting = false
+  client.resolved_capabilities.document_range_formatting = false
 
---     -- eslint
---     eslint_enable_code_actions = false,
---     eslint_enable_disable_comments = true,
---     eslint_bin = "eslint",
---     eslint_enable_diagnostics = true,
---     eslint_opts = {},
+  local ts_utils = require("nvim-lsp-ts-utils")
 
---     -- formatting
---     enable_formatting = true,
---     formatter = "prettier",
---     formatter_opts = {},
+  -- defaults
+  ts_utils.setup {
+    debug = false,
+    disable_commands = false,
+    enable_import_on_completion = true,
 
---     -- update imports on file move
---     update_imports_on_move = true,
---     require_confirmation_on_move = true,
---     watch_dir = nil,
+    -- import all
+    import_all_timeout = 5000, -- ms
+    import_all_priorities = {
+        buffers = 4, -- loaded buffer names
+        buffer_content = 3, -- loaded buffer content
+        local_files = 2, -- git files or files with relative path markers
+        same_file = 1, -- add to existing import statement
+    },
+    import_all_scan_buffers = 100,
+    import_all_select_source = true,
 
---     -- filter diagnostics
---     filter_out_diagnostics_by_severity = {},
---     filter_out_diagnostics_by_code = {},
---   }
+    -- eslint
+    eslint_enable_code_actions = true,
+    eslint_enable_disable_comments = true,
+    eslint_bin = "eslint",
+    eslint_enable_diagnostics = true,
+    eslint_opts = {},
 
---   -- required to fix code action ranges and filter diagnostics
---   ts_utils.setup_client(client)
+    -- formatting
+    enable_formatting = true,
+    formatter = "prettier",
+    formatter_opts = {},
 
---   -- no default maps, so you may want to define some here
---   local opts = { silent = true }
---   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>o", ":TSLspOrganize<CR>", opts)
---   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>x", ":TSLspFixCurrent<CR>", opts)
---   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>i", ":TSLspImportAll<CR>", opts)
--- end
+    -- update imports on file move
+    update_imports_on_move = true,
+    require_confirmation_on_move = true,
+    watch_dir = nil,
+
+    -- filter diagnostics
+    filter_out_diagnostics_by_severity = {},
+    filter_out_diagnostics_by_code = {},
+  }
+
+  -- required to fix code action ranges and filter diagnostics
+  ts_utils.setup_client(client)
+
+  -- no default maps, so you may want to define some here
+  local opts = { noremap = true, silent = true }
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>o", ":TSLspOrganize<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>x", ":TSLspImportCurrent<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>i", ":TSLspImportAll<CR>", opts)
+end
+local tsserver_flags = {
+  "--stdio",
+}
+
+local opts = {
+  cmd = { tsserver_bin, unpack(tsserver_flags) },
+  on_attach = custom_on_attach,
+}
+
+require("lvim.lsp.manager").setup("tsserver", opts)
 
 lvim.lsp.automatic_servers_installation = true
 lvim.lsp.diagnostics.virtual_text= false
 
 -- Prettier configuration
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
---   {
---     exe = "prettier",
---     filetypes = {
---       "javascriptreact",
---       "javascript",
---       "typescriptreact",
---       "typescript",
---       "json",
---       "markdown",
---     },
---   },
--- }
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  {
+    exe = "prettier",
+    filetypes = {
+      "javascriptreact",
+      "javascript",
+      "typescriptreact",
+      "typescript",
+      "json",
+      "markdown",
+    },
+  },
+}
 
 -- -- ESLint
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---   {
---     exe = "eslint",
---     filetypes = {
---       "javascriptreact",
---       "javascript",
---       "typescriptreact",
---       "typescript",
---       "vue",
---     },
---   },
--- }
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  {
+    exe = "eslint",
+    filetypes = {
+      "javascriptreact",
+      "javascript",
+      "typescriptreact",
+      "typescript",
+      "vue",
+    },
+  },
+}
 
 -- Solidity
 -- require("nvim-treesitter.parsers").get_parser_configs().solidity = {
