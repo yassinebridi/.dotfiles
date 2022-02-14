@@ -16,6 +16,7 @@ require'colorizer'.setup(
 	  css_fn   = true;         -- Enable all CSS *functions*: rgb_fn, hsl_fn
   })
 
+
 -- nvim-tree
 function _G.nvimTreeCollapse()
   local lib = require'nvim-tree.lib'
@@ -30,6 +31,17 @@ require('nvim-tree').setup {
     },
   },
 }
+
+-- lsp_signature
+local lsp_signature_cfg = {}  -- add you config here
+require "lsp_signature".setup(lsp_signature_cfg)
+
+-- todo-comments
+require("todo-comments").setup {}
+
+
+-- indent_blankline
+
 -- Nvim Tree
 -- lvim.builtin.nvimtree.filters.dotfiles = false
 -- lvim.builtin.nvimtree.git.ignore = true
