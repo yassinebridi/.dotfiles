@@ -3,10 +3,10 @@
 --------------
 
 lvim.log.level = "warn"
-lvim.format_on_save = true
+lvim.format_on_save = false
 lvim.lint_on_save = false
 lvim.transparent_window = true
--- lvim.colorscheme = "gruvbox"
+lvim.colorscheme = "gruvbox"
 lvim.leader = "space"
 lvim.builtin.notify.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"

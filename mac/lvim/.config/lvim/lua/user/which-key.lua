@@ -13,8 +13,8 @@ lvim.builtin.which_key.mappings["rg"] = { "<cmd>:lua require'telescope.builtin'.
 
 
 -- Cargo run current project
-lvim.builtin.which_key.mappings["tr"] = { "<cmd>:2TermExec cmd=\"cargo run\"<CR>", "Cargo Run" }
+-- lvim.builtin.which_key.mappings["tr"] = { "<cmd>:2TermExec cmd=\"cargo run\"<CR>", "Cargo Run" }
 
-lvim.builtin.which_key.mappings["k"] = { "<cmd>:Telescope neoclip a<CR>", "Clipboard" }
+-- lvim.builtin.which_key.mappings["k"] = { "<cmd>:Telescope neoclip a<CR>", "Clipboard" }
 
 lvim.lsp.buffer_mappings.normal_mode = {}
