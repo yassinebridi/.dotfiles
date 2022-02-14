@@ -1,11 +1,11 @@
 ---------
 -- LSP --
 ---------
--- Better TS/JS Dev experience
-vim.list_extend(lvim.lsp.override, { "tsserver" })
+
+-- Typescript
+vim.list_extend(lvim.lsp.override, { "tsserver tailwindcss" })
 
 local tsserver_bin = "typescript-language-server"
-
 local custom_on_attach = function(client, bufnr)
   require("lvim.lsp").common_on_attach(client, bufnr)
 
@@ -65,13 +65,21 @@ end
 local tsserver_flags = {
   "--stdio",
 }
-
-local opts = {
+local tsserver_opts = {
   cmd = { tsserver_bin, unpack(tsserver_flags) },
   on_attach = custom_on_attach,
 }
+require("lvim.lsp.manager").setup("tsserver", tsserver_opts)
 
-require("lvim.lsp.manager").setup("tsserver", opts)
+-- Tailwindcss
+local tailwind_bin = "tailwindcss-language-server"
+local tailwind_flags = {
+  "--stdio",
+}
+local tailwind_opts = {
+  cmd = { tailwind_bin, unpack(tailwind_flags) },
+}
+require("lvim.lsp.manager").setup("tailwindcss", tailwind_opts)
 
 lvim.lsp.automatic_servers_installation = true
 lvim.lsp.diagnostics.virtual_text= false
