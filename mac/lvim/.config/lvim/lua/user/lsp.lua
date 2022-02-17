@@ -3,7 +3,7 @@
 ---------
 
 -- Typescript
-vim.list_extend(lvim.lsp.override, { "tsserver tailwindcss" })
+vim.list_extend(lvim.lsp.override, { "tsserver tailwindcss graphql" })
 
 local tsserver_bin = "typescript-language-server"
 local custom_on_attach = function(client, bufnr)
@@ -83,6 +83,18 @@ require("lvim.lsp.manager").setup("tailwindcss", tailwind_opts)
 
 lvim.lsp.automatic_servers_installation = true
 lvim.lsp.diagnostics.virtual_text= false
+
+-- GraphQL
+local graphql_bin = "graphql-lsp"
+local graphql_flags = {
+  "server",
+  "-m",
+  "stream"
+}
+local graphql_opts = {
+  cmd = { graphql_bin, unpack(graphql_flags) },
+}
+require("lvim.lsp.manager").setup("graphql", graphql_opts)
 
 -- Prettier configuration
 local formatters = require "lvim.lsp.null-ls.formatters"
