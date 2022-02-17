@@ -95,6 +95,8 @@ formatters.setup {
       "typescriptreact",
       "typescript",
       "graphql",
+      "css",
+      "html",
       "json",
       "markdown",
     },
