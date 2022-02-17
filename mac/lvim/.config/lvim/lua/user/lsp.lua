@@ -103,7 +103,7 @@ formatters.setup {
   },
 }
 
--- -- ESLint
+-- ESLint Configuration
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   {
@@ -113,7 +113,18 @@ linters.setup {
       "javascript",
       "typescriptreact",
       "typescript",
-      "vue",
+    },
+  },
+}
+local code_actions = require "lvim.lsp.null-ls.code_actions"
+code_actions.setup {
+  {
+    exe = "eslint_d",
+    filetypes = {
+      "javascriptreact",
+      "javascript",
+      "typescriptreact",
+      "typescript",
     },
   },
 }
