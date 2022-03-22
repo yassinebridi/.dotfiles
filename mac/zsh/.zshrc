@@ -73,6 +73,10 @@ alias gb='gobang'
 alias la='exa -la --group-directories-first'
 alias ls='exa -l --group-directories-first'
 
+
+alias pg_start="launchctl load ~/Library/LaunchAgents"
+alias pg_stop="launchctl unload ~/Library/LaunchAgents"
+
 # zoxide(autojump replacement)
 eval "$(zoxide init zsh)"
 
@@ -84,3 +88,5 @@ export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 
 eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
