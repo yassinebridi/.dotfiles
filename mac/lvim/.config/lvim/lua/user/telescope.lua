@@ -3,7 +3,7 @@
 ---------------
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
-lvim.builtin.telescope.active = false
+-- lvim.builtin.telescope.active = false
 lvim.builtin.telescope.on_config_done = function()
   local actions = require "telescope.actions"
   -- for input mode
