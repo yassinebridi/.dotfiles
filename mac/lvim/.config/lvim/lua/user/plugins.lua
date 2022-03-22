@@ -7,5 +7,8 @@ lvim.plugins = {
   {"github/copilot.vim"},
   {"rmagatti/auto-session"},
   {"ray-x/lsp_signature.nvim"},
-  {"folke/todo-comments.nvim", requires = {"nvim-lua/plenary.nvim"}}
+  {"folke/todo-comments.nvim", requires = {"nvim-lua/plenary.nvim"}},
+  {'junegunn/fzf', dir = '~/.fzf', run = './install --all' },
+  {"junegunn/fzf.vim"},
 }
+-- use '/opt/homebrew/bin/fzf'

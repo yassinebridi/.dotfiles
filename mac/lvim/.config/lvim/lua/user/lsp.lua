@@ -119,7 +119,7 @@ formatters.setup {
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   {
-    exe = "eslint_d",
+    exe = "eslint",
     filetypes = {
       "javascriptreact",
       "javascript",
@@ -131,7 +131,7 @@ linters.setup {
 local code_actions = require "lvim.lsp.null-ls.code_actions"
 code_actions.setup {
   {
-    exe = "eslint_d",
+    exe = "eslint",
     filetypes = {
       "javascriptreact",
       "javascript",
