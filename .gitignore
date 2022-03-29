@@ -5,7 +5,7 @@ node_modules
 plugged
 .undodir
 
-mac/karabiner/.config/karabiner/automatic_backups
+mac/karabiner/.config/karabiner/automatic_backups/
 lvim/.config/lvim/plugin/packer_compiled.lua
 lazygit/Library/Application Support/lazygit/state.yml
 
