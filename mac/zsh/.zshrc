@@ -9,6 +9,7 @@ export PATH="$HOME/.local/share/nvim/lsp_servers/tsserver/node_modules/.bin:$PAT
 export PATH="$HOME/.local/share/nvim/lsp_servers/tailwindcss_npm/node_modules/.bin:$PATH"
 export PATH="$HOME/.local/share/nvim/lsp_servers/theme_check/bin:$PATH"
 export PATH="$HOME/.local/share/nvim/lsp_servers/graphql/node_modules/.bin:$PATH"
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 export PATH=~/.config/npm-global/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="$HOME/.emacs.d/bin:$PATH"
@@ -51,7 +52,7 @@ alias server='python -m SimpleHTTPServer 8080'
 alias szsh='source ~/.config/zsh/.zshrc'
 
 alias v='lvim'
-alias svim='sudo -E nvim'
+alias svim='sudo -E lvim'
 alias dvim='nvim -d'
 
 alias stn='stow -v -n -t ~'
@@ -73,9 +74,10 @@ alias gb='gobang'
 alias la='exa -la --group-directories-first'
 alias ls='exa -l --group-directories-first'
 
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
-alias pg_start="launchctl load ~/Library/LaunchAgents"
-alias pg_stop="launchctl unload ~/Library/LaunchAgents"
+alias pg_start="brew services start postgresql"
+alias pg_stop="brew services stop postgresql"
 
 # zoxide(autojump replacement)
 eval "$(zoxide init zsh)"
