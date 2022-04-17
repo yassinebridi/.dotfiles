@@ -38,7 +38,7 @@ lvim.builtin.treesitter.ensure_installed = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
 
-require("luasnip/loaders/from_vscode").load { paths = { "~/.config/lvim/vscodesnips" } }
+require("luasnip/loaders/from_vscode").load { paths = { "~/.config/lvim/snips" } }
 
 vim.cmd [[
   au BufWritePost *yabairc !brew services restart koekeishiya/formulae/yabai
