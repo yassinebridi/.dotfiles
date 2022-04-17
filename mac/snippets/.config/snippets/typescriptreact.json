@@ -1,7 +1,7 @@
 {
   "reactFunctionComponent": {
     "prefix": "fce",
-    "body": "import React from 'react'\n\nexport interface ${TM_FILENAME_BASE} {}\nexport const ${TM_FILENAME_BASE}: React.FC<{}> = () => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t)\n}",
+    "body": "import React from 'react'\n\nexport interface ${TM_FILENAME_BASE}Props {}\nexport const ${TM_FILENAME_BASE}: React.FC<${TM_FILENAME_BASE}Props> = () => {\n\treturn (\n\t\t<div>\n\t\t\t${TM_FILENAME_BASE}\n\t\t</div>\n\t)\n}",
     "description": "Creates a React functional component"
   },
   "arrowFunction": {
