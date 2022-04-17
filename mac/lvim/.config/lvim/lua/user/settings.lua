@@ -1,7 +1,6 @@
 --------------
 -- Settings --
 --------------
-
 lvim.log.level = "warn"
 lvim.format_on_save = false
 lvim.lint_on_save = false
@@ -9,6 +8,7 @@ lvim.transparent_window = true
 lvim.colorscheme = "gruvbox"
 lvim.leader = "space"
 lvim.builtin.notify.active = true
+lvim.builtin.sell_soul_to_devel = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.alpha.active = true
 lvim.builtin.terminal.active = true
@@ -38,8 +38,10 @@ lvim.builtin.treesitter.ensure_installed = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
 
+require("luasnip/loaders/from_vscode").load { paths = { "~/.config/lvim/vscodesnips" } }
+
 vim.cmd [[
-  au BufWritePost *yabairc !brew services restart xorpse/formulae/yabai
+  au BufWritePost *yabairc !brew services restart koekeishiya/formulae/yabai
   au BufWritePost *espanso/default.yml !espanso restart
   au BufWritePost *skhdrc !brew services restart skhd
   au BufNewFile,BufRead *.ts setlocal filetype=typescript

@@ -1,0 +1,25 @@
+{
+  "name": "nvim-snippets",
+  "author": "abzcoding",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "typescriptreact",
+          "tsx"
+        ],
+        "path": "./typescriptreact.json"
+      },
+      {
+        "language": [
+          "typescript",
+          "ts"
+        ],
+        "path": "./typescript.json"
+      }
+    ]
+  }
+}
