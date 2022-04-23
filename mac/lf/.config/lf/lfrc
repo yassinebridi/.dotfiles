@@ -59,8 +59,14 @@ cmd bulkrename ${{
 map br bulkrename
 
 #Jump to directory using zoxide
+# cmd az %lf -remote "send $id cd '$(zoxide query $1)'"
+# map a push :az<space>
 cmd az %lf -remote "send $id cd '$(zoxide query $1)'"
 map a push :az<space>
+# cmd a ${{
+#     res="$(zoxide query -i "$1")"
+#     lf -remote "send $id cd \"$res\""
+# }}
 
 # Archive(to zip)/unarchive using atool
 cmd unarchive ${{
