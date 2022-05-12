@@ -43,6 +43,7 @@ bindkey -v '^?' backward-delete-char
 alias y='yarn'
 alias yw='yarn workspace'
 alias yd='yarn dev'
+alias nd='nr dev'
 alias ys='yarn start'
 alias ytp='youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s"'
 alias yts='youtube-dl --write-sub --sub-lang en --skip-download'
