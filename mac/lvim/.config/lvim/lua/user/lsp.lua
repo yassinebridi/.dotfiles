@@ -3,7 +3,7 @@
 ---------
 
 -- Typescript
-vim.list_extend(lvim.lsp.override, { "tsserver tailwindcss graphql" })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "tsserver tailwindcss graphql" })
 
 local tsserver_bin = "typescript-language-server"
 local custom_on_attach = function(client, bufnr)
