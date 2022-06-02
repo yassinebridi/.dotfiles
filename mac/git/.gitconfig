@@ -2,6 +2,9 @@
 	email = ybridi@gmail.com
 	name = Yassine Bridi
 
+[core]
+	editor = nvim
+
 [push]
 	default = current
 

@@ -14,6 +14,8 @@ export PATH=~/.config/npm-global/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
+export GEM_HOME="$HOME/.gem"
+
 
 # Android Paths
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -52,8 +54,8 @@ alias a='z' # Zoxide to have the same alias, across zsh and lf
 alias server='python -m SimpleHTTPServer 8080'
 alias szsh='source ~/.config/zsh/.zshrc'
 
-alias v='lvim'
-alias svim='sudo -E lvim'
+alias v='nvim'
+alias svim='sudo -E nvim'
 alias dvim='nvim -d'
 
 alias stn='stow -v -n -t ~'
