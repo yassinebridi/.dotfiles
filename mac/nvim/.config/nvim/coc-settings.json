@@ -9,7 +9,7 @@
     "graphql": {
       "command": "graphql-lsp",
       "args": ["server", "-m", "stream"],
-      "filetypes": ["graphql"]
+      "filetypes": ["typescript", "typescriptreact", "graphql"]
     },
     "tailwind-lsp": {
       "command": "tailwindcss-language-server",

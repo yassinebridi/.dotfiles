@@ -59,7 +59,7 @@ inoremap <S-k> <UP>
 
 "Saving and quiting
 nnoremap <leader>w :w<cr>
-nnoremap <leader>s :q<cr>
+nnoremap <leader>q :q<cr>
 
 "Enter functionality
 nmap <leader><CR> i<CR><Esc>
@@ -115,7 +115,7 @@ map <Leader>p #
 " Moving between tabs
 autocmd VimEnter * map <S-h> :bp<CR>
 autocmd VimEnter * map <S-l> :bn<CR>
-noremap <leader>q :bd<CR>
+noremap <leader>s :bd<CR>
 
 " Unhighlight ged words
 nnoremap <leader>h :nohl<CR><C-l>
