@@ -42,6 +42,15 @@ bindkey -M vicmd 'gh' vi-digit-or-beginning-of-line
 bindkey -v '^?' backward-delete-char
 
 # Aliases
+
+# Trash
+alias rm='echo "This is not the command you are looking for."; false'
+alias tm="trash-put"
+alias te="trash-empty"
+alias tl="trash-list"
+alias ts="trash-restore"
+alias td="trash-rm"
+
 alias y='yarn'
 alias yw='yarn workspace'
 alias yd='yarn dev'
@@ -66,7 +75,6 @@ alias t='runTmux'
 alias ta='tmux a'
 alias tn='tmux new -s'
 alias tk='tmux kill-ses -t'
-alias tl='tmux ls'
 alias gp='git push'
 alias code='code .'
 alias cat='bat'
