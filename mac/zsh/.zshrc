@@ -16,6 +16,7 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 
 export GEM_HOME="$HOME/.gem"
 
+export DOCKER_HOST=$(docker context inspect | jq '.[] | select(.Name == "'$(docker context show)'") | .Endpoints.docker.Host' -r)
 
 # Android Paths
 export ANDROID_HOME=$HOME/Library/Android/sdk
