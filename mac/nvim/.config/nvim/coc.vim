@@ -28,6 +28,7 @@ set shortmess+=c
 set signcolumn=yes
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()

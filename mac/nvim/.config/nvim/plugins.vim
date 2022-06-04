@@ -12,6 +12,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 Plug 'tpope/vim-commentary'
 Plug 'SirVer/ultisnips'
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'pseewald/vim-anyfold'
 Plug 'voldikss/vim-floaterm'

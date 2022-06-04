@@ -15,10 +15,10 @@ vnoremap gh ^
 vnoremap gl $
 nnoremap k gk
 nnoremap j gj
-nnoremap <M-k> {
-nnoremap <M-j> }
-vnoremap <M-k> {
-vnoremap <M-j> }
+nnoremap <D-k> {
+nnoremap <D-j> }
+vnoremap <D-k> {
+vnoremap <D-j> }
 
 " Remove
 nnoremap yia yi'
