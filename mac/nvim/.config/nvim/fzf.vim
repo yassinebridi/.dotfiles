@@ -14,8 +14,10 @@ nnoremap <leader>mr :Marks<CR>
 " Border color
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.0,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 
-let $FZF_DEFAULT_COMMAND='rg -g !.git -g !node_modules -g !.next --files --hidden'
+let $FZF_DEFAULT_COMMAND='rg -g !.git -g !node_modules -g !.next --files --hidden --no-filename'
 let $FZF_DEFAULT_OPTS='--layout=reverse --info=inline --bind J:down,K:up --color=fg:8,hl:201,bg+:54'
+
+" command! -bang -nargs=* Rg call fzf#vim#grep("rg -g !yarn.lock --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0) 
 
 "Get previews
 command! -bang -nargs=? -complete=dir Files

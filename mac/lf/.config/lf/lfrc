@@ -85,15 +85,15 @@ map tc :archive
 # Locate files using fzf
 cmd locate ${{
 	# Expande lf window
-	bspc node -z right 140 0 && bspc node -z left -140 0 &&
-	bspc node -z top 0 -50 && bspc node -z bottom 0 50 && bspc node -v 0 30
+	# bspc node -z right 140 0 && bspc node -z left -140 0 &&
+	# bspc node -z top 0 -50 && bspc node -z bottom 0 50 && bspc node -v 0 30
 
   file=$(locate / | ~/bin/fzfpreview)
 	lf -remote "send $id select '$file'"
 
 	# Reset lf window expansion
-	bspc node -z right -140 0 && bspc node -z left 140 0 &&
-	bspc node -z top 0 50 && bspc node -z bottom 0 -50 && bspc node -v 0 -30
+	# bspc node -z right -140 0 && bspc node -z left 140 0 &&
+	# bspc node -z top 0 50 && bspc node -z bottom 0 -50 && bspc node -v 0 -30
 }}
 map <c-l> :locate
 

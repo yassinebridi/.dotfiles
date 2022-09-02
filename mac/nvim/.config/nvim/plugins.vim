@@ -10,6 +10,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Utils
 Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
+Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
 Plug 'SirVer/ultisnips'
 Plug 'norcalli/nvim-colorizer.lua'

@@ -98,6 +98,13 @@ nmap <space>rc :CocRestart<CR>
 " Format without save
 nmap <space>t :noa w<CR>
 
+" Tab
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+inoremap <S-Tab> <C-D>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
 " Coc snippets jumping
 " imap <tab> <Plug>(coc-snippets-expand)
 " let g:coc_snippet_next = '<TAB>'
