@@ -45,11 +45,11 @@ yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Microsoft Edge$" title="^$" manage=off
 yabai -m rule --add title="^$" manage=off
 yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add app="^Steam$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Digital Colou?r Meter$" manage=off
 yabai -m rule --add app="^Docker$" manage=off
 yabai -m rule --add app="^NeatDownloadManager$" manage=off
 yabai -m rule --add app="^VLC$" manage=off
 yabai -m rule --add app="^Disk Utility$" manage=off
-yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
