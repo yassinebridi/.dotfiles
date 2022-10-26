@@ -1,6 +1,5 @@
 font:
   size: 17.0
-  use_thin_strokes: true
   normal:
     # family: JetBrainsMono Nerd Font
     family: FiraCode Nerd Font
