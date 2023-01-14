@@ -5,6 +5,7 @@
   "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "javascript.suggestionActions.enabled": true,
+  "suggest.noselect": true,
   "languageserver": {
     // "graphql": {
     //   "command": "graphql-lsp",
