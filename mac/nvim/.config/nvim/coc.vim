@@ -99,16 +99,26 @@ nmap <space>rc :CocRestart<CR>
 nmap <space>t :noa w<CR>
 
 " Tab
-nnoremap <Tab> >>_
-nnoremap <S-Tab> <<_
-inoremap <S-Tab> <C-D>
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
+" nnoremap <Tab> >>_
+" nnoremap <S-Tab> <<_
+" inoremap <S-Tab> <C-D>
+" vnoremap <Tab> >gv
+" vnoremap <S-Tab> <gv
 
 " Coc snippets jumping
 " imap <tab> <Plug>(coc-snippets-expand)
 " let g:coc_snippet_next = '<TAB>'
+" use <tab> to trigger completion and navigate to the next complete item
+" function! CheckBackspace() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
 " Jump to coc problems
 try
 	nmap <silent> m :call CocAction('diagnosticNext')<cr>
