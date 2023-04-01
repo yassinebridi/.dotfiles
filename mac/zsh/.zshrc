@@ -14,9 +14,15 @@ export PATH=~/.config/npm-global/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
+
+# export DOCKER_HOST=$(docker context inspect | jq '.[] | select(.Name == "'$(docker context show)'") | .Endpoints.docker.Host' -r)
+export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
 export GEM_HOME="$HOME/.gem"
 
-export DOCKER_HOST=$(docker context inspect | jq '.[] | select(.Name == "'$(docker context show)'") | .Endpoints.docker.Host' -r)
+# export DOCKER_HOST=$(docker context inspect | jq '.[] | select(.Name == "'$(docker context show)'") | .Endpoints.docker.Host' -r)
+# export DOCKER_HOST=tcp://colima:2375
 
 # Android Paths
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -45,16 +51,17 @@ bindkey -v '^?' backward-delete-char
 # Aliases
 
 # Trash
-alias rm='echo "This is not the command you are looking for."; false'
 alias tm="trash-put"
 alias te="trash-empty"
 alias tl="trash-list"
 alias ts="trash-restore"
 alias td="trash-rm"
 
+alias p='pnpm'
 alias y='yarn'
 alias yw='yarn workspace'
 alias yd='yarn dev'
+alias yg='yarn gen'
 alias nd='nr dev'
 alias ys='yarn start'
 alias ytp='youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s"'
@@ -82,6 +89,7 @@ alias cat='bat'
 alias lg='lazygit'
 alias ld='lazydocker'
 alias gb='gobang'
+alias f='xplr'
 
 alias la='exa -la --group-directories-first'
 alias ls='exa -l --group-directories-first'
@@ -104,3 +112,16 @@ export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# pnpm
+export PNPM_HOME="/Users/yassinebridi/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+eval "$(github-copilot-cli alias -- "$0")"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/yassinebridi/Downloads/Compressed/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yassinebridi/Downloads/Compressed/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/yassinebridi/Downloads/Compressed/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yassinebridi/Downloads/Compressed/google-cloud-sdk/completion.zsh.inc'; fi
