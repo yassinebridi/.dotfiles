@@ -42,3 +42,5 @@ mac/lvim/.config/lvim/plugin/packer_compiled.lua
 mac/lazygit/Library/Application Support/lazygit/state.yml
 
 mac/lvim/.config/lvim/ignore
+
+mac/mpv/.config/mpv/scripts/time_pairs.txt
