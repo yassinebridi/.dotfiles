@@ -3,25 +3,17 @@
 -------------------------------------
 
 -- Colorizer
-require'colorizer'.setup(
-  {'*';},
-  {
-    RGB      = true;         -- #RGB hex codes
-	  RRGGBB   = true;         -- #RRGGBB hex codes
-	  names    = true;         -- "Name" codes like Blue
-	  RRGGBBAA = true;         -- #RRGGBBAA hex codes
-	  rgb_fn   = true;         -- CSS rgb() and rgba() functions
-	  hsl_fn   = true;         -- CSS hsl() and hsla() functions
-	  css      = true;         -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-	  css_fn   = true;         -- Enable all CSS *functions*: rgb_fn, hsl_fn
-  })
+local colorizer_cfg = {} -- add you config here
+require 'colorizer'.setup(colorizer_cfg)
 
+require("typescript").setup({})
 
 -- nvim-tree
 function _G.nvimTreeCollapse()
-  local lib = require'nvim-tree.lib'
+  local lib = require 'nvim-tree.lib'
   lib.collapse_all()
 end
+
 require('nvim-tree').setup {
   view = {
     mappings = {
@@ -32,11 +24,11 @@ require('nvim-tree').setup {
   },
 }
 
--- lsp_signature
-local lsp_signature_cfg = {}  -- add you config here
+-- -- lsp_signature
+local lsp_signature_cfg = {} -- add you config here
 require "lsp_signature".setup(lsp_signature_cfg)
 
--- todo-comments
+-- -- todo-comments
 require("todo-comments").setup {}
 
 

@@ -68,6 +68,7 @@ lvim.keys.normal_mode["<CR>"] = 'o<Esc>'
 
 -- Get out of insert mode
 lvim.keys.command_mode["jk"] = '<C-C>'
+lvim.keys.insert_mode["jk"] = '<C-C>'
 
 -- TODO: Source current file
 lvim.keys.normal_mode["<leader>y"] = ':w<cr> :luafile ~/.config/lvim/config.lua<cr>'
@@ -89,5 +90,9 @@ lvim.keys.visual_mode["<S-Tab>"] = '<gv'
 -- End macros in command mode
 lvim.keys.command_mode["<C-q>"] = '<C-f>i<C-o>q'
 
-lvim.keys.normal_mode["K"] = '<cmd>lua vim.lsp.buf.hover()<CR>'
-lvim.keys.normal_mode["gd"] = '<cmd>lua vim.lsp.buf.definition()<CR>'
+-- lvim.keys.normal_mode["K"] = '<cmd>lua vim.lsp.buf.hover()<CR>'
+-- lvim.keys.normal_mode["gd"] = '<cmd>lua vim.lsp.buf.definition()<CR>'
+
+-- Shift between buffers
+lvim.keys.normal_mode["H"] = ':bprev<cr>'
+lvim.keys.normal_mode["L"] = ':bnext<cr>'
