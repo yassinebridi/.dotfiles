@@ -2,18 +2,18 @@
 -- Settings --
 --------------
 lvim.log.level = "warn"
-lvim.format_on_save = false
+lvim.format_on_save = true
 lvim.lint_on_save = false
 lvim.transparent_window = true
 lvim.colorscheme = "gruvbox"
 lvim.leader = "space"
-lvim.builtin.notify.active = true
+-- lvim.builtin.notify.active = true
 lvim.builtin.sell_soul_to_devel = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.alpha.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 1
+-- lvim.builtin.nvimtree.show_icons.git = 1
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true

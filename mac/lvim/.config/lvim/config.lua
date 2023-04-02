@@ -1,6 +1,6 @@
 require('user/telescope')
 require('user/keymaps')
-require('user/lsp')
+-- require('user/lsp')
 require('user/macros')
 require('user/which-key')
 require('user/settings')
