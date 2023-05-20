@@ -29,12 +29,12 @@ inoremap <C-b> <esc>@k
 
 
 " JSX Tag completion
-inoremap <M-tab> <esc>"ayiwi<ea></"apa>bba
+inoremap <C-x> <esc>yiwi<ea></pa>bba
 
 " JSX Tag completion without closing tag
 inoremap <S-tab> <esc>bi<ea />
 
-" Enclose a bunch of tags with a dib Tag
+" Enclose a bunch of tags with a div Tag
 vnoremap <leader>tg dOdiv<esc><esc>"ayiwi<ea></"apa>bbaPka
         
 " JSX Tag complection for the whole components
