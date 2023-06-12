@@ -13,8 +13,11 @@ export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 export PATH=~/.config/npm-global/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 
 export GOPATH=~/go
+export EDITOR='nvim'
+export VISUAL='nvim'
 export PATH=$PATH:$GOPATH/bin
 
 # export DOCKER_HOST=$(docker context inspect | jq '.[] | select(.Name == "'$(docker context show)'") | .Endpoints.docker.Host' -r)
@@ -64,6 +67,7 @@ alias yd='yarn dev'
 alias yg='yarn gen'
 alias nd='nr dev'
 alias ys='yarn start'
+alias yc='yarn typecheck'
 alias ytp='youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s"'
 alias yts='youtube-dl --write-sub --sub-lang en --skip-download'
 alias a='z' # Zoxide to have the same alias, across zsh and lf
@@ -98,6 +102,8 @@ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
 alias pg_start="brew services start postgresql"
 alias pg_stop="brew services stop postgresql"
+alias pnpx='pnpm dlx'
+alias k='kubectl'
 
 # zoxide(autojump replacement)
 eval "$(zoxide init zsh)"
@@ -119,9 +125,3 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 eval "$(github-copilot-cli alias -- "$0")"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/yassinebridi/Downloads/Compressed/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yassinebridi/Downloads/Compressed/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/yassinebridi/Downloads/Compressed/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yassinebridi/Downloads/Compressed/google-cloud-sdk/completion.zsh.inc'; fi
