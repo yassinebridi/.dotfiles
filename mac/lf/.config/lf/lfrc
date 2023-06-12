@@ -95,18 +95,29 @@ cmd locate ${{
 	# bspc node -z right -140 0 && bspc node -z left 140 0 &&
 	# bspc node -z top 0 50 && bspc node -z bottom 0 -50 && bspc node -v 0 -30
 }}
-cmd fzf_select ${{
-    res="$(find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune -o -print 2> /dev/null | sed 1d | cut -b3- | fzf +m)"
-    if [ -d "$res" ] ; then
+# cmd fzf_select ${{
+#     res="$(find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune -o -print 2> /dev/null | sed 1d | cut -b3- | fzf +m)"
+#     if [ -d "$res" ] ; then
+#         cmd="cd"
+#     elif [ -f "$res" ] ; then
+#         cmd="select"
+#     else
+#         exit 0
+#     fi
+#     lf -remote "send $id $cmd \"$res\""
+# }}
+# map <c-l> :fzf_select
+
+cmd fzf_select_folder ${{ 
+	# res="$(locate '*/[^.]*' | grep -Ev '/\.git($|/)' | grep -Ev '/\.next($|/)' | grep -Ev '^/Volumes($|/)' | grep -Ev '^/var($|/)' | grep -Ev '^/usr($|/)' | grep -Ev '^/tmp($|/)' | grep -Ev '^/sbin($|/)' | grep -Ev '^/private($|/)' | grep -Ev '^/opt($|/)' | grep -Ev '^/nix($|/)' | grep -Ev '^/home($|/)' | grep -Ev '^/etc($|/)' | grep -Ev '^/dev($|/)' | grep -Ev '^/cores($|/)' | grep -Ev '^/System($|/)' | grep -Ev '^/Applications($|/)' | grep -Ev '^/Library($|/)' | fzf +m)"
+
+    res="$(locate '*/[^.]*' | fzf +m)"
+    if [ -d "$res" ]; then
         cmd="cd"
-    elif [ -f "$res" ] ; then
-        cmd="select"
-    else
-        exit 0
+        lf -remote "send $id $cmd \"$res\""
     fi
-    lf -remote "send $id $cmd \"$res\""
 }}
-map <c-l> :fzf_select
+map <c-d> :fzf_select_folder
 
 # Share any file 256MiB limit
 cmd share $curl -F"file=@$fx" https://0x0.st | xclip -selection c | notify-send "Shared file link in copied to clipboard"
