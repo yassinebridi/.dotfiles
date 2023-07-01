@@ -10,7 +10,7 @@ cmd + shift - l : yabai -m window --focus east
 # shift + alt - k : yabai -m window --warp north
 # shift + alt - l : yabai -m window --warp east
 
-# Move focus container to workspace
+# Move focued container to workspace
 shift + alt - 1 : yabai -m window --space 1
 shift + alt - 2 : yabai -m window --space 2
 shift + alt - 3 : yabai -m window --space 3

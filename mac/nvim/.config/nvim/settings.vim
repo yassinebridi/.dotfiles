@@ -38,9 +38,9 @@ au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 au BufNewFile,BufRead *.py setlocal filetype=python
 
-au BufWritePost *yabairc !brew services restart koekeishiya/formulae/yabai
+au BufWritePost *yabairc !yabai --restart-service
 au BufWritePost *espanso/default.yml !espanso restart
-au BufWritePost *skhdrc !brew services restart skhd
+au BufWritePost *skhdrc !skhd --restart-service
 
 " Close netrw
 autocmd FileType netrw setl bufhidden=wipe
