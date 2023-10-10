@@ -44,6 +44,8 @@ yabai -m config window_border_width          6
 
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Notes$" manage=off
 yabai -m rule --add app="^Microsoft Edge$" title="^$" manage=off
 yabai -m rule --add title="^$" manage=off
 yabai -m rule --add app="^System Information$" manage=off
