@@ -1,4 +1,0 @@
-#!/bin/sh
-brew services stop koekeishiya/formulae/yabai 
-brew services stop skhd
-sudo yabai --uninstall-sa
