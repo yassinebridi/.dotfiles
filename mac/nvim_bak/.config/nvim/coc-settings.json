@@ -5,8 +5,11 @@
   "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "javascript.suggestionActions.enabled": true,
+  "javascript.showUnused": true,
   "tsserver.useLocalTsdk": true,
   "suggest.noselect": true,
+  "go.enable": true,
+  "go.goplsPath": "/Users/yassinebridi/go/bin/gopls",
   "languageserver": {
     "graphql": {
       "command": "graphql-lsp",
