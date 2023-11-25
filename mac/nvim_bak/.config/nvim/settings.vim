@@ -7,7 +7,7 @@ set laststatus=2
 " set autoindent
 set nocompatible
 set number
-" set number relativenumber
+set number relativenumber
 set ignorecase
 set smartcase
 set encoding=utf-8
