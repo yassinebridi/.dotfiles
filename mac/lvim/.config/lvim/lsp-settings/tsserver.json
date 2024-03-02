@@ -1,0 +1,5 @@
+{
+  "codeActionsOnSave": {
+    "source.organizeImports": true
+  }
+}
