@@ -23,6 +23,7 @@ Plug 'tpope/vim-surround'
 Plug 'rmagatti/auto-session'
 Plug 'github/copilot.vim'
 Plug 'APZelos/blamer.nvim'
+Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 " Plug 'phaazon/hop.nvim'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'VonHeikemen/searchbox.nvim'
@@ -39,3 +40,17 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'rbong/vim-crystalline'
 " Plug 'yassinebridi/vim-purpura'
 call plug#end()
+
+
+lua << EOF
+local opts = {
+  auto_session_root_dir = vim.fn.stdpath('data').."/sessions/",
+  auto_session_enable_last_session = false,
+  auto_session_enabled = true,
+  auto_save_enabled = true,
+  auto_restore_enabled = true,
+  auto_session_use_git_branch = true,
+}
+
+require('auto-session').setup(opts)
+EOF

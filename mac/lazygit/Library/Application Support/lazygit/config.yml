@@ -1,5 +1,8 @@
 reporting: "off"
 startuppopupversion: 1
+
+os:
+  editPreset: 'nvim'
 git:
   paging:
     colorArg: always
