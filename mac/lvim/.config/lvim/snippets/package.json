@@ -1,6 +1,6 @@
 {
   "name": "nvim-snippets",
-  "author": "abzcoding",
+  "author": "Yassine Bridi",
   "engines": {
     "vscode": "^1.11.0"
   },
