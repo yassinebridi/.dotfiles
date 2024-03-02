@@ -8,6 +8,7 @@
   "javascript.showUnused": true,
   "tsserver.useLocalTsdk": true,
   "suggest.noselect": true,
+  "session.saveOnVimLeave": true,
   "go.enable": true,
   "go.goplsPath": "/Users/yassinebridi/go/bin/gopls",
   "languageserver": {
@@ -23,49 +24,7 @@
         "typescriptreact",
         "graphql"
       ]
-    },
-    // "tailwind-lsp": {
-    //   "command": "tailwindcss-language-server",
-    //   "args": [
-    //     "--stdio"
-    //   ],
-    //   "filetypes": [
-    //     "javascript",
-    //     "javascriptreact",
-    //     "typescript",
-    //     "typescriptreact"
-    //   ],
-    //   "rootPatterns": [
-    //     "tailwind.config.js",
-    //     "tailwind.config.ts",
-    //     "postcss.config.js",
-    //     "postcss.config.ts",
-    //     "package.json",
-    //     "node_modules",
-    //     ".git"
-    //   ],
-    //   "settings": {
-    //     "tailwindCSS": {
-    //       "validate": true,
-    //       "lint": {
-    //         "cssConflict": "warning",
-    //         "invalidApply": "error",
-    //         "invalidScreen": "error",
-    //         "invalidVariant": "error",
-    //         "invalidConfigPath": "error",
-    //         "invalidTailwindDirective": "error",
-    //         "recommendedVariantOrder": "warning"
-    //       },
-    //       "classAttributes": [
-    //         "class",
-    //         "className",
-    //         "classList",
-    //         "ngClass"
-    //       ],
-    //       "experimental": {}
-    //     }
-    //   }
-    // }
+    }
   },
   "coc.preferences.extensionUpdateCheck": "never",
   "prismaLanguageServer.prismaFmtBinPath": "",
@@ -100,5 +59,8 @@
     ".": "toggleHidden"
   },
   "yaml.format.enable": true,
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/GoogleContainerTools/skaffold/main/docs-v2/content/en/schemas/v4beta5.json": [ "skaffold.yaml" ]
+  },
   "yaml.format.singleQuote": true
 }
