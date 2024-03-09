@@ -3,15 +3,16 @@
 -------------------
 lvim.plugins = {
   { "lunarvim/colorschemes" },
-  { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true},
+  { "ellisonleao/gruvbox.nvim", priority = 1000, config = true },
+  { "mg979/vim-visual-multi" },
   {
     "folke/persistence.nvim",
-      event = "BufReadPre",
-      config = function()
-        require("persistence").setup {
-          dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
-          options = { "buffers", "curdir", "tabpages", "winsize" },
-        }
+    event = "BufReadPre",
+    config = function()
+      require("persistence").setup {
+        dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
+        options = { "buffers", "curdir", "tabpages", "winsize" },
+      }
     end,
   },
 }
@@ -25,7 +26,7 @@ table.insert(lvim.plugins, {
   dependencies = { "zbirenbaum/copilot.lua" },
   config = function()
     vim.defer_fn(function()
-      require("copilot").setup() -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
+      require("copilot").setup()     -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
       require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
     end, 100)
   end,
