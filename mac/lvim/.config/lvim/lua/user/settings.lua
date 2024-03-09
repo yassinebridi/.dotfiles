@@ -12,6 +12,11 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevelstart = 99
 vim.opt.whichwrap = "b,s"
 lvim.lsp.installer.setup.automatic_installation = true
-lvim.builtin.which_key.mappings["f"] = { "<cmd>Telescope find_files<cr>", "Find File" }
-lvim.builtin.which_key.mappings["rg"] = { "<cmd>Telescope live_grep<cr>", "Grep" }
+lvim.builtin.which_key.mappings["f"] = { "<cmd>FzfLua files<cr>", "Find File" }
+lvim.builtin.which_key.mappings["rg"] = { "<cmd>FzfLua grep_visual<cr>", "Grep" }
 lvim.builtin.which_key.mappings["aa"] = { "<cmd>normal! ggVG<cr>", "Select All" }
+
+vim.cmd [[
+  au BufWritePost *yabairc !brew services restart koekeishiya/formulae/yabai
+  au BufWritePost *skhdrc !brew services restart skhd
+]]
