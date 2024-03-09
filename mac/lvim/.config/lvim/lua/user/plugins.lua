@@ -24,7 +24,17 @@ lvim.plugins = {
       require("fzf-lua").setup({})
     end
   },
-  { "junegunn/fzf", build = "./install --bin" }
+  { "junegunn/fzf", build = "./install --bin" },
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("refactoring").setup()
+    end,
+  },
 }
 
 ----------------------
@@ -72,3 +82,16 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
   end,
   nested = true,
 })
+
+---------------------------------
+--- Setup refactoring plugin  ---
+---------------------------------
+require('refactoring').setup()
+-- load refactoring Telescope extension
+require("telescope").load_extension("refactoring")
+
+lvim.builtin.which_key.mappings["rr"] = { function() require('telescope').extensions.refactoring.refactors() end, "Refactor Selection" }
+lvim.builtin.which_key.vmappings["rr"] = { function() require('telescope').extensions.refactoring.refactors() end, "Refactor Selection" }
+lvim.builtin.which_key.mappings["rv"] = { function() require('refactoring').debug.print_var() end, "Debug Print Variable" }
+lvim.builtin.which_key.mappings["rp"] = { function() require('refactoring').debug.printf() end, "Debug Print" }
+lvim.builtin.which_key.mappings["rc"] = { function() require('refactoring').debug.cleanup({}) end, "Clean Debug" }
