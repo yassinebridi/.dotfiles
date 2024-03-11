@@ -35,6 +35,21 @@ lvim.plugins = {
       require("refactoring").setup()
     end,
   },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    config = function() require "lsp_signature".on_attach() end,
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    event = "BufRead",
+  },
 }
 
 ----------------------
@@ -90,8 +105,10 @@ require('refactoring').setup()
 -- load refactoring Telescope extension
 require("telescope").load_extension("refactoring")
 
-lvim.builtin.which_key.mappings["rr"] = { function() require('telescope').extensions.refactoring.refactors() end, "Refactor Selection" }
-lvim.builtin.which_key.vmappings["rr"] = { function() require('telescope').extensions.refactoring.refactors() end, "Refactor Selection" }
+lvim.builtin.which_key.mappings["rr"] = { function() require('telescope').extensions.refactoring.refactors() end,
+  "Refactor Selection" }
+lvim.builtin.which_key.vmappings["rr"] = { function() require('telescope').extensions.refactoring.refactors() end,
+  "Refactor Selection" }
 lvim.builtin.which_key.mappings["rv"] = { function() require('refactoring').debug.print_var() end, "Debug Print Variable" }
 lvim.builtin.which_key.mappings["rp"] = { function() require('refactoring').debug.printf() end, "Debug Print" }
 lvim.builtin.which_key.mappings["rc"] = { function() require('refactoring').debug.cleanup({}) end, "Clean Debug" }
