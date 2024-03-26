@@ -59,8 +59,7 @@ vim.cmd [[
   nnoremap <leader>w :w<cr>
   nnoremap <leader>q :q<cr>
   
-  nmap <leader><CR> i<CR><Esc>
-  nmap <CR> o<Esc>
+  nmap <CR> o<space><Esc>
   
   imap jk <Esc>
   cmap jk <C-C>

@@ -5,6 +5,7 @@ lvim.plugins = {
   { "lunarvim/colorschemes" },
   { "ellisonleao/gruvbox.nvim", priority = 1000, config = true },
   { "mg979/vim-visual-multi" },
+  { "dwrdx/mywords.nvim" },
   {
     "folke/persistence.nvim",
     event = "BufReadPre",
@@ -14,6 +15,30 @@ lvim.plugins = {
         options = { "buffers", "curdir", "tabpages", "winsize" },
       }
     end,
+  },
+  {
+    "github/copilot.vim"
+  },
+  {
+    "Exafunction/codeium.nvim",
+    enabled = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require("codeium").setup({
+        enable_chat = true,
+        tools = {
+          language_server = "/usr/local/bin/language_server_macos_arm",
+        },
+      })
+    end
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    enabled = true,
+    opts = { mode = "cursor", max_lines = 3 },
   },
   {
     "ibhagwan/fzf-lua",
@@ -50,18 +75,91 @@ lvim.plugins = {
     "JoosepAlviste/nvim-ts-context-commentstring",
     event = "BufRead",
   },
+  {
+    "stevearc/dressing.nvim",
+    opts = {},
+  },
+  {
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+    -- optionally, override the default options:
+    config = function()
+      require("tailwindcss-colorizer-cmp").setup({
+        color_square_width = 2,
+      })
+    end
+  },
+  -- how is
+  {
+    "mfussenegger/nvim-dap",
+    optional = true,
+    dependencies = {
+      {
+        "williamboman/mason.nvim",
+        opts = function(_, opts)
+          opts.ensure_installed = opts.ensure_installed or {}
+          table.insert(opts.ensure_installed, "js-debug-adapter")
+        end,
+      },
+    },
+    opts = function()
+      local dap = require("dap")
+      if not dap.adapters["pwa-node"] then
+        require("dap").adapters["pwa-node"] = {
+          type = "server",
+          host = "localhost",
+          port = "${port}",
+          executable = {
+            command = "node",
+            -- 💀 Make sure to update this path to point to your installation
+            args = {
+              require("mason-registry").get_package("js-debug-adapter"):get_install_path()
+              .. "/js-debug/src/dapDebugServer.js",
+              "${port}",
+            },
+          },
+        }
+      end
+      for _, language in ipairs({ "typescript", "javascript", "typescriptreact", "javascriptreact" }) do
+        if not dap.configurations[language] then
+          dap.configurations[language] = {
+            {
+              type = "pwa-node",
+              request = "launch",
+              name = "Launch file",
+              program = "${file}",
+              cwd = "${workspaceFolder}",
+            },
+            {
+              type = "pwa-node",
+              request = "attach",
+              name = "Attach",
+              processId = require("dap.utils").pick_process,
+              cwd = "${workspaceFolder}",
+            },
+          }
+        end
+      end
+    end,
+  }
 }
 
+-- require("notify").setup({
+--   background_colour = "#000000",
+-- })
 ----------------------
 --- Copilot Plugin ---
 ----------------------
 table.insert(lvim.plugins, {
   "zbirenbaum/copilot-cmp",
+  enabled = false,
   event = "InsertEnter",
   dependencies = { "zbirenbaum/copilot.lua" },
   config = function()
     vim.defer_fn(function()
-      require("copilot").setup()     -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
+      require("copilot").setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      })                             -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
       require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
     end, 100)
   end,
@@ -98,6 +196,12 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
   nested = true,
 })
 
+-- how 
+require('refactoring').setup({
+  sources = {
+    { name = "codeium" }
+  }
+})
 ---------------------------------
 --- Setup refactoring plugin  ---
 ---------------------------------
