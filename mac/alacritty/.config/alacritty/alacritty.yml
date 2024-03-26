@@ -6,7 +6,11 @@ font:
 
 # Colors (Gruvbox dark)
 window:
-  opacity: 0.90
+  padding: { x = 9, y = 9 }
+  dynamic_padding: true
+  opacity: 0.70
+  blur: true
+  decorations: "buttonless"
 
 # Github Light Theme
 # colors:
