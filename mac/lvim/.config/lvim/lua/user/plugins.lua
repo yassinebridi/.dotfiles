@@ -3,7 +3,8 @@
 -------------------
 lvim.plugins = {
   { "lunarvim/colorschemes" },
-  { "ellisonleao/gruvbox.nvim", priority = 1000, config = true },
+  { "ellisonleao/gruvbox.nvim", priority = 1000,     config = true },
+  { "catppuccin/nvim",          name = "catppuccin", priority = 1000 },
   { "mg979/vim-visual-multi" },
   { "dwrdx/mywords.nvim" },
   {
@@ -196,7 +197,7 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
   nested = true,
 })
 
--- how 
+-- how
 require('refactoring').setup({
   sources = {
     { name = "codeium" }

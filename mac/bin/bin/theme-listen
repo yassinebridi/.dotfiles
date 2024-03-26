@@ -9,12 +9,13 @@ get_appearance_mode() {
 # Function to update Alacritty theme
 update_alacritty_theme() {
     appearance_mode=$(get_appearance_mode)
+    echo "Appearance mode: $appearance_mode"
     if [ "$appearance_mode" == "Dark" ]; then
-        # Use dark mode theme
-        cp alacritty_dark.yml alacritty.yml
+        # Use gruvbox theme
+        sed -i '' 's/.*themes.*github_light.*$/# "~\/.config\/alacritty\/themes\/github_light.toml",/' ~/.config/alacritty/alacritty.toml
     else
-        # Use light mode theme
-        cp alacritty_light.yml alacritty.yml
+        # Use github_light theme
+        sed -i '' 's/# "~\/.config\/alacritty\/themes\/github_light.toml",/    "~\/.config\/alacritty\/themes\/github_light.toml",/' ~/.config/alacritty/alacritty.toml
     fi
 }
 
@@ -22,6 +23,12 @@ update_alacritty_theme() {
 update_alacritty_theme
 
 # Continuously monitor macOS appearance mode changes
-watch -n 1 -g get_appearance_mode | while read -r; do
-    update_alacritty_theme
+while true; do
+    current_mode=$(get_appearance_mode)
+    previous_mode="${previous_mode:-}"
+    if [ "$current_mode" != "$previous_mode" ]; then
+        update_alacritty_theme
+        previous_mode="$current_mode"
+    fi
+    sleep 1
 done

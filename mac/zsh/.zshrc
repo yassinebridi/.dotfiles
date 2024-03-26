@@ -16,8 +16,8 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 
 export GOPATH=~/go
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='lvim'
+export VISUAL='lvim'
 export PATH=$PATH:$GOPATH/bin
 
 # export DOCKER_HOST=$(docker context inspect | jq '.[] | select(.Name == "'$(docker context show)'") | .Endpoints.docker.Host' -r)
@@ -39,7 +39,7 @@ export ZSH="/Users/yassinebridi/.oh-my-zsh"
 
 source $ZSH/oh-my-zsh.sh
 
-export TERM=screen-256color
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
