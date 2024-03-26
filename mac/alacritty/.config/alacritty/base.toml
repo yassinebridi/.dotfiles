@@ -1,0 +1,65 @@
+[font]
+size = 17
+
+  [font.normal]
+  family = "FiraCode Nerd Font"
+
+[window]
+dynamic_padding = true
+opacity = 0.8
+blur = true
+decorations = "buttonless"
+
+  [window.padding]
+
+[[key_bindings]]
+key = "V"
+mods = "Alt"
+action = "Paste"
+
+[[key_bindings]]
+key = "C"
+mods = "Alt"
+action = "Copy"
+
+[[key_bindings]]
+key = "J"
+mods = "Alt|Shift"
+action = "DecreaseFontSize"
+
+[[key_bindings]]
+key = "H"
+mods = "Alt|Shift"
+action = "ResetFontSize"
+
+[[key_bindings]]
+key = "K"
+mods = "Alt|Shift"
+action = "IncreaseFontSize"
+
+[[key_bindings]]
+key = "Up"
+mods = "Alt"
+action = "ScrollLineUp"
+
+[[key_bindings]]
+key = "Down"
+mods = "Alt"
+action = "ScrollLineDown"
+
+[[key_bindings]]
+key = "U"
+mods = "Alt"
+action = "ScrollPageUp"
+
+[[key_bindings]]
+key = "D"
+mods = "Alt"
+action = "ScrollPageDown"
+
+[[key_bindings]]
+key = "Return"
+mods = "Super|Shift"
+
+  [key_bindings.command]
+  program = "/home/yaslix/bin/alacrittyOpen"

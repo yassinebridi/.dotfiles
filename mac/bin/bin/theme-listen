@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Function to check current macOS appearance mode
+get_appearance_mode() {
+    os_version=$(sw_vers -productVersion)
+    defaults read -g AppleInterfaceStyle 2>/dev/null || echo "Light"
+}
+
+# Function to update Alacritty theme
+update_alacritty_theme() {
+    appearance_mode=$(get_appearance_mode)
+    if [ "$appearance_mode" == "Dark" ]; then
+        # Use dark mode theme
+        cp alacritty_dark.yml alacritty.yml
+    else
+        # Use light mode theme
+        cp alacritty_light.yml alacritty.yml
+    fi
+}
+
+# Initial update
+update_alacritty_theme
+
+# Continuously monitor macOS appearance mode changes
+watch -n 1 -g get_appearance_mode | while read -r; do
+    update_alacritty_theme
+done
