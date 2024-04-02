@@ -91,8 +91,8 @@ alias ld='lazydocker'
 alias gb='gobang'
 alias f='xplr'
 
-alias la='exa -la --group-directories-first'
-alias ls='exa -l --group-directories-first'
+alias la='eza -la --group-directories-first'
+alias ls='eza -l --group-directories-first'
 
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
@@ -121,3 +121,10 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 eval "$(github-copilot-cli alias -- "$0")"
+
+function gcp_setup() {
+  GCP_PROJECT_ID=$1
+  gcloud config set project $GCP_PROJECT_ID
+  gcloud container clusters get-credentials cluster-nima --region us-central1 --project $GCP_PROJECT_ID
+}
+
