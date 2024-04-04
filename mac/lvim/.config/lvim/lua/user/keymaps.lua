@@ -1,7 +1,7 @@
 lvim.keys.normal_mode["m"] = "<cmd>lua vim.diagnostic.goto_next()<cr>"
 lvim.keys.normal_mode["M"] = "<cmd>lua vim.diagnostic.goto_prev()<cr>"
 lvim.builtin.which_key.mappings["f"] = { "<cmd>FzfLua files<cr>", "Find File" }
-lvim.builtin.which_key.mappings["rg"] = { "<cmd>FzfLua grep_visual<cr>", "Grep" }
+lvim.builtin.which_key.mappings["rg"] = { "<cmd>FzfLua live_grep_native<cr>", "Grep" }
 lvim.builtin.which_key.mappings["aa"] = { "<cmd>normal! ggVG<cr>", "Select All" }
 lvim.builtin.which_key.mappings["<cr>"] = { "i<cr><esc>", "New Line" }
 lvim.builtin.which_key.mappings["h"] = { "<cmd>lua require'mywords'.hl_toggle()<cr>", "Hightlight Word" }
