@@ -4,6 +4,7 @@
 local actions = require "fzf-lua.actions"
 lvim.plugins = {
   { "lunarvim/colorschemes" },
+  { "jesseleite/nvim-macroni" },
   { "ellisonleao/gruvbox.nvim",   priority = 1000,     config = true },
   { "catppuccin/nvim",            name = "catppuccin", priority = 1000 },
   { "mg979/vim-visual-multi" },

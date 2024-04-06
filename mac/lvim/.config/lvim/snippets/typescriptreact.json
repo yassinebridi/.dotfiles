@@ -1,17 +1,17 @@
 {
   "reactFunctionComponent": {
     "prefix": "fce",
-    "body": "import React from 'react'\n\nexport interface ${TM_FILENAME_BASE}Props {}\nexport const ${TM_FILENAME_BASE}: React.FC<${TM_FILENAME_BASE}Props> = () => {\n\treturn (\n\t\t<div>\n\t\t\t${TM_FILENAME_BASE}\n\t\t</div>\n\t)\n}\n\nexport default ${TM_FILENAME_BASE}",
+    "body": "import React from 'react'\n\nexport interface ${1:${TM_FILENAME_BASE}}Props {}\nexport const ${1:${TM_FILENAME_BASE}}: React.FC<${1:${TM_FILENAME_BASE}}Props> = () => {\n\treturn (\n\t\t<div>\n\t\t\t${1:${TM_FILENAME_BASE}}\n\t\t</div>\n\t)\n}\n\nexport default ${1:${TM_FILENAME_BASE}}",
     "description": "Creates a React functional component"
   },
   "arrowFunction": {
     "prefix": "af",
-    "body": "const handle${TM_FILENAME_BASE} = () => {\n\treturn true\n}",
+    "body": "const handle${1:${TM_FILENAME_BASE}} = () => {\n\treturn true\n}",
     "description": "Creates an arrow function"
   },
   "exportArrowFunction": {
     "prefix": "afe",
-    "body": "export const handle${TM_FILENAME_BASE} = () => {\n\treturn true\n}",
+    "body": "export const handle${1:${TM_FILENAME_BASE}} = () => {\n\treturn true\n}",
     "description": "Creates an export arrow function"
   }
 }
