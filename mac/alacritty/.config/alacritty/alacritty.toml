@@ -1,5 +1,5 @@
 import = [
   "~/.config/alacritty/base.toml", 
   "~/.config/alacritty/themes/gruvbox.toml",
-# "~/.config/alacritty/themes/github_light.toml",
+# "~/.config/alacritty/themes/gruvbox_light.toml",
 ]
