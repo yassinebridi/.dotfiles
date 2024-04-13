@@ -12,10 +12,10 @@ update_alacritty_theme() {
     echo "Appearance mode: $appearance_mode"
     if [ "$appearance_mode" == "Dark" ]; then
         # Use gruvbox theme
-        sed -i '' 's/.*themes.*github_light.*$/# "~\/.config\/alacritty\/themes\/github_light.toml",/' ~/.config/alacritty/alacritty.toml
+        sed -i '' 's/.*themes.*gruvbox_light.*$/# "~\/.config\/alacritty\/themes\/gruvbox_light.toml",/' ~/.config/alacritty/alacritty.toml
     else
-        # Use github_light theme
-        sed -i '' 's/# "~\/.config\/alacritty\/themes\/github_light.toml",/    "~\/.config\/alacritty\/themes\/github_light.toml",/' ~/.config/alacritty/alacritty.toml
+        # Use gruvbox_light theme
+        sed -i '' 's/# "~\/.config\/alacritty\/themes\/gruvbox_light.toml",/    "~\/.config\/alacritty\/themes\/gruvbox_light.toml",/' ~/.config/alacritty/alacritty.toml
     fi
 }
 

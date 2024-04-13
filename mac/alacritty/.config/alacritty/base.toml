@@ -9,7 +9,7 @@ family = "FiraCode Nerd Font"
 
 [window]
 dynamic_padding = true
-padding = {x = 10, y = 0}
+# padding = {x = 10, y = 0}
 opacity = 0.8
 blur = true
 decorations = "buttonless"
