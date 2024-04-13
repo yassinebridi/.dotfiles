@@ -3,10 +3,51 @@
 -------------------
 local actions = require "fzf-lua.actions"
 lvim.plugins = {
-  { "lunarvim/colorschemes" },
+  { "ellisonleao/gruvbox.nvim",   priority = 1000, config = true },
+  -- {
+  --   "f-person/auto-dark-mode.nvim",
+  --   config = {
+  --     update_interval = 1000,
+  --     set_dark_mode = function()
+  --       vim.api.nvim_set_option("background", "dark")
+  --       vim.cmd("colorscheme gruvbox")
+  --     end,
+  --     set_light_mode = function()
+  --       vim.api.nvim_set_option("background", "light")
+  --       vim.cmd("colorscheme gruvbox")
+  --     end,
+  --   },
+  -- },
+  -- { "lunarvim/colorschemes" },
+  {
+    "echasnovski/mini.surround",
+    version = '*',
+    config = function()
+      require('mini.surround').setup()
+    end
+  },
+  {
+    "echasnovski/mini.move",
+    version = '*',
+    config = function()
+      require('mini.move').setup({
+        mappings = {
+          -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
+          left = '<C-H>',
+          right = '<C-L>',
+          down = '<C-J>',
+          up = '<C-K>',
+
+          -- Move current line in Normal mode
+          line_left = '<C-H>',
+          line_right = '<C-L>',
+          line_down = '<C-J>',
+          line_up = '<C-K>',
+        },
+      })
+    end
+  },
   { "jesseleite/nvim-macroni" },
-  { "ellisonleao/gruvbox.nvim",   priority = 1000,     config = true },
-  { "catppuccin/nvim",            name = "catppuccin", priority = 1000 },
   { "mg979/vim-visual-multi" },
   { "nvim-tree/nvim-web-devicons" },
   { "dwrdx/mywords.nvim" },
@@ -37,22 +78,6 @@ lvim.plugins = {
     "github/copilot.vim"
   },
   {
-    "Exafunction/codeium.nvim",
-    enabled = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    config = function()
-      require("codeium").setup({
-        enable_chat = true,
-        tools = {
-          language_server = "/usr/local/bin/language_server_macos_arm",
-        },
-      })
-    end
-  },
-  {
     "nvim-treesitter/nvim-treesitter-context",
     enabled = true,
     opts = { mode = "cursor", max_lines = 3 },
@@ -68,17 +93,7 @@ lvim.plugins = {
       })
     end
   },
-  { "junegunn/fzf",      build = "./install --bin" },
-  {
-    "ThePrimeagen/refactoring.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = function()
-      require("refactoring").setup()
-    end,
-  },
+  { "junegunn/fzf", build = "./install --bin" },
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
@@ -106,31 +121,8 @@ lvim.plugins = {
         color_square_width = 2,
       })
     end
-  },
-  { "tpope/vim-surround" },
+  }
 }
-
--- require("notify").setup({
---   background_colour = "#000000",
--- })
-----------------------
---- Copilot Plugin ---
-----------------------
-table.insert(lvim.plugins, {
-  "zbirenbaum/copilot-cmp",
-  enabled = false,
-  event = "InsertEnter",
-  dependencies = { "zbirenbaum/copilot.lua" },
-  config = function()
-    vim.defer_fn(function()
-      require("copilot").setup({
-        suggestion = { enabled = false },
-        panel = { enabled = false },
-      })                             -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
-      require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
-    end, 100)
-  end,
-})
 
 --------------------------
 --- Session Management ---
@@ -162,24 +154,3 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
   end,
   nested = true,
 })
-
--- how
-require('refactoring').setup({
-  sources = {
-    { name = "codeium" }
-  }
-})
----------------------------------
---- Setup refactoring plugin  ---
----------------------------------
-require('refactoring').setup()
--- load refactoring Telescope extension
-require("telescope").load_extension("refactoring")
-
-lvim.builtin.which_key.mappings["rr"] = { function() require('telescope').extensions.refactoring.refactors() end,
-  "Refactor Selection" }
-lvim.builtin.which_key.vmappings["rr"] = { function() require('telescope').extensions.refactoring.refactors() end,
-  "Refactor Selection" }
-lvim.builtin.which_key.mappings["rv"] = { function() require('refactoring').debug.print_var() end, "Debug Print Variable" }
-lvim.builtin.which_key.mappings["rp"] = { function() require('refactoring').debug.printf() end, "Debug Print" }
-lvim.builtin.which_key.mappings["rc"] = { function() require('refactoring').debug.cleanup({}) end, "Clean Debug" }
