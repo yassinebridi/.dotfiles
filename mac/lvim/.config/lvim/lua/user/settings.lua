@@ -1,6 +1,7 @@
 ------------------------
 --- General Settings ---
 ------------------------
+vim.opt.background = "dark"
 lvim.colorscheme = "gruvbox"
 lvim.transparent_window = true
 lvim.builtin.alpha.active = false
