@@ -12,8 +12,8 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 
 export GOPATH=~/go
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='lvim'
+export VISUAL='lvim'
 export PATH=$PATH:$GOPATH/bin
 
 # export DOCKER_HOST=$(docker context inspect | jq '.[] | select(.Name == "'$(docker context show)'") | .Endpoints.docker.Host' -r)
@@ -71,9 +71,9 @@ alias a='z' # Zoxide to have the same alias, across zsh and lf
 alias server='python -m SimpleHTTPServer 8080'
 alias szsh='source ~/.config/zsh/.zshrc'
 
-alias v='nvim'
-alias svim='sudo -E nvim'
-alias dvim='nvim -d'
+alias v='lvim'
+alias svim='sudo -E lvim'
+alias dvim='lvim -d'
 
 alias stn='stow -v -n -t ~'
 alias str='stow -v -R -t ~'
