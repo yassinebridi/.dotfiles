@@ -1,4 +1,4 @@
-plugins
+# plugins
 node_modules
 .zcompdump*
 .DS_Store
