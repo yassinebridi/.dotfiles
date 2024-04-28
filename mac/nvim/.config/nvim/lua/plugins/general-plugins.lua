@@ -1,5 +1,6 @@
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
 return {
-  { "jesseleite/nvim-macroni" },
   { "mg979/vim-visual-multi" },
   { "dwrdx/mywords.nvim" },
   { "github/copilot.vim" },
