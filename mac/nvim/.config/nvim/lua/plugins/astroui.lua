@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroUI provides the basis for configuring the AstroNvim User Interface
 -- Configuration documentation can be found with `:h astroui`
@@ -11,29 +11,51 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "astrodark",
-    -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
+    colorscheme = "gruvbox",
     highlights = {
-      init = { -- this table overrides highlights in all themes
-        -- Normal = { bg = "#000000" },
-      },
-      astrotheme = { -- a table of overrides/changes when applying the astrotheme theme
-        -- Normal = { bg = "#000000" },
+      -- apply highlight group to all colorschemes (include the default_theme)
+      init = {
+        -- set the transparency for all of these highlight groups
+        -- cmd "au ColorScheme * hi Normal ctermbg=none guibg=none"
+        -- cmd "au ColorScheme * hi SignColumn ctermbg=none guibg=none"
+        -- cmd "au ColorScheme * hi NormalNC ctermbg=none guibg=none"
+        -- cmd "au ColorScheme * hi MsgArea ctermbg=none guibg=none"
+        -- cmd "au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none"
+        -- cmd "au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none"
+        Normal = { bg = "NONE", ctermbg = "NONE" },
+        SignColumn = { bg = "NONE", ctermbg = "NONE" },
+        NormalNC = { bg = "NONE", ctermbg = "NONE" },
+        MsgArea = { bg = "NONE", ctermbg = "NONE" },
+        TelescopeBorder = { bg = "NONE", ctermbg = "NONE" },
+        NeoTreeNormal = { bg = "NONE", ctermbg = "NONE" },
+        NeoTreeNormalNC = { bg = "NONE", ctermbg = "NONE" },
+        CursorLineNr = { cterm = {}, ctermbg = "NONE", ctermfg = "NONE" },
+        NormalFloat = { bg = "NONE", ctermbg = "NONE" },
+        FloatBorder = { bg = "NONE", ctermbg = "NONE" },
       },
     },
-    -- Icons can be configured throughout the interface
-    icons = {
-      -- configure the loading of the lsp in the status line
-      LSPLoading1 = "⠋",
-      LSPLoading2 = "⠙",
-      LSPLoading3 = "⠹",
-      LSPLoading4 = "⠸",
-      LSPLoading5 = "⠼",
-      LSPLoading6 = "⠴",
-      LSPLoading7 = "⠦",
-      LSPLoading8 = "⠧",
-      LSPLoading9 = "⠇",
-      LSPLoading10 = "⠏",
-    },
+    -- -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
+    -- highlights = {
+    --   init = { -- this table overrides highlights in all themes
+    --     -- Normal = { bg = "#000000" },
+    --   },
+    --   astrotheme = { -- a table of overrides/changes when applying the astrotheme theme
+    --     -- Normal = { bg = "#000000" },
+    --   },
+    -- },
+    -- -- Icons can be configured throughout the interface
+    -- icons = {
+    --   -- configure the loading of the lsp in the status line
+    --   LSPLoading1 = "⠋",
+    --   LSPLoading2 = "⠙",
+    --   LSPLoading3 = "⠹",
+    --   LSPLoading4 = "⠸",
+    --   LSPLoading5 = "⠼",
+    --   LSPLoading6 = "⠴",
+    --   LSPLoading7 = "⠦",
+    --   LSPLoading8 = "⠧",
+    --   LSPLoading9 = "⠇",
+    --   LSPLoading10 = "⠏",
+    -- },
   },
 }
