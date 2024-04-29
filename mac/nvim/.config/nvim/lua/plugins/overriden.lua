@@ -8,4 +8,17 @@ return { -- override nvim-cmp plugin
       opts.mapping["<S-Tab>"] = vim.NIL
     end,
   },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      commands = {
+        parent = function(state) state.commands.close_node(state) end,
+      },
+      window = {
+        mappings = {
+          ["h"] = "parent",
+        },
+      },
+    },
+  },
 }
