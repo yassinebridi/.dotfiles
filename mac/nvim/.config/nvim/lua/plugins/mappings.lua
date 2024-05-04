@@ -45,6 +45,7 @@ return {
     autocmd VimEnter * map <S-h> :bp<CR>
     autocmd VimEnter * map <S-l> :bn<CR>
 
+    nmap <leader><CR> i<CR><Esc>
     cnoremap <c-q> <c-f>i<c-o>q
 
     nnoremap <leader>aa <cmd>normal! ggVG<cr>
@@ -71,40 +72,38 @@ return {
         n = {
           ["<Leader>o"] = {
             function()
-              vim.lsp.buf.code_action({ apply = true, context = { only = { "source.removeUnused.ts" }, diagnostics = {} } })
+              vim.lsp.buf.code_action {
+                apply = true,
+                context = { only = { "source.removeUnused.ts" }, diagnostics = {} },
+              }
             end,
             desc = "Remove unused imports",
           },
           ["<Leader>lx"] = {
             function()
-              vim.lsp.buf.code_action({ apply = true, context = { only = { "source.addMissingImports.ts" }, diagnostics = {} } })
+              vim.lsp.buf.code_action {
+                apply = true,
+                context = { only = { "source.addMissingImports.ts" }, diagnostics = {} },
+              }
             end,
             desc = "Add missing imports",
           },
           m = {
-            function()
-              vim.diagnostic.goto_next()
-            end,
+            function() vim.diagnostic.goto_next() end,
             desc = "Next Diagnostic",
           },
           M = {
-            function()
-              vim.diagnostic.goto_prev()
-            end,
+            function() vim.diagnostic.goto_prev() end,
             desc = "Next Diagnostic",
           },
           -- this mapping will only be set in buffers with an LSP attached
           K = {
-            function()
-              vim.lsp.buf.hover()
-            end,
+            function() vim.lsp.buf.hover() end,
             desc = "Hover symbol details",
           },
           -- condition for only server with declaration capabilities
           gD = {
-            function()
-              vim.lsp.buf.declaration()
-            end,
+            function() vim.lsp.buf.declaration() end,
             desc = "Declaration of current symbol",
             cond = "textDocument/declaration",
           },
