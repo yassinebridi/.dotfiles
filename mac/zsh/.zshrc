@@ -100,6 +100,8 @@ alias pg_start="brew services start postgresql"
 alias pg_stop="brew services stop postgresql"
 alias pnpx='pnpm dlx'
 alias k='kubectl'
+alias kgp='kubectl get pods'
+alias kgpw='kubectl get pods -w'
 
 # zoxide(autojump replacement)
 eval "$(zoxide init zsh)"
