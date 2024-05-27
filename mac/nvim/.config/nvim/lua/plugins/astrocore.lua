@@ -28,7 +28,7 @@ return {
     options = {
       opt = { -- vim.opt.<key>
         cmdheight = 1,
-        swapfile = true,
+        swapfile = false,
         relativenumber = false, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
