@@ -1,6 +1,6 @@
 ZSH_THEME="robbyrussell"
 # plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-autocomplete)
-plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions fzf-tab)
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/scripts/bin"
@@ -91,8 +91,8 @@ alias ld='lazydocker'
 alias gb='gobang'
 alias f='xplr'
 
-alias la='eza -la --group-directories-first'
-alias ls='eza -l --group-directories-first'
+alias la='eza -la --group-directories-first --icons=always --color=always --git'
+alias ls='eza -l --group-directories-first --icons=always --color=always --git'
 
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
@@ -149,6 +149,15 @@ export LDFLAGS="-L/opt/homebrew/opt/php@8.1/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/php@8.1/include"
  
 eval "$(starship init zsh)"
+# eval "$(atuin init zsh)"
+
+_fzf_compgen_path() {
+    fd --hidden --exclude .git . "$1"
+}
+
+_fzf_compgen_dir() {
+    fd --type=d --hidden --exclude .git . "$1"
+}
 
 autoload -Uz compinit
 
