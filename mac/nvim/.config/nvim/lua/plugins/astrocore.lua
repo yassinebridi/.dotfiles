@@ -24,6 +24,21 @@ return {
       virtual_text = true,
       underline = true,
     },
+    autocmds = {
+      autosortbuffers = {
+        {
+          -- create a new autocmd on the "User" event
+          event = "User",
+          -- the pattern is the name of our User autocommand events
+          pattern = "AstroBufsUpdated", -- triggered when vim.t.bufs is updated
+          -- nice description
+          desc = "Hide tabline when only one buffer and one tab",
+          -- add the autocmd to the newly created augroup
+          group = "autosortbuffers",
+          callback = function() require("astrocore.buffer").sort("bufnr", true) end,
+        },
+      },
+    },
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
