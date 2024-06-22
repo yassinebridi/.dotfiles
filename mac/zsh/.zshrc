@@ -56,6 +56,8 @@ alias tl="trash-list"
 alias ts="trash-restore"
 alias td="trash-rm"
 
+alias sr='serpl'
+ 
 alias p='pnpm'
 alias y='yarn'
 alias yw='yarn workspace'
