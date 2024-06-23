@@ -37,6 +37,8 @@ source $ZSH/oh-my-zsh.sh
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
