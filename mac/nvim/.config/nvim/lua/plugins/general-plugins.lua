@@ -15,6 +15,10 @@ return {
     opts = { mode = "cursor", max_lines = 3 },
   },
   {
+    "brenoprata10/nvim-highlight-colors",
+    config = function() require("nvim-highlight-colors").setup {} end,
+  },
+  {
     "echasnovski/mini.move",
     version = "*",
     config = function()
@@ -53,4 +57,6 @@ return {
   --     end, { noremap = true, desc = "Toggle Codeium active" })
   --   end,
   -- },
+  --
+  --
 }

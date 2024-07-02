@@ -7,6 +7,9 @@ return { -- override nvim-cmp plugin
       opts.mapping["<Tab>"] = vim.NIL
       opts.mapping["<S-Tab>"] = vim.NIL
     end,
+    formatting = {
+      format = require("nvim-highlight-colors").format,
+    },
   },
   {
     "nvim-neo-tree/neo-tree.nvim",

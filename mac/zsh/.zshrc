@@ -171,3 +171,5 @@ done
  
 fpath+=~/.zfunc
 compinit -C
+
+source $HOME/.config/broot/launcher/bash/br
