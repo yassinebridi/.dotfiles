@@ -96,6 +96,22 @@ return {
         --   desc = "Toggle LSP semantic highlight (buffer)",
         --   cond = function(client) return client.server_capabilities.semanticTokensProvider and vim.lsp.semantic_tokens end,
         -- },
+        gd = {
+          -- vim.lsp.buf.definition {
+          --   on_list = function(list) vim.lsp.util.jump_to_location(list.items[1].user_data, "utf-8", true) end,
+          -- },
+          function()
+            local params = vim.lsp.util.make_position_params()
+            vim.lsp.buf_request(0, "textDocument/definition", params, function(_, result)
+              if not result or vim.tbl_isempty(result) then
+                print("No definition found")
+                return
+              end
+              vim.lsp.util.jump_to_location(result[1], "utf-8", true)
+            end)
+          end,
+          desc = "Go to definition",
+        },
       },
     },
     -- A custom `on_attach` function to be run after the default `on_attach` function
