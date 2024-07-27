@@ -30,6 +30,7 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH=$PATH:$HOME/.kube/kubediff
 
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -103,9 +104,13 @@ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 alias pg_start="brew services start postgresql"
 alias pg_stop="brew services stop postgresql"
 alias pnpx='pnpm dlx'
+alias h='helm'
 alias k='kubectl'
 alias kgp='kubectl get pods'
 alias kgpw='kubectl get pods -w'
+alias kgs='kubectl get svc'
+alias kgd='kubectl get deployments.apps'
+alias kl='kubectl logs --follow'
 
 # zoxide(autojump replacement)
 eval "$(zoxide init zsh)"
@@ -127,6 +132,11 @@ export PATH="$PNPM_HOME:$PATH"
 
 eval "$(github-copilot-cli alias -- "$0")"
 
+function aws_setup() {
+  CLUSTER_NAME=$1
+  REGION=$2
+  aws eks update-kubeconfig --region $REGION --name $CLUSTER_NAME
+}
 function gcp_setup() {
   GCP_PROJECT_ID=$1
   gcloud config set project $GCP_PROJECT_ID
@@ -155,21 +165,24 @@ export CPPFLAGS="-I/opt/homebrew/opt/php@8.1/include"
 eval "$(starship init zsh)"
 # eval "$(atuin init zsh)"
 
-_fzf_compgen_path() {
-    fd --hidden --exclude .git . "$1"
-}
+# _fzf_compgen_path() {
+#     fd --hidden --exclude .git . "$1"
+# }
+#
+# _fzf_compgen_dir() {
+#     fd --type=d --hidden --exclude .git . "$1"
+# }
+#
+# autoload -Uz compinit
+#
+# for dump in ~/.zcompdump(N.mh+24); do
+#     compinit
+# done
+#  
+# fpath+=~/.zfunc
+# compinit -C
 
-_fzf_compgen_dir() {
-    fd --type=d --hidden --exclude .git . "$1"
-}
-
-autoload -Uz compinit
-
-for dump in ~/.zcompdump(N.mh+24); do
-    compinit
-done
- 
-fpath+=~/.zfunc
-compinit -C
-
-source $HOME/.config/broot/launcher/bash/br
+# source $HOME/.config/broot/launcher/bash/br
+export HOMEBREW_PREFIX="/opt/homebrew"
+source ${HOMEBREW_PREFIX}/share/zsh/site-functions/kubesess.sh
+source ${HOMEBREW_PREFIX}/opt/kubesess/etc/bash_completion.d/completion.sh
