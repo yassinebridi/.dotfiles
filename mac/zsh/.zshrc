@@ -10,6 +10,7 @@ export PATH=~/.config/npm-global/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
 
 export GOPATH=~/go
 export EDITOR='nvim'
@@ -103,11 +104,13 @@ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
 alias pg_start="brew services start postgresql"
 alias pg_stop="brew services stop postgresql"
+alias pas='php artisan serve'
 alias pnpx='pnpm dlx'
 alias h='helm'
+alias wh='watch '
 alias k='kubectl'
 alias kgp='kubectl get pods'
-alias kgpw='kubectl get pods -w'
+alias kgpw='watch kubectl get pods'
 alias kgs='kubectl get svc'
 alias kgd='kubectl get deployments.apps'
 alias kl='kubectl logs --follow'
