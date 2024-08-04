@@ -62,6 +62,7 @@ return {
           ["<Leader>u"] = { "<cmd>lua require'mywords'.uhl_all()<cr><cmd>nohlsearch<cr>", desc = "Unhightlight All" },
           -- vim.keymap.set("n", "<leader>k", '<cmd>lua require("kubectl").open()<cr>', { noremap = true, silent = true })
           ["<Leader>k"] = { "<cmd>lua require'kubectl'.open()<cr>", desc = "Kubectl" },
+          ["<Leader>rr"] = { "<cmd>Resurrect<cr>", desc = "Kubectl" },
         },
       },
     },

@@ -39,36 +39,11 @@ return {
       }
     end,
   },
-  -- {
-  --   "Exafunction/codeium.vim",
-  --   event = "User AstroFile",
-  --   config = function()
-  --     vim.cmd "CodeiumEnable"
-  --     vim.keymap.set("i", "<TAB>", function() return vim.fn["codeium#Accept"]() end, { expr = true })
-  --     vim.keymap.set("i", "<c-;>", function() return vim.fn["codeium#CycleCompletions"](1) end, { expr = true })
-  --     vim.keymap.set("i", "<c-,>", function() return vim.fn["codeium#CycleCompletions"](-1) end, { expr = true })
-  --     vim.keymap.set("i", "<c-x>", function() return vim.fn["codeium#Clear"]() end, { expr = true })
-  --     vim.keymap.set("n", "<Leader>;", function()
-  --       if vim.g.codeium_enabled == true then
-  --         vim.cmd "CodeiumDisable"
-  --       else
-  --         vim.cmd "CodeiumEnable"
-  --       end
-  --     end, { noremap = true, desc = "Toggle Codeium active" })
-  --   end,
-  -- },
-  --
-  --
-  {
-    "MeanderingProgrammer/markdown.nvim",
-    name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
-    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-    config = function() require("render-markdown").setup {} end,
-  },
   {
     "ramilito/kubectl.nvim",
     config = function() require("kubectl").setup() end,
+  },
+  {
+    "supercrabtree/vim-resurrect",
   },
 }
