@@ -28,6 +28,7 @@ return { -- override nvim-cmp plugin
     "rcarriga/nvim-notify",
     opts = {
       background_colour = "#000000",
+      level = vim.log.levels.WARN,
     },
   },
 }
