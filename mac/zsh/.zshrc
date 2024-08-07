@@ -1,7 +1,7 @@
 ZSH_THEME="robbyrussell"
 # plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-autocomplete)
-plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions fzf-tab)
-
+plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
+ 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/scripts/bin"
 export PATH="$HOME/.local/bin:$PATH"
@@ -33,8 +33,14 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH=$PATH:$HOME/.kube/kubediff
 
-export ZSH="$HOME/.oh-my-zsh"
+#MySQL
+export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/mysql@8.0/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/mysql@8.0/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql@8.0/lib/pkgconfig"
 
+export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 export HOMEBREW_NO_AUTO_UPDATE=1
@@ -104,7 +110,7 @@ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
 alias pg_start="brew services start postgresql"
 alias pg_stop="brew services stop postgresql"
-alias pas='php artisan serve'
+alias pas='kill -9 $(lsof -t -i:8000) ; php artisan serve'
 alias pnpx='pnpm dlx'
 alias h='helm'
 alias wh='watch '
@@ -160,10 +166,10 @@ source $HOME/.phpbrew/bashrc
 export PHPBREW_SET_PROMPT=1
 export PHPBREW_RC_ENABLE=1
 
-export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/php@8.1/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/php@8.1/include"
+export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/php@8.2/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/php@8.2/include"
  
 eval "$(starship init zsh)"
 # eval "$(atuin init zsh)"
