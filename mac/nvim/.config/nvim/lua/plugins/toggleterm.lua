@@ -51,6 +51,14 @@ return {
           end,
           desc = "ToggleTerm serpl",
         }
+
+        local yazi = {
+          callback = function()
+            astro.toggle_term_cmd "yazi"
+          end,
+          desc = "ToggleTerm yazi",
+        }
+        maps.n["<Leader>yz"] = { yazi.callback, desc = yazi.desc }
         maps.n["<Leader>sr"] = { serpl.callback, desc = serpl.desc }
         maps.n["<Leader>rc"] = { cargo_run.callback, desc = cargo_run.desc }
         maps.n["<Leader>tf"] = { "<Cmd>ToggleTerm direction=float<CR>", desc = "ToggleTerm float" }

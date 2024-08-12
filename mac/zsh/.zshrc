@@ -40,6 +40,8 @@ export LDFLAGS="-L/opt/homebrew/opt/mysql@8.0/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/mysql@8.0/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql@8.0/lib/pkgconfig"
 
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
@@ -67,6 +69,7 @@ alias ts="trash-restore"
 alias td="trash-rm"
 
 alias sr='serpl'
+alias tf='terraform'
  
 alias p='pnpm'
 alias y='yarn'
@@ -120,6 +123,9 @@ alias kgpw='watch kubectl get pods'
 alias kgs='kubectl get svc'
 alias kgd='kubectl get deployments.apps'
 alias kl='kubectl logs --follow'
+alias kc='kubecm'
+ 
+alias yz='yazi'
 
 # zoxide(autojump replacement)
 eval "$(zoxide init zsh)"
@@ -193,5 +199,5 @@ eval "$(starship init zsh)"
 
 # source $HOME/.config/broot/launcher/bash/br
 export HOMEBREW_PREFIX="/opt/homebrew"
-source ${HOMEBREW_PREFIX}/share/zsh/site-functions/kubesess.sh
-source ${HOMEBREW_PREFIX}/opt/kubesess/etc/bash_completion.d/completion.sh
+# source ${HOMEBREW_PREFIX}/share/zsh/site-functions/kubesess.sh
+# source ${HOMEBREW_PREFIX}/opt/kubesess/etc/bash_completion.d/completion.sh
