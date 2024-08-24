@@ -11,6 +11,9 @@ return {
   { import = "astrocommunity.colorscheme.gruvbox-nvim" },
   { import = "astrocommunity.bars-and-lines.lualine-nvim" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.colorscheme.github-nvim-theme" },
+  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   -- { import = "astrocommunity.pack.typescript" },
   -- import/override with your plugins folder
 }

@@ -40,34 +40,6 @@ return {
     end,
   },
   {
-    "ramilito/kubectl.nvim",
-    config = function() require("kubectl").setup() end,
-  },
-  {
     "supercrabtree/vim-resurrect",
   },
-  -- {
-  --   "OXY2DEV/markview.nvim",
-  --   lazy = false,
-  --   config = function()
-  --     require("markview").setup {
-  --       modes = { "n", "no", "c" },
-  --       hybrid_modes = { "n" },
-  --       callbacks = {
-  --         on_enable = function(_, win)
-  --           vim.wo[win].conceallevel = 2
-  --           vim.wo[win].conecalcursor = "c"
-  --         end,
-  --       },
-  --     }
-  --   end,
-  --   dependencies = {
-  --     -- You will not need this if you installed the
-  --     -- parsers manually
-  --     -- Or if the parsers are in your $RUNTIMEPATH
-  --     "nvim-treesitter/nvim-treesitter",
-  --
-  --     "nvim-tree/nvim-web-devicons",
-  --   },
-  -- },
 }

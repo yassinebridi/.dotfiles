@@ -68,5 +68,5 @@ alt - r : yabai -m space --focus next || yabai -m space --focus first
 alt - e : yabai -m space --focus prev || yabai -m space --focus last
 alt - c : yabai -m window --focus "$(yabai -m query --windows | jq -re "sort_by(.display, .frame.x, .frame.y, .id) | map(select(.visible == 1 and .subrole != \"AXUnknown\")) | reverse | nth(index(map(select(.focused == 1))) - 1).id")"
 
-alt - w : open -a Safari
+alt - w : open -a Microsoft\ Edge
 alt - return : open -a alacritty
