@@ -204,3 +204,20 @@ run  = "lsar"
 [[plugin.prepend_previewers]]
 mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}"
 run  = "lsar"
+
+[[plugin.append_previewers]]
+name = "*.csv"
+run  = "rich-preview"
+
+[[plugin.append_previewers]]
+name = "*.md"
+run  = "rich-preview"
+
+[[plugin.append_previewers]]
+name = "*.ipynb"
+run  = "rich-preview"
+
+[[plugin.append_previewers]]
+name = "*.json"
+run  = "rich-preview"
+

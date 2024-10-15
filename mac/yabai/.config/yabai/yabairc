@@ -58,3 +58,4 @@ yabai -m rule --add app="^VLC$" manage=off
 yabai -m rule --add app="^Disk Utility$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opacity=1.0
+yabai -m rule --add app="^ripdrag$" manage=off border=off sticky=on layer=above opacity=1.0

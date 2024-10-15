@@ -1,0 +1,20 @@
+#!/bin/sh
+ 
+if [ -z "$1" ]; then
+    echo "Usage: prepare_league <work|league>"
+    exit 1
+fi
+
+# Switch to the correct profile
+if [ "$1" = "work" ]; then
+    /Library/Application\ Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli --select-profile "Mechanical Keyboard"
+    open /System/Volumes/Data/Applications/Ice.app
+    open '/System/Volumes/Data/Applications/Microsoft Edge.app'
+elif [ "$1" = "league" ]; then
+    /Library/Application\ Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli --select-profile "League"
+    killall Ice
+    killall 'Microsoft Edge'
+else
+    echo "Invalid action"
+    exit 1
+fi

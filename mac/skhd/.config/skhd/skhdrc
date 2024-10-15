@@ -70,3 +70,7 @@ alt - c : yabai -m window --focus "$(yabai -m query --windows | jq -re "sort_by(
 
 alt - w : open -a Microsoft\ Edge
 alt - return : open -a alacritty
+
+# General Keymaps
+shift + alt - i : shortcuts run "Adaptive Mode"
+shift + alt - o : shortcuts run "Noise Control Mode"

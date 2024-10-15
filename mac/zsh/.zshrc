@@ -124,6 +124,7 @@ alias kgs='kubectl get svc'
 alias kgd='kubectl get deployments.apps'
 alias kl='kubectl logs --follow'
 alias kc='kubecm'
+alias kt='watch kubectl top pods --sort-by=memory'
  
 alias yz='yazi'
 
