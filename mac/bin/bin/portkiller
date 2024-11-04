@@ -1,3 +1,0 @@
-#!/bin/sh
-kill -9 $(lsof -t -i:$1 -sTCP:LISTEN)
-notify-send "'$1' port killed."

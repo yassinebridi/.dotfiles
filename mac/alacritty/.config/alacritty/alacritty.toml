@@ -1,5 +1,0 @@
-import = [
-  "~/.config/alacritty/base.toml", 
-  "~/.config/alacritty/themes/gruvbox.toml",
-# "~/.config/alacritty/themes/gruvbox_light.toml",
-]

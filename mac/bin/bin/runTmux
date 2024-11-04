@@ -1,9 +1,0 @@
-#!/bin/sh
-
-isRunning=$(pgrep tmux | head -1)
-
-if [ "$isRunning" ]; then
-  tmux a
-else
-  tmux
-fi
