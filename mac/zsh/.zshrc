@@ -127,6 +127,7 @@ alias kc='kubecm'
 alias kt='watch kubectl top pods --sort-by=memory'
  
 alias yz='yazi'
+alias zl='zellij'
 
 # zoxide(autojump replacement)
 eval "$(zoxide init zsh)"
