@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# Cmus should be open for this to work
-cmus-remote -C clear
-cmus-remote -C "add /YassineHD/Music"
-cmus-remote -C "update-cache -f"

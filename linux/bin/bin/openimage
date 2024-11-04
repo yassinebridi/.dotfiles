@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# Go to the download directory
-cd ~/Downloads && 
-# Download the argument
-  curl -O -J -L $1 &&
-# Then open it with default image viewer(this opens, the latest picture in the directory, which is the screenshoted one)
-  $IMAGE "$(ls -t | head -1)"
-exec zsh

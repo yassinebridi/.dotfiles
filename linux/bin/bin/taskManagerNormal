@@ -1,3 +1,0 @@
-#!/bin/sh
-
-command=$(echo -en "yarn exp\nyarn add\nyarn remove" | dmenu -c -i -l 8 -w 310) && tmux popup -w70 -h20 -KR "$command"

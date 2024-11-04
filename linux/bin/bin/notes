@@ -1,3 +1,0 @@
-#!/bin/sh
-
-$TERMINAL --config-file ~/.config/alacritty/alacrittyVim.yml --class note,Note -e nvim ~/notesFile.md

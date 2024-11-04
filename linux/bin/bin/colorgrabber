@@ -1,6 +1,0 @@
-#!/usr/bin/sh
-
-# Grab a pixel from the screen, then copy it to the clipboard
-echo $(~/.cargo/bin/xcolor) | xclip -r -selection c
-
-notify-send "$(xsel -o -b) copied to clipboard." &

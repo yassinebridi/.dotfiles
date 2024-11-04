@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# Go to the download directory
-cd ~/Downloads/Documents && 
-  curl -O -J -L $1 &&
-# Open the downloaded pdf, with the default PDF reader
-  $READER "$(ls -t | head -1)"
-exec zsh

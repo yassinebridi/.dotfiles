@@ -1,2 +1,0 @@
-#!/bin/bash
-dmenu -nf "#1e0030" -p "$1" <&- && echo

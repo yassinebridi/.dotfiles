@@ -1,7 +1,0 @@
-#!/usr/bin/sh
-
-# $1 being the api, and $2 being the field
-# Read more about how to access json fields using jq here:
-# https://stedolan.github.io/jq/manual/#Basicfilters
-
-while read i; do curl -O $i; done < <(curl $1 | jq -r '.[] | '"$2")

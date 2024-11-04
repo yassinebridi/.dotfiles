@@ -1,5 +1,0 @@
-#!/usr/bin/sh
-
-port="$(echo 192.168.12.212 2>/dev/null | dmenu -i -p "Type your phone's port")"
-
-sshfs -o password_stdin $port:/storage/emulated/0 ~/mounting/Phone  -p 2222 <<< 'admin'
