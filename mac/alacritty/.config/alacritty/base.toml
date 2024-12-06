@@ -13,6 +13,7 @@ dynamic_padding = true
 opacity = 0.8
 blur = true
 decorations = "buttonless"
+option_as_alt = "Both"
 
 [keyboard]
 [[keyboard.bindings]]

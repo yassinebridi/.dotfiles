@@ -1,0 +1,17 @@
+#!/bin/sh
+ 
+if [ -z "$1" ]; then
+    echo "Usage: kill_touch_bar <on|off>"
+    exit 1
+fi
+
+# Switch to the correct profile
+if [ "$1" = "on" ]; then
+    /usr/libexec/TouchBarServer &
+elif [ "$1" = "off" ]; then
+    pkill TouchBarServer
+    killall "ControlStrip"
+else
+    echo "Invalid action"
+    exit 1
+fi

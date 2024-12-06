@@ -71,7 +71,7 @@ alias td="trash-rm"
 alias sr='serpl'
 alias tf='terraform'
  
-alias p='pnpm'
+alias p='pipenv'
 alias y='yarn'
 alias yw='yarn workspace'
 alias yd='yarn dev'
