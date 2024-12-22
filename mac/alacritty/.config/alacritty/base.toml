@@ -1,6 +1,6 @@
 [env]
 TERM = "xterm-256color"
- 
+
 [font]
 size = 17
 
@@ -16,15 +16,15 @@ decorations = "buttonless"
 option_as_alt = "Both"
 
 [keyboard]
-[[keyboard.bindings]]
-key = "V"
-mods = "Alt"
-action = "Paste"
-
-[[keyboard.bindings]]
-key = "C"
-mods = "Alt"
-action = "Copy"
+# [[keyboard.bindings]]
+# key = "V"
+# mods = "Alt"
+# action = "Paste"
+#
+# [[keyboard.bindings]]
+# key = "C"
+# mods = "Alt"
+# action = "Copy"
 
 [[keyboard.bindings]]
 key = "J"

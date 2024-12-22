@@ -58,6 +58,11 @@ bindkey -M viins 'jk' vi-cmd-mode
 bindkey -M vicmd 'gl' vi-end-of-line
 bindkey -M vicmd 'gh' vi-digit-or-beginning-of-line
 bindkey -v '^?' backward-delete-char
+bindkey -M vicmd 'gd' backward-kill-word
+
+autoload -U select-word-style
+select-word-style shell
+
 
 # Aliases
 
@@ -127,7 +132,8 @@ alias kc='kubecm'
 alias kt='watch kubectl top pods --sort-by=memory'
  
 alias yz='yazi'
-alias zl='zellij'
+alias zl='zellij --config ~/.config/zellij/config.kdl attach config'
+alias zt='zellij attach $(zellij ls -s | fzf)'
 
 # zoxide(autojump replacement)
 eval "$(zoxide init zsh)"
@@ -203,3 +209,4 @@ eval "$(starship init zsh)"
 export HOMEBREW_PREFIX="/opt/homebrew"
 # source ${HOMEBREW_PREFIX}/share/zsh/site-functions/kubesess.sh
 # source ${HOMEBREW_PREFIX}/opt/kubesess/etc/bash_completion.d/completion.sh
+# eval "$(zellij setup --generate-auto-start zsh)"
