@@ -210,3 +210,15 @@ export HOMEBREW_PREFIX="/opt/homebrew"
 # source ${HOMEBREW_PREFIX}/share/zsh/site-functions/kubesess.sh
 # source ${HOMEBREW_PREFIX}/opt/kubesess/etc/bash_completion.d/completion.sh
 # eval "$(zellij setup --generate-auto-start zsh)"
+
+. "$HOME/.atuin/bin/env"
+
+export ATUIN_NOBIND="true"
+eval "$(atuin init zsh)"
+
+bindkey '^r' atuin-search
+
+# bind to the up key, which depends on terminal mode
+bindkey '^[[A' atuin-up-search
+bindkey '^[OA' atuin-up-search
+
