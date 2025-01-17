@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# Function to check if required commands exist
+check_requirements() {
+    if ! command -v defaultbrowser &> /dev/null; then
+        echo "Error: defaultbrowser command not found."
+        echo "Please ensure it's installed and in your PATH."
+        exit 1
+    fi
+    
+    if ! command -v plutil &> /dev/null; then
+        echo "Error: plutil command not found."
+        exit 1
+    fi
+}
+
+# Function to get current default browser
+get_current_browser() {
+    local browser_bundle_id=$(plutil -p ~/Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist | grep 'https' -b3 | awk 'NR==3 {split($4, arr, "\""); print arr[2]}')
+    
+    case $browser_bundle_id in
+        "com.microsoft.edgemac")
+            echo "edge"
+            ;;
+        "com.google.chrome")
+            echo "chrome"
+            ;;
+        *)
+            echo "unknown"
+            ;;
+    esac
+}
+
+# Function to set default browser
+set_browser() {
+    local browser=$1
+    case $browser in
+        "edge")
+            defaultbrowser edgemac
+            echo "Default browser set to Microsoft Edge"
+            ;;
+        "chrome")
+            defaultbrowser chrome
+            echo "Default browser set to Google Chrome"
+            ;;
+    esac
+}
+
+# Main script
+main() {
+    # Check if required commands exist
+    check_requirements
+
+    # Get current default browser
+    current=$(get_current_browser)
+
+    # Toggle between browsers
+    case $current in
+        "edge")
+            set_browser "chrome"
+            ;;
+        "chrome")
+            set_browser "edge"
+            ;;
+        *)
+            echo "Current browser is neither Edge nor Chrome."
+            echo "Setting default browser to Edge..."
+            set_browser "edge"
+            ;;
+    esac
+}
+
+# Run the script
+main
