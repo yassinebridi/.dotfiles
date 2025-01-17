@@ -2,7 +2,7 @@
 
 # Function to check if required commands exist
 check_requirements() {
-    if ! command -v defaultbrowser &> /dev/null; then
+    if ! command -v /opt/homebrew/bin/defaultbrowser &> /dev/null; then
         echo "Error: defaultbrowser command not found."
         echo "Please ensure it's installed and in your PATH."
         exit 1
@@ -36,11 +36,11 @@ set_browser() {
     local browser=$1
     case $browser in
         "edge")
-            defaultbrowser edgemac
+            /opt/homebrew/bin/defaultbrowser edgemac
             echo "Default browser set to Microsoft Edge"
             ;;
         "chrome")
-            defaultbrowser chrome
+            /opt/homebrew/bin/defaultbrowser chrome
             echo "Default browser set to Google Chrome"
             ;;
     esac
@@ -57,15 +57,15 @@ main() {
     # Toggle between browsers
     case $current in
         "edge")
-            set_browser "chrome"
+            set_browser "chrome" > /dev/null
             ;;
         "chrome")
-            set_browser "edge"
+            set_browser "edge" > /dev/null
             ;;
         *)
             echo "Current browser is neither Edge nor Chrome."
             echo "Setting default browser to Edge..."
-            set_browser "edge"
+            set_browser "edge" > /dev/null
             ;;
     esac
 }
