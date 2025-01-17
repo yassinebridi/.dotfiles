@@ -129,6 +129,7 @@ alias kgs='kubectl get svc'
 alias kgd='kubectl get deployments.apps'
 alias kl='kubectl logs --follow'
 alias kc='kubecm'
+alias kcs='kubecm switch -s -m'
 alias kt='watch kubectl top pods --sort-by=memory'
  
 alias yz='yazi'
@@ -219,6 +220,5 @@ eval "$(atuin init zsh)"
 bindkey '^r' atuin-search
 
 # bind to the up key, which depends on terminal mode
-bindkey '^[[A' atuin-up-search
-bindkey '^[OA' atuin-up-search
-
+# bindkey '^[[A' atuin-up-search
+# bindkey '^[OA' atuin-up-search

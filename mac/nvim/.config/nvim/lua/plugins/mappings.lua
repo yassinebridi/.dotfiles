@@ -15,6 +15,7 @@ return {
           ["<Leader>dn"] = { "<cmd>lua require'notify'.dismiss()<cr>", desc = "Dismiss Notifications" },
           ["Y"] = { '"ky', desc = "Yank to k register" },
           ["P"] = { '"kp', desc = "Paste from k register" },
+          ["gs"] = { '/', desc = "Search Inside File" },
           ["gh"] = { "^", desc = "Go to start of line" },
           ["gl"] = { "$", desc = "Go to end of line" },
           ["<CR>"] = { "o<space><Esc>", desc = "New line with space" },

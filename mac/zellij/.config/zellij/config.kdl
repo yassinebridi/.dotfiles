@@ -38,8 +38,6 @@ keybinds {
 
   scroll {
     bind "Alt s" { SwitchToMode "Normal"; }
-    bind "g" { ScrollToTop; }
-    bind "G" { ScrollToBottom; }
     bind "c" { Clear; }
   }
 
@@ -94,6 +92,14 @@ keybinds {
     bind "Alt 0" { GoToTab 10; }
   }
 
+  shared_among "search" "scroll" {
+      bind "g" {
+          ScrollToTop
+      }
+      bind "G" {
+        ScrollToBottom
+      }
+  }
   shared_except "move" "locked" {
     bind "Alt m" { SwitchToMode "move"; }
   }
