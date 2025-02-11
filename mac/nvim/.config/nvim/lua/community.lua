@@ -15,6 +15,7 @@ return {
   { import = "astrocommunity.colorscheme.github-nvim-theme" },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
+  { import = "astrocommunity.pack.typescript" },
   -- { import = "astrocommunity.pack.typescript" },
   -- import/override with your plugins folder
 }

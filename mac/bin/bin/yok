@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Check if a directory argument is provided
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <directory>"
+    exit 1
+fi
+
+# Store the directory argument
+src_dir="$1"
+
+# Create a temporary file
+temp_file="/tmp/yek_output.txt"
+
+# Run yek command and save output
+yek "$src_dir" > "$temp_file"
+
+# Open with dropover-mac
+open -b me.damir.dropover-mac "$temp_file"
+#
+# # Clean up the temporary file
+# rm "$temp_file"
