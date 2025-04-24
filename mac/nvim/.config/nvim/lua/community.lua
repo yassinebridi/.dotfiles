@@ -7,10 +7,9 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  -- { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.colorscheme.gruvbox-nvim" },
   { import = "astrocommunity.bars-and-lines.lualine-nvim" },
-  { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.typescript" },
   -- import/override with your plugins folder
 }
