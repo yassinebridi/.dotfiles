@@ -1,12 +1,14 @@
 -- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 return { -- override nvim-cmp plugin
-  { -- override blink.cmp plugin
-    "Saghen/blink.cmp",
-    opts = {
-      keymap = {
-        ["<Tab>"] = { "snippet_forward", "fallback" },
-      },
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function(_, opts)
+      opts.mapping["<Tab>"] = vim.NIL
+      opts.mapping["<S-Tab>"] = vim.NIL
+    end,
+    formatting = {
+      format = require("nvim-highlight-colors").format,
     },
   },
   {

@@ -2,55 +2,13 @@
 
 return {
   -- { "mg979/vim-visual-multi" },
-  {
-    "github/copilot.vim",
-    -- event = "InsertEnter",
-    -- autoStart = true,
-  --   config = function() require("copilot").setup {} end,
-  },
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   event = "InsertEnter",
-  --   config = function() require("copilot").setup {} end,
-  -- },
-  -- {
-  --   "ray-x/lsp_signature.nvim",
-  --   event = "InsertEnter",
-  --   config = function() require("lsp_signature").on_attach() end,
-  -- },
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   build = ":Copilot auth",
-  --   event = "BufReadPost",
-  --   opts = {
-  --     suggestion = {
-  --       keymap = {
-  --         accept = false, -- handled by completion engine
-  --       },
-  --     },
-  --   },
-  --   specs = {
-  --     {
-  --       "AstroNvim/astrocore",
-  --       opts = {
-  --         options = {
-  --           g = {
-  --             -- set the ai_accept function
-  --             ai_accept = function()
-  --               if require("copilot.suggestion").is_visible() then
-  --                 require("copilot.suggestion").accept()
-  --                 return true
-  --               end
-  --             end,
-  --           },
-  --         },
-  --       },
-  --     },
-  --   },
-  -- },
   { "dwrdx/mywords.nvim" },
+  { "github/copilot.vim" },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    config = function() require("lsp_signature").on_attach() end,
+  },
   {
     "nvim-treesitter/nvim-treesitter-context",
     enabled = true,
@@ -138,6 +96,8 @@ return {
           mc.enableCursors()
         elseif mc.hasCursors() then
           mc.clearCursors()
+        else
+          -- Default <esc> handler.
         end
       end)
 
