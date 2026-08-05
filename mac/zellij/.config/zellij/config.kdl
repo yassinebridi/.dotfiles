@@ -45,11 +45,24 @@ keybinds {
       // bind "Alt w" { SwitchToMode "Normal"; }
       bind "Alt s" { SwitchToMode "Scroll"; }
       bind "d" { Detach; }
-      bind "w" {
-          LaunchOrFocusPlugin "session-manager" {
+      bind "e" {
+          Run "bash" "-c" "$HOME/.config/zellij/last-session.sh" {
               floating true
-              move_to_focused_tab true
-          };
+              close_on_exit true
+              width "1"
+              height "1"
+              name "switch"
+          }
+          SwitchToMode "Normal"
+      }
+      bind "w" {
+          Run "bash" "-c" "$HOME/.config/zellij/open-session-manager.sh" {
+              floating true
+              close_on_exit true
+              width "1"
+              height "1"
+              name "sm"
+          }
           SwitchToMode "Normal"
       }
   }

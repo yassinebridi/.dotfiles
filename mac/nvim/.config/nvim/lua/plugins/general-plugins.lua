@@ -3,7 +3,7 @@
 return {
   -- { "mg979/vim-visual-multi" },
   {
-    "github/copilot.vim",
+    -- "github/copilot.vim",
     -- event = "InsertEnter",
     -- autoStart = true,
   --   config = function() require("copilot").setup {} end,
