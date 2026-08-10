@@ -1,4 +1,5 @@
 default_shell "zsh"
+session_serialization false
 // pane_frames false
 
 // theme "catppuccin-mocha"

@@ -11,6 +11,7 @@ export PATH=/opt/homebrew/bin:$PATH
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 
 export GOPATH=~/go
 export EDITOR='nvim'
@@ -65,13 +66,7 @@ select-word-style shell
 
 
 # Aliases
-
-# Trash
-alias tm="trash-put"
-alias te="trash-empty"
-alias tl="trash-list"
-alias ts="trash-restore"
-alias td="trash-rm"
+alias cc="claude --dangerously-skip-permissions"
 
 alias sr='serpl'
 alias tf='terraform'
@@ -135,6 +130,10 @@ alias kt='watch kubectl top pods --sort-by=memory'
 alias yz='yazi'
 alias zl='zellij --config ~/.config/zellij/config.kdl attach config'
 alias zt='zellij attach $(zellij ls -s | fzf)'
+alias zj='zellij attach -c "$(basename "$PWD")"'
+zn() {
+  zellij --session "$1"
+}
 
 # zoxide(autojump replacement)
 eval "$(zoxide init zsh)"
@@ -154,7 +153,7 @@ export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
-eval "$(github-copilot-cli alias -- "$0")"
+# eval "$(github-copilot-cli alias -- "$0")"
 
 function aws_setup() {
   CLUSTER_NAME=$1
