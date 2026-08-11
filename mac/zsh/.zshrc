@@ -234,3 +234,4 @@ bindkey '^r' atuin-search
 # bind to the up key, which depends on terminal mode
 # bindkey '^[[A' atuin-up-search
 # bindkey '^[OA' atuin-up-search
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
