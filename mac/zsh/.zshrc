@@ -72,7 +72,6 @@ alias sr='serpl'
 alias tf='terraform'
  
 alias p='pipenv'
-alias y='yarn'
 alias yw='yarn workspace'
 alias yd='yarn dev'
 alias yg='yarn gen'
@@ -135,6 +134,20 @@ zn() {
   zellij --session "$1"
 }
 
+# Decode base64
+dcd() {
+  echo "$1" | base64 -d
+}
+
+# shell wrapper that provides the ability to change the current working directory when exiting Yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	command rm -f -- "$tmp"
+}
+
 # zoxide(autojump replacement)
 eval "$(zoxide init zsh)"
 
@@ -176,9 +189,9 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
  
 # source <(fx --comp zsh)
-source $HOME/.phpbrew/bashrc
-export PHPBREW_SET_PROMPT=1
-export PHPBREW_RC_ENABLE=1
+# source $HOME/.phpbrew/bashrc
+# export PHPBREW_SET_PROMPT=1
+# export PHPBREW_RC_ENABLE=1
 
 export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
