@@ -75,3 +75,6 @@ alt - return : open -a alacritty
 shift + alt - i : shortcuts run "Adaptive Mode"
 shift + alt - o : shortcuts run "Noise Control Mode"
 shift + alt - p : shortcuts run "Play/Pause"
+
+# Open yazi
+alt - y : alacritty -e zsh -ci "y" & sleep 0.1 && yabai -m window --toggle float && yabai -m window --grid 5:5:1:1:3:3
