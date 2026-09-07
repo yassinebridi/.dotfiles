@@ -4,8 +4,3 @@ import = [
   "~/.config/alacritty/themes/gruvbox.toml",
 # "~/.config/alacritty/themes/gruvbox_light.toml",
 ]
-
-[[keyboard.bindings]]
-key = "Return"
-mods = "Shift"
-chars = "\u001B\r"

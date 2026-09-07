@@ -12,6 +12,8 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH=/Applications/Alacritty.app/Contents/MacOS:$PATH
 
 export GOPATH=~/go
 export EDITOR='nvim'

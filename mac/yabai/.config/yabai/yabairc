@@ -59,5 +59,8 @@ yabai -m rule --add app="^Disk Utility$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opacity=1.0
 yabai -m rule --add app="^ripdrag$" manage=off border=off sticky=on layer=above opacity=1.0
+yabai -m rule --add app="^qemu-system-aarch64$" manage=off
+yabai -m rule --add app="^Android Emulator$" manage=off
+yabai -m rule --add title="^Android Emulator.*$" manage=off
 
 yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq -r '.[0].id')"

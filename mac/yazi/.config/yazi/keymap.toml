@@ -373,3 +373,13 @@ keymap = [
 	# Filtering
 	{ on = "f", run = "filter", desc = "Filter help items" },
 ]
+
+[[mgr.prepend_keymap]]
+on   = [ "<C-m>" ]
+run  = "shell 'shelve add $@' --confirm"
+desc = "Add the current selection to the Shelve shelf"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "p" ]
+run  = "cd ~/projects"
+desc = "Cd to ~/projects"
