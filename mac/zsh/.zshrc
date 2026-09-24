@@ -68,7 +68,7 @@ select-word-style shell
 
 
 # Aliases
-alias cc="claude --dangerously-skip-permissions"
+# alias cc="claude --dangerously-skip-permissions"
 
 alias sr='serpl'
 alias tf='terraform'
@@ -182,6 +182,28 @@ function gcp_setup() {
 }
 function kex() {
   kubectl exec -it $1 -- sh
+}
+
+cc() {
+  local -a names=("Yassine Account" "Company Account")
+  local -a dirs=("$HOME/.claude-yassine" "")   # "" = default ~/.claude (company)
+  local choice
+
+  if command -v fzf >/dev/null 2>&1; then
+    choice=$(printf '%s\n' "${names[@]}" | fzf --height=~6 --reverse --prompt="Claude account > ") || return 1
+  else
+    PS3="Choose account: "
+    select choice in "${names[@]}"; do [[ -n $choice ]] && break; done
+  fi
+
+  local idx=${names[(Ie)$choice]}
+  (( idx == 0 )) && return 1
+
+  if [[ -n ${dirs[$idx]} ]]; then
+    CLAUDE_CONFIG_DIR="${dirs[$idx]}" command claude --dangerously-skip-permissions "$@"
+  else
+    env -u CLAUDE_CONFIG_DIR claude --dangerously-skip-permissions "$@"
+  fi
 }
 
 # The next line updates PATH for the Google Cloud SDK.
